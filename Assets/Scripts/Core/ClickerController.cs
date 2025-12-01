@@ -3,7 +3,7 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 
 /// <summary>
-/// Handles all click interactions for Money Coin and Case Coin.
+/// Handles all click interactions for Money Coin and Case Coin. 
 /// Integrates with ComboSystem for momentum multipliers.
 /// </summary>
 public class ClickerController : MonoBehaviour
@@ -79,6 +79,12 @@ public class ClickerController : MonoBehaviour
         OnMoneyClicked ??= new UnityEvent<float>();
         OnCaseClicked ??= new UnityEvent<float>();
         OnClickFeedback ??= new UnityEvent<Vector3>();
+
+        // Ensure minimum starting values (fixes 0 value bug from serialization)
+        if (baseMoneyPerClick <= 0f) baseMoneyPerClick = 1f;
+        if (baseCasePercentPerClick <= 0f) baseCasePercentPerClick = 0.5f;
+        if (moneyClickMultiplier <= 0f) moneyClickMultiplier = 1f;
+        if (caseClickMultiplier <= 0f) caseClickMultiplier = 1f;
     }
 
     private void Start()
@@ -98,7 +104,7 @@ public class ClickerController : MonoBehaviour
     #region Click Handlers
 
     /// <summary>
-    /// Called when player clicks the Money Coin.
+    /// Called when player clicks the Money Coin. 
     /// Can be called from UI Button or directly from code.
     /// </summary>
     public void OnMoneyCoinClicked()
@@ -194,7 +200,7 @@ public class ClickerController : MonoBehaviour
     }
 
     /// <summary>
-    /// Upgrade the base case % per click value.
+    /// Upgrade the base case % per click value. 
     /// </summary>
     public void UpgradeBaseCasePercentPerClick(float additionalPercent)
     {
@@ -216,10 +222,10 @@ public class ClickerController : MonoBehaviour
     /// </summary>
     public void SetClickValues(float baseMoney, float moneyMultiplier, float baseCase, float caseMultiplier)
     {
-        baseMoneyPerClick = baseMoney;
-        moneyClickMultiplier = moneyMultiplier;
-        baseCasePercentPerClick = baseCase;
-        caseClickMultiplier = caseMultiplier;
+        baseMoneyPerClick = baseMoney > 0f ? baseMoney : 1f;
+        moneyClickMultiplier = moneyMultiplier > 0f ? moneyMultiplier : 1f;
+        baseCasePercentPerClick = baseCase > 0f ? baseCase : 0.5f;
+        caseClickMultiplier = caseMultiplier > 0f ? caseMultiplier : 1f;
     }
 
     /// <summary>
@@ -237,18 +243,13 @@ public class ClickerController : MonoBehaviour
 
     private void Update()
     {
-        // Optional: Handle keyboard/mouse input directly (editor testing)
-        // Only when legacy Input Manager is enabled to avoid exceptions with the new Input System
-        #if UNITY_EDITOR && ENABLE_LEGACY_INPUT_MANAGER
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            OnMoneyCoinClicked();
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            OnCaseCoinClicked();
-        }
-        #endif
+        // Optional: Handle keyboard/mouse input directly
+        // This can be used if you want clicks anywhere on the screen
+        // or specific key bindings
+
+        // Example: Press 1 for money click, 2 for case click (for testing)
+#if UNITY_EDITOR
+#endif
     }
 
     #endregion

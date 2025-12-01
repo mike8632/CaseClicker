@@ -2,18 +2,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
-/// <summary>
-/// Simple UI controller that displays core statistics.
-/// Attach to a Stats Panel GameObject and assign Text fields.
-/// </summary>
 public class StatsUIController : MonoBehaviour
 {
     [Header("Core Counters")] public Text totalClicksText; public Text casesDroppedText; public Text casesOpenedText; public Text itemsSoldText; public Text tradeUpsText; public Text upgradesText; public Text achievementsText; public Text playTimeText;
     [Header("Economy")] public Text moneyPerSecondText; public Text actualMoneyText; public Text moneyRecordText; public Text totalGainedMoneyText; public Text totalExperienceText; public Text offlineIncomeText; public Text keysBoughtText; public Text missionsCompletedText;
 
     private bool subscribed;
-    private float refreshTimer;
-    private const float refreshInterval = 0.5f; // seconds
 
     private void OnEnable()
     {
@@ -40,7 +34,6 @@ public class StatsUIController : MonoBehaviour
 
     private void OnStatChanged(string key, object value)
     {
-        // Update only changed field for efficiency.
         switch (key)
         {
             case "moneyClicks": UpdateText(totalClicksText, (StatisticsManager.Instance.GetAllStatistics().totalMoneyClicks + StatisticsManager.Instance.GetAllStatistics().totalCaseClicks).ToString("N0")); break;
@@ -58,18 +51,15 @@ public class StatsUIController : MonoBehaviour
             case "offlineIncomeSeconds": UpdateText(offlineIncomeText, SecondsToHMS((float)value)); break;
             case "keysBought": UpdateText(keysBoughtText, ((int)value).ToString("N0")); break;
             case "missionsCompleted": UpdateText(missionsCompletedText, ((int)value).ToString("N0")); break;
-            case "prestiges": RefreshAll(); break; // could have broader impact
+            case "prestiges": RefreshAll(); break;
             default: break;
         }
-
-        // Play time updates periodically elsewhere; RefreshAll covers it.
     }
 
     public void RefreshAll()
     {
         if (StatisticsManager.Instance == null) return;
         var s = StatisticsManager.Instance.GetAllStatistics();
-
         UpdateText(totalClicksText, (s.totalMoneyClicks + s.totalCaseClicks).ToString("N0"));
         UpdateText(casesDroppedText, s.totalCasesDropped.ToString("N0"));
         UpdateText(casesOpenedText, s.totalCasesOpened.ToString("N0"));
@@ -78,7 +68,6 @@ public class StatsUIController : MonoBehaviour
         UpdateText(upgradesText, s.totalUpgradesPurchased.ToString("N0"));
         UpdateText(achievementsText, s.totalAchievementsUnlocked.ToString("N0"));
         UpdateText(playTimeText, (s.totalPlayTimeSeconds / 3600f).ToString("F1") + " h");
-
         UpdateText(moneyPerSecondText, s.moneyPerSecond.ToString("F3"));
         UpdateText(actualMoneyText, "$" + s.actualMoney.ToString("F2"));
         UpdateText(moneyRecordText, "$" + s.moneyRecord.ToString("F2"));
@@ -94,29 +83,12 @@ public class StatsUIController : MonoBehaviour
         // Late subscribe if StatisticsManager initialized after this panel
         if (!subscribed) TrySubscribe();
 
-        // Lightweight periodic update of play time field (avoid event spam)
         if (playTimeText != null && StatisticsManager.Instance != null)
         {
             playTimeText.text = (StatisticsManager.Instance.GetAllStatistics().totalPlayTimeSeconds / 3600f).ToString("F1") + " h";
         }
-
-        // Fallback: periodic refresh of all stats in case an event was missed
-        refreshTimer += Time.unscaledDeltaTime;
-        if (refreshTimer >= refreshInterval)
-        {
-            refreshTimer = 0f;
-            RefreshAll();
-        }
     }
 
-    private static void UpdateText(Text t, string value)
-    {
-        if (t != null) t.text = value;
-    }
-
-    private static string SecondsToHMS(float seconds)
-    {
-        var ts = TimeSpan.FromSeconds(seconds);
-        return ts.ToString("hh\\:mm\\:ss");
-    }
+    private static void UpdateText(Text t, string value) { if (t != null) t.text = value; }
+    private static string SecondsToHMS(float seconds) { var ts = TimeSpan.FromSeconds(seconds); return ts.ToString("hh\\:mm\\:ss"); }
 }

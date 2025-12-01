@@ -40,7 +40,7 @@ public class BalanceManager : MonoBehaviour
     public float MoneyPerSecondMultiplier => moneyPerSecondMultiplier;
 
     /// <summary>
-    /// Current Money Per Second including all multipliers.
+    /// Current Money Per Second including all multipliers. 
     /// </summary>
     public float CurrentMoneyPerSecond => baseMoneyPerSecond * moneyPerSecondMultiplier;
 
@@ -59,6 +59,9 @@ public class BalanceManager : MonoBehaviour
         OnMoneyChanged ??= new UnityEvent<double>();
         OnMoneyTransaction ??= new UnityEvent<double, double>();
         OnInsufficientFunds ??= new UnityEvent();
+
+        // Ensure multiplier is never 0 (fixes 0 value bug from serialization)
+        if (moneyPerSecondMultiplier <= 0f) moneyPerSecondMultiplier = 1f;
 
         // Set starting money
         currentMoney = startingMoney;
@@ -99,7 +102,7 @@ public class BalanceManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Attempt to spend money. Returns true if successful, false if insufficient funds.
+    /// Attempt to spend money.  Returns true if successful, false if insufficient funds.
     /// </summary>
     public bool SpendMoney(double amount)
     {
@@ -111,7 +114,7 @@ public class BalanceManager : MonoBehaviour
 
         if (currentMoney < amount)
         {
-            Debug.Log($"[Balance] Insufficient funds! Need ${amount:F2}, have ${currentMoney:F2}");
+            Debug.Log($"[Balance] Insufficient funds!  Need ${amount:F2}, have ${currentMoney:F2}");
             OnInsufficientFunds?.Invoke();
             return false;
         }
@@ -130,7 +133,7 @@ public class BalanceManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Check if player can afford a purchase.
+    /// Check if player can afford a purchase. 
     /// </summary>
     public bool CanAfford(double amount)
     {
@@ -186,7 +189,7 @@ public class BalanceManager : MonoBehaviour
     #region Upgrade Methods
 
     /// <summary>
-    /// Upgrade base Money Per Second.
+    /// Upgrade base Money Per Second. 
     /// </summary>
     public void UpgradeBaseMoneyPerSecond(float additionalMPS)
     {
@@ -213,7 +216,7 @@ public class BalanceManager : MonoBehaviour
     public void SetIdleValues(float baseMPS, float mpsMultiplier)
     {
         baseMoneyPerSecond = baseMPS;
-        moneyPerSecondMultiplier = mpsMultiplier;
+        moneyPerSecondMultiplier = mpsMultiplier > 0f ? mpsMultiplier : 1f;
         // Update stats for MPS snapshot
         StatisticsManager.Instance?.UpdateMoneyPerSecond(CurrentMoneyPerSecond);
     }

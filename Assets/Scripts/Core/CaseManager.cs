@@ -45,7 +45,7 @@ public class CaseProgressManager : MonoBehaviour
     public float CasePerSecondMultiplier => casePerSecondMultiplier;
 
     /// <summary>
-    /// Current Case % Per Second including all multipliers.
+    /// Current Case % Per Second including all multipliers. 
     /// </summary>
     public float CurrentCasePercentPerSecond => baseCasePercentPerSecond * casePerSecondMultiplier;
 
@@ -65,6 +65,10 @@ public class CaseProgressManager : MonoBehaviour
         OnProgressGained ??= new UnityEvent<float, float>();
         OnCaseDropped ??= new UnityEvent<CaseData>();
         OnProgressReset ??= new UnityEvent();
+
+        // Ensure multiplier is never 0 (fixes 0 value bug from serialization)
+        if (casePerSecondMultiplier <= 0f) casePerSecondMultiplier = 1f;
+        if (maxProgress <= 0f) maxProgress = 100f;
     }
 
     private void Start()
@@ -76,7 +80,7 @@ public class CaseProgressManager : MonoBehaviour
     #region Progress Operations
 
     /// <summary>
-    /// Add progress to the Case Coin (from clicking).
+    /// Add progress to the Case Coin (from clicking). 
     /// </summary>
     public void AddProgress(float amount)
     {
@@ -136,7 +140,7 @@ public class CaseProgressManager : MonoBehaviour
         }
         else
         {
-            Debug.Log($"[CaseProgress] Case Dropped! (No case data available - Case #{totalCasesDropped})");
+            Debug.Log($"[CaseProgress] Case Dropped!  (No case data available - Case #{totalCasesDropped})");
             OnCaseDropped?.Invoke(null);
             GameManager.Instance?.OnCaseDropped?.Invoke(null);
         }
@@ -233,7 +237,7 @@ public class CaseProgressManager : MonoBehaviour
     #region Upgrade Methods
 
     /// <summary>
-    /// Upgrade base Case % Per Second.
+    /// Upgrade base Case % Per Second. 
     /// </summary>
     public void UpgradeBaseCasePercentPerSecond(float additionalCPS)
     {
@@ -243,7 +247,7 @@ public class CaseProgressManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Upgrade Case Per Second multiplier.
+    /// Upgrade Case Per Second multiplier. 
     /// </summary>
     public void UpgradeCasePerSecondMultiplier(float additionalMultiplier)
     {
@@ -258,7 +262,7 @@ public class CaseProgressManager : MonoBehaviour
     public void SetIdleValues(float baseCPS, float cpsMultiplier)
     {
         baseCasePercentPerSecond = baseCPS;
-        casePerSecondMultiplier = cpsMultiplier;
+        casePerSecondMultiplier = cpsMultiplier > 0f ? cpsMultiplier : 1f;
         StatisticsManager.Instance?.OnStatisticChanged?.Invoke("casePerSecond", CurrentCasePercentPerSecond);
     }
 

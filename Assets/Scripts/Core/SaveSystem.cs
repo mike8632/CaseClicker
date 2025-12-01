@@ -50,7 +50,7 @@ public class SaveSystem : MonoBehaviour
     private void Start()
     {
         // Loading is handled by GameManager to ensure proper initialization order
-        // LoadGame() is called manually from GameManager.Start()
+        // LoadGame() is called manually from GameManager. Start()
     }
 
     private void Update()
@@ -80,7 +80,7 @@ public class SaveSystem : MonoBehaviour
     #region Save Operations
 
     /// <summary>
-    /// Save all game data.
+    /// Save all game data. 
     /// </summary>
     public void SaveGame()
     {
@@ -190,7 +190,7 @@ public class SaveSystem : MonoBehaviour
     }
 
     /// <summary>
-    /// Save data to PlayerPrefs.
+    /// Save data to PlayerPrefs. 
     /// </summary>
     private void SaveToPlayerPrefs(SaveData data)
     {
@@ -225,8 +225,10 @@ public class SaveSystem : MonoBehaviour
 
             if (data != null)
             {
+                // Validate save data before applying (fix for 0 values)
+                ValidateSaveData(data);
                 ApplySaveData(data);
-                Debug.Log($"[SaveSystem] Game loaded successfully. Save from: {DateTime.FromBinary(data.saveTimestamp)}");
+                Debug.Log($"[SaveSystem] Game loaded successfully.  Save from: {DateTime.FromBinary(data.saveTimestamp)}");
             }
             else
             {
@@ -243,7 +245,7 @@ public class SaveSystem : MonoBehaviour
     }
 
     /// <summary>
-    /// Load data from JSON file.
+    /// Load data from JSON file. 
     /// </summary>
     private SaveData LoadFromJson()
     {
@@ -258,6 +260,32 @@ public class SaveSystem : MonoBehaviour
     {
         string json = PlayerPrefs.GetString("CaseClickerSaveData");
         return JsonUtility.FromJson<SaveData>(json);
+    }
+
+    /// <summary>
+    /// Validate and fix any 0 or invalid values in save data. 
+    /// </summary>
+    private void ValidateSaveData(SaveData data)
+    {
+        // Fix clicker values
+        if (data.baseMoneyPerClick <= 0f) data.baseMoneyPerClick = 1f;
+        if (data.moneyClickMultiplier <= 0f) data.moneyClickMultiplier = 1f;
+        if (data.baseCasePercentPerClick <= 0f) data.baseCasePercentPerClick = 0.5f;
+        if (data.caseClickMultiplier <= 0f) data.caseClickMultiplier = 1f;
+
+        // Fix idle income multipliers
+        if (data.moneyPerSecondMultiplier <= 0f) data.moneyPerSecondMultiplier = 1f;
+        if (data.casePerSecondMultiplier <= 0f) data.casePerSecondMultiplier = 1f;
+
+        // Fix combo values
+        if (data.currentMaxComboMultiplier <= 0f) data.currentMaxComboMultiplier = 5f;
+        if (data.comboDecayTime <= 0f) data.comboDecayTime = 3f;
+
+        // Fix idle time settings
+        if (data.maxIdleMinutes <= 0f) data.maxIdleMinutes = 60f;
+        if (data.offlineEfficiency <= 0f) data.offlineEfficiency = 1f;
+
+        Debug.Log("[SaveSystem] Save data validated and corrected if needed.");
     }
 
     /// <summary>
@@ -371,13 +399,14 @@ public class SaveSystem : MonoBehaviour
     }
 
     /// <summary>
-    /// Import save data from string.
+    /// Import save data from string. 
     /// </summary>
     public bool ImportSaveData(string json)
     {
         try
         {
             SaveData data = JsonUtility.FromJson<SaveData>(json);
+            ValidateSaveData(data);
             ApplySaveData(data);
             SaveGame();
             return true;
@@ -393,7 +422,7 @@ public class SaveSystem : MonoBehaviour
 }
 
 /// <summary>
-/// Container for all saveable game data.
+/// Container for all saveable game data. 
 /// </summary>
 [Serializable]
 public class SaveData
@@ -407,13 +436,13 @@ public class SaveData
     public double totalMoneyEarned;
     public double totalMoneySpent;
     public float baseMoneyPerSecond;
-    public float moneyPerSecondMultiplier;
+    public float moneyPerSecondMultiplier = 1f;
 
     // Clicker
-    public float baseMoneyPerClick;
-    public float moneyClickMultiplier;
-    public float baseCasePercentPerClick;
-    public float caseClickMultiplier;
+    public float baseMoneyPerClick = 1f;
+    public float moneyClickMultiplier = 1f;
+    public float baseCasePercentPerClick = 0.5f;
+    public float caseClickMultiplier = 1f;
     public int totalMoneyClicks;
     public int totalCaseClicks;
 
@@ -422,17 +451,17 @@ public class SaveData
     public int totalCasesDropped;
     public float totalCaseProgressEarned;
     public float baseCasePercentPerSecond;
-    public float casePerSecondMultiplier;
+    public float casePerSecondMultiplier = 1f;
 
     // Combo
-    public float currentMaxComboMultiplier;
-    public float comboDecayTime;
-    public float highestComboReached;
+    public float currentMaxComboMultiplier = 5f;
+    public float comboDecayTime = 3f;
+    public float highestComboReached = 1f;
     public int comboResetCount;
 
     // Idle Income
-    public float maxIdleMinutes;
-    public float offlineEfficiency;
+    public float maxIdleMinutes = 60f;
+    public float offlineEfficiency = 1f;
     public double totalIdleMoneyEarned;
     public float totalIdleCaseProgressEarned;
     public float totalIdleTimeSeconds;
