@@ -1,0 +1,845 @@
+fileFormatVersion: 2
+guid: 95c0a1f97b17bcf43b217a04d13dea97
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1757460004937434605
+    second: _pp-bizon_0
+  - first:
+      213: -4074789818254858965
+    second: _pp-bizon_1
+  - first:
+      213: -8288788847418455781
+    second: _pp-bizon_2
+  - first:
+      213: 8495573071889573262
+    second: _pp-bizon_3
+  - first:
+      213: 5169222488699068780
+    second: _pp-bizon_4
+  - first:
+      213: -8469279209722290220
+    second: _pp-bizon_5
+  - first:
+      213: -5456095225029836705
+    second: _pp-bizon_6
+  - first:
+      213: 9023579715489809443
+    second: _pp-bizon_7
+  - first:
+      213: -5177466334045953978
+    second: _pp-bizon_8
+  - first:
+      213: 9003849138858999951
+    second: _pp-bizon_9
+  - first:
+      213: -5745718488238718737
+    second: _pp-bizon_10
+  - first:
+      213: -6522529772365137334
+    second: _pp-bizon_11
+  - first:
+      213: -7903742567831962407
+    second: _pp-bizon_12
+  - first:
+      213: -7120012835024550675
+    second: _pp-bizon_13
+  - first:
+      213: -2148434155817978257
+    second: _pp-bizon_14
+  - first:
+      213: -2877169794345144525
+    second: _pp-bizon_15
+  - first:
+      213: 7200247454207968238
+    second: _pp-bizon_16
+  - first:
+      213: -6169841749399743250
+    second: _pp-bizon_17
+  - first:
+      213: 2217904737989339837
+    second: _pp-bizon_18
+  - first:
+      213: -389365650119766483
+    second: _pp-bizon_19
+  - first:
+      213: 854538961110598599
+    second: _pp-bizon_20
+  - first:
+      213: 887954929884548790
+    second: _pp-bizon_21
+  - first:
+      213: 5143967466588754262
+    second: _pp-bizon_22
+  - first:
+      213: 3671188548376385979
+    second: _pp-bizon_23
+  - first:
+      213: -7473152935129054115
+    second: _pp-bizon_24
+  - first:
+      213: -7722756802580324849
+    second: _pp-bizon_25
+  - first:
+      213: -7922638012813132304
+    second: _pp-bizon_26
+  - first:
+      213: -304545157173565071
+    second: _pp-bizon_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: _pp-bizon_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 247
+        width: 142
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de580452090c36810800000000000000
+      internalID: 1757460004937434605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _pp-bizon_1
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 244
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b256a8cdf307377c0800000000000000
+      internalID: -4074789818254858965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _pp-bizon_2
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 173
+        width: 215
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b19476b857e48fc80800000000000000
+      internalID: -8288788847418455781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _pp-bizon_3
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 242
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e852a5982b656e570800000000000000
+      internalID: 8495573071889573262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _pp-bizon_4
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 116
+        width: 129
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c616edb3774ccb740800000000000000
+      internalID: 5169222488699068780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _pp-bizon_5
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 182
+        width: 87
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dfd6e05e63177a80800000000000000
+      internalID: -8469279209722290220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _pp-bizon_6
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 234
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f50446bec4e0844b0800000000000000
+      internalID: -5456095225029836705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _pp-bizon_7
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 238
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 324c03831f13a3d70800000000000000
+      internalID: 9023579715489809443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _pp-bizon_8
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 238
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 640a5a2fcc1f528b0800000000000000
+      internalID: -5177466334045953978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _pp-bizon_9
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 208
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f80c5ec561914fc70800000000000000
+      internalID: 9003849138858999951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _pp-bizon_10
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 230
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe003212a7b1340b0800000000000000
+      internalID: -5745718488238718737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _pp-bizon_11
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 225
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4a3449dab15b75a0800000000000000
+      internalID: -6522529772365137334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _pp-bizon_12
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 214
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dcfd38a204405290800000000000000
+      internalID: -7903742567831962407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _pp-bizon_13
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 206
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de4c32ccc02a03d90800000000000000
+      internalID: -7120012835024550675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _pp-bizon_14
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 204
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f663727a48a3f22e0800000000000000
+      internalID: -2148434155817978257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _pp-bizon_15
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 200
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33fe291e05d3218d0800000000000000
+      internalID: -2877169794345144525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _pp-bizon_16
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 183
+        width: 22
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee30afa39ea6ce360800000000000000
+      internalID: 7200247454207968238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _pp-bizon_17
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 203
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee457ae3e91506aa0800000000000000
+      internalID: -6169841749399743250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _pp-bizon_18
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 199
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbaa285bb9497ce10800000000000000
+      internalID: 2217904737989339837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _pp-bizon_19
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 194
+        width: 23
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2e4fd01102b89af0800000000000000
+      internalID: -389365650119766483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _pp-bizon_20
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 135
+        width: 92
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c38ab758aeebdb00800000000000000
+      internalID: 854538961110598599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _pp-bizon_21
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 189
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6be435cdd46a25c00800000000000000
+      internalID: 887954929884548790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _pp-bizon_22
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 183
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 651503e282b036740800000000000000
+      internalID: 5143967466588754262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _pp-bizon_23
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 172
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb9d471b88ea2f230800000000000000
+      internalID: 3671188548376385979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _pp-bizon_24
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 102
+        width: 23
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d54077dfff60a4890800000000000000
+      internalID: -7473152935129054115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _pp-bizon_25
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 113
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0ed77fda9143d490800000000000000
+      internalID: -7722756802580324849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _pp-bizon_26
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 109
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fd344a04b22d0290800000000000000
+      internalID: -7922638012813132304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _pp-bizon_27
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 107
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 179aa980bc906cbf0800000000000000
+      internalID: -304545157173565071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      _pp-bizon_0: 1757460004937434605
+      _pp-bizon_1: -4074789818254858965
+      _pp-bizon_10: -5745718488238718737
+      _pp-bizon_11: -6522529772365137334
+      _pp-bizon_12: -7903742567831962407
+      _pp-bizon_13: -7120012835024550675
+      _pp-bizon_14: -2148434155817978257
+      _pp-bizon_15: -2877169794345144525
+      _pp-bizon_16: 7200247454207968238
+      _pp-bizon_17: -6169841749399743250
+      _pp-bizon_18: 2217904737989339837
+      _pp-bizon_19: -389365650119766483
+      _pp-bizon_2: -8288788847418455781
+      _pp-bizon_20: 854538961110598599
+      _pp-bizon_21: 887954929884548790
+      _pp-bizon_22: 5143967466588754262
+      _pp-bizon_23: 3671188548376385979
+      _pp-bizon_24: -7473152935129054115
+      _pp-bizon_25: -7722756802580324849
+      _pp-bizon_26: -7922638012813132304
+      _pp-bizon_27: -304545157173565071
+      _pp-bizon_3: 8495573071889573262
+      _pp-bizon_4: 5169222488699068780
+      _pp-bizon_5: -8469279209722290220
+      _pp-bizon_6: -5456095225029836705
+      _pp-bizon_7: 9023579715489809443
+      _pp-bizon_8: -5177466334045953978
+      _pp-bizon_9: 9003849138858999951
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,793 @@
+fileFormatVersion: 2
+guid: 1e53e3638bd723a47a5629b1031f6e8b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 288785791270874328
+    second: _galil ar_0
+  - first:
+      213: -7889492543985013468
+    second: _galil ar_1
+  - first:
+      213: -1550745820754294237
+    second: _galil ar_2
+  - first:
+      213: 3376376411445059054
+    second: _galil ar_3
+  - first:
+      213: 3981357134112206232
+    second: _galil ar_4
+  - first:
+      213: 8997387039047335850
+    second: _galil ar_5
+  - first:
+      213: -4851822583013860706
+    second: _galil ar_6
+  - first:
+      213: -3247307985244347149
+    second: _galil ar_7
+  - first:
+      213: -4356319480055540493
+    second: _galil ar_8
+  - first:
+      213: 9089991027368978985
+    second: _galil ar_9
+  - first:
+      213: -2800167973799118165
+    second: _galil ar_10
+  - first:
+      213: -7139679765712574589
+    second: _galil ar_11
+  - first:
+      213: -391447996194047092
+    second: _galil ar_12
+  - first:
+      213: 864365409561674020
+    second: _galil ar_13
+  - first:
+      213: -5295667000042324783
+    second: _galil ar_14
+  - first:
+      213: -1767826366814088116
+    second: _galil ar_15
+  - first:
+      213: -5452590443252447493
+    second: _galil ar_16
+  - first:
+      213: 1431038496011516560
+    second: _galil ar_17
+  - first:
+      213: -4181325546402674636
+    second: _galil ar_18
+  - first:
+      213: -5591512877073004296
+    second: _galil ar_19
+  - first:
+      213: -7349522458615873319
+    second: _galil ar_20
+  - first:
+      213: -3002456711521105921
+    second: _galil ar_21
+  - first:
+      213: -103154050485636421
+    second: _galil ar_22
+  - first:
+      213: -6039556743807689516
+    second: _galil ar_23
+  - first:
+      213: -3372295058059459854
+    second: _galil ar_24
+  - first:
+      213: 7090242185757208132
+    second: _galil ar_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: _galil ar_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 281
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dc61e8a529f10400800000000000000
+      internalID: 288785791270874328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _galil ar_1
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 257
+        width: 98
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42d2ea1e454e28290800000000000000
+      internalID: -7889492543985013468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _galil ar_2
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 218
+        width: 122
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32ac40964e4aa7ae0800000000000000
+      internalID: -1550745820754294237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _galil ar_3
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 263
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eedd038157c4bde20800000000000000
+      internalID: 3376376411445059054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _galil ar_4
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 218
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89da9b6283f904730800000000000000
+      internalID: 3981357134112206232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _galil ar_5
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 268
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aafbe1187d32ddc70800000000000000
+      internalID: 8997387039047335850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _galil ar_6
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 261
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9a9d3a111ddaacb0800000000000000
+      internalID: -4851822583013860706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _galil ar_7
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 254
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f4a837a79e3fe2d0800000000000000
+      internalID: -3247307985244347149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _galil ar_8
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 213
+        width: 40
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f4dc2f738e3b83c0800000000000000
+      internalID: -4356319480055540493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _galil ar_9
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 121
+        width: 151
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92ae0d5bda2262e70800000000000000
+      internalID: 9089991027368978985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _galil ar_10
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 253
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baa3742501ec329d0800000000000000
+      internalID: -2800167973799118165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _galil ar_11
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 220
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38768aaa413caec90800000000000000
+      internalID: -7139679765712574589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _galil ar_12
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 217
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8bb0d61f1c419af0800000000000000
+      internalID: -391447996194047092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _galil ar_13
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 221
+        width: 29
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4210f09a2c7defb00800000000000000
+      internalID: 864365409561674020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _galil ar_14
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 197
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dcf7bdcbe20286b0800000000000000
+      internalID: -5295667000042324783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _galil ar_15
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 193
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c441a75294b6777e0800000000000000
+      internalID: -1767826366814088116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _galil ar_16
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 135
+        width: 78
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf68f3481e18454b0800000000000000
+      internalID: -5452590443252447493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _galil ar_17
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 111
+        width: 22
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09afcae1ee11cd310800000000000000
+      internalID: 1431038496011516560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _galil ar_18
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 87
+        width: 34
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4380764b192f8f5c0800000000000000
+      internalID: -4181325546402674636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _galil ar_19
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 121
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f88a05d9a4f662b0800000000000000
+      internalID: -5591512877073004296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _galil ar_20
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 80
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d002796340410a90800000000000000
+      internalID: -7349522458615873319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _galil ar_21
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 107
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff70c4057812556d0800000000000000
+      internalID: -3002456711521105921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _galil ar_22
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 107
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb239a700f5819ef0800000000000000
+      internalID: -103154050485636421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _galil ar_23
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 71
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dc1784f32f2f2ca0800000000000000
+      internalID: -6039556743807689516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _galil ar_24
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 66
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f28f8a03833331d0800000000000000
+      internalID: -3372295058059459854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _galil ar_25
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 75
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44e2c85c3b9956260800000000000000
+      internalID: 7090242185757208132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      _galil ar_0: 288785791270874328
+      _galil ar_1: -7889492543985013468
+      _galil ar_10: -2800167973799118165
+      _galil ar_11: -7139679765712574589
+      _galil ar_12: -391447996194047092
+      _galil ar_13: 864365409561674020
+      _galil ar_14: -5295667000042324783
+      _galil ar_15: -1767826366814088116
+      _galil ar_16: -5452590443252447493
+      _galil ar_17: 1431038496011516560
+      _galil ar_18: -4181325546402674636
+      _galil ar_19: -5591512877073004296
+      _galil ar_2: -1550745820754294237
+      _galil ar_20: -7349522458615873319
+      _galil ar_21: -3002456711521105921
+      _galil ar_22: -103154050485636421
+      _galil ar_23: -6039556743807689516
+      _galil ar_24: -3372295058059459854
+      _galil ar_25: 7090242185757208132
+      _galil ar_3: 3376376411445059054
+      _galil ar_4: 3981357134112206232
+      _galil ar_5: 8997387039047335850
+      _galil ar_6: -4851822583013860706
+      _galil ar_7: -3247307985244347149
+      _galil ar_8: -4356319480055540493
+      _galil ar_9: 9089991027368978985
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

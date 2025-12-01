@@ -1,0 +1,871 @@
+fileFormatVersion: 2
+guid: d8580122c8ac5a7429f0018e0d02e934
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8150847512987768565
+    second: _mac-10_0
+  - first:
+      213: -696370629612250924
+    second: _mac-10_1
+  - first:
+      213: -3366176702656999648
+    second: _mac-10_2
+  - first:
+      213: -5931072510651564102
+    second: _mac-10_3
+  - first:
+      213: 6946403558288118734
+    second: _mac-10_4
+  - first:
+      213: 325915656365730525
+    second: _mac-10_5
+  - first:
+      213: -798702458211436318
+    second: _mac-10_6
+  - first:
+      213: -2375532038893942160
+    second: _mac-10_7
+  - first:
+      213: -9028925493460862695
+    second: _mac-10_8
+  - first:
+      213: 3218392963770516086
+    second: _mac-10_9
+  - first:
+      213: 6390093649811979914
+    second: _mac-10_10
+  - first:
+      213: -6417807477204728904
+    second: _mac-10_11
+  - first:
+      213: 7611763606484617117
+    second: _mac-10_12
+  - first:
+      213: 5101907914405857711
+    second: _mac-10_13
+  - first:
+      213: 728731530682210397
+    second: _mac-10_14
+  - first:
+      213: 7496664334907906617
+    second: _mac-10_15
+  - first:
+      213: -3057475723405094689
+    second: _mac-10_16
+  - first:
+      213: -8261221956407737798
+    second: _mac-10_17
+  - first:
+      213: -800020829862339899
+    second: _mac-10_18
+  - first:
+      213: 2043082339645939853
+    second: _mac-10_19
+  - first:
+      213: 2124776110543844432
+    second: _mac-10_20
+  - first:
+      213: 645064451077747511
+    second: _mac-10_21
+  - first:
+      213: 3791414298713694992
+    second: _mac-10_22
+  - first:
+      213: -8949905183357302496
+    second: _mac-10_23
+  - first:
+      213: -4130430358131094022
+    second: _mac-10_24
+  - first:
+      213: -8142298106262147212
+    second: _mac-10_25
+  - first:
+      213: -5966027320358540738
+    second: _mac-10_26
+  - first:
+      213: -7734358012985695069
+    second: _mac-10_27
+  - first:
+      213: -8187831221617923465
+    second: _mac-10_28
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: _mac-10_0
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 201
+        width: 162
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b09ecf93f5f52ee80800000000000000
+      internalID: -8150847512987768565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _mac-10_1
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 346
+        width: 26
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d852f51a9ef556f0800000000000000
+      internalID: -696370629612250924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _mac-10_2
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 42
+        width: 132
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02f0feaaf10f841d0800000000000000
+      internalID: -3366176702656999648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _mac-10_3
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 299
+        width: 19
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abf7789c9f890bda0800000000000000
+      internalID: -5931072510651564102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _mac-10_4
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 187
+        width: 148
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec3d54e8b35966060800000000000000
+      internalID: 6946403558288118734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _mac-10_5
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 190
+        width: 23
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddaea6c0092e58400800000000000000
+      internalID: 325915656365730525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _mac-10_6
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 194
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e8731198507ae4f0800000000000000
+      internalID: -798702458211436318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _mac-10_7
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 199
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07aca2d523a680fd0800000000000000
+      internalID: -2375532038893942160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _mac-10_8
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 185
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 919fbcad910d2b280800000000000000
+      internalID: -9028925493460862695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _mac-10_9
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 190
+        width: 32
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 672882949570aac20800000000000000
+      internalID: 3218392963770516086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _mac-10_10
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 195
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8eb58e715c2ea850800000000000000
+      internalID: 6390093649811979914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _mac-10_11
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 189
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b3cd5c3a1e5fe6a0800000000000000
+      internalID: -6417807477204728904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _mac-10_12
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 186
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9703c6dbaa62a960800000000000000
+      internalID: 7611763606484617117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _mac-10_13
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 190
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa94ae2973e9dc640800000000000000
+      internalID: 5101907914405857711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _mac-10_14
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 177
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5890f65779fc1a00800000000000000
+      internalID: 728731530682210397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _mac-10_15
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 174
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93a968a5e70890860800000000000000
+      internalID: 7496664334907906617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _mac-10_16
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 164
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd01f0d570aa195d0800000000000000
+      internalID: -3057475723405094689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _mac-10_17
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 175
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a32c8a5866e3a5d80800000000000000
+      internalID: -8261221956407737798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _mac-10_18
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 166
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ca542f3b41c5e4f0800000000000000
+      internalID: -800020829862339899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _mac-10_19
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 130
+        width: 17
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d80687d209c7a5c10800000000000000
+      internalID: 2043082339645939853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _mac-10_20
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 146
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 054b3307d98bc7d10800000000000000
+      internalID: 2124776110543844432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _mac-10_21
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 131
+        width: 27
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 733b8b753bab3f800800000000000000
+      internalID: 645064451077747511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _mac-10_22
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 135
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 013aa27873fcd9430800000000000000
+      internalID: 3791414298713694992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _mac-10_23
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 119
+        width: 25
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0298f8487ac8bc380800000000000000
+      internalID: -8949905183357302496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _mac-10_24
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 121
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afd4b162973cda6c0800000000000000
+      internalID: -4130430358131094022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _mac-10_25
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 118
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47fa8e8130fb00f80800000000000000
+      internalID: -8142298106262147212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _mac-10_26
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 56
+        width: 39
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3ae0c1f2c9643da0800000000000000
+      internalID: -5966027320358540738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _mac-10_27
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 41
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a4aa469d5a0aa490800000000000000
+      internalID: -7734358012985695069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _mac-10_28
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 0
+        width: 50
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77a6c9a82eafe5e80800000000000000
+      internalID: -8187831221617923465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      _mac-10_0: -8150847512987768565
+      _mac-10_1: -696370629612250924
+      _mac-10_10: 6390093649811979914
+      _mac-10_11: -6417807477204728904
+      _mac-10_12: 7611763606484617117
+      _mac-10_13: 5101907914405857711
+      _mac-10_14: 728731530682210397
+      _mac-10_15: 7496664334907906617
+      _mac-10_16: -3057475723405094689
+      _mac-10_17: -8261221956407737798
+      _mac-10_18: -800020829862339899
+      _mac-10_19: 2043082339645939853
+      _mac-10_2: -3366176702656999648
+      _mac-10_20: 2124776110543844432
+      _mac-10_21: 645064451077747511
+      _mac-10_22: 3791414298713694992
+      _mac-10_23: -8949905183357302496
+      _mac-10_24: -4130430358131094022
+      _mac-10_25: -8142298106262147212
+      _mac-10_26: -5966027320358540738
+      _mac-10_27: -7734358012985695069
+      _mac-10_28: -8187831221617923465
+      _mac-10_3: -5931072510651564102
+      _mac-10_4: 6946403558288118734
+      _mac-10_5: 325915656365730525
+      _mac-10_6: -798702458211436318
+      _mac-10_7: -2375532038893942160
+      _mac-10_8: -9028925493460862695
+      _mac-10_9: 3218392963770516086
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

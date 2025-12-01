@@ -1,0 +1,793 @@
+fileFormatVersion: 2
+guid: e6a20e7423cc64348a96650282e73a6f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 647062297834478602
+    second: _m9 bayonet new_0
+  - first:
+      213: -12830577185527980
+    second: _m9 bayonet new_1
+  - first:
+      213: -679699153633640859
+    second: _m9 bayonet new_2
+  - first:
+      213: -3235214273487814077
+    second: _m9 bayonet new_3
+  - first:
+      213: -8244859789090943242
+    second: _m9 bayonet new_4
+  - first:
+      213: -7061869844700901687
+    second: _m9 bayonet new_5
+  - first:
+      213: -1124427447602202839
+    second: _m9 bayonet new_6
+  - first:
+      213: -7354379473365586655
+    second: _m9 bayonet new_7
+  - first:
+      213: -548172813399851913
+    second: _m9 bayonet new_8
+  - first:
+      213: -4194000357898083780
+    second: _m9 bayonet new_9
+  - first:
+      213: 6554972488945770441
+    second: _m9 bayonet new_10
+  - first:
+      213: 5070924340746199110
+    second: _m9 bayonet new_11
+  - first:
+      213: 5404783212500261615
+    second: _m9 bayonet new_12
+  - first:
+      213: -6532626366934047612
+    second: _m9 bayonet new_13
+  - first:
+      213: 7122860997531038145
+    second: _m9 bayonet new_14
+  - first:
+      213: -2258179849279538084
+    second: _m9 bayonet new_15
+  - first:
+      213: 2453184231357549785
+    second: _m9 bayonet new_16
+  - first:
+      213: 7431666254133330232
+    second: _m9 bayonet new_17
+  - first:
+      213: -3242187311879817647
+    second: _m9 bayonet new_18
+  - first:
+      213: -8318531015368583629
+    second: _m9 bayonet new_19
+  - first:
+      213: 6849254335649710700
+    second: _m9 bayonet new_20
+  - first:
+      213: -2647310415870551491
+    second: _m9 bayonet new_21
+  - first:
+      213: 416970989225793408
+    second: _m9 bayonet new_22
+  - first:
+      213: -2112174771702958363
+    second: _m9 bayonet new_23
+  - first:
+      213: -6304868879889413736
+    second: _m9 bayonet new_24
+  - first:
+      213: 2938256992389913478
+    second: _m9 bayonet new_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: _m9 bayonet new_0
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 194
+        width: 242
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0cd8f94bb3daf800800000000000000
+      internalID: 647062297834478602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _m9 bayonet new_1
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 213
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 457e79478aa62dff0800000000000000
+      internalID: -12830577185527980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _m9 bayonet new_2
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 209
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56e788198393196f0800000000000000
+      internalID: -679699153633640859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _m9 bayonet new_3
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 216
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3424c7852c53a13d0800000000000000
+      internalID: -3235214273487814077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _m9 bayonet new_4
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 67
+        width: 210
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fe055874bf549d80800000000000000
+      internalID: -8244859789090943242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _m9 bayonet new_5
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 207
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ce4f88aac23ffd90800000000000000
+      internalID: -7061869844700901687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _m9 bayonet new_6
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 189
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 927b8f1a13b3560f0800000000000000
+      internalID: -1124427447602202839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _m9 bayonet new_7
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 175
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12dae9a85deffe990800000000000000
+      internalID: -7354379473365586655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _m9 bayonet new_8
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 192
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77c76c50bbf7468f0800000000000000
+      internalID: -548172813399851913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _m9 bayonet new_9
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 181
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c32af9f25eaebc5c0800000000000000
+      internalID: -4194000357898083780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _m9 bayonet new_10
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 166
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cf121cbfb0f7fa50800000000000000
+      internalID: 6554972488945770441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _m9 bayonet new_11
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 76
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6402f0d22da8f5640800000000000000
+      internalID: 5070924340746199110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _m9 bayonet new_12
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 70
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fea921d22b5a10b40800000000000000
+      internalID: 5404783212500261615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _m9 bayonet new_13
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 83
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 484ab8c3ee27755a0800000000000000
+      internalID: -6532626366934047612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _m9 bayonet new_14
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 69
+        width: 9
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c17256b65c79d260800000000000000
+      internalID: 7122860997531038145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _m9 bayonet new_15
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 62
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5c7fb4346559a0e0800000000000000
+      internalID: -2258179849279538084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _m9 bayonet new_16
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 39
+        width: 17
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dc08a69f067b0220800000000000000
+      internalID: 2453184231357549785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _m9 bayonet new_17
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 60
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83100ee5515922760800000000000000
+      internalID: 7431666254133330232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _m9 bayonet new_18
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 67
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 156ff1451df6103d0800000000000000
+      internalID: -3242187311879817647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _m9 bayonet new_19
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 21
+        width: 47
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 336d2ef6d14ae8c80800000000000000
+      internalID: -8318531015368583629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _m9 bayonet new_20
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 62
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6284b487807d0f50800000000000000
+      internalID: 6849254335649710700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _m9 bayonet new_21
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 49
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3a18dbe33dd24bd0800000000000000
+      internalID: -2647310415870551491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _m9 bayonet new_22
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 51
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 087527ec7e069c500800000000000000
+      internalID: 416970989225793408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _m9 bayonet new_23
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 58
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e67a156c3c00b2e0800000000000000
+      internalID: -2112174771702958363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _m9 bayonet new_24
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 31
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 899c6ca882b9088a0800000000000000
+      internalID: -6304868879889413736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _m9 bayonet new_25
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 43
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68b5532ca29c6c820800000000000000
+      internalID: 2938256992389913478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      _m9 bayonet new_0: 647062297834478602
+      _m9 bayonet new_1: -12830577185527980
+      _m9 bayonet new_10: 6554972488945770441
+      _m9 bayonet new_11: 5070924340746199110
+      _m9 bayonet new_12: 5404783212500261615
+      _m9 bayonet new_13: -6532626366934047612
+      _m9 bayonet new_14: 7122860997531038145
+      _m9 bayonet new_15: -2258179849279538084
+      _m9 bayonet new_16: 2453184231357549785
+      _m9 bayonet new_17: 7431666254133330232
+      _m9 bayonet new_18: -3242187311879817647
+      _m9 bayonet new_19: -8318531015368583629
+      _m9 bayonet new_2: -679699153633640859
+      _m9 bayonet new_20: 6849254335649710700
+      _m9 bayonet new_21: -2647310415870551491
+      _m9 bayonet new_22: 416970989225793408
+      _m9 bayonet new_23: -2112174771702958363
+      _m9 bayonet new_24: -6304868879889413736
+      _m9 bayonet new_25: 2938256992389913478
+      _m9 bayonet new_3: -3235214273487814077
+      _m9 bayonet new_4: -8244859789090943242
+      _m9 bayonet new_5: -7061869844700901687
+      _m9 bayonet new_6: -1124427447602202839
+      _m9 bayonet new_7: -7354379473365586655
+      _m9 bayonet new_8: -548172813399851913
+      _m9 bayonet new_9: -4194000357898083780
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

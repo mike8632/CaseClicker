@@ -1,0 +1,845 @@
+fileFormatVersion: 2
+guid: b2da4fa1c127ad24d8b0012e105c9ce7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 130651933882159014
+    second: famas_0
+  - first:
+      213: 168550201557466598
+    second: famas_1
+  - first:
+      213: 778433913834131377
+    second: famas_2
+  - first:
+      213: 395665025422563767
+    second: famas_3
+  - first:
+      213: -868505129110953487
+    second: famas_4
+  - first:
+      213: -132998086246064088
+    second: famas_5
+  - first:
+      213: 5736421331266758772
+    second: famas_6
+  - first:
+      213: -4277163005109565420
+    second: famas_7
+  - first:
+      213: 8024218929667772558
+    second: famas_8
+  - first:
+      213: -3560047268947691012
+    second: famas_9
+  - first:
+      213: -6178690056407935120
+    second: famas_10
+  - first:
+      213: -2781145307641190782
+    second: famas_11
+  - first:
+      213: 2917641869137528668
+    second: famas_12
+  - first:
+      213: -761167934854228792
+    second: famas_13
+  - first:
+      213: -8222963796610336917
+    second: famas_14
+  - first:
+      213: 617629673514115047
+    second: famas_15
+  - first:
+      213: 700472843700860413
+    second: famas_16
+  - first:
+      213: -5698833763752711987
+    second: famas_17
+  - first:
+      213: -5499781635041484315
+    second: famas_18
+  - first:
+      213: 4007376423404202850
+    second: famas_19
+  - first:
+      213: 791808563656232970
+    second: famas_20
+  - first:
+      213: -5845304465599267633
+    second: famas_21
+  - first:
+      213: 4136068630473243209
+    second: famas_22
+  - first:
+      213: -58737601968069253
+    second: famas_23
+  - first:
+      213: 2406901077582979777
+    second: famas_24
+  - first:
+      213: -273632993254939836
+    second: famas_25
+  - first:
+      213: -980792328034063412
+    second: famas_26
+  - first:
+      213: 4220250804130802717
+    second: famas_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: famas_0
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 120
+        width: 223
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6af834cdd3b20d100800000000000000
+      internalID: 130651933882159014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: famas_1
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 228
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ed37aae38fc65200800000000000000
+      internalID: 168550201557466598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: famas_2
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 193
+        width: 53
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bf4333358d8dca00800000000000000
+      internalID: 778433913834131377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: famas_3
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 199
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b99b5a8e3fad7500800000000000000
+      internalID: 395665025422563767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: famas_4
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 190
+        width: 30
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f1acb5cf2372f3f0800000000000000
+      internalID: -868505129110953487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: famas_5
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 191
+        width: 24
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8202f79f1fe772ef0800000000000000
+      internalID: -132998086246064088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: famas_6
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 149
+        width: 29
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 478e024deccdb9f40800000000000000
+      internalID: 5736421331266758772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: famas_7
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 176
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 418800288e674a4c0800000000000000
+      internalID: -4277163005109565420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: famas_8
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 153
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8010d63a90cb5f60800000000000000
+      internalID: 8024218929667772558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: famas_9
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 173
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf9f5ceeedb289ec0800000000000000
+      internalID: -3560047268947691012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: famas_10
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 57
+        width: 48
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 077119a3122e04aa0800000000000000
+      internalID: -6178690056407935120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: famas_11
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 128
+        width: 26
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2866d4de3136769d0800000000000000
+      internalID: -2781145307641190782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: famas_12
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 145
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c57cfb752db8d7820800000000000000
+      internalID: 2917641869137528668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: famas_13
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 134
+        width: 37
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c4989ccbc9cf65f0800000000000000
+      internalID: -761167934854228792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: famas_14
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 133
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b67b42e7ef922ed80800000000000000
+      internalID: -8222963796610336917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: famas_15
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 93
+        width: 27
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ef9c8c6ae2429800800000000000000
+      internalID: 617629673514115047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: famas_16
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 123
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df5f89f075498b900800000000000000
+      internalID: 700472843700860413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: famas_17
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 119
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc86485b2eca9e0b0800000000000000
+      internalID: -5698833763752711987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: famas_18
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 130
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e1a225fdb9dca3b0800000000000000
+      internalID: -5499781635041484315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: famas_19
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 123
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26b684600af0d9730800000000000000
+      internalID: 4007376423404202850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: famas_20
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 114
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0097d681b11dfa00800000000000000
+      internalID: 791808563656232970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: famas_21
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 117
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcc73fbee8e41eea0800000000000000
+      internalID: -5845304465599267633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: famas_22
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 94
+        width: 31
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94a7efd6184466930800000000000000
+      internalID: 4136068630473243209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: famas_23
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 106
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b752cb356725f2ff0800000000000000
+      internalID: -58737601968069253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: famas_24
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 114
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c2a6da17c7076120800000000000000
+      internalID: 2406901077582979777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: famas_25
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 118
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 443663e0e3cd33cf0800000000000000
+      internalID: -273632993254939836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: famas_26
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 94
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccbe919f2968362f0800000000000000
+      internalID: -980792328034063412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: famas_27
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 91
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1ce54b1fb7519a30800000000000000
+      internalID: 4220250804130802717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      famas_0: 130651933882159014
+      famas_1: 168550201557466598
+      famas_10: -6178690056407935120
+      famas_11: -2781145307641190782
+      famas_12: 2917641869137528668
+      famas_13: -761167934854228792
+      famas_14: -8222963796610336917
+      famas_15: 617629673514115047
+      famas_16: 700472843700860413
+      famas_17: -5698833763752711987
+      famas_18: -5499781635041484315
+      famas_19: 4007376423404202850
+      famas_2: 778433913834131377
+      famas_20: 791808563656232970
+      famas_21: -5845304465599267633
+      famas_22: 4136068630473243209
+      famas_23: -58737601968069253
+      famas_24: 2406901077582979777
+      famas_25: -273632993254939836
+      famas_26: -980792328034063412
+      famas_27: 4220250804130802717
+      famas_3: 395665025422563767
+      famas_4: -868505129110953487
+      famas_5: -132998086246064088
+      famas_6: 5736421331266758772
+      famas_7: -4277163005109565420
+      famas_8: 8024218929667772558
+      famas_9: -3560047268947691012
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

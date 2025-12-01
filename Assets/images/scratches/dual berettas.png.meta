@@ -1,0 +1,793 @@
+fileFormatVersion: 2
+guid: a69539324186170468997abcd6dd1ba7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6812998352915172242
+    second: dual berettas_0
+  - first:
+      213: -809799390838431685
+    second: dual berettas_1
+  - first:
+      213: 786643375303564182
+    second: dual berettas_2
+  - first:
+      213: 7809384091137293179
+    second: dual berettas_3
+  - first:
+      213: 4060900765431656750
+    second: dual berettas_4
+  - first:
+      213: -4524065498651587190
+    second: dual berettas_5
+  - first:
+      213: -6552945158516556683
+    second: dual berettas_6
+  - first:
+      213: -1458673603628605598
+    second: dual berettas_7
+  - first:
+      213: 6137091091888666144
+    second: dual berettas_8
+  - first:
+      213: 223614791524042629
+    second: dual berettas_9
+  - first:
+      213: -7005630798007208495
+    second: dual berettas_10
+  - first:
+      213: -7237002914241625287
+    second: dual berettas_11
+  - first:
+      213: 5039846602968406042
+    second: dual berettas_12
+  - first:
+      213: -904921116517585004
+    second: dual berettas_13
+  - first:
+      213: -7289228778489270819
+    second: dual berettas_14
+  - first:
+      213: -6024589319667369915
+    second: dual berettas_15
+  - first:
+      213: 1901524409638138558
+    second: dual berettas_16
+  - first:
+      213: -4748640252774047880
+    second: dual berettas_17
+  - first:
+      213: -8779889109816548080
+    second: dual berettas_18
+  - first:
+      213: -6842908568105721168
+    second: dual berettas_19
+  - first:
+      213: 7505433806726450608
+    second: dual berettas_20
+  - first:
+      213: 7448125018941027002
+    second: dual berettas_21
+  - first:
+      213: -1515235565760076468
+    second: dual berettas_22
+  - first:
+      213: 646822738565113398
+    second: dual berettas_23
+  - first:
+      213: -6888359552457931473
+    second: dual berettas_24
+  - first:
+      213: -4854542258531203834
+    second: dual berettas_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: dual berettas_0
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 204
+        width: 49
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29b84d8b7e1ac8e50800000000000000
+      internalID: 6812998352915172242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dual berettas_1
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 249
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b306fb99eb303c4f0800000000000000
+      internalID: -809799390838431685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dual berettas_2
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 150
+        width: 83
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69b12e56bf7baea00800000000000000
+      internalID: 786643375303564182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dual berettas_3
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 66
+        width: 116
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7b33da7471806c60800000000000000
+      internalID: 7809384091137293179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dual berettas_4
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 207
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e217aa70bb73b5830800000000000000
+      internalID: 4060900765431656750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dual berettas_5
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 212
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8d8544066a4731c0800000000000000
+      internalID: -4524065498651587190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dual berettas_6
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 208
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57c310ae8134f05a0800000000000000
+      internalID: -6552945158516556683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dual berettas_7
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 151
+        width: 11
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26f5a7cf510c1cbe0800000000000000
+      internalID: -1458673603628605598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dual berettas_8
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 173
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 026fc3615d35b2550800000000000000
+      internalID: 6137091091888666144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dual berettas_9
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 135
+        width: 9
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5874057d7707a1300800000000000000
+      internalID: 223614791524042629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dual berettas_10
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 27
+        width: 111
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d57e3918eff6ce90800000000000000
+      internalID: -7005630798007208495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dual berettas_11
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 38
+        width: 40
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 933492a5130019b90800000000000000
+      internalID: -7237002914241625287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dual berettas_12
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 64
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a18146c78c121f540800000000000000
+      internalID: 5039846602968406042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dual berettas_13
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 51
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49f283cf9031173f0800000000000000
+      internalID: -904921116517585004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dual berettas_14
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 63
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddda793cb0577da90800000000000000
+      internalID: -7289228778489270819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dual berettas_15
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 61
+        width: 11
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5483d93feeb546ca0800000000000000
+      internalID: -6024589319667369915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dual berettas_16
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 68
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb237383062936a10800000000000000
+      internalID: 1901524409638138558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dual berettas_17
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 54
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87f184779d0791eb0800000000000000
+      internalID: -4748640252774047880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dual berettas_18
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 47
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 015601a5f51972680800000000000000
+      internalID: -8779889109816548080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dual berettas_19
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 36
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b2e49f99ea1901a0800000000000000
+      internalID: -6842908568105721168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dual berettas_20
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 55
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bd432f1848a82860800000000000000
+      internalID: 7505433806726450608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dual berettas_21
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 27
+        width: 33
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab2fdac2e3e0d5760800000000000000
+      internalID: 7448125018941027002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dual berettas_22
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 31
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4525dfe74dc8fae0800000000000000
+      internalID: -1515235565760076468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dual berettas_23
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 24
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 636a1dc8ad9f9f800800000000000000
+      internalID: 646822738565113398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dual berettas_24
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 28
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f25839eab71a760a0800000000000000
+      internalID: -6888359552457931473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dual berettas_25
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 33
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 605002d498331acb0800000000000000
+      internalID: -4854542258531203834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      dual berettas_0: 6812998352915172242
+      dual berettas_1: -809799390838431685
+      dual berettas_10: -7005630798007208495
+      dual berettas_11: -7237002914241625287
+      dual berettas_12: 5039846602968406042
+      dual berettas_13: -904921116517585004
+      dual berettas_14: -7289228778489270819
+      dual berettas_15: -6024589319667369915
+      dual berettas_16: 1901524409638138558
+      dual berettas_17: -4748640252774047880
+      dual berettas_18: -8779889109816548080
+      dual berettas_19: -6842908568105721168
+      dual berettas_2: 786643375303564182
+      dual berettas_20: 7505433806726450608
+      dual berettas_21: 7448125018941027002
+      dual berettas_22: -1515235565760076468
+      dual berettas_23: 646822738565113398
+      dual berettas_24: -6888359552457931473
+      dual berettas_25: -4854542258531203834
+      dual berettas_3: 7809384091137293179
+      dual berettas_4: 4060900765431656750
+      dual berettas_5: -4524065498651587190
+      dual berettas_6: -6552945158516556683
+      dual berettas_7: -1458673603628605598
+      dual berettas_8: 6137091091888666144
+      dual berettas_9: 223614791524042629
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

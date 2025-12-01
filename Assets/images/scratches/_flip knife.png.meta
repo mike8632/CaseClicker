@@ -1,0 +1,611 @@
+fileFormatVersion: 2
+guid: 291cc3ca7dd34ef4d9af28b9f86ccb8a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1722489056418920335
+    second: _flip knife_0
+  - first:
+      213: -635871958258506885
+    second: _flip knife_1
+  - first:
+      213: -346093209911400809
+    second: _flip knife_2
+  - first:
+      213: 445199162246612664
+    second: _flip knife_3
+  - first:
+      213: -5930598480646028698
+    second: _flip knife_4
+  - first:
+      213: -7185848429691536741
+    second: _flip knife_5
+  - first:
+      213: -5020844654010148429
+    second: _flip knife_6
+  - first:
+      213: 8098408721571558410
+    second: _flip knife_7
+  - first:
+      213: -3120947128954458716
+    second: _flip knife_8
+  - first:
+      213: -1337378021830979883
+    second: _flip knife_9
+  - first:
+      213: -107859015428427235
+    second: _flip knife_10
+  - first:
+      213: 462332347182521143
+    second: _flip knife_11
+  - first:
+      213: -5878874544643159764
+    second: _flip knife_12
+  - first:
+      213: -347445573438028098
+    second: _flip knife_13
+  - first:
+      213: -6695288044405087030
+    second: _flip knife_14
+  - first:
+      213: -8846931905682039066
+    second: _flip knife_15
+  - first:
+      213: 6468731950857647929
+    second: _flip knife_16
+  - first:
+      213: -2636935027692427427
+    second: _flip knife_17
+  - first:
+      213: 1349208694260653533
+    second: _flip knife_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: _flip knife_0
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 366
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17807ae445d7818e0800000000000000
+      internalID: -1722489056418920335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _flip knife_1
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 195
+        width: 209
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b73ae5da2ddec27f0800000000000000
+      internalID: -635871958258506885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _flip knife_2
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 191
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7966e0c2f0e623bf0800000000000000
+      internalID: -346093209911400809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _flip knife_3
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 188
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b6c200874aad2600800000000000000
+      internalID: 445199162246612664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _flip knife_4
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 172
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6624f9f7a1842bda0800000000000000
+      internalID: -5930598480646028698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _flip knife_5
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 132
+        width: 121
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9aff6aececb64c90800000000000000
+      internalID: -7185848429691536741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _flip knife_6
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 135
+        width: 18
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b95e458360625ab0800000000000000
+      internalID: -5020844654010148429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _flip knife_7
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 127
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a04b23733d3536070800000000000000
+      internalID: 8098408721571558410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _flip knife_8
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 130
+        width: 13
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ade4e72f1b20b4d0800000000000000
+      internalID: -3120947128954458716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _flip knife_9
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 122
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5de895e56cda07de0800000000000000
+      internalID: -1337378021830979883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _flip knife_10
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 128
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d12b0930ccec08ef0800000000000000
+      internalID: -107859015428427235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _flip knife_11
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 86
+        width: 90
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73b9cf9f1d88a6600800000000000000
+      internalID: 462332347182521143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _flip knife_12
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 131
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c29457fcfba0a6ea0800000000000000
+      internalID: -5878874544643159764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _flip knife_13
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 131
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb6c1708710ad2bf0800000000000000
+      internalID: -347445573438028098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _flip knife_14
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 118
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac4a05c2ffe8513a0800000000000000
+      internalID: -6695288044405087030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _flip knife_15
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 127
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ee90c90e42693580800000000000000
+      internalID: -8846931905682039066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _flip knife_16
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 122
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 937f61ebf6d85c950800000000000000
+      internalID: 6468731950857647929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _flip knife_17
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 105
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d57ab9a3099b76bd0800000000000000
+      internalID: -2636935027692427427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _flip knife_18
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 34
+        width: 66
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddd5645b82a59b210800000000000000
+      internalID: 1349208694260653533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      _flip knife_0: -1722489056418920335
+      _flip knife_1: -635871958258506885
+      _flip knife_10: -107859015428427235
+      _flip knife_11: 462332347182521143
+      _flip knife_12: -5878874544643159764
+      _flip knife_13: -347445573438028098
+      _flip knife_14: -6695288044405087030
+      _flip knife_15: -8846931905682039066
+      _flip knife_16: 6468731950857647929
+      _flip knife_17: -2636935027692427427
+      _flip knife_18: 1349208694260653533
+      _flip knife_2: -346093209911400809
+      _flip knife_3: 445199162246612664
+      _flip knife_4: -5930598480646028698
+      _flip knife_5: -7185848429691536741
+      _flip knife_6: -5020844654010148429
+      _flip knife_7: 8098408721571558410
+      _flip knife_8: -3120947128954458716
+      _flip knife_9: -1337378021830979883
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

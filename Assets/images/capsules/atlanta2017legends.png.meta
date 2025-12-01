@@ -1,0 +1,455 @@
+fileFormatVersion: 2
+guid: a5047fb96fdbb74409ff40257c2fdb25
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2039116726438140716
+    second: atlanta2017legends_0
+  - first:
+      213: 1030551565746139411
+    second: atlanta2017legends_1
+  - first:
+      213: -4288028748724661014
+    second: atlanta2017legends_2
+  - first:
+      213: 4276653715553489288
+    second: atlanta2017legends_3
+  - first:
+      213: 7637983771282978947
+    second: atlanta2017legends_4
+  - first:
+      213: 3051980585521619275
+    second: atlanta2017legends_5
+  - first:
+      213: 7552506902160328635
+    second: atlanta2017legends_6
+  - first:
+      213: 3725910429461119503
+    second: atlanta2017legends_7
+  - first:
+      213: -7525653261784366398
+    second: atlanta2017legends_8
+  - first:
+      213: 5721521888970286097
+    second: atlanta2017legends_9
+  - first:
+      213: 1694593350705803845
+    second: atlanta2017legends_10
+  - first:
+      213: -2887062112051645667
+    second: atlanta2017legends_11
+  - first:
+      213: -4679777161072993631
+    second: atlanta2017legends_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: atlanta2017legends_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 159
+        width: 35
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2b17e6ebd56c4c10800000000000000
+      internalID: 2039116726438140716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlanta2017legends_1
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 143
+        width: 35
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 311750f50314d4e00800000000000000
+      internalID: 1030551565746139411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlanta2017legends_2
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 150
+        width: 20
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae49a9d629cdd74c0800000000000000
+      internalID: -4288028748724661014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlanta2017legends_3
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 0
+        width: 140
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8819be645e9b95b30800000000000000
+      internalID: 4276653715553489288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlanta2017legends_4
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 141
+        width: 37
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 388358fa5c19ff960800000000000000
+      internalID: 7637983771282978947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlanta2017legends_5
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 117
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b41a7652c20da5a20800000000000000
+      internalID: 3051980585521619275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlanta2017legends_6
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 95
+        width: 11
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb7c3fa3305efc860800000000000000
+      internalID: 7552506902160328635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlanta2017legends_7
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 96
+        width: 20
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0204fc7bc715b330800000000000000
+      internalID: 3725910429461119503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlanta2017legends_8
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 95
+        width: 40
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c245942b328f8790800000000000000
+      internalID: -7525653261784366398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlanta2017legends_9
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 47
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11422b618dde66f40800000000000000
+      internalID: 5721521888970286097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlanta2017legends_10
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 54
+        width: 36
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 542fe839ca7648710800000000000000
+      internalID: 1694593350705803845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlanta2017legends_11
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 7
+        width: 43
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d133cae2e481fe7d0800000000000000
+      internalID: -2887062112051645667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: atlanta2017legends_12
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 8
+        width: 46
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1aa124e67771e0fb0800000000000000
+      internalID: -4679777161072993631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      atlanta2017legends_0: 2039116726438140716
+      atlanta2017legends_1: 1030551565746139411
+      atlanta2017legends_10: 1694593350705803845
+      atlanta2017legends_11: -2887062112051645667
+      atlanta2017legends_12: -4679777161072993631
+      atlanta2017legends_2: -4288028748724661014
+      atlanta2017legends_3: 4276653715553489288
+      atlanta2017legends_4: 7637983771282978947
+      atlanta2017legends_5: 3051980585521619275
+      atlanta2017legends_6: 7552506902160328635
+      atlanta2017legends_7: 3725910429461119503
+      atlanta2017legends_8: -7525653261784366398
+      atlanta2017legends_9: 5721521888970286097
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

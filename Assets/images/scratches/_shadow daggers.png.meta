@@ -1,0 +1,923 @@
+fileFormatVersion: 2
+guid: 77a345088bc74284c9a90605aa961810
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5780280985719443130
+    second: _shadow daggers_0
+  - first:
+      213: -6183575960941747895
+    second: _shadow daggers_1
+  - first:
+      213: -5161225196489794197
+    second: _shadow daggers_2
+  - first:
+      213: 8863930885588044369
+    second: _shadow daggers_3
+  - first:
+      213: -577489316495850312
+    second: _shadow daggers_4
+  - first:
+      213: 830824378445561942
+    second: _shadow daggers_5
+  - first:
+      213: 3280831572626543237
+    second: _shadow daggers_6
+  - first:
+      213: 2796377686097618883
+    second: _shadow daggers_7
+  - first:
+      213: 2730691595659843825
+    second: _shadow daggers_8
+  - first:
+      213: -1273153541470922221
+    second: _shadow daggers_9
+  - first:
+      213: -4437149192534611646
+    second: _shadow daggers_10
+  - first:
+      213: -1145984963458254404
+    second: _shadow daggers_11
+  - first:
+      213: -8447813386765252880
+    second: _shadow daggers_12
+  - first:
+      213: -8354953351465024266
+    second: _shadow daggers_13
+  - first:
+      213: 7507115709487825284
+    second: _shadow daggers_14
+  - first:
+      213: 1627231621493907920
+    second: _shadow daggers_15
+  - first:
+      213: -2731361010947187040
+    second: _shadow daggers_16
+  - first:
+      213: -1409406913462159314
+    second: _shadow daggers_17
+  - first:
+      213: 2746491772729981169
+    second: _shadow daggers_18
+  - first:
+      213: -7131593360757361589
+    second: _shadow daggers_19
+  - first:
+      213: -5580242445668978857
+    second: _shadow daggers_20
+  - first:
+      213: -3406685463325769659
+    second: _shadow daggers_21
+  - first:
+      213: -3302272790913690321
+    second: _shadow daggers_22
+  - first:
+      213: 2075301523017158153
+    second: _shadow daggers_23
+  - first:
+      213: 9010361893073061081
+    second: _shadow daggers_24
+  - first:
+      213: 8833466085648055943
+    second: _shadow daggers_25
+  - first:
+      213: 28994142536870982
+    second: _shadow daggers_26
+  - first:
+      213: -8342892630578154254
+    second: _shadow daggers_27
+  - first:
+      213: -7398734161795040531
+    second: _shadow daggers_28
+  - first:
+      213: -4986085091548856845
+    second: _shadow daggers_29
+  - first:
+      213: -1237542969573932542
+    second: _shadow daggers_30
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: _shadow daggers_0
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 269
+        width: 77
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6417f38911158cfa0800000000000000
+      internalID: -5780280985719443130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _shadow daggers_1
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 271
+        width: 11
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9412c6eec668f2aa0800000000000000
+      internalID: -6183575960941747895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _shadow daggers_2
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 286
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6d1e657705af58b0800000000000000
+      internalID: -5161225196489794197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _shadow daggers_3
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 278
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15ac6156d22030b70800000000000000
+      internalID: 8863930885588044369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _shadow daggers_4
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 165
+        width: 134
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b48eacb6885cf7f0800000000000000
+      internalID: -577489316495850312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _shadow daggers_5
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 43
+        width: 269
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6508bfbce5ea78b00800000000000000
+      internalID: 830824378445561942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _shadow daggers_6
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 263
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5829a46ceead78d20800000000000000
+      internalID: 3280831572626543237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _shadow daggers_7
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 273
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c76dad80babec620800000000000000
+      internalID: 2796377686097618883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _shadow daggers_8
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 259
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f81376d98d55e520800000000000000
+      internalID: 2730691595659843825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _shadow daggers_9
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 184
+        width: 23
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31a58187999d45ee0800000000000000
+      internalID: -1273153541470922221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _shadow daggers_10
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 212
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 249209381541c62c0800000000000000
+      internalID: -4437149192534611646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _shadow daggers_11
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 200
+        width: 20
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb9b1275fb4a810f0800000000000000
+      internalID: -1145984963458254404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _shadow daggers_12
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 141
+        width: 41
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f64111bb7653ca80800000000000000
+      internalID: -8447813386765252880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _shadow daggers_13
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 163
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f4c7fa713e3d0c80800000000000000
+      internalID: -8354953351465024266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _shadow daggers_14
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 160
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 481c6cf96f1ae2860800000000000000
+      internalID: 7507115709487825284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _shadow daggers_15
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 148
+        width: 11
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d16d6ec986159610800000000000000
+      internalID: 1627231621493907920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _shadow daggers_16
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 147
+        width: 12
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ae1425c1a1481ad0800000000000000
+      internalID: -2731361010947187040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _shadow daggers_17
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 158
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e28bb1b21e7c07ce0800000000000000
+      internalID: -1409406913462159314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _shadow daggers_18
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 146
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f87a1c37bf7d1620800000000000000
+      internalID: 2746491772729981169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _shadow daggers_19
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 128
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b44f5898f9d770d90800000000000000
+      internalID: -7131593360757361589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _shadow daggers_20
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 147
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75fe751af0ffe82b0800000000000000
+      internalID: -5580242445668978857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _shadow daggers_21
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 136
+        width: 19
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5400bf8de9509b0d0800000000000000
+      internalID: -3406685463325769659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _shadow daggers_22
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 132
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f25d6229468fb22d0800000000000000
+      internalID: -3302272790913690321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _shadow daggers_23
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 55
+        width: 26
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90ec3416db3fccc10800000000000000
+      internalID: 2075301523017158153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _shadow daggers_24
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 89
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d4065e176c3b0d70800000000000000
+      internalID: 9010361893073061081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _shadow daggers_25
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 83
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78e338a6a96c69a70800000000000000
+      internalID: 8833466085648055943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _shadow daggers_26
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 84
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64c2a7ed402076000800000000000000
+      internalID: 28994142536870982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _shadow daggers_27
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 68
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f43a23ea57183c80800000000000000
+      internalID: -8342892630578154254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _shadow daggers_28
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 74
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: deab8a2ea7a625990800000000000000
+      internalID: -7398734161795040531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _shadow daggers_29
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 56
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fdfb52d60eddcab0800000000000000
+      internalID: -4986085091548856845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _shadow daggers_30
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 50
+        width: 33
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2028348d93d53dee0800000000000000
+      internalID: -1237542969573932542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      _shadow daggers_0: -5780280985719443130
+      _shadow daggers_1: -6183575960941747895
+      _shadow daggers_10: -4437149192534611646
+      _shadow daggers_11: -1145984963458254404
+      _shadow daggers_12: -8447813386765252880
+      _shadow daggers_13: -8354953351465024266
+      _shadow daggers_14: 7507115709487825284
+      _shadow daggers_15: 1627231621493907920
+      _shadow daggers_16: -2731361010947187040
+      _shadow daggers_17: -1409406913462159314
+      _shadow daggers_18: 2746491772729981169
+      _shadow daggers_19: -7131593360757361589
+      _shadow daggers_2: -5161225196489794197
+      _shadow daggers_20: -5580242445668978857
+      _shadow daggers_21: -3406685463325769659
+      _shadow daggers_22: -3302272790913690321
+      _shadow daggers_23: 2075301523017158153
+      _shadow daggers_24: 9010361893073061081
+      _shadow daggers_25: 8833466085648055943
+      _shadow daggers_26: 28994142536870982
+      _shadow daggers_27: -8342892630578154254
+      _shadow daggers_28: -7398734161795040531
+      _shadow daggers_29: -4986085091548856845
+      _shadow daggers_3: 8863930885588044369
+      _shadow daggers_30: -1237542969573932542
+      _shadow daggers_4: -577489316495850312
+      _shadow daggers_5: 830824378445561942
+      _shadow daggers_6: 3280831572626543237
+      _shadow daggers_7: 2796377686097618883
+      _shadow daggers_8: 2730691595659843825
+      _shadow daggers_9: -1273153541470922221
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

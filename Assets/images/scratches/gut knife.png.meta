@@ -1,0 +1,637 @@
+fileFormatVersion: 2
+guid: 8b00b61fe6764b44ba36b0f5650aff4c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 9055476629163683147
+    second: gut knife_0
+  - first:
+      213: 8275135544760715349
+    second: gut knife_1
+  - first:
+      213: 1809444224420629606
+    second: gut knife_2
+  - first:
+      213: 8534148361602419664
+    second: gut knife_3
+  - first:
+      213: -5107565195403684786
+    second: gut knife_4
+  - first:
+      213: 903781096137683537
+    second: gut knife_5
+  - first:
+      213: -4241158020066503891
+    second: gut knife_6
+  - first:
+      213: -511836020683494649
+    second: gut knife_7
+  - first:
+      213: 3328861517534127548
+    second: gut knife_8
+  - first:
+      213: 7575695659835112716
+    second: gut knife_9
+  - first:
+      213: -2579932604349373864
+    second: gut knife_10
+  - first:
+      213: -4590706062854365471
+    second: gut knife_11
+  - first:
+      213: -2813131984198982821
+    second: gut knife_12
+  - first:
+      213: 7439749893608016244
+    second: gut knife_13
+  - first:
+      213: -4814971422692495414
+    second: gut knife_14
+  - first:
+      213: -8487477767388961289
+    second: gut knife_15
+  - first:
+      213: -4552908788375622471
+    second: gut knife_16
+  - first:
+      213: 6729983580732494610
+    second: gut knife_17
+  - first:
+      213: -1040847645140222195
+    second: gut knife_18
+  - first:
+      213: 4647288664841159118
+    second: gut knife_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: gut knife_0
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 203
+        width: 66
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4d272924048bad70800000000000000
+      internalID: 9055476629163683147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gut knife_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 234
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 558cba53fef27d270800000000000000
+      internalID: 8275135544760715349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gut knife_2
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 199
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66c497d6fef6c1910800000000000000
+      internalID: 1809444224420629606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gut knife_3
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 151
+        width: 61
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0db4bc118b26f6670800000000000000
+      internalID: 8534148361602419664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gut knife_4
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 210
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4490dc04884e19b0800000000000000
+      internalID: -5107565195403684786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gut knife_5
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 187
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 152fff55e10ea8c00800000000000000
+      internalID: 903781096137683537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gut knife_6
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 184
+        width: 23
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2313a950416425c0800000000000000
+      internalID: -4241158020066503891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gut knife_7
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 195
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70b29ebd9d795e8f0800000000000000
+      internalID: -511836020683494649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gut knife_8
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 122
+        width: 90
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb5e613c9ed723e20800000000000000
+      internalID: 3328861517534127548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gut knife_9
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 184
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0db0fa9017422960800000000000000
+      internalID: 7575695659835112716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gut knife_10
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 150
+        width: 16
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 852ae4527fc323cd0800000000000000
+      internalID: -2579932604349373864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gut knife_11
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 155
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ee555f88298a40c0800000000000000
+      internalID: -4590706062854365471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gut knife_12
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 147
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b53a78f6d5fb5f8d0800000000000000
+      internalID: -2813131984198982821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gut knife_13
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 139
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 479814a5c1d4f3760800000000000000
+      internalID: 7439749893608016244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gut knife_14
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 61
+        width: 95
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acfa1ca7009cd2db0800000000000000
+      internalID: -4814971422692495414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gut knife_15
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 53
+        width: 6
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f561cb60fb663a80800000000000000
+      internalID: -8487477767388961289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gut knife_16
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 50
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bced1e4491d0d0c0800000000000000
+      internalID: -4552908788375622471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gut knife_17
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 50
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21395c1e864b56d50800000000000000
+      internalID: 6729983580732494610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gut knife_18
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 55
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0f7d16d49a2e81f0800000000000000
+      internalID: -1040847645140222195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gut knife_19
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 44
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec18e841b6c7e7040800000000000000
+      internalID: 4647288664841159118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      gut knife_0: 9055476629163683147
+      gut knife_1: 8275135544760715349
+      gut knife_10: -2579932604349373864
+      gut knife_11: -4590706062854365471
+      gut knife_12: -2813131984198982821
+      gut knife_13: 7439749893608016244
+      gut knife_14: -4814971422692495414
+      gut knife_15: -8487477767388961289
+      gut knife_16: -4552908788375622471
+      gut knife_17: 6729983580732494610
+      gut knife_18: -1040847645140222195
+      gut knife_19: 4647288664841159118
+      gut knife_2: 1809444224420629606
+      gut knife_3: 8534148361602419664
+      gut knife_4: -5107565195403684786
+      gut knife_5: 903781096137683537
+      gut knife_6: -4241158020066503891
+      gut knife_7: -511836020683494649
+      gut knife_8: 3328861517534127548
+      gut knife_9: 7575695659835112716
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

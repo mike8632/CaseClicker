@@ -1,0 +1,715 @@
+fileFormatVersion: 2
+guid: 653e18a247ba9b348a158fd5db28e4d5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7479656477717549821
+    second: _ak-47_0
+  - first:
+      213: 5969311330786812050
+    second: _ak-47_1
+  - first:
+      213: 3272793746691019938
+    second: _ak-47_2
+  - first:
+      213: 4825207083364471415
+    second: _ak-47_3
+  - first:
+      213: -2037235565768199955
+    second: _ak-47_4
+  - first:
+      213: 7185216187768118266
+    second: _ak-47_5
+  - first:
+      213: -5988813877690176926
+    second: _ak-47_6
+  - first:
+      213: -4492498413911027542
+    second: _ak-47_7
+  - first:
+      213: -6785899186579442303
+    second: _ak-47_8
+  - first:
+      213: 6495349900846783266
+    second: _ak-47_9
+  - first:
+      213: 2008576102761700091
+    second: _ak-47_10
+  - first:
+      213: -3635763317876012055
+    second: _ak-47_11
+  - first:
+      213: -4558134397955181843
+    second: _ak-47_12
+  - first:
+      213: 6116292211610627749
+    second: _ak-47_13
+  - first:
+      213: 9065115848471040650
+    second: _ak-47_14
+  - first:
+      213: 5331964060432128252
+    second: _ak-47_15
+  - first:
+      213: -2257103361533238570
+    second: _ak-47_16
+  - first:
+      213: 7438527955903883194
+    second: _ak-47_17
+  - first:
+      213: 4132697160360183027
+    second: _ak-47_18
+  - first:
+      213: -7152347916612080174
+    second: _ak-47_19
+  - first:
+      213: 5771113102971180016
+    second: _ak-47_20
+  - first:
+      213: 6557247500164230924
+    second: _ak-47_21
+  - first:
+      213: -4725713249198864864
+    second: _ak-47_22
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: _ak-47_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 288
+        width: 26
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30d22bbff0ce23890800000000000000
+      internalID: -7479656477717549821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _ak-47_1
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 297
+        width: 9
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2902341570147d250800000000000000
+      internalID: 5969311330786812050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _ak-47_2
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 285
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a453a6929c4b6d20800000000000000
+      internalID: 3272793746691019938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _ak-47_3
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 237
+        width: 71
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77253abf64496f240800000000000000
+      internalID: 4825207083364471415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _ak-47_4
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 280
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de03892fb094ab3e0800000000000000
+      internalID: -2037235565768199955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _ak-47_5
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 280
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afb1e4acd0407b360800000000000000
+      internalID: 7185216187768118266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _ak-47_6
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 277
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26ae852228573eca0800000000000000
+      internalID: -5988813877690176926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _ak-47_7
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 211
+        width: 201
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa0d3dcae7077a1c0800000000000000
+      internalID: -4492498413911027542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _ak-47_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 252
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 185f15e94a4a3d1a0800000000000000
+      internalID: -6785899186579442303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _ak-47_9
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 251
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22b57db225e142a50800000000000000
+      internalID: 6495349900846783266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _ak-47_10
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 245
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfa1375d255efdb10800000000000000
+      internalID: 2008576102761700091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _ak-47_11
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 156
+        width: 241
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ebca96868c2b8dc0800000000000000
+      internalID: -3635763317876012055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _ak-47_12
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 236
+        width: 17
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de274634ae04eb0c0800000000000000
+      internalID: -4558134397955181843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _ak-47_13
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 235
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ae2a876c5f61e450800000000000000
+      internalID: 6116292211610627749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _ak-47_14
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 203
+        width: 17
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8251ebc5d2cdcd70800000000000000
+      internalID: 9065115848471040650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _ak-47_15
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 207
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf8d4312011fef940800000000000000
+      internalID: 5331964060432128252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _ak-47_16
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 79
+        width: 86
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d2a87a83782da0e0800000000000000
+      internalID: -2257103361533238570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _ak-47_17
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 125
+        width: 37
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab7a67fc3c5fa3760800000000000000
+      internalID: 7438527955903883194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _ak-47_18
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 149
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f4c88fdb2a4a5930800000000000000
+      internalID: 4132697160360183027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _ak-47_19
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 144
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dde450f671cdbc90800000000000000
+      internalID: -7152347916612080174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _ak-47_20
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 143
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f3133d5acc171050800000000000000
+      internalID: 5771113102971180016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _ak-47_21
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 63
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0f6b9f0cd5000b50800000000000000
+      internalID: 6557247500164230924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _ak-47_22
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 71
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 026052776d4ea6eb0800000000000000
+      internalID: -4725713249198864864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      _ak-47_0: -7479656477717549821
+      _ak-47_1: 5969311330786812050
+      _ak-47_10: 2008576102761700091
+      _ak-47_11: -3635763317876012055
+      _ak-47_12: -4558134397955181843
+      _ak-47_13: 6116292211610627749
+      _ak-47_14: 9065115848471040650
+      _ak-47_15: 5331964060432128252
+      _ak-47_16: -2257103361533238570
+      _ak-47_17: 7438527955903883194
+      _ak-47_18: 4132697160360183027
+      _ak-47_19: -7152347916612080174
+      _ak-47_2: 3272793746691019938
+      _ak-47_20: 5771113102971180016
+      _ak-47_21: 6557247500164230924
+      _ak-47_22: -4725713249198864864
+      _ak-47_3: 4825207083364471415
+      _ak-47_4: -2037235565768199955
+      _ak-47_5: 7185216187768118266
+      _ak-47_6: -5988813877690176926
+      _ak-47_7: -4492498413911027542
+      _ak-47_8: -6785899186579442303
+      _ak-47_9: 6495349900846783266
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,1053 @@
+fileFormatVersion: 2
+guid: 3da365e86f6963f4b8bef87738e6d4b9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8930571264898196007
+    second: _negev_0
+  - first:
+      213: 4710560246254266664
+    second: _negev_1
+  - first:
+      213: -8615676706422440060
+    second: _negev_2
+  - first:
+      213: -7303620341576025030
+    second: _negev_3
+  - first:
+      213: -1617455295105092705
+    second: _negev_4
+  - first:
+      213: -4503094874717054641
+    second: _negev_5
+  - first:
+      213: -4233571216902246801
+    second: _negev_6
+  - first:
+      213: 1023996438962747407
+    second: _negev_7
+  - first:
+      213: 6555463567738110268
+    second: _negev_8
+  - first:
+      213: 755831971348186132
+    second: _negev_9
+  - first:
+      213: 4974119126157651580
+    second: _negev_10
+  - first:
+      213: 5169342835669111926
+    second: _negev_11
+  - first:
+      213: 4119913034938529345
+    second: _negev_12
+  - first:
+      213: 2684288898138993475
+    second: _negev_13
+  - first:
+      213: 8840153301683651440
+    second: _negev_14
+  - first:
+      213: -5069798047741169932
+    second: _negev_15
+  - first:
+      213: -6151752373162781297
+    second: _negev_16
+  - first:
+      213: -2638267357755283481
+    second: _negev_17
+  - first:
+      213: 199018788571237057
+    second: _negev_18
+  - first:
+      213: -6108873021860654546
+    second: _negev_19
+  - first:
+      213: -6131220193802604706
+    second: _negev_20
+  - first:
+      213: -2661666563358962111
+    second: _negev_21
+  - first:
+      213: 4421942055079813278
+    second: _negev_22
+  - first:
+      213: -5748342247633911839
+    second: _negev_23
+  - first:
+      213: -8885295849304840615
+    second: _negev_24
+  - first:
+      213: -5489652568209963161
+    second: _negev_25
+  - first:
+      213: 5918742553020134038
+    second: _negev_26
+  - first:
+      213: 5352880120330287262
+    second: _negev_27
+  - first:
+      213: -3897153959815515273
+    second: _negev_28
+  - first:
+      213: -4711346395798639645
+    second: _negev_29
+  - first:
+      213: 5062500671684031724
+    second: _negev_30
+  - first:
+      213: 1070882068144934842
+    second: _negev_31
+  - first:
+      213: 3061765818134417521
+    second: _negev_32
+  - first:
+      213: 73209749913821166
+    second: _negev_33
+  - first:
+      213: 504310632653920330
+    second: _negev_34
+  - first:
+      213: -5228729118765708232
+    second: _negev_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: _negev_0
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 300
+        width: 48
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dd9e6230cc301480800000000000000
+      internalID: -8930571264898196007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _negev_1
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 317
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 829ef0b16954f5140800000000000000
+      internalID: 4710560246254266664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _negev_2
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 303
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48f351eeea7fe6880800000000000000
+      internalID: -8615676706422440060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _negev_3
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 289
+        width: 34
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3c3b0edef354aa90800000000000000
+      internalID: -7303620341576025030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _negev_4
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 284
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f93bf2f8af4ad89e0800000000000000
+      internalID: -1617455295105092705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _negev_5
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 257
+        width: 68
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f499b92e11bc181c0800000000000000
+      internalID: -4503094874717054641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _negev_6
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 42
+        width: 232
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6e293d98655f35c0800000000000000
+      internalID: -4233571216902246801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _negev_7
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 282
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f08b3abf557f53e00800000000000000
+      internalID: 1023996438962747407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _negev_8
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 281
+        width: 17
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c318b0de16fa9fa50800000000000000
+      internalID: 6555463567738110268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _negev_9
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 290
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41487126c214d7a00800000000000000
+      internalID: 755831971348186132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _negev_10
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 208
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7e6a11cdfe970540800000000000000
+      internalID: 4974119126157651580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _negev_11
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 172
+        width: 40
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6749442bbe13db740800000000000000
+      internalID: 5169342835669111926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _negev_12
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 182
+        width: 8
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1463309b31fdc2930800000000000000
+      internalID: 4119913034938529345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _negev_13
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 156
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3437918e782804520800000000000000
+      internalID: 2684288898138993475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _negev_14
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 135
+        width: 66
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 073c9da37988eaa70800000000000000
+      internalID: 8840153301683651440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _negev_15
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 121
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fe2b69598574a9b0800000000000000
+      internalID: -5069798047741169932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _negev_16
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 133
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f85577b5fc590aaa0800000000000000
+      internalID: -6151752373162781297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _negev_17
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 121
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e7ec76f0ddf26bd0800000000000000
+      internalID: -2638267357755283481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _negev_18
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 122
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1caca64a88e03c200800000000000000
+      internalID: 199018788571237057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _negev_19
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 120
+        width: 23
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2257025a5ce83ba0800000000000000
+      internalID: -6108873021860654546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _negev_20
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 134
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5fa1b4e7b789eaa0800000000000000
+      internalID: -6131220193802604706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _negev_21
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 128
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14e447cdc5cdf0bd0800000000000000
+      internalID: -2661666563358962111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _negev_22
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 81
+        width: 33
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e90a462eed4ed5d30800000000000000
+      internalID: 4421942055079813278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _negev_23
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 122
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1eff86a8e29c930b0800000000000000
+      internalID: -5748342247633911839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _negev_24
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 122
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 956aee9508611b480800000000000000
+      internalID: -8885295849304840615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _negev_25
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 40
+        width: 47
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 767c88b1316d0d3b0800000000000000
+      internalID: -5489652568209963161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _negev_26
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 116
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 692f0cd3ef8932250800000000000000
+      internalID: 5918742553020134038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _negev_27
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 111
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e987981db10494a40800000000000000
+      internalID: 5352880120330287262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _negev_28
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 113
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 773703e1f178ae9c0800000000000000
+      internalID: -3897153959815515273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _negev_29
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 100
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ebea903a6fed9eb0800000000000000
+      internalID: -4711346395798639645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _negev_30
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 101
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce437e2e98d914640800000000000000
+      internalID: 5062500671684031724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _negev_31
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 96
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abf4d1431998cde00800000000000000
+      internalID: 1070882068144934842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _negev_32
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 78
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 170d5572ac39d7a20800000000000000
+      internalID: 3061765818134417521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _negev_33
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 88
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eef55b131e7140100800000000000000
+      internalID: 73209749913821166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _negev_34
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 58
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a481ac339dbaff600800000000000000
+      internalID: 504310632653920330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _negev_35
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 39
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83c8a39c192df67b0800000000000000
+      internalID: -5228729118765708232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      _negev_0: -8930571264898196007
+      _negev_1: 4710560246254266664
+      _negev_10: 4974119126157651580
+      _negev_11: 5169342835669111926
+      _negev_12: 4119913034938529345
+      _negev_13: 2684288898138993475
+      _negev_14: 8840153301683651440
+      _negev_15: -5069798047741169932
+      _negev_16: -6151752373162781297
+      _negev_17: -2638267357755283481
+      _negev_18: 199018788571237057
+      _negev_19: -6108873021860654546
+      _negev_2: -8615676706422440060
+      _negev_20: -6131220193802604706
+      _negev_21: -2661666563358962111
+      _negev_22: 4421942055079813278
+      _negev_23: -5748342247633911839
+      _negev_24: -8885295849304840615
+      _negev_25: -5489652568209963161
+      _negev_26: 5918742553020134038
+      _negev_27: 5352880120330287262
+      _negev_28: -3897153959815515273
+      _negev_29: -4711346395798639645
+      _negev_3: -7303620341576025030
+      _negev_30: 5062500671684031724
+      _negev_31: 1070882068144934842
+      _negev_32: 3061765818134417521
+      _negev_33: 73209749913821166
+      _negev_34: 504310632653920330
+      _negev_35: -5228729118765708232
+      _negev_4: -1617455295105092705
+      _negev_5: -4503094874717054641
+      _negev_6: -4233571216902246801
+      _negev_7: 1023996438962747407
+      _negev_8: 6555463567738110268
+      _negev_9: 755831971348186132
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

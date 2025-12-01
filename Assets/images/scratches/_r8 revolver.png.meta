@@ -1,0 +1,741 @@
+fileFormatVersion: 2
+guid: 268cc4682c944a843952f46ba8365b7e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7308142594950709460
+    second: _r8 revolver_0
+  - first:
+      213: -1588492620981011952
+    second: _r8 revolver_1
+  - first:
+      213: 3910387112720542975
+    second: _r8 revolver_2
+  - first:
+      213: 2296094242035599297
+    second: _r8 revolver_3
+  - first:
+      213: 7230019098178792243
+    second: _r8 revolver_4
+  - first:
+      213: 7134993664700594821
+    second: _r8 revolver_5
+  - first:
+      213: -6996506619518579392
+    second: _r8 revolver_6
+  - first:
+      213: -2760923510630991338
+    second: _r8 revolver_7
+  - first:
+      213: -958348357503716193
+    second: _r8 revolver_8
+  - first:
+      213: -285552760915841389
+    second: _r8 revolver_9
+  - first:
+      213: 2692176753331352238
+    second: _r8 revolver_10
+  - first:
+      213: 7907933753042352642
+    second: _r8 revolver_11
+  - first:
+      213: -8673531309513935517
+    second: _r8 revolver_12
+  - first:
+      213: -4272630542322326526
+    second: _r8 revolver_13
+  - first:
+      213: -3868198266995320023
+    second: _r8 revolver_14
+  - first:
+      213: 5825587944087099290
+    second: _r8 revolver_15
+  - first:
+      213: -7278391573360077668
+    second: _r8 revolver_16
+  - first:
+      213: 709103247443136397
+    second: _r8 revolver_17
+  - first:
+      213: -147277108432719656
+    second: _r8 revolver_18
+  - first:
+      213: -1699689429803753472
+    second: _r8 revolver_19
+  - first:
+      213: -704119427559937582
+    second: _r8 revolver_20
+  - first:
+      213: -3063172961546351434
+    second: _r8 revolver_21
+  - first:
+      213: 8933348089451908906
+    second: _r8 revolver_22
+  - first:
+      213: -4155144558215671206
+    second: _r8 revolver_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: _r8 revolver_0
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 307
+        width: 23
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2fbf04b703449a90800000000000000
+      internalID: -7308142594950709460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _r8 revolver_1
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 335
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01af81e906a84f9e0800000000000000
+      internalID: -1588492620981011952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _r8 revolver_2
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 323
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffc29f36c5c744630800000000000000
+      internalID: 3910387112720542975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _r8 revolver_3
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 325
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c70a534c8d5ddf10800000000000000
+      internalID: 2296094242035599297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _r8 revolver_4
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 305
+        width: 8
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33bac324010365460800000000000000
+      internalID: 7230019098178792243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _r8 revolver_5
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 298
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58a342b6fe6940360800000000000000
+      internalID: 7134993664700594821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _r8 revolver_6
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 291
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04d0de27c4a67ee90800000000000000
+      internalID: -6996506619518579392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _r8 revolver_7
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 248
+        width: 70
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61ab0d0f1ba3fa9d0800000000000000
+      internalID: -2760923510630991338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _r8 revolver_8
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 129
+        width: 246
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9479e31f3343b2f0800000000000000
+      internalID: -958348357503716193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _r8 revolver_9
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 292
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39eaaf0e643890cf0800000000000000
+      internalID: -285552760915841389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _r8 revolver_10
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 267
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea231ee4e788c5520800000000000000
+      internalID: 2692176753331352238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _r8 revolver_11
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 278
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20a3961b9df9ebd60800000000000000
+      internalID: 7907933753042352642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _r8 revolver_12
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 255
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36571347a3d61a780800000000000000
+      internalID: -8673531309513935517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _r8 revolver_13
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 263
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 204a46cb82194b4c0800000000000000
+      internalID: -4272630542322326526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _r8 revolver_14
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 235
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92b56f6bb26615ac0800000000000000
+      internalID: -3868198266995320023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _r8 revolver_15
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 245
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a971c1fae55a8d050800000000000000
+      internalID: 5825587944087099290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _r8 revolver_16
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 244
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c941da53d65fdfa90800000000000000
+      internalID: -7278391573360077668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _r8 revolver_17
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 208
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8f8ce485ad37d900800000000000000
+      internalID: 709103247443136397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _r8 revolver_18
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 225
+        width: 18
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d0325c0044c4fdf0800000000000000
+      internalID: -147277108432719656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _r8 revolver_19
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 213
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 000af0c087d7968e0800000000000000
+      internalID: -1699689429803753472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _r8 revolver_20
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 188
+        width: 34
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d9a6d87c177a36f0800000000000000
+      internalID: -704119427559937582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _r8 revolver_21
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 212
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bcc27dbb6c6d75d0800000000000000
+      internalID: -3063172961546351434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _r8 revolver_22
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 43
+        width: 109
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2f02b6a1c0a9fb70800000000000000
+      internalID: 8933348089451908906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _r8 revolver_23
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 191
+        width: 7
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5258290a06f556c0800000000000000
+      internalID: -4155144558215671206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      _r8 revolver_0: -7308142594950709460
+      _r8 revolver_1: -1588492620981011952
+      _r8 revolver_10: 2692176753331352238
+      _r8 revolver_11: 7907933753042352642
+      _r8 revolver_12: -8673531309513935517
+      _r8 revolver_13: -4272630542322326526
+      _r8 revolver_14: -3868198266995320023
+      _r8 revolver_15: 5825587944087099290
+      _r8 revolver_16: -7278391573360077668
+      _r8 revolver_17: 709103247443136397
+      _r8 revolver_18: -147277108432719656
+      _r8 revolver_19: -1699689429803753472
+      _r8 revolver_2: 3910387112720542975
+      _r8 revolver_20: -704119427559937582
+      _r8 revolver_21: -3063172961546351434
+      _r8 revolver_22: 8933348089451908906
+      _r8 revolver_23: -4155144558215671206
+      _r8 revolver_3: 2296094242035599297
+      _r8 revolver_4: 7230019098178792243
+      _r8 revolver_5: 7134993664700594821
+      _r8 revolver_6: -6996506619518579392
+      _r8 revolver_7: -2760923510630991338
+      _r8 revolver_8: -958348357503716193
+      _r8 revolver_9: -285552760915841389
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

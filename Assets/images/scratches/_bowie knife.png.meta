@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: 4a4613d8c4ca57b428792403a34d90e5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1835904701819531353
+    second: _bowie knife_0
+  - first:
+      213: -2641483247815640405
+    second: _bowie knife_1
+  - first:
+      213: -7414637306133388508
+    second: _bowie knife_2
+  - first:
+      213: -2521997740714678895
+    second: _bowie knife_3
+  - first:
+      213: 1409522053088074471
+    second: _bowie knife_4
+  - first:
+      213: -7328731101743510230
+    second: _bowie knife_5
+  - first:
+      213: 5040010081953683431
+    second: _bowie knife_6
+  - first:
+      213: -50944942786324214
+    second: _bowie knife_7
+  - first:
+      213: -6281897163903003001
+    second: _bowie knife_8
+  - first:
+      213: -2934251012108611633
+    second: _bowie knife_9
+  - first:
+      213: -5422140146180010807
+    second: _bowie knife_10
+  - first:
+      213: -1823105551689643216
+    second: _bowie knife_11
+  - first:
+      213: -3947647471737530588
+    second: _bowie knife_12
+  - first:
+      213: -6595264439277928955
+    second: _bowie knife_13
+  - first:
+      213: 7758660465162580199
+    second: _bowie knife_14
+  - first:
+      213: -6465307948884151758
+    second: _bowie knife_15
+  - first:
+      213: 1387276188451044835
+    second: _bowie knife_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: _bowie knife_0
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 235
+        width: 181
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7afc396966e8586e0800000000000000
+      internalID: -1835904701819531353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _bowie knife_1
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 240
+        width: 27
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baabdc53bf0975bd0800000000000000
+      internalID: -2641483247815640405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _bowie knife_2
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 234
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4236f8d87aae91990800000000000000
+      internalID: -7414637306133388508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _bowie knife_3
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 245
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1952d5cba60100dd0800000000000000
+      internalID: -2521997740714678895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _bowie knife_4
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 236
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ead46dd6d0af8310800000000000000
+      internalID: 1409522053088074471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _bowie knife_5
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 112
+        width: 170
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2d883a64ed1b4a90800000000000000
+      internalID: -7328731101743510230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _bowie knife_6
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 229
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e79c376776b1f540800000000000000
+      internalID: 5040010081953683431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _bowie knife_7
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 224
+        width: 12
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a095e1e28d10b4ff0800000000000000
+      internalID: -50944942786324214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _bowie knife_8
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 216
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7861706ffc732d8a0800000000000000
+      internalID: -6281897163903003001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _bowie knife_9
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 204
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcf8f6530427747d0800000000000000
+      internalID: -2934251012108611633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _bowie knife_10
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 120
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cc4e88c340b0c4b0800000000000000
+      internalID: -5422140146180010807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _bowie knife_11
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 133
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03b0f73f82703b6e0800000000000000
+      internalID: -1823105551689643216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _bowie knife_12
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 110
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4279d9c3a832739c0800000000000000
+      internalID: -3947647471737530588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _bowie knife_13
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 35
+        width: 118
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50eb2198fe9e874a0800000000000000
+      internalID: -6595264439277928955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _bowie knife_14
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 113
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e0f1eef59c4cab60800000000000000
+      internalID: 7758660465162580199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _bowie knife_15
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 115
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2323047dcac9646a0800000000000000
+      internalID: -6465307948884151758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: _bowie knife_16
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 78
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ed7bf1e758904310800000000000000
+      internalID: 1387276188451044835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      _bowie knife_0: -1835904701819531353
+      _bowie knife_1: -2641483247815640405
+      _bowie knife_10: -5422140146180010807
+      _bowie knife_11: -1823105551689643216
+      _bowie knife_12: -3947647471737530588
+      _bowie knife_13: -6595264439277928955
+      _bowie knife_14: 7758660465162580199
+      _bowie knife_15: -6465307948884151758
+      _bowie knife_16: 1387276188451044835
+      _bowie knife_2: -7414637306133388508
+      _bowie knife_3: -2521997740714678895
+      _bowie knife_4: 1409522053088074471
+      _bowie knife_5: -7328731101743510230
+      _bowie knife_6: 5040010081953683431
+      _bowie knife_7: -50944942786324214
+      _bowie knife_8: -6281897163903003001
+      _bowie knife_9: -2934251012108611633
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
