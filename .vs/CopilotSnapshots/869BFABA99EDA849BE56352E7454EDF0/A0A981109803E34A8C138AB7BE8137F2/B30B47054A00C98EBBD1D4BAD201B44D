@@ -1,0 +1,228 @@
+﻿using UnityEngine;
+using UnityEngine.Events;
+using System;
+
+/// <summary>
+/// Manages all player currency: Money balance and transactions.
+/// Handles MoneyPerSecond (idle income) calculations.
+/// </summary>
+public class BalanceManager : MonoBehaviour
+{
+    public static BalanceManager Instance { get; private set; }
+
+    [Header("Starting Values")]
+    [SerializeField] private double startingMoney = 0;
+
+    [Header("Money Per Second (Idle Income)")]
+    [SerializeField] private float baseMoneyPerSecond = 0f;
+
+    // Events
+    public UnityEvent<double> OnMoneyChanged;
+    public UnityEvent<double, double> OnMoneyTransaction; // (amount, newBalance)
+    public UnityEvent OnInsufficientFunds;
+
+    // Current balance
+    private double currentMoney = 0;
+
+    // Idle income multipliers (modified by upgrades)
+    private float moneyPerSecondMultiplier = 1f;
+
+    // Statistics
+    private double totalMoneyEarned = 0;
+    private double totalMoneySpent = 0;
+
+    #region Properties
+
+    public double CurrentMoney => currentMoney;
+    public double TotalMoneyEarned => totalMoneyEarned;
+    public double TotalMoneySpent => totalMoneySpent;
+    public float BaseMoneyPerSecond => baseMoneyPerSecond;
+    public float MoneyPerSecondMultiplier => moneyPerSecondMultiplier;
+
+    /// <summary>
+    /// Current Money Per Second including all multipliers.
+    /// </summary>
+    public float CurrentMoneyPerSecond => baseMoneyPerSecond * moneyPerSecondMultiplier;
+
+    #endregion
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+
+        // Initialize events
+        OnMoneyChanged ??= new UnityEvent<double>();
+        OnMoneyTransaction ??= new UnityEvent<double, double>();
+        OnInsufficientFunds ??= new UnityEvent();
+
+        // Set starting money
+        currentMoney = startingMoney;
+    }
+
+    private void Start()
+    {
+        // Notify UI of initial balance
+        OnMoneyChanged?.Invoke(currentMoney);
+    }
+
+    #region Money Operations
+
+    /// <summary>
+    /// Add money to the player's balance (from clicking, idle, selling, etc.)
+    /// </summary>
+    public void AddMoney(double amount)
+    {
+        if (amount <= 0)
+        {
+            Debug.LogWarning("[Balance] Attempted to add zero or negative money.");
+            return;
+        }
+
+        currentMoney += amount;
+        totalMoneyEarned += amount;
+
+        OnMoneyChanged?.Invoke(currentMoney);
+        OnMoneyTransaction?.Invoke(amount, currentMoney);
+        GameManager.Instance?.OnMoneyChanged?.Invoke(currentMoney);
+
+        Debug.Log($"[Balance] +${amount:F2} | Total: ${currentMoney:F2}");
+    }
+
+    /// <summary>
+    /// Attempt to spend money. Returns true if successful, false if insufficient funds.
+    /// </summary>
+    public bool SpendMoney(double amount)
+    {
+        if (amount <= 0)
+        {
+            Debug.LogWarning("[Balance] Attempted to spend zero or negative money.");
+            return false;
+        }
+
+        if (currentMoney < amount)
+        {
+            Debug.Log($"[Balance] Insufficient funds! Need ${amount:F2}, have ${currentMoney:F2}");
+            OnInsufficientFunds?.Invoke();
+            return false;
+        }
+
+        currentMoney -= amount;
+        totalMoneySpent += amount;
+
+        OnMoneyChanged?.Invoke(currentMoney);
+        OnMoneyTransaction?.Invoke(-amount, currentMoney);
+        GameManager.Instance?.OnMoneyChanged?.Invoke(currentMoney);
+
+        Debug.Log($"[Balance] -${amount:F2} | Remaining: ${currentMoney:F2}");
+        return true;
+    }
+
+    /// <summary>
+    /// Check if player can afford a purchase.
+    /// </summary>
+    public bool CanAfford(double amount)
+    {
+        return currentMoney >= amount;
+    }
+
+    /// <summary>
+    /// Set money directly (used for loading save data).
+    /// </summary>
+    public void SetMoney(double amount)
+    {
+        currentMoney = Math.Max(0, amount);
+        OnMoneyChanged?.Invoke(currentMoney);
+        Debug.Log($"[Balance] Balance set to: ${currentMoney:F2}");
+    }
+
+    /// <summary>
+    /// Set all balance statistics (used for loading save data).
+    /// </summary>
+    public void SetStatistics(double earned, double spent)
+    {
+        totalMoneyEarned = earned;
+        totalMoneySpent = spent;
+    }
+
+    #endregion
+
+    #region Idle Income (Money Per Second)
+
+    /// <summary>
+    /// Called by IdleIncomeSystem to add passive income.
+    /// </summary>
+    public void AddIdleIncome(float deltaTime)
+    {
+        if (CurrentMoneyPerSecond <= 0) return;
+
+        double idleEarnings = CurrentMoneyPerSecond * deltaTime;
+        AddMoney(idleEarnings);
+    }
+
+    /// <summary>
+    /// Calculate offline earnings for a given time period.
+    /// </summary>
+    public double CalculateOfflineEarnings(float seconds)
+    {
+        return CurrentMoneyPerSecond * seconds;
+    }
+
+    #endregion
+
+    #region Upgrade Methods
+
+    /// <summary>
+    /// Upgrade base Money Per Second.
+    /// </summary>
+    public void UpgradeBaseMoneyPerSecond(float additionalMPS)
+    {
+        baseMoneyPerSecond += additionalMPS;
+        Debug.Log($"[Balance] Base MPS upgraded to: ${baseMoneyPerSecond:F2}/s");
+    }
+
+    /// <summary>
+    /// Upgrade Money Per Second multiplier.
+    /// </summary>
+    public void UpgradeMoneyPerSecondMultiplier(float additionalMultiplier)
+    {
+        moneyPerSecondMultiplier += additionalMultiplier;
+        Debug.Log($"[Balance] MPS Multiplier upgraded to: {moneyPerSecondMultiplier:F2}x");
+    }
+
+    /// <summary>
+    /// Set idle income values directly (used for loading save data).
+    /// </summary>
+    public void SetIdleValues(float baseMPS, float mpsMultiplier)
+    {
+        baseMoneyPerSecond = baseMPS;
+        moneyPerSecondMultiplier = mpsMultiplier;
+    }
+
+    #endregion
+
+    #region Utility Methods
+
+    /// <summary>
+    /// Format money for display (handles large numbers).
+    /// </summary>
+    public static string FormatMoney(double amount)
+    {
+        if (amount < 1000)
+            return $"${amount:F2}";
+        else if (amount < 1000000)
+            return $"${amount / 1000:F2}K";
+        else if (amount < 1000000000)
+            return $"${amount / 1000000:F2}M";
+        else if (amount < 1000000000000)
+            return $"${amount / 1000000000:F2}B";
+        else
+            return $"${amount / 1000000000000:F2}T";
+    }
+
+    #endregion
+}

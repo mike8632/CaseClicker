@@ -1,0 +1,88 @@
+﻿using UnityEngine;
+using UnityEngine.UI;
+
+/// <summary>
+/// Simple UI for showing Case progress (0-100%).
+/// - Bind a Slider (0..100) and/or a Text to visualize progress.
+/// - Optionally show total cases dropped.
+/// </summary>
+public class CaseProgressUI : MonoBehaviour
+{
+    [Header("UI References")] public Slider progressBar; public Text percentText; public Text casesDroppedText;
+
+    private bool subscribed;
+
+    private void OnEnable()
+    {
+        TrySubscribe();
+    }
+
+    private void OnDisable()
+    {
+        if (subscribed && CaseProgressManager.Instance != null)
+        {
+            CaseProgressManager.Instance.OnProgressChanged.RemoveListener(OnProgressChanged);
+            CaseProgressManager.Instance.OnCaseDropped.RemoveListener(OnCaseDropped);
+            subscribed = false;
+        }
+    }
+
+    private void TrySubscribe()
+    {
+        if (subscribed) return;
+        if (CaseProgressManager.Instance == null) return;
+
+        CaseProgressManager.Instance.OnProgressChanged.AddListener(OnProgressChanged);
+        CaseProgressManager.Instance.OnCaseDropped.AddListener(OnCaseDropped);
+        subscribed = true;
+        RefreshAll();
+    }
+
+    private void Update()
+    {
+        // Late-subscribe if manager was created after this UI enabled
+        if (!subscribed) TrySubscribe();
+    }
+
+    private void OnProgressChanged(float current)
+    {
+        UpdateProgressUI(current);
+    }
+
+    private void OnCaseDropped(CaseData _)
+    {
+        // Update progress (will be reduced by 100) and total dropped label
+        UpdateProgressUI(CaseProgressManager.Instance.CurrentProgress);
+        if (casesDroppedText != null)
+            casesDroppedText.text = CaseProgressManager.Instance.TotalCasesDropped.ToString();
+    }
+
+    public void RefreshAll()
+    {
+        if (CaseProgressManager.Instance == null) return;
+        UpdateProgressUI(CaseProgressManager.Instance.CurrentProgress);
+        if (casesDroppedText != null)
+            casesDroppedText.text = CaseProgressManager.Instance.TotalCasesDropped.ToString();
+    }
+
+    private void UpdateProgressUI(float current)
+    {
+        float pct = Mathf.Clamp(current, 0f, CaseProgressManager.Instance?.MaxProgress ?? 100f);
+        if (progressBar != null)
+        {
+            // Expect slider min=0, max=100
+            progressBar.minValue = 0f;
+            progressBar.maxValue = 100f;
+            progressBar.value = (CaseProgressManager.Instance != null && CaseProgressManager.Instance.MaxProgress > 0)
+                ? (current / CaseProgressManager.Instance.MaxProgress) * 100f
+                : current;
+        }
+        if (percentText != null)
+        {
+            float percent = (CaseProgressManager.Instance != null && CaseProgressManager.Instance.MaxProgress > 0)
+                ? (current / CaseProgressManager.Instance.MaxProgress) * 100f
+                : current;
+            percentText.text = percent.ToString("F2") + "%";
+        }
+    }
+}

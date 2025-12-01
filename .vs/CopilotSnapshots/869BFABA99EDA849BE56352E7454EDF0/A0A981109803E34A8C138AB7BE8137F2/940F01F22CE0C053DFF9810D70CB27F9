@@ -1,0 +1,101 @@
+﻿using UnityEngine;
+using UnityEngine.UI;
+using System;
+
+/// <summary>
+/// Simple UI controller that displays core statistics.
+/// Attach to a Stats Panel GameObject and assign Text fields.
+/// </summary>
+public class StatsUIController : MonoBehaviour
+{
+    [Header("Core Counters")] public Text totalClicksText; public Text casesDroppedText; public Text casesOpenedText; public Text itemsSoldText; public Text tradeUpsText; public Text upgradesText; public Text achievementsText; public Text playTimeText;
+    [Header("Economy")] public Text moneyPerSecondText; public Text actualMoneyText; public Text moneyRecordText; public Text totalGainedMoneyText; public Text totalExperienceText; public Text offlineIncomeText; public Text keysBoughtText; public Text missionsCompletedText;
+
+    private void OnEnable()
+    {
+        if (StatisticsManager.Instance != null)
+        {
+            StatisticsManager.Instance.OnStatisticChanged.AddListener(OnStatChanged);
+            RefreshAll();
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (StatisticsManager.Instance != null)
+        {
+            StatisticsManager.Instance.OnStatisticChanged.RemoveListener(OnStatChanged);
+        }
+    }
+
+    private void OnStatChanged(string key, object value)
+    {
+        // Update only changed field for efficiency.
+        switch (key)
+        {
+            case "moneyClicks": UpdateText(totalClicksText, (StatisticsManager.Instance.GetAllStatistics().totalMoneyClicks + StatisticsManager.Instance.GetAllStatistics().totalCaseClicks).ToString("N0")); break;
+            case "caseClicks": UpdateText(totalClicksText, (StatisticsManager.Instance.GetAllStatistics().totalMoneyClicks + StatisticsManager.Instance.GetAllStatistics().totalCaseClicks).ToString("N0")); break;
+            case "casesDropped": UpdateText(casesDroppedText, ((int)value).ToString("N0")); break;
+            case "casesOpened": UpdateText(casesOpenedText, ((int)value).ToString("N0")); break;
+            case "itemsSold": UpdateText(itemsSoldText, ((int)value).ToString("N0")); break;
+            case "tradeUps": UpdateText(tradeUpsText, ((int)value).ToString("N0")); break;
+            case "upgrades": UpdateText(upgradesText, ((int)value).ToString("N0")); break;
+            case "achievements": UpdateText(achievementsText, ((int)value).ToString("N0")); break;
+            case "moneyPerSecond": UpdateText(moneyPerSecondText, ((float)value).ToString("F3")); break;
+            case "actualMoney": UpdateText(actualMoneyText, "$" + ((double)value).ToString("F2")); UpdateText(moneyRecordText, "$" + StatisticsManager.Instance.GetAllStatistics().moneyRecord.ToString("F2")); break;
+            case "totalGainedMoney": UpdateText(totalGainedMoneyText, "$" + ((double)value).ToString("F2")); break;
+            case "totalExperienceGained": UpdateText(totalExperienceText, ((int)value).ToString("N0")); break;
+            case "offlineIncomeSeconds": UpdateText(offlineIncomeText, SecondsToHMS((float)value)); break;
+            case "keysBought": UpdateText(keysBoughtText, ((int)value).ToString("N0")); break;
+            case "missionsCompleted": UpdateText(missionsCompletedText, ((int)value).ToString("N0")); break;
+            case "prestiges": RefreshAll(); break; // could have broader impact
+            default: break;
+        }
+
+        // Play time updates periodically elsewhere; RefreshAll covers it.
+    }
+
+    public void RefreshAll()
+    {
+        if (StatisticsManager.Instance == null) return;
+        var s = StatisticsManager.Instance.GetAllStatistics();
+
+        UpdateText(totalClicksText, (s.totalMoneyClicks + s.totalCaseClicks).ToString("N0"));
+        UpdateText(casesDroppedText, s.totalCasesDropped.ToString("N0"));
+        UpdateText(casesOpenedText, s.totalCasesOpened.ToString("N0"));
+        UpdateText(itemsSoldText, s.totalItemsSold.ToString("N0"));
+        UpdateText(tradeUpsText, s.totalTradeUps.ToString("N0"));
+        UpdateText(upgradesText, s.totalUpgradesPurchased.ToString("N0"));
+        UpdateText(achievementsText, s.totalAchievementsUnlocked.ToString("N0"));
+        UpdateText(playTimeText, (s.totalPlayTimeSeconds / 3600f).ToString("F1") + " h");
+
+        UpdateText(moneyPerSecondText, s.moneyPerSecond.ToString("F3"));
+        UpdateText(actualMoneyText, "$" + s.actualMoney.ToString("F2"));
+        UpdateText(moneyRecordText, "$" + s.moneyRecord.ToString("F2"));
+        UpdateText(totalGainedMoneyText, "$" + s.totalGainedMoney.ToString("F2"));
+        UpdateText(totalExperienceText, s.totalExperienceGained.ToString("N0"));
+        UpdateText(offlineIncomeText, SecondsToHMS(s.offlineIncomeSeconds));
+        UpdateText(keysBoughtText, s.totalKeysBought.ToString("N0"));
+        UpdateText(missionsCompletedText, s.totalMissionsCompleted.ToString("N0"));
+    }
+
+    private void Update()
+    {
+        // Lightweight periodic update of play time field (avoid event spam)
+        if (playTimeText != null && StatisticsManager.Instance != null)
+        {
+            playTimeText.text = (StatisticsManager.Instance.GetAllStatistics().totalPlayTimeSeconds / 3600f).ToString("F1") + " h";
+        }
+    }
+
+    private static void UpdateText(Text t, string value)
+    {
+        if (t != null) t.text = value;
+    }
+
+    private static string SecondsToHMS(float seconds)
+    {
+        var ts = TimeSpan.FromSeconds(seconds);
+        return ts.ToString("hh\\:mm\\:ss");
+    }
+}

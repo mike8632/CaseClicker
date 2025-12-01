@@ -1,0 +1,452 @@
+﻿using UnityEngine;
+using UnityEngine.Events;
+using System;
+using System.Collections.Generic;
+
+/// <summary>
+/// Tracks all game statistics for achievements, leaderboards, and player info.
+/// Based on GDD Section 24 statistics requirements.
+/// </summary>
+public class StatisticsManager : MonoBehaviour
+{
+    public static StatisticsManager Instance { get; private set; }
+
+    // Events
+    public UnityEvent<string, object> OnStatisticChanged;
+
+    // Statistics data container
+    private GameStatistics stats = new GameStatistics();
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+
+        // Initialize events
+        OnStatisticChanged ??= new UnityEvent<string, object>();
+    }
+
+    #region Recording Methods (Called by other systems)
+
+    /// <summary>
+    /// Update snapshot of current money per second. Caller should pass current computed MPS.
+    /// </summary>
+    public void UpdateMoneyPerSecond(float currentMps)
+    {
+        stats.moneyPerSecond = currentMps;
+        OnStatisticChanged?.Invoke("moneyPerSecond", stats.moneyPerSecond);
+    }
+
+    /// <summary>
+    /// Update actual money amount (used to track current balance and record peak).
+    /// </summary>
+    public void UpdateActualMoney(double currentMoney)
+    {
+        stats.actualMoney = currentMoney;
+        if (currentMoney > stats.moneyRecord)
+        {
+            stats.moneyRecord = currentMoney;
+        }
+        OnStatisticChanged?.Invoke("actualMoney", stats.actualMoney);
+    }
+
+    /// <summary>
+    /// Add gained money to total tracker.
+    /// </summary>
+    public void AddTotalGainedMoney(double amount)
+    {
+        stats.totalGainedMoney += amount;
+        OnStatisticChanged?.Invoke("totalGainedMoney", stats.totalGainedMoney);
+    }
+
+    /// <summary>
+    /// Add experience points to total.
+    /// </summary>
+    public void AddExperience(int xp)
+    {
+        stats.totalExperienceGained += xp;
+        OnStatisticChanged?.Invoke("totalExperienceGained", stats.totalExperienceGained);
+    }
+
+    /// <summary>
+    /// Record offline income time in seconds (capped elsewhere per Idle Time Limit system).
+    /// </summary>
+    public void RecordOfflineIncomeTime(float seconds)
+    {
+        stats.offlineIncomeSeconds += seconds;
+        OnStatisticChanged?.Invoke("offlineIncomeSeconds", stats.offlineIncomeSeconds);
+    }
+
+    /// <summary>
+    /// Record a money click event.
+    /// </summary>
+    public void RecordMoneyClick(float amountEarned)
+    {
+        stats.totalMoneyClicks++;
+        stats.totalMoneyFromClicking += amountEarned;
+        AddTotalGainedMoney(amountEarned);
+        OnStatisticChanged?.Invoke("moneyClicks", stats.totalMoneyClicks);
+    }
+
+    /// <summary>
+    /// Record a case click event.
+    /// </summary>
+    public void RecordCaseClick(float progressGained)
+    {
+        stats.totalCaseClicks++;
+        stats.totalCaseProgressFromClicking += progressGained;
+        OnStatisticChanged?.Invoke("caseClicks", stats.totalCaseClicks);
+    }
+
+    /// <summary>
+    /// Record a case drop.
+    /// </summary>
+    public void RecordCaseDrop(CaseData caseData)
+    {
+        stats.totalCasesDropped++;
+
+        if (caseData != null)
+        {
+            // Track by rarity
+            if (!stats.casesDroppedByRarity.ContainsKey(caseData.rarity.ToString()))
+                stats.casesDroppedByRarity[caseData.rarity.ToString()] = 0;
+            stats.casesDroppedByRarity[caseData.rarity.ToString()]++;
+        }
+
+        OnStatisticChanged?.Invoke("casesDropped", stats.totalCasesDropped);
+    }
+
+    /// <summary>
+    /// Record a case opening.
+    /// </summary>
+    public void RecordCaseOpened(CaseData caseData, CaseItemData itemReceived, float itemValue)
+    {
+        stats.totalCasesOpened++;
+        double keyCost = caseData?.keyPrice ?? 2.50f;
+        stats.totalMoneySpentOnKeys += keyCost;
+        stats.totalKeysBought += 1; // every open consumes 1 key purchase in economy
+
+        if (itemReceived != null)
+        {
+            // Track items by rarity
+            if (!stats.itemsReceivedByRarity.ContainsKey(itemReceived.rarity.ToString()))
+                stats.itemsReceivedByRarity[itemReceived.rarity.ToString()] = 0;
+            stats.itemsReceivedByRarity[itemReceived.rarity.ToString()]++;
+
+            // Track total value
+            stats.totalValueFromCases += itemValue;
+            AddTotalGainedMoney(itemValue);
+
+            // Track best item
+            if (itemValue > stats.highestValueItemReceived)
+            {
+                stats.highestValueItemReceived = itemValue;
+                stats.highestValueItemName = itemReceived.itemName;
+            }
+        }
+
+        OnStatisticChanged?.Invoke("casesOpened", stats.totalCasesOpened);
+    }
+
+    /// <summary>
+    /// Record an item sale.
+    /// </summary>
+    public void RecordItemSold(string itemName, float salePrice, float purchasePrice)
+    {
+        stats.totalItemsSold++;
+        stats.totalMoneyFromSelling += salePrice;
+        stats.totalProfit += (salePrice - purchasePrice);
+        AddTotalGainedMoney(salePrice);
+
+        if (salePrice > stats.highestSalePrice)
+        {
+            stats.highestSalePrice = salePrice;
+            stats.highestSaleItemName = itemName;
+        }
+
+        OnStatisticChanged?.Invoke("itemsSold", stats.totalItemsSold);
+    }
+
+    /// <summary>
+    /// Record an item purchase from market.
+    /// </summary>
+    public void RecordItemPurchased(string itemName, float price)
+    {
+        stats.totalItemsPurchased++;
+        stats.totalMoneySpentOnMarket += price;
+
+        OnStatisticChanged?.Invoke("itemsPurchased", stats.totalItemsPurchased);
+    }
+
+    /// <summary>
+    /// Record a key purchase (bulk or single).
+    /// </summary>
+    public void RecordKeysPurchased(int count, double totalCost)
+    {
+        stats.totalKeysBought += count;
+        stats.totalMoneySpentOnKeys += totalCost;
+        OnStatisticChanged?.Invoke("keysBought", stats.totalKeysBought);
+    }
+
+    /// <summary>
+    /// Record a mission completion.
+    /// </summary>
+    public void RecordMissionCompleted()
+    {
+        stats.totalMissionsCompleted++;
+        OnStatisticChanged?.Invoke("missionsCompleted", stats.totalMissionsCompleted);
+    }
+
+    /// <summary>
+    /// Record a trade-up contract.
+    /// </summary>
+    public void RecordTradeUp(int inputItemCount, float inputTotalValue, CaseItemData resultItem, float resultValue)
+    {
+        stats.totalTradeUps++;
+        stats.totalItemsUsedInTradeUps += inputItemCount;
+
+        float profitLoss = resultValue - inputTotalValue;
+        stats.totalTradeUpProfitLoss += profitLoss;
+
+        if (profitLoss > stats.bestTradeUpProfit)
+        {
+            stats.bestTradeUpProfit = profitLoss;
+        }
+
+        OnStatisticChanged?.Invoke("tradeUps", stats.totalTradeUps);
+    }
+
+    /// <summary>
+    /// Record an upgrade purchase.
+    /// </summary>
+    public void RecordUpgradePurchased(string upgradeName, float cost)
+    {
+        stats.totalUpgradesPurchased++;
+        stats.totalMoneySpentOnUpgrades += cost;
+
+        OnStatisticChanged?.Invoke("upgrades", stats.totalUpgradesPurchased);
+    }
+
+    /// <summary>
+    /// Record prestige/rebirth.
+    /// </summary>
+    public void RecordPrestige(int prestigePointsEarned)
+    {
+        stats.totalPrestiges++;
+        stats.totalPrestigePointsEarned += prestigePointsEarned;
+
+        OnStatisticChanged?.Invoke("prestiges", stats.totalPrestiges);
+    }
+
+    /// <summary>
+    /// Record achievement unlocked.
+    /// </summary>
+    public void RecordAchievementUnlocked(string achievementId)
+    {
+        stats.totalAchievementsUnlocked++;
+        if (!stats.unlockedAchievements.Contains(achievementId))
+        {
+            stats.unlockedAchievements.Add(achievementId);
+        }
+
+        OnStatisticChanged?.Invoke("achievements", stats.totalAchievementsUnlocked);
+    }
+
+    /// <summary>
+    /// Record play time (called periodically).
+    /// </summary>
+    public void RecordPlayTime(float seconds)
+    {
+        stats.totalPlayTimeSeconds += seconds;
+    }
+
+    /// <summary>
+    /// Record session start.
+    /// </summary>
+    public void RecordSessionStart()
+    {
+        stats.totalSessions++;
+        if (stats.firstPlayDate == 0)
+        {
+            stats.firstPlayDate = DateTime.Now.ToBinary();
+        }
+        stats.lastPlayDate = DateTime.Now.ToBinary();
+    }
+
+    #endregion
+
+    #region Getter Methods
+
+    /// <summary>
+    /// Get all statistics as a data object.
+    /// </summary>
+    public GameStatistics GetAllStatistics()
+    {
+        return stats;
+    }
+
+    /// <summary>
+    /// Set all statistics (used for loading save data).
+    /// </summary>
+    public void SetAllStatistics(GameStatistics loadedStats)
+    {
+        if (loadedStats != null)
+        {
+            stats = loadedStats;
+        }
+    }
+
+    // Convenience getters
+    public long TotalClicks => stats.totalMoneyClicks + stats.totalCaseClicks;
+    public int TotalCasesDropped => stats.totalCasesDropped;
+    public int TotalCasesOpened => stats.totalCasesOpened;
+    public double TotalMoneyEarned => stats.totalMoneyFromClicking + stats.totalMoneyFromSelling + stats.totalValueFromCases;
+    public float TotalPlayTimeHours => stats.totalPlayTimeSeconds / 3600f;
+
+    #endregion
+
+    #region Utility Methods
+
+    /// <summary>
+    /// Get a formatted statistics summary for display.
+    /// </summary>
+    public string GetStatisticsSummary()
+    {
+        return $"Total Clicks: {TotalClicks:N0}\n" +
+               $"Cases Dropped: {stats.totalCasesDropped:N0}\n" +
+               $"Cases Opened: {stats.totalCasesOpened:N0}\n" +
+               $"Items Sold: {stats.totalItemsSold:N0}\n" +
+               $"Trade-Ups: {stats.totalTradeUps:N0}\n" +
+               $"Upgrades: {stats.totalUpgradesPurchased:N0}\n" +
+               $"Achievements: {stats.totalAchievementsUnlocked:N0}\n" +
+               $"Play Time: {TotalPlayTimeHours:F1} hours\n" +
+               $"Money Per Second: {stats.moneyPerSecond:F3}\n" +
+               $"Actual Money: ${stats.actualMoney:F2}\n" +
+               $"Money Record: ${stats.moneyRecord:F2}\n" +
+               $"Total Gained Money: ${stats.totalGainedMoney:F2}\n" +
+               $"Total Experience: {stats.totalExperienceGained:N0}\n" +
+               $"Offline Income Time: {TimeSpan.FromSeconds(stats.offlineIncomeSeconds):hh\\:mm\\:ss}\n" +
+               $"Keys Bought: {stats.totalKeysBought:N0}\n" +
+               $"Missions Completed: {stats.totalMissionsCompleted:N0}";
+    }
+
+    /// <summary>
+    /// Reset all statistics (for new game).
+    /// </summary>
+    public void ResetStatistics()
+    {
+        stats = new GameStatistics();
+        Debug.Log("[Statistics] All statistics reset.");
+    }
+
+    #endregion
+}
+
+/// <summary>
+/// Container for all tracked game statistics.
+/// Serializable for save/load.
+/// </summary>
+[Serializable]
+public class GameStatistics
+{
+    // Click statistics
+    public long totalMoneyClicks = 0;
+    public long totalCaseClicks = 0;
+    public double totalMoneyFromClicking = 0;
+    public float totalCaseProgressFromClicking = 0;
+
+    // Live economy snapshots
+    public float moneyPerSecond = 0; // snapshot of current MPS
+    public double actualMoney = 0;   // current balance
+    public double moneyRecord = 0;   // peak balance in a single moment
+    public double totalGainedMoney = 0; // cumulative earnings from all sources
+
+    // Case statistics
+    public int totalCasesDropped = 0;
+    public int totalCasesOpened = 0;
+    public double totalMoneySpentOnKeys = 0;
+    public double totalValueFromCases = 0;
+    public float highestValueItemReceived = 0;
+    public string highestValueItemName = "";
+    public SerializableDictionary casesDroppedByRarity = new SerializableDictionary();
+    public SerializableDictionary itemsReceivedByRarity = new SerializableDictionary();
+
+    // Trading statistics
+    public int totalItemsSold = 0;
+    public int totalItemsPurchased = 0;
+    public double totalMoneyFromSelling = 0;
+    public double totalMoneySpentOnMarket = 0;
+    public double totalProfit = 0;
+    public float highestSalePrice = 0;
+    public string highestSaleItemName = "";
+
+    // Trade-up statistics
+    public int totalTradeUps = 0;
+    public int totalItemsUsedInTradeUps = 0;
+    public double totalTradeUpProfitLoss = 0;
+    public float bestTradeUpProfit = 0;
+
+    // Upgrade statistics
+    public int totalUpgradesPurchased = 0;
+    public double totalMoneySpentOnUpgrades = 0;
+
+    // Prestige statistics
+    public int totalPrestiges = 0;
+    public int totalPrestigePointsEarned = 0;
+
+    // Achievement statistics
+    public int totalAchievementsUnlocked = 0;
+    public List<string> unlockedAchievements = new List<string>();
+
+    // Progression statistics
+    public int totalExperienceGained = 0;
+    public int totalMissionsCompleted = 0;
+
+    // Keys
+    public int totalKeysBought = 0;
+
+    // Time statistics
+    public float totalPlayTimeSeconds = 0;
+    public float offlineIncomeSeconds = 0; // accumulated offline income time since last display
+    public int totalSessions = 0;
+    public long firstPlayDate = 0;
+    public long lastPlayDate = 0;
+}
+
+/// <summary>
+/// Serializable dictionary wrapper for Unity's JsonUtility.
+/// </summary>
+[Serializable]
+public class SerializableDictionary
+{
+    public List<string> keys = new List<string>();
+    public List<int> values = new List<int>();
+
+    public int this[string key]
+    {
+        get
+        {
+            int index = keys.IndexOf(key);
+            return index >= 0 ? values[index] : 0;
+        }
+        set
+        {
+            int index = keys.IndexOf(key);
+            if (index >= 0)
+            {
+                values[index] = value;
+            }
+            else
+            {
+                keys.Add(key);
+                values.Add(value);
+            }
+        }
+    }
+
+    public bool ContainsKey(string key) => keys.Contains(key);
+}
