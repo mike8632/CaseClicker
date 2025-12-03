@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+#if ENABLE_INPUT_SYSTEM
+using UnityEngine.InputSystem;
+#endif
 
 /// <summary>
 /// Manages sidebar tabs and panels. Call SelectTab(id) or SelectTab(index).
@@ -59,7 +62,22 @@ public class SidebarController : MonoBehaviour
     {
         if (!enableNumberShortcuts) return;
 
-        // check numeric keys 1..9 (Alpha1..Alpha9)
+        // Support both old and new input systems to avoid runtime exceptions.
+#if ENABLE_INPUT_SYSTEM
+        var kb = Keyboard.current;
+        if (kb == null) return;
+        // check numeric keys 1..9
+        for (int i = 0; i < Math.Min(9, orderedPanels.Count); i++)
+        {
+            // digit keys across the top of the keyboard
+            Key key = Key.Digit1 + i;
+            if (kb[key].wasPressedThisFrame)
+            {
+                SelectTab(i);
+            }
+        }
+#else
+        // Legacy Input Manager
         for (int i = 0; i < Math.Min(9, orderedPanels.Count); i++)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1 + i))
@@ -67,6 +85,7 @@ public class SidebarController : MonoBehaviour
                 SelectTab(i);
             }
         }
+#endif
     }
 
     private void AutoRegisterPanels()
