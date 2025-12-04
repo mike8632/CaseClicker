@@ -2,10 +2,8 @@ using UnityEngine;
 using UnityEngine.Events;
 
 /// <summary>
-/// Manages the Momentum/Combo system.
-/// Multiplier starts at 1.0x and builds up to max (default 5.0x, upgradeable to 10.0x).
-/// Resets to 1.0x after 3 seconds of inactivity.
-/// Building max combo takes approximately 20-30 minutes of continuous clicking.
+/// Manages two independent Momentum/Combo systems: one for Money (coin) clicks and one for Case clicks.
+/// Each multiplier starts at 1.0x and decays independently.
 /// </summary>
 public class ComboSystem : MonoBehaviour
 {
@@ -22,36 +20,49 @@ public class ComboSystem : MonoBehaviour
     [SerializeField] private float baseComboGainPerClick = 0.01f;  // Adjusted based on timeToMaxCombo
 
     // Events
-    public UnityEvent<float> OnComboChanged;          // Current multiplier
-    public UnityEvent<float> OnComboDecayWarning;     // Time remaining before reset
-    public UnityEvent OnComboReset;
-    public UnityEvent OnComboMaxReached;
+    public UnityEvent<float> OnCoinComboChanged;       // Current coin multiplier
+    public UnityEvent<float> OnCaseComboChanged;       // Current case multiplier
+    public UnityEvent<float> OnComboDecayWarning;      // Time remaining before reset (generic)
+    public UnityEvent OnCoinComboReset;
+    public UnityEvent OnCaseComboReset;
+    public UnityEvent OnComboMaxReached;               // Generic notification
 
-    // Current state
-    private float currentMultiplier = 1.0f;
+    // Current state (independent)
+    private float coinMultiplier = 1.0f;
+    private float caseMultiplier = 1.0f;
     private float currentMaxMultiplier;
-    private float timeSinceLastClick = 0f;
-    private bool isComboActive = false;
-    private bool hasReachedMax = false;
+    private float coinTimeSinceLastClick = 0f;
+    private float caseTimeSinceLastClick = 0f;
+    private bool coinComboActive = false;
+    private bool caseComboActive = false;
+    private bool coinReachedMax = false;
+    private bool caseReachedMax = false;
 
     // Statistics
-    private float highestComboReached = 1.0f;
-    private int comboResetCount = 0;
+    private float highestCoinComboReached = 1.0f;
+    private float highestCaseComboReached = 1.0f;
+    private int coinComboResetCount = 0;
+    private int caseComboResetCount = 0;
     private int maxComboReachedCount = 0;
 
     #region Properties
 
-    public float CurrentMultiplier => currentMultiplier;
+    public float CurrentCoinMultiplier => coinMultiplier;
+    public float CurrentCaseMultiplier => caseMultiplier;
+    // Backward-compat: treat CurrentMultiplier as coin combo
+    public float CurrentMultiplier => coinMultiplier;
     public float MinMultiplier => minMultiplier;
     public float CurrentMaxMultiplier => currentMaxMultiplier;
     public float AbsoluteMaxMultiplier => absoluteMaxMultiplier;
     public float ComboDecayTime => comboDecayTime;
-    public float TimeSinceLastClick => timeSinceLastClick;
-    public float TimeUntilReset => Mathf.Max(0, comboDecayTime - timeSinceLastClick);
-    public bool IsComboActive => isComboActive;
-    public float ComboPercentage => (currentMultiplier - minMultiplier) / (currentMaxMultiplier - minMultiplier);
-    public float HighestComboReached => highestComboReached;
-    public int ComboResetCount => comboResetCount;
+    public float CoinTimeUntilReset => Mathf.Max(0, comboDecayTime - coinTimeSinceLastClick);
+    public float CaseTimeUntilReset => Mathf.Max(0, comboDecayTime - caseTimeSinceLastClick);
+    public bool IsCoinComboActive => coinComboActive;
+    public bool IsCaseComboActive => caseComboActive;
+    public float HighestCoinComboReached => highestCoinComboReached;
+    public float HighestCaseComboReached => highestCaseComboReached;
+    public int CoinComboResetCount => coinComboResetCount;
+    public int CaseComboResetCount => caseComboResetCount;
 
     #endregion
 
@@ -65,148 +76,155 @@ public class ComboSystem : MonoBehaviour
         Instance = this;
 
         // Initialize events
-        OnComboChanged ??= new UnityEvent<float>();
+        OnCoinComboChanged ??= new UnityEvent<float>();
+        OnCaseComboChanged ??= new UnityEvent<float>();
         OnComboDecayWarning ??= new UnityEvent<float>();
-        OnComboReset ??= new UnityEvent();
+        OnCoinComboReset ??= new UnityEvent();
+        OnCaseComboReset ??= new UnityEvent();
         OnComboMaxReached ??= new UnityEvent();
 
         // Set initial max multiplier
         currentMaxMultiplier = defaultMaxMultiplier;
-        currentMultiplier = minMultiplier;
+        coinMultiplier = minMultiplier;
+        caseMultiplier = minMultiplier;
 
-        // Calculate combo gain rate based on desired time to max
-        // If we want ~1500 seconds of clicking to reach max (25 min), and max is 5.0x (gain of 4.0):
-        // We need (maxMultiplier - minMultiplier) / timeToMax = comboGainPerSecond
-        // Assuming ~2-3 clicks per second: 4.0 / 1500 / 2.5 = ~0.001 per click
         CalculateComboGainRate();
     }
 
     private void CalculateComboGainRate()
     {
-        // Assuming average click rate of 2-3 clicks per second
         float assumedClicksPerSecond = 2.5f;
         float totalGainNeeded = defaultMaxMultiplier - minMultiplier;
         float totalClicksToMax = timeToMaxCombo * assumedClicksPerSecond;
         baseComboGainPerClick = totalGainNeeded / totalClicksToMax;
-
         Debug.Log($"[Combo] Gain per click: {baseComboGainPerClick:F6}, Clicks to max: {totalClicksToMax:F0}");
     }
 
     private void Update()
     {
-        if (!isComboActive) return;
-
-        // Track time since last click
-        timeSinceLastClick += Time.deltaTime;
-
-        // Decay warning (when less than 1 second remaining)
-        if (timeSinceLastClick >= comboDecayTime - 1f && timeSinceLastClick < comboDecayTime)
+        if (coinComboActive)
         {
-            OnComboDecayWarning?.Invoke(TimeUntilReset);
+            coinTimeSinceLastClick += Time.deltaTime;
+            if (coinTimeSinceLastClick >= comboDecayTime - 1f && coinTimeSinceLastClick < comboDecayTime)
+            {
+                OnComboDecayWarning?.Invoke(CoinTimeUntilReset);
+            }
+            if (coinTimeSinceLastClick >= comboDecayTime)
+            {
+                ResetCoinCombo();
+            }
         }
 
-        // Check for combo reset
-        if (timeSinceLastClick >= comboDecayTime)
+        if (caseComboActive)
         {
-            ResetCombo();
+            caseTimeSinceLastClick += Time.deltaTime;
+            if (caseTimeSinceLastClick >= comboDecayTime - 1f && caseTimeSinceLastClick < comboDecayTime)
+            {
+                OnComboDecayWarning?.Invoke(CaseTimeUntilReset);
+            }
+            if (caseTimeSinceLastClick >= comboDecayTime)
+            {
+                ResetCaseCombo();
+            }
         }
     }
 
     #region Combo Operations
 
-    /// <summary>
-    /// Register a click to build combo and reset decay timer.
-    /// Called by ClickerController on each click.
-    /// </summary>
-    public void RegisterClick()
+    public void RegisterCoinClick()
     {
-        // Reset decay timer
-        timeSinceLastClick = 0f;
-        isComboActive = true;
-        hasReachedMax = false;
+        coinTimeSinceLastClick = 0f;
+        coinComboActive = true;
+        coinReachedMax = false;
 
-        // Build combo
-        float previousMultiplier = currentMultiplier;
-        currentMultiplier += baseComboGainPerClick;
-        currentMultiplier = Mathf.Clamp(currentMultiplier, minMultiplier, currentMaxMultiplier);
+        float previous = coinMultiplier;
+        coinMultiplier += baseComboGainPerClick;
+        coinMultiplier = Mathf.Clamp(coinMultiplier, minMultiplier, currentMaxMultiplier);
 
-        // Track highest combo
-        if (currentMultiplier > highestComboReached)
+        if (coinMultiplier > highestCoinComboReached)
+            highestCoinComboReached = coinMultiplier;
+
+        if (coinMultiplier >= currentMaxMultiplier && !coinReachedMax)
         {
-            highestComboReached = currentMultiplier;
-        }
-
-        // Check if max reached
-        if (currentMultiplier >= currentMaxMultiplier && !hasReachedMax)
-        {
-            hasReachedMax = true;
+            coinReachedMax = true;
             maxComboReachedCount++;
             OnComboMaxReached?.Invoke();
-            Debug.Log($"[Combo] MAX COMBO REACHED: {currentMultiplier:F2}x!");
+            Debug.Log($"[Combo] COIN MAX COMBO REACHED: {coinMultiplier:F2}x!");
         }
 
-        // Notify if changed significantly (avoid spamming)
-        if (Mathf.Abs(currentMultiplier - previousMultiplier) > 0.001f)
+        if (Mathf.Abs(coinMultiplier - previous) > 0.001f)
         {
-            OnComboChanged?.Invoke(currentMultiplier);
-            GameManager.Instance?.OnComboChanged?.Invoke(currentMultiplier);
+            OnCoinComboChanged?.Invoke(coinMultiplier);
+            GameManager.Instance?.OnComboChanged?.Invoke(coinMultiplier);
         }
     }
 
-    /// <summary>
-    /// Reset combo to minimum multiplier.
-    /// Called automatically after decay time or manually.
-    /// </summary>
-    public void ResetCombo()
+    public void RegisterCaseClick()
     {
-        if (currentMultiplier > minMultiplier)
+        caseTimeSinceLastClick = 0f;
+        caseComboActive = true;
+        caseReachedMax = false;
+
+        float previous = caseMultiplier;
+        caseMultiplier += baseComboGainPerClick;
+        caseMultiplier = Mathf.Clamp(caseMultiplier, minMultiplier, currentMaxMultiplier);
+
+        if (caseMultiplier > highestCaseComboReached)
+            highestCaseComboReached = caseMultiplier;
+
+        if (caseMultiplier >= currentMaxMultiplier && !caseReachedMax)
         {
-            Debug.Log($"[Combo] Combo reset! Was: {currentMultiplier:F2}x");
-            comboResetCount++;
+            caseReachedMax = true;
+            maxComboReachedCount++;
+            OnComboMaxReached?.Invoke();
+            Debug.Log($"[Combo] CASE MAX COMBO REACHED: {caseMultiplier:F2}x!");
         }
 
-        currentMultiplier = minMultiplier;
-        isComboActive = false;
-        timeSinceLastClick = 0f;
-        hasReachedMax = false;
-
-        OnComboChanged?.Invoke(currentMultiplier);
-        OnComboReset?.Invoke();
-        GameManager.Instance?.OnComboChanged?.Invoke(currentMultiplier);
+        if (Mathf.Abs(caseMultiplier - previous) > 0.001f)
+        {
+            OnCaseComboChanged?.Invoke(caseMultiplier);
+        }
     }
 
-    /// <summary>
-    /// Set combo value directly (used for loading save data or bonuses).
-    /// </summary>
-    public void SetCombo(float multiplier)
+    public void ResetCoinCombo()
     {
-        currentMultiplier = Mathf.Clamp(multiplier, minMultiplier, currentMaxMultiplier);
-        isComboActive = currentMultiplier > minMultiplier;
-        timeSinceLastClick = 0f;
-        OnComboChanged?.Invoke(currentMultiplier);
+        if (coinMultiplier > minMultiplier)
+        {
+            Debug.Log($"[Combo] Coin combo reset! Was: {coinMultiplier:F2}x");
+            coinComboResetCount++;
+        }
+
+        coinMultiplier = minMultiplier;
+        coinComboActive = false;
+        coinTimeSinceLastClick = 0f;
+        coinReachedMax = false;
+
+        OnCoinComboChanged?.Invoke(coinMultiplier);
+        OnCoinComboReset?.Invoke();
+        GameManager.Instance?.OnComboChanged?.Invoke(coinMultiplier);
     }
 
-    /// <summary>
-    /// Add a bonus to current combo (from power-ups, achievements, etc.).
-    /// </summary>
-    public void AddComboBonus(float bonusAmount)
+    public void ResetCaseCombo()
     {
-        currentMultiplier += bonusAmount;
-        currentMultiplier = Mathf.Clamp(currentMultiplier, minMultiplier, currentMaxMultiplier);
-        timeSinceLastClick = 0f;
-        isComboActive = true;
+        if (caseMultiplier > minMultiplier)
+        {
+            Debug.Log($"[Combo] Case combo reset! Was: {caseMultiplier:F2}x");
+            caseComboResetCount++;
+        }
 
-        OnComboChanged?.Invoke(currentMultiplier);
-        Debug.Log($"[Combo] Bonus applied! New combo: {currentMultiplier:F2}x");
+        caseMultiplier = minMultiplier;
+        caseComboActive = false;
+        caseTimeSinceLastClick = 0f;
+        caseReachedMax = false;
+
+        OnCaseComboChanged?.Invoke(caseMultiplier);
+        OnCaseComboReset?.Invoke();
     }
 
     #endregion
 
     #region Upgrade Methods
 
-    /// <summary>
-    /// Upgrade the maximum combo multiplier (towards absolute max of 10.0x).
-    /// </summary>
     public void UpgradeMaxMultiplier(float additionalMax)
     {
         currentMaxMultiplier += additionalMax;
@@ -214,47 +232,32 @@ public class ComboSystem : MonoBehaviour
         Debug.Log($"[Combo] Max multiplier upgraded to: {currentMaxMultiplier:F2}x");
     }
 
-    /// <summary>
-    /// Set max multiplier directly (used for loading save data).
-    /// </summary>
     public void SetMaxMultiplier(float maxMultiplier)
     {
         currentMaxMultiplier = Mathf.Clamp(maxMultiplier, defaultMaxMultiplier, absoluteMaxMultiplier);
     }
 
-    /// <summary>
-    /// Upgrade combo decay time (time before reset).
-    /// </summary>
     public void UpgradeDecayTime(float additionalSeconds)
     {
         comboDecayTime += additionalSeconds;
         Debug.Log($"[Combo] Decay time upgraded to: {comboDecayTime:F1}s");
     }
 
-    /// <summary>
-    /// Set decay time directly (used for loading save data).
-    /// </summary>
     public void SetDecayTime(float decayTime)
     {
         comboDecayTime = Mathf.Max(1f, decayTime);
     }
 
-    /// <summary>
-    /// Upgrade combo build rate (faster combo building).
-    /// </summary>
     public void UpgradeComboGainRate(float multiplier)
     {
         baseComboGainPerClick *= multiplier;
         Debug.Log($"[Combo] Combo gain rate upgraded to: {baseComboGainPerClick:F6}/click");
     }
 
-    /// <summary>
-    /// Set statistics (used for loading save data).
-    /// </summary>
-    public void SetStatistics(float highestCombo, int resetCount, int maxReachedCount)
+    public void SetStatistics(float highestCoinCombo, int coinResetCount, int maxReachedCount)
     {
-        highestComboReached = highestCombo;
-        comboResetCount = resetCount;
+        highestCoinComboReached = highestCoinCombo;
+        coinComboResetCount = coinResetCount;
         maxComboReachedCount = maxReachedCount;
     }
 

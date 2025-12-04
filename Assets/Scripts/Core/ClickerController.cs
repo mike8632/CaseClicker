@@ -41,25 +41,25 @@ public class ClickerController : MonoBehaviour
     public int TotalCaseClicks => totalCaseClicks;
 
     /// <summary>
-    /// Current Money Per Click including all multipliers (upgrades + combo)
+    /// Current Money Per Click including all multipliers (upgrades + coin combo)
     /// </summary>
     public float CurrentMoneyPerClick
     {
         get
         {
-            float comboMultiplier = GameManager.Instance?.Combo?.CurrentMultiplier ?? 1f;
+            float comboMultiplier = GameManager.Instance?.Combo?.CurrentCoinMultiplier ?? 1f;
             return baseMoneyPerClick * moneyClickMultiplier * comboMultiplier;
         }
     }
 
     /// <summary>
-    /// Current Case % Per Click including all multipliers (upgrades + combo)
+    /// Current Case % Per Click including all multipliers (upgrades + case combo)
     /// </summary>
     public float CurrentCasePercentPerClick
     {
         get
         {
-            float comboMultiplier = GameManager.Instance?.Combo?.CurrentMultiplier ?? 1f;
+            float comboMultiplier = GameManager.Instance?.Combo?.CurrentCaseMultiplier ?? 1f;
             return baseCasePercentPerClick * caseClickMultiplier * comboMultiplier;
         }
     }
@@ -112,8 +112,7 @@ public class ClickerController : MonoBehaviour
         if (GameManager.Instance == null || GameManager.Instance.IsGamePaused)
             return;
 
-        // Register click with combo system
-        GameManager.Instance.Combo?.RegisterClick();
+        GameManager.Instance.Combo?.RegisterCoinClick();
 
         // Calculate earnings with combo multiplier
         float earnings = CurrentMoneyPerClick;
@@ -128,7 +127,7 @@ public class ClickerController : MonoBehaviour
         // Trigger events for UI feedback
         OnMoneyClicked?.Invoke(earnings);
 
-        Debug.Log($"[Clicker] Money Click: +${earnings:F2} (Combo: {GameManager.Instance.Combo?.CurrentMultiplier:F2}x)");
+        Debug.Log($"[Clicker] Money Click: +${earnings:F2} (Coin Combo: {GameManager.Instance.Combo?.CurrentCoinMultiplier:F2}x)");
     }
 
     /// <summary>
@@ -140,8 +139,7 @@ public class ClickerController : MonoBehaviour
         if (GameManager.Instance == null || GameManager.Instance.IsGamePaused)
             return;
 
-        // Register click with combo system
-        GameManager.Instance.Combo?.RegisterClick();
+        GameManager.Instance.Combo?.RegisterCaseClick();
 
         // Calculate case progress with combo multiplier
         float progressGain = CurrentCasePercentPerClick;
@@ -156,7 +154,7 @@ public class ClickerController : MonoBehaviour
         // Trigger events for UI feedback
         OnCaseClicked?.Invoke(progressGain);
 
-        Debug.Log($"[Clicker] Case Click: +{progressGain:F2}% (Combo: {GameManager.Instance.Combo?.CurrentMultiplier:F2}x)");
+        Debug.Log($"[Clicker] Case Click: +{progressGain:F2}% (Case Combo: {GameManager.Instance.Combo?.CurrentCaseMultiplier:F2}x)");
     }
 
     /// <summary>

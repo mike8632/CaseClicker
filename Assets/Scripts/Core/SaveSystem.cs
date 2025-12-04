@@ -151,13 +151,13 @@ public class SaveSystem : MonoBehaviour
             data.casePerSecondMultiplier = CaseProgressManager.Instance.CasePerSecondMultiplier;
         }
 
-        // Combo data
+        // Combo data (use coin combo stats for backward-compatible fields)
         if (ComboSystem.Instance != null)
         {
             data.currentMaxComboMultiplier = ComboSystem.Instance.CurrentMaxMultiplier;
             data.comboDecayTime = ComboSystem.Instance.ComboDecayTime;
-            data.highestComboReached = ComboSystem.Instance.HighestComboReached;
-            data.comboResetCount = ComboSystem.Instance.ComboResetCount;
+            data.highestComboReached = ComboSystem.Instance.HighestCoinComboReached;
+            data.comboResetCount = ComboSystem.Instance.CoinComboResetCount;
         }
 
         // Idle income data
@@ -321,7 +321,7 @@ public class SaveSystem : MonoBehaviour
             CaseProgressManager.Instance.SetIdleValues(data.baseCasePercentPerSecond, data.casePerSecondMultiplier);
         }
 
-        // Apply to Combo
+        // Apply to Combo (using coin combo stats)
         if (ComboSystem.Instance != null)
         {
             ComboSystem.Instance.SetMaxMultiplier(data.currentMaxComboMultiplier);
@@ -453,7 +453,7 @@ public class SaveData
     public float baseCasePercentPerSecond;
     public float casePerSecondMultiplier = 1f;
 
-    // Combo
+    // Combo (coin combo stats stored for backward compatibility)
     public float currentMaxComboMultiplier = 5f;
     public float comboDecayTime = 3f;
     public float highestComboReached = 1f;

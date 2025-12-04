@@ -18,12 +18,14 @@ public class CaseProgressionUI : MonoBehaviour
     [SerializeField] private Text casePerSecondText;
     [SerializeField] private Text casesDroppedText;
     [SerializeField] private Text clickProgressText;  // Shows progress per click
+    [SerializeField] private Text caseComboText;      // Shows case combo multiplier
 
     [Header("Text Formats")]
     [SerializeField] private string percentFormat = "{0:F1}%";
     [SerializeField] private string cpsFormat = "{0:F2}%/s";
     [SerializeField] private string casesDroppedFormat = "Cases: {0}";
     [SerializeField] private string clickProgressFormat = "+{0:F2}% per click";
+    [SerializeField] private string caseComboFormat = "Combo: {0:F2}x";
 
     [Header("Animation Settings")]
     [SerializeField] private bool animateProgressBar = true;
@@ -40,35 +42,26 @@ public class CaseProgressionUI : MonoBehaviour
     [SerializeField] private AudioClip caseDropSound;
     [SerializeField] private AudioClip progressTickSound;  // Optional sound on progress gain
 
-    [Header("Milestone Notifications")]
-    [SerializeField] private bool showMilestones = true;
-    [SerializeField] private Text milestoneText;
-    [SerializeField] private float milestoneFadeTime = 2f;
-    private float[] milestones = { 25f, 50f, 75f, 90f };
-    private int lastMilestoneIndex = -1;
-
     // Events
     public UnityEvent OnCaseDropped;
     public UnityEvent<float> OnProgressUpdated;
-    public UnityEvent<float> OnMilestoneReached;
 
     // Internal state
     private float displayedProgress = 0f;
     private float targetProgress = 0f;
     private bool isSubscribed = false;
-    private float milestoneTimer = 0f;
 
     private void Awake()
     {
         // Initialize events
         OnCaseDropped ??= new UnityEvent();
         OnProgressUpdated ??= new UnityEvent<float>();
-        OnMilestoneReached ??= new UnityEvent<float>();
     }
 
     private void OnEnable()
     {
         TrySubscribe();
+        RefreshCaseComboText();
     }
 
     private void OnDisable()
@@ -80,6 +73,7 @@ public class CaseProgressionUI : MonoBehaviour
     {
         TrySubscribe();
         InitializeUI();
+        RefreshCaseComboText();
     }
 
     private void Update()
@@ -97,21 +91,10 @@ public class CaseProgressionUI : MonoBehaviour
             ApplyPulseEffect();
         }
 
-        // Fade milestone text
-        if (milestoneTimer > 0f)
-        {
-            milestoneTimer -= Time.deltaTime;
-            if (milestoneText != null)
-            {
-                float alpha = Mathf.Clamp01(milestoneTimer / milestoneFadeTime);
-                Color color = milestoneText.color;
-                color.a = alpha;
-                milestoneText.color = color;
-            }
-        }
-
         // Update CPS display (updates every frame for accuracy)
         UpdateCPSDisplay();
+        // Update Case combo text every frame for responsiveness
+        RefreshCaseComboText();
     }
 
     #region Subscription Management
@@ -126,6 +109,12 @@ public class CaseProgressionUI : MonoBehaviour
         CaseProgressManager.Instance.OnCaseDropped.AddListener(OnCaseDroppedHandler);
         CaseProgressManager.Instance.OnProgressReset.AddListener(OnProgressReset);
 
+        // Subscribe to case combo changes if available
+        if (GameManager.Instance != null && GameManager.Instance.Combo != null)
+        {
+            GameManager.Instance.Combo.OnCaseComboChanged.AddListener(OnCaseComboChanged);
+        }
+
         isSubscribed = true;
         RefreshAllDisplays();
     }
@@ -139,6 +128,11 @@ public class CaseProgressionUI : MonoBehaviour
         CaseProgressManager.Instance.OnProgressGained.RemoveListener(OnProgressGained);
         CaseProgressManager.Instance.OnCaseDropped.RemoveListener(OnCaseDroppedHandler);
         CaseProgressManager.Instance.OnProgressReset.RemoveListener(OnProgressReset);
+
+        if (GameManager.Instance != null && GameManager.Instance.Combo != null)
+        {
+            GameManager.Instance.Combo.OnCaseComboChanged.RemoveListener(OnCaseComboChanged);
+        }
 
         isSubscribed = false;
     }
@@ -158,7 +152,6 @@ public class CaseProgressionUI : MonoBehaviour
         }
 
         UpdatePercentText(currentProgress);
-        CheckMilestones(currentProgress);
         OnProgressUpdated?.Invoke(currentProgress);
     }
 
@@ -176,9 +169,6 @@ public class CaseProgressionUI : MonoBehaviour
 
     private void OnCaseDroppedHandler(CaseData caseData)
     {
-        // Reset milestone tracking
-        lastMilestoneIndex = -1;
-
         // Play case drop sound
         if (caseDropSound != null && audioSource != null)
         {
@@ -212,52 +202,28 @@ public class CaseProgressionUI : MonoBehaviour
         }
     }
 
+    private void OnCaseComboChanged(float newMultiplier)
+    {
+        RefreshCaseComboText();
+        UpdateClickProgressDisplay();
+    }
+
     #endregion
 
     #region UI Updates
 
     private void InitializeUI()
     {
-        // Set up progress bar
-        if (progressBar != null)
-        {
-            progressBar.minValue = 0f;
-            progressBar.maxValue = 100f;
-            progressBar.value = 0f;
-        }
-
-        // Initialize displays
         RefreshAllDisplays();
     }
 
-    public void RefreshAllDisplays()
+    private void RefreshAllDisplays()
     {
-        if (CaseProgressManager.Instance == null) return;
-
-        float currentProgress = CaseProgressManager.Instance.CurrentProgress;
-        targetProgress = currentProgress;
-        displayedProgress = currentProgress;
-
-        UpdateProgressBarVisual(currentProgress);
-        UpdatePercentText(currentProgress);
+        UpdatePercentText(targetProgress);
         UpdateCPSDisplay();
-        UpdateCasesDroppedDisplay();
         UpdateClickProgressDisplay();
-    }
-
-    private void UpdateProgressBarVisual(float progress)
-    {
-        if (progressBar != null)
-        {
-            progressBar.value = progress;
-        }
-
-        // Update fill color based on gradient
-        if (progressFillImage != null && progressGradient != null)
-        {
-            float normalizedProgress = progress / 100f;
-            progressFillImage.color = progressGradient.Evaluate(normalizedProgress);
-        }
+        UpdateCasesDroppedDisplay();
+        RefreshCaseComboText();
     }
 
     private void UpdatePercentText(float progress)
@@ -272,8 +238,7 @@ public class CaseProgressionUI : MonoBehaviour
     {
         if (casePerSecondText != null && CaseProgressManager.Instance != null)
         {
-            float cps = CaseProgressManager.Instance.CurrentCasePercentPerSecond;
-            casePerSecondText.text = string.Format(cpsFormat, cps);
+            casePerSecondText.text = string.Format(cpsFormat, CaseProgressManager.Instance.CurrentCasePercentPerSecond);
         }
     }
 
@@ -281,8 +246,7 @@ public class CaseProgressionUI : MonoBehaviour
     {
         if (casesDroppedText != null && CaseProgressManager.Instance != null)
         {
-            int casesDropped = CaseProgressManager.Instance.TotalCasesDropped;
-            casesDroppedText.text = string.Format(casesDroppedFormat, casesDropped);
+            casesDroppedText.text = string.Format(casesDroppedFormat, CaseProgressManager.Instance.TotalCasesDropped);
         }
     }
 
@@ -290,86 +254,36 @@ public class CaseProgressionUI : MonoBehaviour
     {
         if (clickProgressText != null && ClickerController.Instance != null)
         {
-            float progressPerClick = ClickerController.Instance.CurrentCasePercentPerClick;
-            clickProgressText.text = string.Format(clickProgressFormat, progressPerClick);
+            clickProgressText.text = string.Format(clickProgressFormat, ClickerController.Instance.CurrentCasePercentPerClick);
         }
     }
 
-    #endregion
+    private void RefreshCaseComboText()
+    {
+        if (caseComboText == null) return;
+        float mult = GameManager.Instance?.Combo?.CurrentCaseMultiplier ?? 1f;
+        caseComboText.text = string.Format(caseComboFormat, mult);
+    }
 
-    #region Visual Effects
+    private void UpdateProgressBarVisual(float progress)
+    {
+        if (progressBar != null)
+        {
+            progressBar.value = progress;
+        }
+
+        if (progressFillImage != null && progressGradient != null)
+        {
+            float t = Mathf.Clamp01(progress / 100f);
+            progressFillImage.color = progressGradient.Evaluate(t);
+        }
+    }
 
     private void ApplyPulseEffect()
     {
         if (progressFillImage == null) return;
-
         float pulse = 1f + Mathf.Sin(Time.time * pulseSpeed) * pulseIntensity;
         progressFillImage.transform.localScale = new Vector3(pulse, 1f, 1f);
-    }
-
-    private void CheckMilestones(float progress)
-    {
-        if (!showMilestones) return;
-
-        for (int i = 0; i < milestones.Length; i++)
-        {
-            if (progress >= milestones[i] && i > lastMilestoneIndex)
-            {
-                lastMilestoneIndex = i;
-                ShowMilestoneNotification(milestones[i]);
-                OnMilestoneReached?.Invoke(milestones[i]);
-                break;
-            }
-        }
-    }
-
-    private void ShowMilestoneNotification(float milestone)
-    {
-        if (milestoneText != null)
-        {
-            milestoneText.text = $"{milestone:F0}% Complete! ";
-            milestoneText.color = new Color(milestoneText.color.r, milestoneText.color.g, milestoneText.color.b, 1f);
-            milestoneTimer = milestoneFadeTime;
-        }
-
-        Debug.Log($"[CaseProgressUI] Milestone reached: {milestone}%");
-    }
-
-    #endregion
-
-    #region Public Methods
-
-    /// <summary>
-    /// Force refresh all UI elements. 
-    /// </summary>
-    public void ForceRefresh()
-    {
-        RefreshAllDisplays();
-    }
-
-    /// <summary>
-    /// Set custom milestone percentages. 
-    /// </summary>
-    public void SetMilestones(float[] newMilestones)
-    {
-        milestones = newMilestones;
-        lastMilestoneIndex = -1;
-    }
-
-    /// <summary>
-    /// Get the current displayed progress (may differ from actual during animation).
-    /// </summary>
-    public float GetDisplayedProgress()
-    {
-        return displayedProgress;
-    }
-
-    /// <summary>
-    /// Get the actual current progress. 
-    /// </summary>
-    public float GetActualProgress()
-    {
-        return CaseProgressManager.Instance?.CurrentProgress ?? 0f;
     }
 
     #endregion
