@@ -14,12 +14,35 @@ public class TabButton : MonoBehaviour
     [Header("Visual (optional)")]
     public GameObject selectedHighlight; // assign an indicator (e.g. an image) to show selected state
 
+    // New: assign two assets to visually indicate unselected vs selected states (e.g. images, game objects)
+    [Tooltip("Asset shown when the button is NOT selected (optional)")]
+    public GameObject unselectedAsset;
+    [Tooltip("Asset shown when the button IS selected (optional)")]
+    public GameObject selectedAsset;
+
+    [Header("Audio (optional)")]
+    [Tooltip("Sound to play when the button is clicked (optional)")]
+    public AudioClip clickSfx;
+    [Tooltip("AudioSource to play the click sound from. If not set, one will be added at runtime.")]
+    public AudioSource audioSource;
+
     private Button btn;
 
     private void Awake()
     {
         btn = GetComponent<Button>();
         btn.onClick.AddListener(OnClicked);
+
+        // Ensure we have an AudioSource if a clip is set but no source provided
+        if (audioSource == null && clickSfx != null)
+        {
+            audioSource = gameObject.GetComponent<AudioSource>();
+            if (audioSource == null)
+            {
+                audioSource = gameObject.AddComponent<AudioSource>();
+                audioSource.playOnAwake = false;
+            }
+        }
     }
 
     private void OnEnable()
@@ -50,6 +73,21 @@ public class TabButton : MonoBehaviour
             return;
         }
 
+        // Play click sound if assigned
+        if (clickSfx != null)
+        {
+            if (audioSource == null)
+            {
+                audioSource = gameObject.GetComponent<AudioSource>();
+                if (audioSource == null)
+                {
+                    audioSource = gameObject.AddComponent<AudioSource>();
+                    audioSource.playOnAwake = false;
+                }
+            }
+            audioSource.PlayOneShot(clickSfx);
+        }
+
         SidebarController.Instance?.SelectTab(tabId);
     }
 
@@ -65,8 +103,6 @@ public class TabButton : MonoBehaviour
 
     private void RefreshSelectedState()
     {
-        if (selectedHighlight == null) return;
-
         bool selected = false;
         if (SidebarController.Instance != null)
         {
@@ -84,7 +120,21 @@ public class TabButton : MonoBehaviour
             selected = myIndex >= 0 && myIndex == activeIndex;
         }
 
-        selectedHighlight.SetActive(selected);
+        // Toggle highlight
+        if (selectedHighlight != null)
+        {
+            selectedHighlight.SetActive(selected);
+        }
+
+        // Toggle the two visual assets if provided
+        if (unselectedAsset != null)
+        {
+            unselectedAsset.SetActive(!selected);
+        }
+        if (selectedAsset != null)
+        {
+            selectedAsset.SetActive(selected);
+        }
     }
 
     // helper to get active index quickly (used above)
