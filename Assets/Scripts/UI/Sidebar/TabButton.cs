@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 /// <summary>
 /// Attach to your sidebar Button. Set TabId to match the TabPanel's TabId.
@@ -27,6 +28,7 @@ public class TabButton : MonoBehaviour
     public AudioSource audioSource;
 
     private Button btn;
+    private Coroutine waitForControllerCo;
 
     private void Awake()
     {
@@ -47,13 +49,9 @@ public class TabButton : MonoBehaviour
 
     private void OnEnable()
     {
+        // Try immediate subscription, or defer until controller becomes available
+        TrySubscribeToController();
         RefreshSelectedState();
-        // subscribe to changes so highlight updates when tabs change
-        if (SidebarController.Instance != null)
-        {
-            SidebarController.Instance.OnTabChanged.AddListener(OnTabChanged);
-            SidebarController.Instance.OnTabClosed.AddListener(OnTabClosed);
-        }
     }
 
     private void OnDisable()
@@ -63,6 +61,37 @@ public class TabButton : MonoBehaviour
             SidebarController.Instance.OnTabChanged.RemoveListener(OnTabChanged);
             SidebarController.Instance.OnTabClosed.RemoveListener(OnTabClosed);
         }
+        if (waitForControllerCo != null)
+        {
+            StopCoroutine(waitForControllerCo);
+            waitForControllerCo = null;
+        }
+    }
+
+    private void TrySubscribeToController()
+    {
+        if (SidebarController.Instance != null)
+        {
+            SidebarController.Instance.OnTabChanged.AddListener(OnTabChanged);
+            SidebarController.Instance.OnTabClosed.AddListener(OnTabClosed);
+        }
+        else if (waitForControllerCo == null)
+        {
+            waitForControllerCo = StartCoroutine(WaitForController());
+        }
+    }
+
+    private IEnumerator WaitForController()
+    {
+        // Wait until the controller singleton is set up
+        while (SidebarController.Instance == null)
+        {
+            yield return null; // wait a frame
+        }
+        SidebarController.Instance.OnTabChanged.AddListener(OnTabChanged);
+        SidebarController.Instance.OnTabClosed.AddListener(OnTabClosed);
+        RefreshSelectedState();
+        waitForControllerCo = null;
     }
 
     private void OnClicked()
@@ -93,12 +122,22 @@ public class TabButton : MonoBehaviour
 
     private void OnTabChanged(string newTabId, int idx)
     {
-        RefreshSelectedState();
+        // Directly toggle visuals based on the reported new selected tab id.
+        bool isSelected = !string.IsNullOrEmpty(newTabId) && newTabId == tabId;
+        ApplySelection(isSelected);
     }
 
     private void OnTabClosed(string closedTabId, int idx)
     {
-        RefreshSelectedState();
+        // If this tab was closed, ensure it's visually unselected; otherwise refresh state.
+        if (!string.IsNullOrEmpty(closedTabId) && closedTabId == tabId)
+        {
+            ApplySelection(false);
+        }
+        else
+        {
+            RefreshSelectedState();
+        }
     }
 
     private void RefreshSelectedState()
@@ -106,6 +145,7 @@ public class TabButton : MonoBehaviour
         bool selected = false;
         if (SidebarController.Instance != null)
         {
+            // Prefer index-based mapping if controller uses indexes consistently.
             int activeIndex = -1;
             var panels = SidebarController.Instance.GetAllPanels();
             for (int i = 0; i < panels.Count; i++)
@@ -120,12 +160,16 @@ public class TabButton : MonoBehaviour
             selected = myIndex >= 0 && myIndex == activeIndex;
         }
 
+        ApplySelection(selected);
+    }
+
+    private void ApplySelection(bool selected)
+    {
         // Toggle highlight
         if (selectedHighlight != null)
         {
             selectedHighlight.SetActive(selected);
         }
-
         // Toggle the two visual assets if provided
         if (unselectedAsset != null)
         {
