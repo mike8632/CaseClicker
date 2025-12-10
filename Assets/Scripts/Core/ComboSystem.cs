@@ -1,9 +1,11 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 /// <summary>
 /// Manages two independent Momentum/Combo systems: one for Money (coin) clicks and one for Case clicks.
 /// Each multiplier starts at 1.0x and decays independently.
+/// Progress bars: coin requires a number of clicks to gain 0.01x, case requires a different number.
 /// </summary>
 public class ComboSystem : MonoBehaviour
 {
@@ -14,10 +16,20 @@ public class ComboSystem : MonoBehaviour
     [SerializeField] private float defaultMaxMultiplier = 5.0f;
     [SerializeField] private float absoluteMaxMultiplier = 10.0f;  // Upgraded max
     [SerializeField] private float comboDecayTime = 3.0f;          // Seconds before reset
-    [SerializeField] private float timeToMaxCombo = 1500f;         // ~25 minutes to max (in seconds of active clicking)
 
-    [Header("Combo Build Rate")]
-    [SerializeField] private float baseComboGainPerClick = 0.01f;  // Adjusted based on timeToMaxCombo
+    [Header("Increment Settings")]
+    [Tooltip("Boost added when progress bars complete")]
+    [SerializeField] private float boostPerIncrement = 0.01f;
+    [Tooltip("Coin clicks required to fill the progress bar once")]
+    [SerializeField] private int coinClicksPerIncrement = 17;
+    [Tooltip("Case clicks required to fill the progress bar once")]
+    [SerializeField] private int caseClicksPerIncrement = 14;
+
+    [Header("Progress Bars (optional)")]
+    [Tooltip("Assign the Coin progress Slider here to update it automatically.")]
+    public Slider coinProgressBar;
+    [Tooltip("Assign the Case progress Slider here to update it automatically.")]
+    public Slider caseProgressBar;
 
     // Events
     public UnityEvent<float> OnCoinComboChanged;       // Current coin multiplier
@@ -26,6 +38,9 @@ public class ComboSystem : MonoBehaviour
     public UnityEvent OnCoinComboReset;
     public UnityEvent OnCaseComboReset;
     public UnityEvent OnComboMaxReached;               // Generic notification
+    // New: progress bar updates (current clicks, required clicks)
+    public UnityEvent<int, int> OnCoinProgressChanged;
+    public UnityEvent<int, int> OnCaseProgressChanged;
 
     // Current state (independent)
     private float coinMultiplier = 1.0f;
@@ -37,6 +52,10 @@ public class ComboSystem : MonoBehaviour
     private bool caseComboActive = false;
     private bool coinReachedMax = false;
     private bool caseReachedMax = false;
+
+    // Progress counters for bars
+    private int coinClicksProgress = 0;
+    private int caseClicksProgress = 0;
 
     // Statistics
     private float highestCoinComboReached = 1.0f;
@@ -63,6 +82,8 @@ public class ComboSystem : MonoBehaviour
     public float HighestCaseComboReached => highestCaseComboReached;
     public int CoinComboResetCount => coinComboResetCount;
     public int CaseComboResetCount => caseComboResetCount;
+    public int CoinClicksProgress => coinClicksProgress;
+    public int CaseClicksProgress => caseClicksProgress;
 
     #endregion
 
@@ -82,22 +103,36 @@ public class ComboSystem : MonoBehaviour
         OnCoinComboReset ??= new UnityEvent();
         OnCaseComboReset ??= new UnityEvent();
         OnComboMaxReached ??= new UnityEvent();
+        OnCoinProgressChanged ??= new UnityEvent<int, int>();
+        OnCaseProgressChanged ??= new UnityEvent<int, int>();
 
         // Set initial max multiplier
         currentMaxMultiplier = defaultMaxMultiplier;
         coinMultiplier = minMultiplier;
         caseMultiplier = minMultiplier;
 
-        CalculateComboGainRate();
+        // Init progress bars
+        InitBars();
+
+        // Notify initial progress bars
+        OnCoinProgressChanged?.Invoke(coinClicksProgress, coinClicksPerIncrement);
+        OnCaseProgressChanged?.Invoke(caseClicksProgress, caseClicksPerIncrement);
     }
 
-    private void CalculateComboGainRate()
+    private void InitBars()
     {
-        float assumedClicksPerSecond = 2.5f;
-        float totalGainNeeded = defaultMaxMultiplier - minMultiplier;
-        float totalClicksToMax = timeToMaxCombo * assumedClicksPerSecond;
-        baseComboGainPerClick = totalGainNeeded / totalClicksToMax;
-        Debug.Log($"[Combo] Gain per click: {baseComboGainPerClick:F6}, Clicks to max: {totalClicksToMax:F0}");
+        if (coinProgressBar != null)
+        {
+            coinProgressBar.minValue = 0f;
+            coinProgressBar.maxValue = coinClicksPerIncrement;
+            coinProgressBar.value = coinClicksProgress;
+        }
+        if (caseProgressBar != null)
+        {
+            caseProgressBar.minValue = 0f;
+            caseProgressBar.maxValue = caseClicksPerIncrement;
+            caseProgressBar.value = caseClicksProgress;
+        }
     }
 
     private void Update()
@@ -137,25 +172,44 @@ public class ComboSystem : MonoBehaviour
         coinComboActive = true;
         coinReachedMax = false;
 
-        float previous = coinMultiplier;
-        coinMultiplier += baseComboGainPerClick;
-        coinMultiplier = Mathf.Clamp(coinMultiplier, minMultiplier, currentMaxMultiplier);
-
-        if (coinMultiplier > highestCoinComboReached)
-            highestCoinComboReached = coinMultiplier;
-
-        if (coinMultiplier >= currentMaxMultiplier && !coinReachedMax)
+        // Advance progress bar
+        coinClicksProgress = Mathf.Min(coinClicksProgress + 1, coinClicksPerIncrement);
+        OnCoinProgressChanged?.Invoke(coinClicksProgress, coinClicksPerIncrement);
+        if (coinProgressBar != null)
         {
-            coinReachedMax = true;
-            maxComboReachedCount++;
-            OnComboMaxReached?.Invoke();
-            Debug.Log($"[Combo] COIN MAX COMBO REACHED: {coinMultiplier:F2}x!");
+            coinProgressBar.value = coinClicksProgress;
         }
 
-        if (Mathf.Abs(coinMultiplier - previous) > 0.001f)
+        if (coinClicksProgress >= coinClicksPerIncrement)
         {
-            OnCoinComboChanged?.Invoke(coinMultiplier);
-            GameManager.Instance?.OnComboChanged?.Invoke(coinMultiplier);
+            // Grant boost and reset progress bar
+            coinClicksProgress = 0;
+            float previous = coinMultiplier;
+            coinMultiplier += boostPerIncrement;
+            coinMultiplier = Mathf.Clamp(coinMultiplier, minMultiplier, currentMaxMultiplier);
+
+            if (coinMultiplier > highestCoinComboReached)
+                highestCoinComboReached = coinMultiplier;
+
+            if (coinMultiplier >= currentMaxMultiplier && !coinReachedMax)
+            {
+                coinReachedMax = true;
+                maxComboReachedCount++;
+                OnComboMaxReached?.Invoke();
+            }
+
+            if (Mathf.Abs(coinMultiplier - previous) > 0.00001f)
+            {
+                OnCoinComboChanged?.Invoke(coinMultiplier);
+                GameManager.Instance?.OnComboChanged?.Invoke(coinMultiplier);
+            }
+
+            // Update progress bar after reset
+            OnCoinProgressChanged?.Invoke(coinClicksProgress, coinClicksPerIncrement);
+            if (coinProgressBar != null)
+            {
+                coinProgressBar.value = coinClicksProgress;
+            }
         }
     }
 
@@ -165,24 +219,43 @@ public class ComboSystem : MonoBehaviour
         caseComboActive = true;
         caseReachedMax = false;
 
-        float previous = caseMultiplier;
-        caseMultiplier += baseComboGainPerClick;
-        caseMultiplier = Mathf.Clamp(caseMultiplier, minMultiplier, currentMaxMultiplier);
-
-        if (caseMultiplier > highestCaseComboReached)
-            highestCaseComboReached = caseMultiplier;
-
-        if (caseMultiplier >= currentMaxMultiplier && !caseReachedMax)
+        // Advance progress bar
+        caseClicksProgress = Mathf.Min(caseClicksProgress + 1, caseClicksPerIncrement);
+        OnCaseProgressChanged?.Invoke(caseClicksProgress, caseClicksPerIncrement);
+        if (caseProgressBar != null)
         {
-            caseReachedMax = true;
-            maxComboReachedCount++;
-            OnComboMaxReached?.Invoke();
-            Debug.Log($"[Combo] CASE MAX COMBO REACHED: {caseMultiplier:F2}x!");
+            caseProgressBar.value = caseClicksProgress;
         }
 
-        if (Mathf.Abs(caseMultiplier - previous) > 0.001f)
+        if (caseClicksProgress >= caseClicksPerIncrement)
         {
-            OnCaseComboChanged?.Invoke(caseMultiplier);
+            // Grant boost and reset progress bar
+            caseClicksProgress = 0;
+            float previous = caseMultiplier;
+            caseMultiplier += boostPerIncrement;
+            caseMultiplier = Mathf.Clamp(caseMultiplier, minMultiplier, currentMaxMultiplier);
+
+            if (caseMultiplier > highestCaseComboReached)
+                highestCaseComboReached = caseMultiplier;
+
+            if (caseMultiplier >= currentMaxMultiplier && !caseReachedMax)
+            {
+                caseReachedMax = true;
+                maxComboReachedCount++;
+                OnComboMaxReached?.Invoke();
+            }
+
+            if (Mathf.Abs(caseMultiplier - previous) > 0.00001f)
+            {
+                OnCaseComboChanged?.Invoke(caseMultiplier);
+            }
+
+            // Update progress bar after reset
+            OnCaseProgressChanged?.Invoke(caseClicksProgress, caseClicksPerIncrement);
+            if (caseProgressBar != null)
+            {
+                caseProgressBar.value = caseClicksProgress;
+            }
         }
     }
 
@@ -190,7 +263,6 @@ public class ComboSystem : MonoBehaviour
     {
         if (coinMultiplier > minMultiplier)
         {
-            Debug.Log($"[Combo] Coin combo reset! Was: {coinMultiplier:F2}x");
             coinComboResetCount++;
         }
 
@@ -198,6 +270,13 @@ public class ComboSystem : MonoBehaviour
         coinComboActive = false;
         coinTimeSinceLastClick = 0f;
         coinReachedMax = false;
+        coinClicksProgress = 0;
+        OnCoinProgressChanged?.Invoke(coinClicksProgress, coinClicksPerIncrement);
+        if (coinProgressBar != null)
+        {
+            coinProgressBar.maxValue = coinClicksPerIncrement;
+            coinProgressBar.value = coinClicksProgress;
+        }
 
         OnCoinComboChanged?.Invoke(coinMultiplier);
         OnCoinComboReset?.Invoke();
@@ -208,7 +287,6 @@ public class ComboSystem : MonoBehaviour
     {
         if (caseMultiplier > minMultiplier)
         {
-            Debug.Log($"[Combo] Case combo reset! Was: {caseMultiplier:F2}x");
             caseComboResetCount++;
         }
 
@@ -216,6 +294,13 @@ public class ComboSystem : MonoBehaviour
         caseComboActive = false;
         caseTimeSinceLastClick = 0f;
         caseReachedMax = false;
+        caseClicksProgress = 0;
+        OnCaseProgressChanged?.Invoke(caseClicksProgress, caseClicksPerIncrement);
+        if (caseProgressBar != null)
+        {
+            caseProgressBar.maxValue = caseClicksPerIncrement;
+            caseProgressBar.value = caseClicksProgress;
+        }
 
         OnCaseComboChanged?.Invoke(caseMultiplier);
         OnCaseComboReset?.Invoke();
@@ -229,7 +314,6 @@ public class ComboSystem : MonoBehaviour
     {
         currentMaxMultiplier += additionalMax;
         currentMaxMultiplier = Mathf.Clamp(currentMaxMultiplier, defaultMaxMultiplier, absoluteMaxMultiplier);
-        Debug.Log($"[Combo] Max multiplier upgraded to: {currentMaxMultiplier:F2}x");
     }
 
     public void SetMaxMultiplier(float maxMultiplier)
@@ -240,7 +324,6 @@ public class ComboSystem : MonoBehaviour
     public void UpgradeDecayTime(float additionalSeconds)
     {
         comboDecayTime += additionalSeconds;
-        Debug.Log($"[Combo] Decay time upgraded to: {comboDecayTime:F1}s");
     }
 
     public void SetDecayTime(float decayTime)
@@ -250,8 +333,7 @@ public class ComboSystem : MonoBehaviour
 
     public void UpgradeComboGainRate(float multiplier)
     {
-        baseComboGainPerClick *= multiplier;
-        Debug.Log($"[Combo] Combo gain rate upgraded to: {baseComboGainPerClick:F6}/click");
+        boostPerIncrement *= multiplier;
     }
 
     public void SetStatistics(float highestCoinCombo, int coinResetCount, int maxReachedCount)

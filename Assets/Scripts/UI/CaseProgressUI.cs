@@ -1,6 +1,6 @@
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 /// <summary>
 /// UI Controller for Case Progression display. 
@@ -51,6 +51,11 @@ public class CaseProgressionUI : MonoBehaviour
     private float targetProgress = 0f;
     private bool isSubscribed = false;
 
+    // Cached systems (similar to MoneyUI style)
+    private ClickerController clicker => ClickerController.Instance;
+    private CaseProgressManager progressMgr => CaseProgressManager.Instance;
+    private ComboSystem Combo => GameManager.Instance?.Combo;
+
     private void Awake()
     {
         // Initialize events
@@ -62,6 +67,7 @@ public class CaseProgressionUI : MonoBehaviour
     {
         TrySubscribe();
         RefreshCaseComboText();
+        RefreshAllDisplays();
     }
 
     private void OnDisable()
@@ -91,10 +97,13 @@ public class CaseProgressionUI : MonoBehaviour
             ApplyPulseEffect();
         }
 
-        // Update CPS display (updates every frame for accuracy)
+        // Update fast-changing values smoothly (match MoneyUI approach)
         UpdateCPSDisplay();
-        // Update Case combo text every frame for responsiveness
         RefreshCaseComboText();
+        // Also ensure percent and per-click remain responsive
+        UpdatePercentText(targetProgress);
+        UpdateClickProgressDisplay();
+        UpdateCasesDroppedDisplay();
     }
 
     #region Subscription Management
@@ -102,17 +111,17 @@ public class CaseProgressionUI : MonoBehaviour
     private void TrySubscribe()
     {
         if (isSubscribed) return;
-        if (CaseProgressManager.Instance == null) return;
+        if (progressMgr == null) return;
 
-        CaseProgressManager.Instance.OnProgressChanged.AddListener(OnProgressChanged);
-        CaseProgressManager.Instance.OnProgressGained.AddListener(OnProgressGained);
-        CaseProgressManager.Instance.OnCaseDropped.AddListener(OnCaseDroppedHandler);
-        CaseProgressManager.Instance.OnProgressReset.AddListener(OnProgressReset);
+        progressMgr.OnProgressChanged.AddListener(OnProgressChanged);
+        progressMgr.OnProgressGained.AddListener(OnProgressGained);
+        progressMgr.OnCaseDropped.AddListener(OnCaseDroppedHandler);
+        progressMgr.OnProgressReset.AddListener(OnProgressReset);
 
         // Subscribe to case combo changes if available
-        if (GameManager.Instance != null && GameManager.Instance.Combo != null)
+        if (Combo != null)
         {
-            GameManager.Instance.Combo.OnCaseComboChanged.AddListener(OnCaseComboChanged);
+            Combo.OnCaseComboChanged.AddListener(OnCaseComboChanged);
         }
 
         isSubscribed = true;
@@ -122,16 +131,16 @@ public class CaseProgressionUI : MonoBehaviour
     private void Unsubscribe()
     {
         if (!isSubscribed) return;
-        if (CaseProgressManager.Instance == null) return;
+        if (progressMgr == null) return;
 
-        CaseProgressManager.Instance.OnProgressChanged.RemoveListener(OnProgressChanged);
-        CaseProgressManager.Instance.OnProgressGained.RemoveListener(OnProgressGained);
-        CaseProgressManager.Instance.OnCaseDropped.RemoveListener(OnCaseDroppedHandler);
-        CaseProgressManager.Instance.OnProgressReset.RemoveListener(OnProgressReset);
+        progressMgr.OnProgressChanged.RemoveListener(OnProgressChanged);
+        progressMgr.OnProgressGained.RemoveListener(OnProgressGained);
+        progressMgr.OnCaseDropped.RemoveListener(OnCaseDroppedHandler);
+        progressMgr.OnProgressReset.RemoveListener(OnProgressReset);
 
-        if (GameManager.Instance != null && GameManager.Instance.Combo != null)
+        if (Combo != null)
         {
-            GameManager.Instance.Combo.OnCaseComboChanged.RemoveListener(OnCaseComboChanged);
+            Combo.OnCaseComboChanged.RemoveListener(OnCaseComboChanged);
         }
 
         isSubscribed = false;
@@ -188,8 +197,6 @@ public class CaseProgressionUI : MonoBehaviour
 
         // Trigger event
         OnCaseDropped?.Invoke();
-
-        Debug.Log($"[CaseProgressUI] Case dropped!  {(caseData != null ? caseData.caseName : "Unknown Case")}");
     }
 
     private void OnProgressReset()
@@ -228,41 +235,34 @@ public class CaseProgressionUI : MonoBehaviour
 
     private void UpdatePercentText(float progress)
     {
-        if (progressPercentText != null)
-        {
-            progressPercentText.text = string.Format(percentFormat, progress);
-        }
+        if (progressPercentText == null) return;
+        progressPercentText.text = string.Format(percentFormat, progress);
     }
 
     private void UpdateCPSDisplay()
     {
-        if (casePerSecondText != null && CaseProgressManager.Instance != null)
-        {
-            casePerSecondText.text = string.Format(cpsFormat, CaseProgressManager.Instance.CurrentCasePercentPerSecond);
-        }
+        if (casePerSecondText == null || progressMgr == null) return;
+        casePerSecondText.text = string.Format(cpsFormat, progressMgr.CurrentCasePercentPerSecond);
     }
 
     private void UpdateCasesDroppedDisplay()
     {
-        if (casesDroppedText != null && CaseProgressManager.Instance != null)
-        {
-            casesDroppedText.text = string.Format(casesDroppedFormat, CaseProgressManager.Instance.TotalCasesDropped);
-        }
+        if (casesDroppedText == null || progressMgr == null) return;
+        casesDroppedText.text = string.Format(casesDroppedFormat, progressMgr.TotalCasesDropped);
     }
 
     private void UpdateClickProgressDisplay()
     {
-        if (clickProgressText != null && ClickerController.Instance != null)
-        {
-            clickProgressText.text = string.Format(clickProgressFormat, ClickerController.Instance.CurrentCasePercentPerClick);
-        }
+        if (clickProgressText == null || clicker == null) return;
+        clickProgressText.text = string.Format(clickProgressFormat, clicker.CurrentCasePercentPerClick);
     }
 
     private void RefreshCaseComboText()
     {
-        if (caseComboText == null) return;
-        float mult = GameManager.Instance?.Combo?.CurrentCaseMultiplier ?? 1f;
-        caseComboText.text = string.Format(caseComboFormat, mult);
+        if (caseComboText == null || Combo == null) return;
+
+        string processedFormat = caseComboFormat.Replace("\\n", "\n");
+        caseComboText.text = string.Format(processedFormat, Combo.CurrentCaseMultiplier);
     }
 
     private void UpdateProgressBarVisual(float progress)

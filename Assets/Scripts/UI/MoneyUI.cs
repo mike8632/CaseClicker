@@ -110,6 +110,9 @@ public class MoneyUI : MonoBehaviour
     private void UpdateCombo()
     {
         if (comboText == null || combo == null) return;
-        comboText.text = string.Format(comboFormat, combo.CurrentMultiplier);
+
+        string processedFormat = comboFormat.Replace("\\n", "\n");
+
+        comboText.text = string.Format(processedFormat, combo.CurrentMultiplier);
     }
 }
