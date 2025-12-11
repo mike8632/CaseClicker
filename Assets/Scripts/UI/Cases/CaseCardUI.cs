@@ -67,6 +67,11 @@ public class CaseCardUI : MonoBehaviour
         if (GameManager.Instance != null)
         {
             GameManager.Instance.OnGameInitialized.AddListener(OnGameInitialized);
+            GameManager.Instance.OnCaseDropped.AddListener(OnCaseDropped);
+        }
+        if (CaseInventoryManager.Instance != null)
+        {
+            CaseInventoryManager.Instance.OnCaseCountChanged.AddListener(OnCaseCountChanged);
         }
         if (SaveSystem.Instance != null)
         {
@@ -79,6 +84,11 @@ public class CaseCardUI : MonoBehaviour
         if (GameManager.Instance != null)
         {
             GameManager.Instance.OnGameInitialized.RemoveListener(OnGameInitialized);
+            GameManager.Instance.OnCaseDropped.RemoveListener(OnCaseDropped);
+        }
+        if (CaseInventoryManager.Instance != null)
+        {
+            CaseInventoryManager.Instance.OnCaseCountChanged.RemoveListener(OnCaseCountChanged);
         }
         if (SaveSystem.Instance != null)
         {
@@ -96,6 +106,24 @@ public class CaseCardUI : MonoBehaviour
         Refresh();
     }
 
+    private void OnCaseDropped(CaseData dropped)
+    {
+        if (dropped == null || data == null) return;
+        if (dropped.caseId == data.caseId)
+        {
+            Refresh();
+        }
+    }
+
+    private void OnCaseCountChanged(string caseId)
+    {
+        if (data == null) return;
+        if (caseId == data.caseId)
+        {
+            Refresh();
+        }
+    }
+    
     public void SetData(CaseData caseData)
     {
         data = caseData;

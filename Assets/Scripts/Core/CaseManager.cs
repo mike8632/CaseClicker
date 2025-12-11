@@ -121,38 +121,49 @@ public class CaseProgressManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Drop a random case from the available pool.
+    /// Drop a +1 to a random unlocked case in the inventory.
     /// </summary>
     private void DropCase()
     {
         totalCasesDropped++;
 
-        CaseData droppedCase = GetRandomCase();
+        CaseData droppedCase = null;
+
+        // Make sure we have an inventory
+        if (CaseInventoryManager.Instance != null)
+        {
+            // Pick a random unlocked caseId
+            string caseId = CaseInventoryManager.Instance
+                .GetRandomUnlockedCaseId(requireAtLeastOneOwned: false);
+
+            if (!string.IsNullOrEmpty(caseId))
+            {
+                // Give +1 of that case
+                CaseInventoryManager.Instance.AddCases(caseId, 1);
+
+                // Optional: try to find a matching CaseData for stats / UI.
+                // If you don't maintain availableCases, this will just stay null.
+                droppedCase = FindCaseById(caseId);
+            }
+        }
 
         if (droppedCase != null)
         {
-            // Add the dropped case to inventory (only if unlocked)
-            if (CaseInventoryManager.Instance == null || CaseInventoryManager.Instance.IsCaseUnlocked(droppedCase.caseId))
-            {
-                CaseInventoryManager.Instance?.AddCases(droppedCase.caseId, 1);
-            }
-
             Debug.Log($"[CaseProgress] Case Dropped: {droppedCase.caseName}!");
             OnCaseDropped?.Invoke(droppedCase);
             GameManager.Instance?.OnCaseDropped?.Invoke(droppedCase);
-
-            // Record statistics
             GameManager.Instance?.Statistics?.RecordCaseDrop(droppedCase);
         }
         else
         {
-            Debug.Log($"[CaseProgress] Case Dropped!  (No case data available - Case #{totalCasesDropped})");
+            Debug.Log($"[CaseProgress] Case Dropped! (No unlocked case to award - Drop #{totalCasesDropped})");
             OnCaseDropped?.Invoke(null);
             GameManager.Instance?.OnCaseDropped?.Invoke(null);
         }
 
         OnProgressReset?.Invoke();
     }
+
 
     /// <summary>
     /// Get a random unlocked case from the available pool (falls back to all if none unlocked).
@@ -333,6 +344,15 @@ public class CaseProgressManager : MonoBehaviour
         CaseInventoryManager.Instance.AddCases(c.caseId, 1);
         OnCaseDropped?.Invoke(c);
         GameManager.Instance?.OnCaseDropped?.Invoke(c);
+    }
+
+    /// <summary>
+    /// Award one random unlocked case from the available pool, accepting a caseId parameter for compatibility.
+    /// The provided caseId is ignored; a random unlocked case will be incremented by +1.
+    /// </summary>
+    public void AwardRandomUnlockedCase(string _)
+    {
+        AwardRandomUnlockedCase();
     }
 
     // Helper to find a case by id from the available pool

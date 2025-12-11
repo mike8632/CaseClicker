@@ -26,6 +26,9 @@ public class CaseInventoryManager : MonoBehaviour
 
     private readonly Dictionary<string, CaseEntry> _entries = new Dictionary<string, CaseEntry>();
 
+    // Event fired when a case count changes (caseId provided)
+    public UnityEngine.Events.UnityEvent<string> OnCaseCountChanged;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -34,6 +37,9 @@ public class CaseInventoryManager : MonoBehaviour
             return;
         }
         Instance = this;
+
+        // Initialize event
+        OnCaseCountChanged ??= new UnityEngine.Events.UnityEvent<string>();
 
         // Seed from initial entries
         foreach (var e in initialEntries)
@@ -48,6 +54,52 @@ public class CaseInventoryManager : MonoBehaviour
                 casePriceOverride = e.casePriceOverride,
                 caseSellPriceOverride = e.caseSellPriceOverride
             };
+        }
+    }
+
+    private void OnEnable()
+    {
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.OnGameInitialized.AddListener(OnGameInitialized);
+        }
+        if (SaveSystem.Instance != null)
+        {
+            SaveSystem.Instance.OnLoadCompleted.AddListener(OnSaveLoadCompleted);
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.OnGameInitialized.RemoveListener(OnGameInitialized);
+        }
+        if (SaveSystem.Instance != null)
+        {
+            SaveSystem.Instance.OnLoadCompleted.RemoveListener(OnSaveLoadCompleted);
+        }
+    }
+
+    private void OnGameInitialized()
+    {
+        BroadcastInventoryChanged();
+    }
+
+    private void OnSaveLoadCompleted()
+    {
+        BroadcastInventoryChanged();
+    }
+
+    /// <summary>
+    /// Emit OnCaseCountChanged for all known entries to force UI refresh.
+    /// </summary>
+    public void BroadcastInventoryChanged()
+    {
+        foreach (var kv in _entries)
+        {
+            var id = kv.Key;
+            OnCaseCountChanged?.Invoke(id);
         }
     }
 
@@ -116,6 +168,8 @@ public class CaseInventoryManager : MonoBehaviour
         // auto-unlock if we now own at least 1
         if (e.ownedCount > 0)
             e.unlocked = true;
+
+        OnCaseCountChanged?.Invoke(caseId);
     }
 
 
@@ -125,6 +179,7 @@ public class CaseInventoryManager : MonoBehaviour
         if (_entries.TryGetValue(caseId, out var e))
         {
             e.ownedCount = Mathf.Max(0, e.ownedCount - amount);
+            OnCaseCountChanged?.Invoke(caseId);
         }
     }
 
@@ -264,6 +319,31 @@ public class CaseInventoryManager : MonoBehaviour
             Debug.LogWarning($"[CaseInventory] Could not open case '{data?.caseName}' (requires 1 case and 1 key)");
         }
     }
+    public string GetRandomUnlockedCaseId(bool requireAtLeastOneOwned = false)
+    {
+        var candidates = new List<string>();
+
+        foreach (var kv in _entries)
+        {
+            var e = kv.Value;
+            if (!e.unlocked)
+                continue;
+
+            if (requireAtLeastOneOwned && e.ownedCount <= 0)
+                continue;
+
+            // use the caseId stored in the entry
+            if (!string.IsNullOrEmpty(e.caseId))
+                candidates.Add(e.caseId);
+        }
+
+        if (candidates.Count == 0)
+            return null;
+
+        int index = Random.Range(0, candidates.Count);
+        return candidates[index];
+    }
+
 
     public System.Collections.Generic.List<CaseEntryDTO> GetSnapshot()
     {
