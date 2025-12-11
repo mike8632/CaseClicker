@@ -304,6 +304,7 @@ public class CaseData
     public Sprite caseIcon;
     public float dropWeight = 1f;       // Higher = more common
     public float keyPrice = 2.50f;      // Cost to open the case
+    public float casePrice = 0.60f;     // Cost to buy the case itself
     public CaseRarity rarity;
 
     // Item pool for this case (to be expanded)
