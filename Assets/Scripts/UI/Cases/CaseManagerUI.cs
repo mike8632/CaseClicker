@@ -28,6 +28,56 @@ public class CaseManagerUI : MonoBehaviour
     private void OnEnable()
     {
         Refresh();
+        if (CaseInventoryManager.Instance != null)
+        {
+            CaseInventoryManager.Instance.OnCaseCountChanged.AddListener(OnCaseCountChanged);
+        }
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.OnCaseDropped.AddListener(OnCaseDropped);
+            GameManager.Instance.OnGameInitialized.AddListener(OnGameInitialized);
+        }
+        if (SaveSystem.Instance != null)
+        {
+            SaveSystem.Instance.OnLoadCompleted.AddListener(OnSaveLoadCompleted);
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (CaseInventoryManager.Instance != null)
+        {
+            CaseInventoryManager.Instance.OnCaseCountChanged.RemoveListener(OnCaseCountChanged);
+        }
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.OnCaseDropped.RemoveListener(OnCaseDropped);
+            GameManager.Instance.OnGameInitialized.RemoveListener(OnGameInitialized);
+        }
+        if (SaveSystem.Instance != null)
+        {
+            SaveSystem.Instance.OnLoadCompleted.RemoveListener(OnSaveLoadCompleted);
+        }
+    }
+
+    private void OnCaseCountChanged(string caseId)
+    {
+        Refresh();
+    }
+
+    private void OnCaseDropped(CaseData data)
+    {
+        Refresh();
+    }
+
+    private void OnGameInitialized()
+    {
+        Refresh();
+    }
+
+    private void OnSaveLoadCompleted()
+    {
+        Refresh();
     }
 
     /// <summary>

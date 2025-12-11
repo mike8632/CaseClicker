@@ -256,4 +256,16 @@ public class CaseCardUI : MonoBehaviour
         CaseInventoryManager.Instance?.OpenCase(data);
         Refresh();
     }
+
+    private void Update()
+    {
+        if (data == null) return;
+        var inv = CaseInventoryManager.Instance;
+        if (inv == null) return;
+        int current = inv.GetCaseCount(data.caseId);
+        if (current != ownedCount)
+        {
+            UpdateCount(current);
+        }
+    }
 }
