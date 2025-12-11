@@ -154,7 +154,6 @@ public class CaseCardUI : MonoBehaviour
         if (nameText) nameText.text = data.caseName;
         if (icon) icon.sprite = data.caseIcon;
 
-        // Read counts from inventory
         int caseCount = CaseInventoryManager.Instance != null
             ? CaseInventoryManager.Instance.GetCaseCount(data.caseId)
             : ownedCount;
@@ -163,17 +162,15 @@ public class CaseCardUI : MonoBehaviour
             : 0;
         UpdateCount(caseCount);
 
-        // Unlock state
-        bool unlocked = CaseInventoryManager.Instance == null
-            ? true
-            : CaseInventoryManager.Instance.IsCaseUnlocked(data.caseId);
+        // Unlock state: default to true until inventory is ready
+        bool unlocked = true;
+        if (CaseInventoryManager.Instance != null)
+        {
+            unlocked = CaseInventoryManager.Instance.IsCaseUnlocked(data.caseId);
+        }
 
         if (lockOverlay) lockOverlay.SetActive(!unlocked);
 
-        // Button visibility logic:
-        // - If no cases owned: show BUY CASE
-        // - If cases owned but no keys: show BUY KEY and SELL
-        // - If cases owned and keys owned: show OPEN and SELL (hide BUY KEY)
         bool hasCase = unlocked && caseCount > 0;
         bool hasKey = unlocked && keyCount > 0;
         bool canBuyCase = unlocked && caseCount == 0;
@@ -201,12 +198,11 @@ public class CaseCardUI : MonoBehaviour
 
         if (sellCaseButton)
         {
-            bool showSell = hasCase; // can sell if at least 1 case
+            bool showSell = hasCase;
             sellCaseButton.gameObject.SetActive(showSell);
             sellCaseButton.interactable = showSell;
         }
 
-        // Prices
         float casePrice = CaseInventoryManager.Instance != null
             ? CaseInventoryManager.Instance.GetCasePrice(data)
             : data.casePrice;

@@ -18,6 +18,7 @@ public class CaseManagerUI : MonoBehaviour
 
     private readonly List<CaseCardUI> _cards = new List<CaseCardUI>();
     private string _currentSearch = string.Empty;
+    private Coroutine _delayedRefreshRoutine;
 
     private void Awake()
     {
@@ -29,13 +30,49 @@ public class CaseManagerUI : MonoBehaviour
         if (searchInput != null)
             searchInput.onValueChanged.AddListener(OnSearchChanged);
 
+        // Subscribe to init/load events so cards refresh lock/unlock state and counts immediately
+        if (GameManager.Instance != null)
+            GameManager.Instance.OnGameInitialized.AddListener(OnGameInitialized);
+        if (SaveSystem.Instance != null)
+            SaveSystem.Instance.OnLoadCompleted.AddListener(OnSaveLoadCompleted);
+
         ApplySearchFilter();
+
+        // Start a delayed refresh that waits until inventory is ready
+        if (_delayedRefreshRoutine != null)
+        {
+            StopCoroutine(_delayedRefreshRoutine);
+        }
+        _delayedRefreshRoutine = StartCoroutine(WaitForInventoryThenRefresh());
     }
 
     private void OnDisable()
     {
         if (searchInput != null)
             searchInput.onValueChanged.RemoveListener(OnSearchChanged);
+
+        if (GameManager.Instance != null)
+            GameManager.Instance.OnGameInitialized.RemoveListener(OnGameInitialized);
+        if (SaveSystem.Instance != null)
+            SaveSystem.Instance.OnLoadCompleted.RemoveListener(OnSaveLoadCompleted);
+
+        if (_delayedRefreshRoutine != null)
+        {
+            StopCoroutine(_delayedRefreshRoutine);
+            _delayedRefreshRoutine = null;
+        }
+    }
+
+    private System.Collections.IEnumerator WaitForInventoryThenRefresh()
+    {
+        // Wait until CaseInventoryManager exists
+        while (CaseInventoryManager.Instance == null)
+        {
+            yield return null; // wait a frame
+        }
+        // Small extra frame to allow save data application
+        yield return null;
+        RefreshAllCards();
     }
 
     /// <summary>
@@ -61,6 +98,7 @@ public class CaseManagerUI : MonoBehaviour
     {
         RebuildCardList();
         ApplySearchFilter();
+        RefreshAllCards();
     }
 
     private void OnSearchChanged(string text)
@@ -98,5 +136,25 @@ public class CaseManagerUI : MonoBehaviour
 
             card.gameObject.SetActive(show);
         }
+    }
+
+    private void RefreshAllCards()
+    {
+        foreach (var card in _cards)
+        {
+            if (card == null) continue;
+            // Do not seed locked here; wait for inventory to provide true unlock states
+            card.Refresh();
+        }
+    }
+
+    private void OnGameInitialized()
+    {
+        Refresh();
+    }
+
+    private void OnSaveLoadCompleted()
+    {
+        Refresh();
     }
 }

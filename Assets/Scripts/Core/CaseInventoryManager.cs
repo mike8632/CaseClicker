@@ -364,4 +364,10 @@ public class CaseInventoryManager : MonoBehaviour
         }
         return list;
     }
+
+    public bool HasEntry(string caseId)
+    {
+        if (string.IsNullOrEmpty(caseId)) return false;
+        return _entries.ContainsKey(caseId);
+    }
 }
