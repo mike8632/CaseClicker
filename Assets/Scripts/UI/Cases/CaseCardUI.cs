@@ -265,7 +265,8 @@ public class CaseCardUI : MonoBehaviour
         int current = inv.GetCaseCount(data.caseId);
         if (current != ownedCount)
         {
-            UpdateCount(current);
+            // Use full Refresh to update button visibility and other UI states
+            Refresh();
         }
     }
 }
