@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     public UnityEvent<float> OnCaseProgressChanged;
     public UnityEvent<CaseData> OnCaseDropped;
     public UnityEvent<float> OnComboChanged;
+    public UnityEvent<CaseData> OnCaseOpened; // NEW: fired when a case is opened (consumes 1 case + 1 key)
 
     // Properties
     public bool IsGamePaused => isGamePaused;
@@ -45,12 +46,7 @@ public class GameManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        InitializeSystems();
-    }
-
-    private void InitializeSystems()
-    {
-        // Initialize events
+        // Initialize events if null
         OnGameInitialized ??= new UnityEvent();
         OnGamePaused ??= new UnityEvent();
         OnGameResumed ??= new UnityEvent();
@@ -58,7 +54,13 @@ public class GameManager : MonoBehaviour
         OnCaseProgressChanged ??= new UnityEvent<float>();
         OnCaseDropped ??= new UnityEvent<CaseData>();
         OnComboChanged ??= new UnityEvent<float>();
+        OnCaseOpened ??= new UnityEvent<CaseData>();
 
+        InitializeSystems();
+    }
+
+    private void InitializeSystems()
+    {
         // Get or create core systems
         Balance = GetOrAddComponent<BalanceManager>();
         CaseProgress = GetOrAddComponent<CaseProgressManager>();
@@ -111,6 +113,12 @@ public class GameManager : MonoBehaviour
     public void TriggerComboChanged(float multiplier)
     {
         OnComboChanged?.Invoke(multiplier);
+    }
+
+    // Optional: helper to raise OnCaseOpened centrally
+    public void RaiseCaseOpened(CaseData data)
+    {
+        OnCaseOpened?.Invoke(data);
     }
 
     #endregion

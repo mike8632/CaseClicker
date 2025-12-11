@@ -13,10 +13,11 @@ public class CaseInventoryManager : MonoBehaviour
     public class CaseEntry
     {
         public string caseId;
-        public int ownedCount;
+        public int ownedCount;            // number of cases owned
+        public int ownedKeys;             // number of keys owned for this case
         public bool unlocked;
-        public float keyPrice; // override if you want a custom key price per caseId
-        public float casePriceOverride; // optional override for case purchase price
+        public float keyPrice;            // override key price per caseId
+        public float casePriceOverride;   // optional override for case purchase price
         public float caseSellPriceOverride; // optional override for selling price
     }
 
@@ -41,6 +42,7 @@ public class CaseInventoryManager : MonoBehaviour
             _entries[e.caseId] = new CaseEntry {
                 caseId = e.caseId,
                 ownedCount = e.ownedCount,
+                ownedKeys = e.ownedKeys,
                 unlocked = e.unlocked,
                 keyPrice = e.keyPrice,
                 casePriceOverride = e.casePriceOverride,
@@ -71,6 +73,13 @@ public class CaseInventoryManager : MonoBehaviour
     {
         if (string.IsNullOrEmpty(caseId)) return 0;
         if (_entries.TryGetValue(caseId, out var e)) return e.ownedCount;
+        return 0;
+    }
+
+    public int GetKeyCount(string caseId)
+    {
+        if (string.IsNullOrEmpty(caseId)) return 0;
+        if (_entries.TryGetValue(caseId, out var e)) return e.ownedKeys;
         return 0;
     }
 
@@ -114,6 +123,26 @@ public class CaseInventoryManager : MonoBehaviour
         }
     }
 
+    public void AddKeys(string caseId, int amount)
+    {
+        if (string.IsNullOrEmpty(caseId) || amount <= 0) return;
+        if (!_entries.TryGetValue(caseId, out var e))
+        {
+            e = new CaseEntry { caseId = caseId, unlocked = true };
+            _entries[caseId] = e;
+        }
+        e.ownedKeys += amount;
+    }
+
+    public void RemoveKeys(string caseId, int amount)
+    {
+        if (string.IsNullOrEmpty(caseId) || amount <= 0) return;
+        if (_entries.TryGetValue(caseId, out var e))
+        {
+            e.ownedKeys = Mathf.Max(0, e.ownedKeys - amount);
+        }
+    }
+
     public bool TryBuyCaseKey(CaseData data)
     {
         if (data == null || string.IsNullOrEmpty(data.caseId)) return false;
@@ -125,7 +154,7 @@ public class CaseInventoryManager : MonoBehaviour
         if (money < price) return false;
 
         BalanceManager.Instance?.SpendMoney(price);
-        AddCases(data.caseId, 1);
+        AddKeys(data.caseId, 1); // keys, not cases
         return true;
     }
 
@@ -207,6 +236,27 @@ public class CaseInventoryManager : MonoBehaviour
         if (!TrySellCase(data))
         {
             Debug.LogWarning($"[CaseInventory] Could not sell case '{data?.caseName}' (none owned)");
+        }
+    }
+
+    // Opening a case: requires at least 1 case and 1 key, consumes both
+    public bool TryOpenCase(CaseData data)
+    {
+        if (data == null || string.IsNullOrEmpty(data.caseId)) return false;
+        if (GetCaseCount(data.caseId) <= 0) return false;
+        if (GetKeyCount(data.caseId) <= 0) return false;
+        RemoveCases(data.caseId, 1);
+        RemoveKeys(data.caseId, 1);
+        // Trigger whatever system opens the case (not implemented here)
+        GameManager.Instance?.OnCaseOpened?.Invoke(data);
+        return true;
+    }
+
+    public void OpenCase(CaseData data)
+    {
+        if (!TryOpenCase(data))
+        {
+            Debug.LogWarning($"[CaseInventory] Could not open case '{data?.caseName}' (requires 1 case and 1 key)");
         }
     }
 }
