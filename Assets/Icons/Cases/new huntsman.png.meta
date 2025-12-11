@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c900af1e137b1e54cbf699d3dd9dd5c7
+guid: 5c9ca6c96f7c1724cba0896229dedae3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4029819251187114856
-    second: weapon_0
+      213: 4620559834575036594
+    second: new huntsman_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: weapon_0
+      name: new huntsman_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 238
-        height: 176
+        x: 7
+        y: 40
+        width: 243
+        height: 177
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 89c16ffedb43318c0800000000000000
-      internalID: -4029819251187114856
+      spriteID: 2b0684350b68f1040800000000000000
+      internalID: 4620559834575036594
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      weapon_0: -4029819251187114856
+      new huntsman_0: 4620559834575036594
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

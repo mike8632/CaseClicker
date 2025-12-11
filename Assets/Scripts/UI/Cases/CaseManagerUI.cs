@@ -3,155 +3,100 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 
 /// <summary>
-/// Simple UI manager that renders a grid/list of case "cards".
-/// Each card shows: icon, name, and owned count.
-/// Bind this to your Case Manager panel and assign a `contentParent` and `cardPrefab`.
+/// Handles search/filtering for existing CaseCardUI children under contentParent.
+/// It does NOT spawn or destroy cards; it just shows/hides them based on the search text.
 /// </summary>
 public class CaseManagerUI : MonoBehaviour
 {
     [Header("Setup")]
-    [Tooltip("Parent transform where cards will be instantiated (e.g., a Vertical/Horizontal/Grid Layout group)")]
+    [Tooltip("Parent that contains all the case rows (each with a CaseCardUI).")]
     public Transform contentParent;
 
-    [Tooltip("Prefab containing a CaseCardUI component to display a single case")]
-    public GameObject cardPrefab;
+    [Header("Search")]
+    [Tooltip("InputField used to type the search query.")]
+    public InputField searchInput;
 
-    [Header("Data Source (optional)")]
-    [Tooltip("If set, will use cases from CaseProgressManager. If null, provide cases manually in `manualCases`.")]
-    public CaseProgressManager progressManager;
+    private readonly List<CaseCardUI> _cards = new List<CaseCardUI>();
+    private string _currentSearch = string.Empty;
 
-    [Tooltip("Manual cases to render if no progressManager provided")]
-    public List<CaseData> manualCases = new List<CaseData>();
-
-    private readonly List<CaseCardUI> _spawnedCards = new List<CaseCardUI>();
+    private void Awake()
+    {
+        RebuildCardList();
+    }
 
     private void OnEnable()
     {
-        Refresh();
-        if (CaseInventoryManager.Instance != null)
-        {
-            CaseInventoryManager.Instance.OnCaseCountChanged.AddListener(OnCaseCountChanged);
-        }
-        if (GameManager.Instance != null)
-        {
-            GameManager.Instance.OnCaseDropped.AddListener(OnCaseDropped);
-            GameManager.Instance.OnGameInitialized.AddListener(OnGameInitialized);
-        }
-        if (SaveSystem.Instance != null)
-        {
-            SaveSystem.Instance.OnLoadCompleted.AddListener(OnSaveLoadCompleted);
-        }
+        if (searchInput != null)
+            searchInput.onValueChanged.AddListener(OnSearchChanged);
+
+        ApplySearchFilter();
     }
 
     private void OnDisable()
     {
-        if (CaseInventoryManager.Instance != null)
-        {
-            CaseInventoryManager.Instance.OnCaseCountChanged.RemoveListener(OnCaseCountChanged);
-        }
-        if (GameManager.Instance != null)
-        {
-            GameManager.Instance.OnCaseDropped.RemoveListener(OnCaseDropped);
-            GameManager.Instance.OnGameInitialized.RemoveListener(OnGameInitialized);
-        }
-        if (SaveSystem.Instance != null)
-        {
-            SaveSystem.Instance.OnLoadCompleted.RemoveListener(OnSaveLoadCompleted);
-        }
-    }
-
-    private void OnCaseCountChanged(string caseId)
-    {
-        Refresh();
-    }
-
-    private void OnCaseDropped(CaseData data)
-    {
-        Refresh();
-    }
-
-    private void OnGameInitialized()
-    {
-        Refresh();
-    }
-
-    private void OnSaveLoadCompleted()
-    {
-        Refresh();
+        if (searchInput != null)
+            searchInput.onValueChanged.RemoveListener(OnSearchChanged);
     }
 
     /// <summary>
-    /// Rebuild the cards from the data source.
+    /// Re-scan children under contentParent for CaseCardUI components.
+    /// Call this if you add/remove case rows at runtime.
+    /// </summary>
+    public void RebuildCardList()
+    {
+        _cards.Clear();
+
+        // Use contentParent if set, otherwise fall back to this panel's transform.
+        Transform root = contentParent != null ? contentParent : transform;
+
+        // true = include inactive children as well
+        _cards.AddRange(root.GetComponentsInChildren<CaseCardUI>(true));
+    }
+
+
+    /// <summary>
+    /// Public refresh (e.g. if you change names or add rows).
     /// </summary>
     public void Refresh()
     {
-        if (contentParent == null || cardPrefab == null)
-        {
-            Debug.LogWarning("[CaseManagerUI] Missing contentParent or cardPrefab.");
-            return;
-        }
-
-        // Clear previous
-        for (int i = _spawnedCards.Count - 1; i >= 0; i--)
-        {
-            if (_spawnedCards[i] != null)
-            {
-                Destroy(_spawnedCards[i].gameObject);
-            }
-        }
-        _spawnedCards.Clear();
-
-        // Get source cases
-        List<CaseData> source = null;
-        if (progressManager == null)
-        {
-            source = manualCases;
-        }
-        else
-        {
-            // Access available cases via reflection-free helper
-            source = GetAvailableCases(progressManager);
-        }
-
-        if (source == null || source.Count == 0)
-        {
-            Debug.Log("[CaseManagerUI] No cases to display.");
-            return;
-        }
-
-        foreach (var caseData in source)
-        {
-            if (caseData == null) continue;
-            var go = Instantiate(cardPrefab, contentParent);
-            var card = go.GetComponent<CaseCardUI>();
-            if (card == null)
-            {
-                Debug.LogWarning("[CaseManagerUI] Card prefab missing CaseCardUI component.");
-                continue;
-            }
-            card.SetData(caseData);
-            _spawnedCards.Add(card);
-        }
+        RebuildCardList();
+        ApplySearchFilter();
     }
 
-    /// <summary>
-    /// Adds a case to be displayed when using manual mode.
-    /// </summary>
-    public void AddManualCase(CaseData data)
+    private void OnSearchChanged(string text)
     {
-        if (data == null) return;
-        manualCases.Add(data);
-        if (progressManager == null)
-            Refresh();
+        _currentSearch = text ?? string.Empty;
+        ApplySearchFilter();
     }
 
-    // Helper to get the available cases from CaseProgressManager
-    private List<CaseData> GetAvailableCases(CaseProgressManager manager)
+    private void ApplySearchFilter()
     {
-        // We don't have a public getter in the manager, so mirror via a simple public method if needed.
-        // For now, use a lightweight cache: build from events or manual assignment.
-        // To keep it simple, try to use reflection only if absolutely needed; otherwise rely on manualCases.
-        // If you want a direct getter, expose one in CaseProgressManager.
-        return manualCases.Count > 0 ? manualCases : new List<CaseData>();
+        if (_cards.Count == 0) return;
+
+        string query = string.IsNullOrWhiteSpace(_currentSearch)
+            ? null
+            : _currentSearch.Trim().ToLowerInvariant();
+
+        foreach (var card in _cards)
+        {
+            if (card == null) continue;
+
+            bool show = true;
+
+            if (!string.IsNullOrEmpty(query))
+            {
+                string name = null;
+
+                if (card.data != null)
+                    name = card.data.caseName;
+                else if (card.nameText != null)
+                    name = card.nameText.text;
+
+                show = !string.IsNullOrEmpty(name) &&
+                       name.ToLowerInvariant().Contains(query);
+            }
+
+            card.gameObject.SetActive(show);
+        }
     }
 }
