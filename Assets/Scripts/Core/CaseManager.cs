@@ -309,6 +309,44 @@ public class CaseProgressManager : MonoBehaviour
         availableCases.Remove(caseData);
     }
 
+    /// <summary>
+    /// Award a case directly by its id (increments count if unlocked).
+    /// </summary>
+    public void AwardCaseById(string caseId)
+    {
+        if (string.IsNullOrEmpty(caseId) || CaseInventoryManager.Instance == null) return;
+        if (!CaseInventoryManager.Instance.IsCaseUnlocked(caseId)) return;
+        CaseInventoryManager.Instance.AddCases(caseId, 1);
+        OnCaseDropped?.Invoke(FindCaseById(caseId));
+        GameManager.Instance?.OnCaseDropped?.Invoke(FindCaseById(caseId));
+    }
+
+    /// <summary>
+    /// Award one random unlocked case from the available pool.
+    /// </summary>
+    public void AwardRandomUnlockedCase()
+    {
+        var c = GetRandomCase();
+        if (c == null) return;
+        if (CaseInventoryManager.Instance == null) return;
+        if (!CaseInventoryManager.Instance.IsCaseUnlocked(c.caseId)) return;
+        CaseInventoryManager.Instance.AddCases(c.caseId, 1);
+        OnCaseDropped?.Invoke(c);
+        GameManager.Instance?.OnCaseDropped?.Invoke(c);
+    }
+
+    // Helper to find a case by id from the available pool
+    private CaseData FindCaseById(string caseId)
+    {
+        if (string.IsNullOrEmpty(caseId)) return null;
+        // search availableCases list
+        foreach (var c in availableCases)
+        {
+            if (c != null && c.caseId == caseId) return c;
+        }
+        return null;
+    }
+
     #endregion
 }
 

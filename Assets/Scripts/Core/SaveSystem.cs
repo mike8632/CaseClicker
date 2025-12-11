@@ -178,50 +178,7 @@ public class SaveSystem : MonoBehaviour
         // Case inventory
         if (CaseInventoryManager.Instance != null)
         {
-            var list = new List<CaseEntryDTO>();
-            foreach (var entry in CaseInventoryManager.Instance.initialEntries)
-            {
-                // prefer live dictionary if available
-            }
-            // Build from internal map via getters
-            // We don't have direct access to dictionary, so iterate initial list + known ids
-            // For robustness, allow manager to expose a method in the future. For now, gather from initialEntries and update from getters.
-            var seen = new HashSet<string>();
-            foreach (var e in CaseInventoryManager.Instance.initialEntries)
-            {
-                if (e == null || string.IsNullOrEmpty(e.caseId)) continue;
-                seen.Add(e.caseId);
-                list.Add(new CaseEntryDTO
-                {
-                    caseId = e.caseId,
-                    ownedCount = CaseInventoryManager.Instance.GetCaseCount(e.caseId),
-                    ownedKeys = CaseInventoryManager.Instance.GetKeyCount(e.caseId),
-                    unlocked = CaseInventoryManager.Instance.IsCaseUnlocked(e.caseId),
-                    keyPrice = CaseInventoryManager.Instance.GetKeyPrice(e.caseId, 0f),
-                    casePriceOverride = e.casePriceOverride,
-                    caseSellPriceOverride = e.caseSellPriceOverride
-                });
-            }
-            // If you have more cases than initialEntries, you can optionally add them here by traversing CaseProgressManager availableCases
-            if (CaseProgressManager.Instance != null)
-            {
-                foreach (var c in typeof(CaseProgressManager).GetField("availableCases", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)?.GetValue(CaseProgressManager.Instance) as List<CaseData>)
-                {
-                    if (c == null || string.IsNullOrEmpty(c.caseId)) continue;
-                    if (seen.Contains(c.caseId)) continue;
-                    list.Add(new CaseEntryDTO
-                    {
-                        caseId = c.caseId,
-                        ownedCount = CaseInventoryManager.Instance.GetCaseCount(c.caseId),
-                        ownedKeys = CaseInventoryManager.Instance.GetKeyCount(c.caseId),
-                        unlocked = CaseInventoryManager.Instance.IsCaseUnlocked(c.caseId),
-                        keyPrice = CaseInventoryManager.Instance.GetKeyPrice(c.caseId, c.keyPrice),
-                        casePriceOverride = 0f,
-                        caseSellPriceOverride = 0f
-                    });
-                }
-            }
-            data.caseInventory = list;
+            data.caseInventory = CaseInventoryManager.Instance.GetSnapshot();
         }
 
         return data;
@@ -398,23 +355,34 @@ public class SaveSystem : MonoBehaviour
         // Case inventory
         if (CaseInventoryManager.Instance != null && data.caseInventory != null)
         {
-            foreach (var dto in data.caseInventory)
+            ApplyCaseInventory(data.caseInventory);
+        }
+    }
+
+    private void ApplyCaseInventory(List<CaseEntryDTO> list)
+    {
+        if (list == null) return;
+        // Clear existing counts/keys to avoid stacking, but preserve unlock flags for cases not in save
+        var current = CaseInventoryManager.Instance.GetSnapshot();
+        foreach (var dto in current)
+        {
+            if (!string.IsNullOrEmpty(dto.caseId))
             {
-                if (string.IsNullOrEmpty(dto.caseId)) continue;
-                CaseInventoryManager.Instance.SetUnlocked(dto.caseId, dto.unlocked);
-                // Set counts
-                // Reset to 0 then add amounts
-                int current = CaseInventoryManager.Instance.GetCaseCount(dto.caseId);
-                if (current > 0) CaseInventoryManager.Instance.RemoveCases(dto.caseId, current);
-                if (dto.ownedCount > 0) CaseInventoryManager.Instance.AddCases(dto.caseId, dto.ownedCount);
-
-                int currentKeys = CaseInventoryManager.Instance.GetKeyCount(dto.caseId);
-                if (currentKeys > 0) CaseInventoryManager.Instance.RemoveKeys(dto.caseId, currentKeys);
-                if (dto.ownedKeys > 0) CaseInventoryManager.Instance.AddKeys(dto.caseId, dto.ownedKeys);
-
-                if (dto.keyPrice > 0f) CaseInventoryManager.Instance.SetKeyPrice(dto.caseId, dto.keyPrice);
-                // Note: case price/sell overrides require a setter; skip if not exposed
+                int c = CaseInventoryManager.Instance.GetCaseCount(dto.caseId);
+                if (c > 0) CaseInventoryManager.Instance.RemoveCases(dto.caseId, c);
+                int k = CaseInventoryManager.Instance.GetKeyCount(dto.caseId);
+                if (k > 0) CaseInventoryManager.Instance.RemoveKeys(dto.caseId, k);
+                // Preserve unlock state; do not force lock here
             }
+        }
+        // Apply loaded entries
+        foreach (var dto in list)
+        {
+            if (string.IsNullOrEmpty(dto.caseId)) continue;
+            CaseInventoryManager.Instance.SetUnlocked(dto.caseId, dto.unlocked);
+            if (dto.ownedCount > 0) CaseInventoryManager.Instance.AddCases(dto.caseId, dto.ownedCount);
+            if (dto.ownedKeys > 0) CaseInventoryManager.Instance.AddKeys(dto.caseId, dto.ownedKeys);
+            if (dto.keyPrice > 0f) CaseInventoryManager.Instance.SetKeyPrice(dto.caseId, dto.keyPrice);
         }
     }
 

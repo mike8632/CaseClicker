@@ -112,7 +112,12 @@ public class CaseInventoryManager : MonoBehaviour
             _entries[caseId] = e;
         }
         e.ownedCount += amount;
+
+        // auto-unlock if we now own at least 1
+        if (e.ownedCount > 0)
+            e.unlocked = true;
     }
+
 
     public void RemoveCases(string caseId, int amount)
     {
@@ -258,5 +263,25 @@ public class CaseInventoryManager : MonoBehaviour
         {
             Debug.LogWarning($"[CaseInventory] Could not open case '{data?.caseName}' (requires 1 case and 1 key)");
         }
+    }
+
+    public System.Collections.Generic.List<CaseEntryDTO> GetSnapshot()
+    {
+        var list = new System.Collections.Generic.List<CaseEntryDTO>();
+        foreach (var kv in _entries)
+        {
+            var e = kv.Value;
+            list.Add(new CaseEntryDTO
+            {
+                caseId = e.caseId,
+                ownedCount = e.ownedCount,
+                ownedKeys = e.ownedKeys,
+                unlocked = e.unlocked,
+                keyPrice = e.keyPrice,
+                casePriceOverride = e.casePriceOverride,
+                caseSellPriceOverride = e.caseSellPriceOverride
+            });
+        }
+        return list;
     }
 }

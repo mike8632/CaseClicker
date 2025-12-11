@@ -62,6 +62,38 @@ public class CaseCardUI : MonoBehaviour
             openCaseButton.onClick.RemoveAllListeners();
             openCaseButton.onClick.AddListener(OpenCase);
         }
+
+        // Refresh after load/init to ensure counts from save are shown
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.OnGameInitialized.AddListener(OnGameInitialized);
+        }
+        if (SaveSystem.Instance != null)
+        {
+            SaveSystem.Instance.OnLoadCompleted.AddListener(OnSaveLoadCompleted);
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.OnGameInitialized.RemoveListener(OnGameInitialized);
+        }
+        if (SaveSystem.Instance != null)
+        {
+            SaveSystem.Instance.OnLoadCompleted.RemoveListener(OnSaveLoadCompleted);
+        }
+    }
+
+    private void OnGameInitialized()
+    {
+        Refresh();
+    }
+
+    private void OnSaveLoadCompleted()
+    {
+        Refresh();
     }
 
     public void SetData(CaseData caseData)
