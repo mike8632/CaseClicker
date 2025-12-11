@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using System;
 using System.IO;
+using System.Collections.Generic;
 
 /// <summary>
 /// Handles saving and loading all game data.
@@ -115,12 +116,10 @@ public class SaveSystem : MonoBehaviour
     private SaveData CollectSaveData()
     {
         SaveData data = new SaveData();
-
-        // Save timestamp
         data.saveTimestamp = DateTime.Now.ToBinary();
         data.gameVersion = Application.version;
 
-        // Balance data
+        // Balance
         if (BalanceManager.Instance != null)
         {
             data.currentMoney = BalanceManager.Instance.CurrentMoney;
@@ -130,7 +129,7 @@ public class SaveSystem : MonoBehaviour
             data.moneyPerSecondMultiplier = BalanceManager.Instance.MoneyPerSecondMultiplier;
         }
 
-        // Clicker data
+        // Clicker
         if (ClickerController.Instance != null)
         {
             data.baseMoneyPerClick = ClickerController.Instance.BaseMoneyPerClick;
@@ -141,7 +140,7 @@ public class SaveSystem : MonoBehaviour
             data.totalCaseClicks = ClickerController.Instance.TotalCaseClicks;
         }
 
-        // Case progress data
+        // Case progress
         if (CaseProgressManager.Instance != null)
         {
             data.currentCaseProgress = CaseProgressManager.Instance.CurrentProgress;
@@ -151,7 +150,7 @@ public class SaveSystem : MonoBehaviour
             data.casePerSecondMultiplier = CaseProgressManager.Instance.CasePerSecondMultiplier;
         }
 
-        // Combo data (use coin combo stats for backward-compatible fields)
+        // Combo
         if (ComboSystem.Instance != null)
         {
             data.currentMaxComboMultiplier = ComboSystem.Instance.CurrentMaxMultiplier;
@@ -160,7 +159,7 @@ public class SaveSystem : MonoBehaviour
             data.comboResetCount = ComboSystem.Instance.CoinComboResetCount;
         }
 
-        // Idle income data
+        // Idle income
         if (IdleIncomeSystem.Instance != null)
         {
             data.maxIdleMinutes = IdleIncomeSystem.Instance.CurrentMaxIdleMinutes;
@@ -170,10 +169,59 @@ public class SaveSystem : MonoBehaviour
             data.totalIdleTimeSeconds = IdleIncomeSystem.Instance.TotalIdleTimeSeconds;
         }
 
-        // Statistics data
+        // Statistics
         if (StatisticsManager.Instance != null)
         {
             data.statistics = StatisticsManager.Instance.GetAllStatistics();
+        }
+
+        // Case inventory
+        if (CaseInventoryManager.Instance != null)
+        {
+            var list = new List<CaseEntryDTO>();
+            foreach (var entry in CaseInventoryManager.Instance.initialEntries)
+            {
+                // prefer live dictionary if available
+            }
+            // Build from internal map via getters
+            // We don't have direct access to dictionary, so iterate initial list + known ids
+            // For robustness, allow manager to expose a method in the future. For now, gather from initialEntries and update from getters.
+            var seen = new HashSet<string>();
+            foreach (var e in CaseInventoryManager.Instance.initialEntries)
+            {
+                if (e == null || string.IsNullOrEmpty(e.caseId)) continue;
+                seen.Add(e.caseId);
+                list.Add(new CaseEntryDTO
+                {
+                    caseId = e.caseId,
+                    ownedCount = CaseInventoryManager.Instance.GetCaseCount(e.caseId),
+                    ownedKeys = CaseInventoryManager.Instance.GetKeyCount(e.caseId),
+                    unlocked = CaseInventoryManager.Instance.IsCaseUnlocked(e.caseId),
+                    keyPrice = CaseInventoryManager.Instance.GetKeyPrice(e.caseId, 0f),
+                    casePriceOverride = e.casePriceOverride,
+                    caseSellPriceOverride = e.caseSellPriceOverride
+                });
+            }
+            // If you have more cases than initialEntries, you can optionally add them here by traversing CaseProgressManager availableCases
+            if (CaseProgressManager.Instance != null)
+            {
+                foreach (var c in typeof(CaseProgressManager).GetField("availableCases", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance)?.GetValue(CaseProgressManager.Instance) as List<CaseData>)
+                {
+                    if (c == null || string.IsNullOrEmpty(c.caseId)) continue;
+                    if (seen.Contains(c.caseId)) continue;
+                    list.Add(new CaseEntryDTO
+                    {
+                        caseId = c.caseId,
+                        ownedCount = CaseInventoryManager.Instance.GetCaseCount(c.caseId),
+                        ownedKeys = CaseInventoryManager.Instance.GetKeyCount(c.caseId),
+                        unlocked = CaseInventoryManager.Instance.IsCaseUnlocked(c.caseId),
+                        keyPrice = CaseInventoryManager.Instance.GetKeyPrice(c.caseId, c.keyPrice),
+                        casePriceOverride = 0f,
+                        caseSellPriceOverride = 0f
+                    });
+                }
+            }
+            data.caseInventory = list;
         }
 
         return data;
@@ -346,6 +394,28 @@ public class SaveSystem : MonoBehaviour
         {
             StatisticsManager.Instance.SetAllStatistics(data.statistics);
         }
+
+        // Case inventory
+        if (CaseInventoryManager.Instance != null && data.caseInventory != null)
+        {
+            foreach (var dto in data.caseInventory)
+            {
+                if (string.IsNullOrEmpty(dto.caseId)) continue;
+                CaseInventoryManager.Instance.SetUnlocked(dto.caseId, dto.unlocked);
+                // Set counts
+                // Reset to 0 then add amounts
+                int current = CaseInventoryManager.Instance.GetCaseCount(dto.caseId);
+                if (current > 0) CaseInventoryManager.Instance.RemoveCases(dto.caseId, current);
+                if (dto.ownedCount > 0) CaseInventoryManager.Instance.AddCases(dto.caseId, dto.ownedCount);
+
+                int currentKeys = CaseInventoryManager.Instance.GetKeyCount(dto.caseId);
+                if (currentKeys > 0) CaseInventoryManager.Instance.RemoveKeys(dto.caseId, currentKeys);
+                if (dto.ownedKeys > 0) CaseInventoryManager.Instance.AddKeys(dto.caseId, dto.ownedKeys);
+
+                if (dto.keyPrice > 0f) CaseInventoryManager.Instance.SetKeyPrice(dto.caseId, dto.keyPrice);
+                // Note: case price/sell overrides require a setter; skip if not exposed
+            }
+        }
     }
 
     #endregion
@@ -468,4 +538,22 @@ public class SaveData
 
     // Statistics (serialized separately)
     public GameStatistics statistics;
+
+    // Case inventory
+    public System.Collections.Generic.List<CaseEntryDTO> caseInventory;
+}
+
+/// <summary>
+/// Serializable DTO for case entries in inventory.
+/// </summary>
+[Serializable]
+public class CaseEntryDTO
+{
+    public string caseId;
+    public int ownedCount;
+    public int ownedKeys;
+    public bool unlocked;
+    public float keyPrice;
+    public float casePriceOverride;
+    public float caseSellPriceOverride;
 }

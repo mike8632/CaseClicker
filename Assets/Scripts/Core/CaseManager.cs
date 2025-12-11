@@ -131,6 +131,12 @@ public class CaseProgressManager : MonoBehaviour
 
         if (droppedCase != null)
         {
+            // Add the dropped case to inventory (only if unlocked)
+            if (CaseInventoryManager.Instance == null || CaseInventoryManager.Instance.IsCaseUnlocked(droppedCase.caseId))
+            {
+                CaseInventoryManager.Instance?.AddCases(droppedCase.caseId, 1);
+            }
+
             Debug.Log($"[CaseProgress] Case Dropped: {droppedCase.caseName}!");
             OnCaseDropped?.Invoke(droppedCase);
             GameManager.Instance?.OnCaseDropped?.Invoke(droppedCase);
@@ -149,7 +155,7 @@ public class CaseProgressManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Get a random case from the available pool.
+    /// Get a random unlocked case from the available pool (falls back to all if none unlocked).
     /// Uses weighted random based on case rarity/drop rates.
     /// </summary>
     private CaseData GetRandomCase()
@@ -157,9 +163,23 @@ public class CaseProgressManager : MonoBehaviour
         if (availableCases == null || availableCases.Count == 0)
             return null;
 
+        // Build unlocked list if inventory available
+        List<CaseData> pool = availableCases;
+        if (CaseInventoryManager.Instance != null)
+        {
+            var unlocked = new List<CaseData>();
+            foreach (var c in availableCases)
+            {
+                if (c != null && CaseInventoryManager.Instance.IsCaseUnlocked(c.caseId))
+                    unlocked.Add(c);
+            }
+            if (unlocked.Count > 0)
+                pool = unlocked;
+        }
+
         // Calculate total weight
         float totalWeight = 0f;
-        foreach (var caseData in availableCases)
+        foreach (var caseData in pool)
         {
             if (caseData != null)
                 totalWeight += caseData.dropWeight;
@@ -169,7 +189,7 @@ public class CaseProgressManager : MonoBehaviour
         float randomValue = Random.Range(0f, totalWeight);
         float currentWeight = 0f;
 
-        foreach (var caseData in availableCases)
+        foreach (var caseData in pool)
         {
             if (caseData == null) continue;
 
@@ -179,7 +199,7 @@ public class CaseProgressManager : MonoBehaviour
         }
 
         // Fallback to first case
-        return availableCases[0];
+        return pool[0];
     }
 
     /// <summary>
