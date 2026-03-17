@@ -3,27 +3,42 @@ using UnityEngine.Events;
 using System.Collections.Generic;
 
 [System.Serializable]
+public enum UpgradeEffectType
+{
+    None,
+    MoneyPerSecond,
+    MoneyPerTap
+}
+
+[System.Serializable]
 public class UpgradeDefinition
 {
     public string id;
     public string displayName;
     public Sprite icon;
 
-    // Level arrays: index 0 = level 1, etc.
-    public float[] costs = new float[0];
-    public int[] requiredCasesOpened = new int[0];
-    public string[] descriptions = new string[0];
+    [Header("Upgrade Values")]
+    public float cost = 0f;
+    public int requiredCasesOpened = 0;
+    [TextArea] public string description = "";
+
+    [Header("Effect")]
+    public UpgradeEffectType effectType = UpgradeEffectType.None;
+    public float effectAmount = 0f;
+
+    [Header("Progression")]
+    [Min(1)] public int maxLevel = 1;
 
     [HideInInspector]
     public int currentLevel = 0; // number of levels already purchased
 
-    public int MaxLevel => costs != null ? costs.Length : 0;
+    public int MaxLevel => Mathf.Max(1, maxLevel);
 
     public bool IsMaxed => currentLevel >= MaxLevel;
 
-    public float CurrentCost => (currentLevel < MaxLevel) ? costs[currentLevel] : 0f;
-    public int CurrentRequiredCases => (currentLevel < MaxLevel) ? requiredCasesOpened[currentLevel] : 0;
-    public string CurrentDescription => (currentLevel < MaxLevel && descriptions != null && descriptions.Length > currentLevel) ? descriptions[currentLevel] : string.Empty;
+    public float CurrentCost => cost;
+    public int CurrentRequiredCases => requiredCasesOpened;
+    public string CurrentDescription => description ?? string.Empty;
 }
 
 /// <summary>
@@ -36,6 +51,10 @@ public class UpgradeManager : MonoBehaviour
 
     [Header("Definitions")]
     public List<UpgradeDefinition> upgrades = new List<UpgradeDefinition>();
+
+    [Header("Testing")]
+    [SerializeField] private bool grantTestMoneyOnPurchase = true;
+    [SerializeField] private float testMoneyAmount = 10000f;
 
     // Fired when an upgrade is purchased: (upgradeId, newLevel)
     public UnityEvent<string, int> OnUpgradePurchased;
@@ -55,74 +74,18 @@ public class UpgradeManager : MonoBehaviour
         OnUpgradePurchased ??= new UnityEvent<string, int>();
         OnUpgradesChanged ??= new UnityEvent();
 
-        // Validate upgrade definitions so costs/requirements/descriptions arrays align per level
         ValidateDefinitions();
     }
 
     private void ValidateDefinitions()
     {
-        if (upgrades == null || upgrades.Count == 0) return;
-
+        if (upgrades == null) return;
         foreach (var def in upgrades)
         {
             if (def == null) continue;
-
-            int maxLen = 0;
-            if (def.costs != null) maxLen = Mathf.Max(maxLen, def.costs.Length);
-            if (def.requiredCasesOpened != null) maxLen = Mathf.Max(maxLen, def.requiredCasesOpened.Length);
-            if (def.descriptions != null) maxLen = Mathf.Max(maxLen, def.descriptions.Length);
-
-            if (maxLen == 0)
-            {
-                Debug.LogWarning($"[UpgradeManager] Upgrade '{def.id}' has no levels defined (costs/requirements/descriptions arrays are empty).");
-                continue;
-            }
-
-            // Resize arrays to maxLen, preserving existing values and repeating last known value if needed
-            if (def.costs == null || def.costs.Length != maxLen)
-            {
-                float[] newCosts = new float[maxLen];
-                for (int i = 0; i < maxLen; i++)
-                {
-                    if (def.costs != null && i < def.costs.Length)
-                        newCosts[i] = def.costs[i];
-                    else if (def.costs != null && def.costs.Length > 0)
-                        newCosts[i] = def.costs[def.costs.Length - 1];
-                    else
-                        newCosts[i] = 0f;
-                }
-                def.costs = newCosts;
-            }
-
-            if (def.requiredCasesOpened == null || def.requiredCasesOpened.Length != maxLen)
-            {
-                int[] newReq = new int[maxLen];
-                for (int i = 0; i < maxLen; i++)
-                {
-                    if (def.requiredCasesOpened != null && i < def.requiredCasesOpened.Length)
-                        newReq[i] = def.requiredCasesOpened[i];
-                    else if (def.requiredCasesOpened != null && def.requiredCasesOpened.Length > 0)
-                        newReq[i] = def.requiredCasesOpened[def.requiredCasesOpened.Length - 1];
-                    else
-                        newReq[i] = 0;
-                }
-                def.requiredCasesOpened = newReq;
-            }
-
-            if (def.descriptions == null || def.descriptions.Length != maxLen)
-            {
-                string[] newDesc = new string[maxLen];
-                for (int i = 0; i < maxLen; i++)
-                {
-                    if (def.descriptions != null && i < def.descriptions.Length)
-                        newDesc[i] = def.descriptions[i];
-                    else if (def.descriptions != null && def.descriptions.Length > 0)
-                        newDesc[i] = def.descriptions[def.descriptions.Length - 1];
-                    else
-                        newDesc[i] = string.Empty;
-                }
-                def.descriptions = newDesc;
-            }
+            if (def.maxLevel <= 0) def.maxLevel = 1;
+            if (def.cost < 0f) def.cost = 0f;
+            if (def.requiredCasesOpened < 0) def.requiredCasesOpened = 0;
         }
     }
 
@@ -159,8 +122,18 @@ public class UpgradeManager : MonoBehaviour
         if (BalanceManager.Instance != null)
             BalanceManager.Instance.SpendMoney(cost);
 
+        // Apply gameplay effect
+        ApplyUpgradeEffect(def);
+
         // Increase level
         def.currentLevel++;
+
+        // Test reward money (for quick verification)
+        if (grantTestMoneyOnPurchase && testMoneyAmount > 0f && BalanceManager.Instance != null)
+        {
+            BalanceManager.Instance.AddMoney(testMoneyAmount);
+            Debug.Log($"[UpgradeManager] Test reward: +${testMoneyAmount:F2}");
+        }
 
         // Record stats
         StatisticsManager.Instance?.RecordUpgradePurchased(def.id, cost);
@@ -170,6 +143,25 @@ public class UpgradeManager : MonoBehaviour
         OnUpgradesChanged?.Invoke();
 
         return true;
+    }
+
+    private void ApplyUpgradeEffect(UpgradeDefinition def)
+    {
+        if (def == null) return;
+        if (def.effectAmount == 0f) return;
+
+        switch (def.effectType)
+        {
+            case UpgradeEffectType.MoneyPerSecond:
+                BalanceManager.Instance?.UpgradeBaseMoneyPerSecond(def.effectAmount);
+                break;
+            case UpgradeEffectType.MoneyPerTap:
+                ClickerController.Instance?.UpgradeBaseMoneyPerClick(def.effectAmount);
+                break;
+            case UpgradeEffectType.None:
+            default:
+                break;
+        }
     }
 
     /// <summary>
@@ -182,5 +174,30 @@ public class UpgradeManager : MonoBehaviour
         int required = def.CurrentRequiredCases;
         int opened = StatisticsManager.Instance != null ? StatisticsManager.Instance.TotalCasesOpened : 0;
         return $"OPENED CASES {opened}/{required}";
+    }
+
+    /// <summary>
+    /// DEV: Reset all upgrade levels back to 0.
+    /// You can hook this to a UI Button OnClick.
+    /// </summary>
+    public void ResetAllUpgrades()
+    {
+        if (upgrades == null) return;
+
+        for (int i = 0; i < upgrades.Count; i++)
+        {
+            var def = upgrades[i];
+            if (def == null) continue;
+            def.currentLevel = 0;
+        }
+
+        Debug.Log("[UpgradeManager] All upgrades reset to level 0.");
+        OnUpgradesChanged?.Invoke();
+    }
+
+    [ContextMenu("DEV/Reset All Upgrades")]
+    private void ResetAllUpgradesFromContextMenu()
+    {
+        ResetAllUpgrades();
     }
 }

@@ -309,6 +309,12 @@ public class CaseInventoryManager : MonoBehaviour
         RemoveKeys(data.caseId, 1);
         // Trigger whatever system opens the case (not implemented here)
         GameManager.Instance?.OnCaseOpened?.Invoke(data);
+
+        // Record case opened statistic (item details may be recorded elsewhere when the open result is processed)
+        StatisticsManager.Instance?.RecordCaseOpened(data, null, 0f);
+
+        Debug.Log($"[CaseInventory] Opened case '{data.caseId}' - total opened now: {StatisticsManager.Instance?.TotalCasesOpened}");
+
         return true;
     }
 

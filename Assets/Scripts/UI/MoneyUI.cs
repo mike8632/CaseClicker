@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System;
+using System.Globalization;
 
 /// <summary>
 /// UI controller for Money clicker. Shows balance, $ per click, $ per second, and combo multiplier.
@@ -15,8 +17,8 @@ public class MoneyUI : MonoBehaviour
 
     [Header("Formats")]
     [SerializeField] private string balanceFormat = "${0:F2}";
-    [SerializeField] private string perClickFormat = "+${0:F2} per click";
-    [SerializeField] private string perSecondFormat = "${0:F2}/s";
+    [SerializeField] private string perClickFormat = "+${0} per click";
+    [SerializeField] private string perSecondFormat = "${0}/s";
     [SerializeField] private string comboFormat = "Combo: {0:F2}x";
 
     private ClickerController clicker => ClickerController.Instance;
@@ -83,7 +85,7 @@ public class MoneyUI : MonoBehaviour
         if (value is float fv) f = fv;
         else if (value is double dv) f = (float)dv;
         else if (value is int iv) f = iv;
-        
+
         if (key == "moneyPerClick") UpdatePerClick();
         if (key == "moneyPerSecond") UpdatePerSecond();
     }
@@ -97,14 +99,13 @@ public class MoneyUI : MonoBehaviour
     private void UpdatePerClick()
     {
         if (perClickText == null || clicker == null) return;
-        perClickText.text = string.Format(perClickFormat, clicker.CurrentMoneyPerClick);
+        perClickText.text = string.Format(perClickFormat, FormatDynamicTruncated(clicker.CurrentMoneyPerClick));
     }
 
     private void UpdatePerSecond()
     {
         if (perSecondText == null || balance == null) return;
-        float mps = balance.CurrentMoneyPerSecond;
-        perSecondText.text = string.Format(perSecondFormat, mps);
+        perSecondText.text = string.Format(perSecondFormat, FormatDynamicTruncated(balance.CurrentMoneyPerSecond));
     }
 
     private void UpdateCombo()
@@ -114,5 +115,17 @@ public class MoneyUI : MonoBehaviour
         string processedFormat = comboFormat.Replace("\\n", "\n");
 
         comboText.text = string.Format(processedFormat, combo.CurrentMultiplier);
+    }
+
+    private string FormatDynamicTruncated(float value)
+    {
+        float abs = Mathf.Abs(value);
+        int decimals = abs >= 1f ? 2 : (abs >= 0.1f ? 3 : 4);
+
+        double factor = Math.Pow(10, decimals);
+        double truncated = Math.Truncate(value * factor) / factor;
+
+        string pattern = "0." + new string('0', decimals);
+        return truncated.ToString(pattern, CultureInfo.InvariantCulture);
     }
 }
