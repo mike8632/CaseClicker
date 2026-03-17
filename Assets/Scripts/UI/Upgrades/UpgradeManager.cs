@@ -54,6 +54,76 @@ public class UpgradeManager : MonoBehaviour
 
         OnUpgradePurchased ??= new UnityEvent<string, int>();
         OnUpgradesChanged ??= new UnityEvent();
+
+        // Validate upgrade definitions so costs/requirements/descriptions arrays align per level
+        ValidateDefinitions();
+    }
+
+    private void ValidateDefinitions()
+    {
+        if (upgrades == null || upgrades.Count == 0) return;
+
+        foreach (var def in upgrades)
+        {
+            if (def == null) continue;
+
+            int maxLen = 0;
+            if (def.costs != null) maxLen = Mathf.Max(maxLen, def.costs.Length);
+            if (def.requiredCasesOpened != null) maxLen = Mathf.Max(maxLen, def.requiredCasesOpened.Length);
+            if (def.descriptions != null) maxLen = Mathf.Max(maxLen, def.descriptions.Length);
+
+            if (maxLen == 0)
+            {
+                Debug.LogWarning($"[UpgradeManager] Upgrade '{def.id}' has no levels defined (costs/requirements/descriptions arrays are empty).");
+                continue;
+            }
+
+            // Resize arrays to maxLen, preserving existing values and repeating last known value if needed
+            if (def.costs == null || def.costs.Length != maxLen)
+            {
+                float[] newCosts = new float[maxLen];
+                for (int i = 0; i < maxLen; i++)
+                {
+                    if (def.costs != null && i < def.costs.Length)
+                        newCosts[i] = def.costs[i];
+                    else if (def.costs != null && def.costs.Length > 0)
+                        newCosts[i] = def.costs[def.costs.Length - 1];
+                    else
+                        newCosts[i] = 0f;
+                }
+                def.costs = newCosts;
+            }
+
+            if (def.requiredCasesOpened == null || def.requiredCasesOpened.Length != maxLen)
+            {
+                int[] newReq = new int[maxLen];
+                for (int i = 0; i < maxLen; i++)
+                {
+                    if (def.requiredCasesOpened != null && i < def.requiredCasesOpened.Length)
+                        newReq[i] = def.requiredCasesOpened[i];
+                    else if (def.requiredCasesOpened != null && def.requiredCasesOpened.Length > 0)
+                        newReq[i] = def.requiredCasesOpened[def.requiredCasesOpened.Length - 1];
+                    else
+                        newReq[i] = 0;
+                }
+                def.requiredCasesOpened = newReq;
+            }
+
+            if (def.descriptions == null || def.descriptions.Length != maxLen)
+            {
+                string[] newDesc = new string[maxLen];
+                for (int i = 0; i < maxLen; i++)
+                {
+                    if (def.descriptions != null && i < def.descriptions.Length)
+                        newDesc[i] = def.descriptions[i];
+                    else if (def.descriptions != null && def.descriptions.Length > 0)
+                        newDesc[i] = def.descriptions[def.descriptions.Length - 1];
+                    else
+                        newDesc[i] = string.Empty;
+                }
+                def.descriptions = newDesc;
+            }
+        }
     }
 
     public UpgradeDefinition GetUpgrade(string id)
