@@ -7,7 +7,8 @@ public enum UpgradeEffectType
 {
     None,
     MoneyPerSecond,
-    MoneyPerTap
+    MoneyPerTap,
+    UnlockCase
 }
 
 [System.Serializable]
@@ -25,6 +26,7 @@ public class UpgradeDefinition
     [Header("Effect")]
     public UpgradeEffectType effectType = UpgradeEffectType.None;
     public float effectAmount = 0f;
+    public string unlockCaseId = "";
 
     [Header("Progression")]
     [Min(1)] public int maxLevel = 1;
@@ -148,15 +150,33 @@ public class UpgradeManager : MonoBehaviour
     private void ApplyUpgradeEffect(UpgradeDefinition def)
     {
         if (def == null) return;
-        if (def.effectAmount == 0f) return;
 
         switch (def.effectType)
         {
             case UpgradeEffectType.MoneyPerSecond:
-                BalanceManager.Instance?.UpgradeBaseMoneyPerSecond(def.effectAmount);
+                if (def.effectAmount != 0f)
+                    BalanceManager.Instance?.UpgradeBaseMoneyPerSecond(def.effectAmount);
                 break;
             case UpgradeEffectType.MoneyPerTap:
-                ClickerController.Instance?.UpgradeBaseMoneyPerClick(def.effectAmount);
+                if (def.effectAmount != 0f)
+                    ClickerController.Instance?.UpgradeBaseMoneyPerClick(def.effectAmount);
+                break;
+            case UpgradeEffectType.UnlockCase:
+                if (!string.IsNullOrEmpty(def.unlockCaseId))
+                {
+                    // Unlock now if inventory exists, otherwise queue until inventory initializes.
+                    CaseInventoryManager.UnlockCaseNowOrQueue(def.unlockCaseId);
+
+                    // Refresh any visible case manager UIs immediately.
+                    var caseUis = UnityEngine.Object.FindObjectsByType<CaseManagerUI>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+                    for (int i = 0; i < caseUis.Length; i++)
+                    {
+                        if (caseUis[i] != null)
+                            caseUis[i].Refresh();
+                    }
+
+                    Debug.Log($"[UpgradeManager] Unlocked case: {def.unlockCaseId}");
+                }
                 break;
             case UpgradeEffectType.None:
             default:

@@ -9,6 +9,9 @@ public class CaseInventoryManager : MonoBehaviour
 {
     public static CaseInventoryManager Instance { get; private set; }
 
+    // Unlock requests made before the inventory manager exists are queued here.
+    private static readonly HashSet<string> _pendingUnlockCaseIds = new HashSet<string>();
+
     [System.Serializable]
     public class CaseEntry
     {
@@ -55,6 +58,33 @@ public class CaseInventoryManager : MonoBehaviour
                 caseSellPriceOverride = e.caseSellPriceOverride
             };
         }
+
+        ApplyPendingUnlocks();
+    }
+
+    public static void UnlockCaseNowOrQueue(string caseId)
+    {
+        if (string.IsNullOrEmpty(caseId)) return;
+
+        if (Instance != null)
+        {
+            Instance.SetUnlocked(caseId, true);
+        }
+        else
+        {
+            _pendingUnlockCaseIds.Add(caseId);
+        }
+    }
+
+    private void ApplyPendingUnlocks()
+    {
+        if (_pendingUnlockCaseIds.Count == 0) return;
+
+        foreach (var caseId in _pendingUnlockCaseIds)
+        {
+            SetUnlocked(caseId, true);
+        }
+        _pendingUnlockCaseIds.Clear();
     }
 
     private void OnEnable()
@@ -119,6 +149,9 @@ public class CaseInventoryManager : MonoBehaviour
             _entries[caseId] = e;
         }
         e.unlocked = unlocked;
+
+        // Notify UI even if only unlock state changed (count may be unchanged)
+        OnCaseCountChanged?.Invoke(caseId);
     }
 
     public int GetCaseCount(string caseId)

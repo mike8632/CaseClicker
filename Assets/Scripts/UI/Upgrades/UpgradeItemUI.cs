@@ -26,7 +26,7 @@ public class UpgradeItemUI : MonoBehaviour
     private CanvasGroup _canvasGroup;
     private LayoutElement _layoutElement;
 
-    private Color _enabledColor = new Color(0.388f, 0.573f, 0.176f); // green
+    private Color _enabledColor = new Color(0.47f, 0.68f, 0.20f, 1f); // screenshot green
     private Color _disabledColor = new Color(0.6f, 0.0f, 0.0f); // red
 
     private void Awake()
