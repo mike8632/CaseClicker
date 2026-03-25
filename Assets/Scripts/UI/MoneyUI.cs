@@ -25,23 +25,44 @@ public class MoneyUI : MonoBehaviour
     private BalanceManager balance => BalanceManager.Instance;
     private ComboSystem combo => GameManager.Instance?.Combo;
 
+    private Coroutine _initRoutine;
+    private bool _isInitialized;
+
     private void OnEnable()
     {
-        RefreshAll();
-        Subscribe();
+        _isInitialized = false;
+        if (_initRoutine != null) StopCoroutine(_initRoutine);
+        _initRoutine = StartCoroutine(WaitForSystemsThenInit());
     }
 
     private void OnDisable()
     {
+        if (_initRoutine != null)
+        {
+            StopCoroutine(_initRoutine);
+            _initRoutine = null;
+        }
         Unsubscribe();
+        _isInitialized = false;
+    }
+
+    private System.Collections.IEnumerator WaitForSystemsThenInit()
+    {
+        while (BalanceManager.Instance == null || ClickerController.Instance == null || GameManager.Instance == null)
+            yield return null;
+
+        Subscribe();
+        RefreshAll();
+        _isInitialized = true;
+        _initRoutine = null;
     }
 
     private void Update()
     {
-        // Update fast-changing values smoothly
+        if (!_isInitialized) return;
+
         UpdatePerSecond();
         UpdateCombo();
-        // Also refresh balance and per-click so UI stays responsive even without events
         UpdateBalance();
         UpdatePerClick();
     }
@@ -52,7 +73,6 @@ public class MoneyUI : MonoBehaviour
         {
             balance.OnMoneyChanged.AddListener(OnBalanceChanged);
         }
-        // Optional: update per click/MPS when upgrades change
         StatisticsManager.Instance?.OnStatisticChanged?.AddListener(OnStatisticChanged);
     }
 
@@ -80,11 +100,13 @@ public class MoneyUI : MonoBehaviour
 
     private void OnStatisticChanged(string key, object value)
     {
-        // Convert to float when possible
+        // Convert to float when possible (kept for potential future use)
         float f = 0f;
         if (value is float fv) f = fv;
         else if (value is double dv) f = (float)dv;
         else if (value is int iv) f = iv;
+
+        _ = f; // avoid "assigned but never used" warning
 
         if (key == "moneyPerClick") UpdatePerClick();
         if (key == "moneyPerSecond") UpdatePerSecond();
@@ -111,9 +133,7 @@ public class MoneyUI : MonoBehaviour
     private void UpdateCombo()
     {
         if (comboText == null || combo == null) return;
-
         string processedFormat = comboFormat.Replace("\\n", "\n");
-
         comboText.text = string.Format(processedFormat, combo.CurrentMultiplier);
     }
 

@@ -56,6 +56,8 @@ public class CaseProgressionUI : MonoBehaviour
     private CaseProgressManager progressMgr => CaseProgressManager.Instance;
     private ComboSystem Combo => GameManager.Instance?.Combo;
 
+    private Coroutine _initRoutine;
+
     private void Awake()
     {
         // Initialize events
@@ -65,21 +67,34 @@ public class CaseProgressionUI : MonoBehaviour
 
     private void OnEnable()
     {
-        TrySubscribe();
-        RefreshCaseComboText();
-        RefreshAllDisplays();
+        if (_initRoutine != null) StopCoroutine(_initRoutine);
+        _initRoutine = StartCoroutine(WaitForSystemsThenInit());
     }
 
     private void OnDisable()
     {
+        if (_initRoutine != null)
+        {
+            StopCoroutine(_initRoutine);
+            _initRoutine = null;
+        }
         Unsubscribe();
+    }
+
+    private System.Collections.IEnumerator WaitForSystemsThenInit()
+    {
+        while (CaseProgressManager.Instance == null || ClickerController.Instance == null || GameManager.Instance == null)
+            yield return null;
+
+        TrySubscribe();
+        RefreshCaseComboText();
+        RefreshAllDisplays();
+        _initRoutine = null;
     }
 
     private void Start()
     {
-        TrySubscribe();
-        InitializeUI();
-        RefreshCaseComboText();
+        // Initialization moved to OnEnable coroutine to avoid startup race order issues
     }
 
     private void Update()
