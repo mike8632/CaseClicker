@@ -395,6 +395,8 @@ public class CaseData
 [System.Serializable]
 public class CaseItemData
 {
+    public string weaponName;
+    public string skinName;
     public string itemName;
     public string itemId;
     public Sprite itemIcon;

@@ -9,6 +9,7 @@ public class SkinInventoryUI : MonoBehaviour
 {
     [SerializeField] private Transform contentParent;
     [SerializeField] private GameObject cardPrefab;
+    [SerializeField] private bool newestOnTop = true;
 
     private Coroutine initRoutine;
 
@@ -71,6 +72,10 @@ public class SkinInventoryUI : MonoBehaviour
             return;
 
         var go = Instantiate(cardPrefab, contentParent);
+        if (newestOnTop)
+        {
+            go.transform.SetAsFirstSibling();
+        }
         var card = go.GetComponent<SkinInventoryCardUI>();
         if (card != null)
         {
