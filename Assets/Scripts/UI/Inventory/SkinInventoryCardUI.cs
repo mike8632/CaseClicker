@@ -14,6 +14,7 @@ public class SkinInventoryCardUI : MonoBehaviour
     [SerializeField] private GameObject statTrakBadge;
     [SerializeField] private Text statTrakText;
     [SerializeField] private Image rarityBackground;
+    [SerializeField] private Image rarityBackgroundSecondary;
 
     [Header("Formats")]
     [SerializeField] private string sellPriceFormat = "SELL FOR ${0:F2}";
@@ -57,6 +58,10 @@ public class SkinInventoryCardUI : MonoBehaviour
         if (rarityBackground != null)
         {
             rarityBackground.color = GetRarityColor(entry.rarity);
+        }
+        if (rarityBackgroundSecondary != null)
+        {
+            rarityBackgroundSecondary.color = GetRarityColor(entry.rarity);
         }
     }
 

@@ -339,10 +339,18 @@ public class CaseInventoryManager : MonoBehaviour
         if (GetCaseCount(data.caseId) <= 0) return false;
         if (GetKeyCount(data.caseId) <= 0) return false;
 
+        CaseData caseDataForOpen = ResolveCaseDataForOpen(data);
+        int configuredCount = caseDataForOpen.possibleItems != null ? caseDataForOpen.possibleItems.Count : -1;
+        Debug.Log($"[CaseInventory] TryOpenCase caseId='{caseDataForOpen.caseId}' caseName='{caseDataForOpen.caseName}' possibleItemsCount={configuredCount}");
+
         // Roll item result first (based on case item pool)
-        CaseItemData rolledItem = RollRandomItem(data);
+        CaseItemData rolledItem = RollRandomItem(caseDataForOpen);
         float rolledValue = 0f;
-        if (rolledItem != null)
+        if (rolledItem == null)
+        {
+            Debug.LogWarning($"[CaseInventory] Opened case '{caseDataForOpen.caseId}' but no valid items are configured in possibleItems. No skin was added.");
+        }
+        else
         {
             float min = Mathf.Min(rolledItem.minValue, rolledItem.maxValue);
             float max = Mathf.Max(rolledItem.minValue, rolledItem.maxValue);
@@ -355,30 +363,65 @@ public class CaseInventoryManager : MonoBehaviour
         // Add rolled skin/item to skin inventory if available
         if (rolledItem != null && SkinInventoryManager.Instance != null)
         {
-            SkinInventoryManager.Instance.AddSkin(rolledItem, data.caseId, rolledValue);
+            SkinInventoryManager.Instance.AddSkin(rolledItem, caseDataForOpen.caseId, rolledValue);
+        }
+        else if (rolledItem != null)
+        {
+            Debug.LogWarning("[CaseInventory] SkinInventoryManager is missing; rolled item was not added to UI inventory.");
         }
 
         // Trigger whatever system opens the case (not implemented here)
-        GameManager.Instance?.OnCaseOpened?.Invoke(data);
+        GameManager.Instance?.OnCaseOpened?.Invoke(caseDataForOpen);
 
         // Record case opened statistic with rolled item details
-        StatisticsManager.Instance?.RecordCaseOpened(data, rolledItem, rolledValue);
+        StatisticsManager.Instance?.RecordCaseOpened(caseDataForOpen, rolledItem, rolledValue);
 
-        Debug.Log($"[CaseInventory] Opened case '{data.caseId}' - total opened now: {StatisticsManager.Instance?.TotalCasesOpened}");
+        Debug.Log($"[CaseInventory] Opened case '{caseDataForOpen.caseId}' - total opened now: {StatisticsManager.Instance?.TotalCasesOpened}");
 
         return true;
+    }
+
+    private static CaseData ResolveCaseDataForOpen(CaseData input)
+    {
+        if (input == null) return null;
+
+        if (input.possibleItems != null && input.possibleItems.Count > 0)
+            return input;
+
+        var cards = Object.FindObjectsByType<CaseCardUI>(FindObjectsSortMode.None);
+        for (int i = 0; i < cards.Length; i++)
+        {
+            var card = cards[i];
+            var cardData = card != null ? card.data : null;
+            if (cardData == null) continue;
+            if (cardData.caseId != input.caseId) continue;
+            if (cardData.possibleItems == null || cardData.possibleItems.Count == 0) continue;
+
+            Debug.LogWarning($"[CaseInventory] Resolved case data fallback for caseId='{input.caseId}' using active CaseCardUI '{card.name}'.");
+            return cardData;
+        }
+
+        return input;
     }
 
     private CaseItemData RollRandomItem(CaseData data)
     {
         if (data == null || data.possibleItems == null || data.possibleItems.Count == 0)
+        {
+            Debug.LogWarning($"[CaseInventory] RollRandomItem failed early for caseId='{data?.caseId}'. possibleItems is null or empty.");
             return null;
+        }
 
         float totalWeight = 0f;
         for (int i = 0; i < data.possibleItems.Count; i++)
         {
             var item = data.possibleItems[i];
-            if (item == null) continue;
+            if (item == null)
+            {
+                Debug.LogWarning($"[CaseInventory] RollRandomItem item[{i}] is null for caseId='{data.caseId}'.");
+                continue;
+            }
+            Debug.Log($"[CaseInventory] RollRandomItem item[{i}] id='{item.itemId}' name='{item.itemName}' chance={item.dropChance}");
             totalWeight += Mathf.Max(0f, item.dropChance);
         }
 
