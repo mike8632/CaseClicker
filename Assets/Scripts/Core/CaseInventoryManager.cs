@@ -338,17 +338,67 @@ public class CaseInventoryManager : MonoBehaviour
         if (data == null || string.IsNullOrEmpty(data.caseId)) return false;
         if (GetCaseCount(data.caseId) <= 0) return false;
         if (GetKeyCount(data.caseId) <= 0) return false;
+
+        // Roll item result first (based on case item pool)
+        CaseItemData rolledItem = RollRandomItem(data);
+        float rolledValue = 0f;
+        if (rolledItem != null)
+        {
+            float min = Mathf.Min(rolledItem.minValue, rolledItem.maxValue);
+            float max = Mathf.Max(rolledItem.minValue, rolledItem.maxValue);
+            rolledValue = max > min ? Random.Range(min, max) : min;
+        }
+
         RemoveCases(data.caseId, 1);
         RemoveKeys(data.caseId, 1);
+
+        // Add rolled skin/item to skin inventory if available
+        if (rolledItem != null && SkinInventoryManager.Instance != null)
+        {
+            SkinInventoryManager.Instance.AddSkin(rolledItem, data.caseId, rolledValue);
+        }
+
         // Trigger whatever system opens the case (not implemented here)
         GameManager.Instance?.OnCaseOpened?.Invoke(data);
 
-        // Record case opened statistic (item details may be recorded elsewhere when the open result is processed)
-        StatisticsManager.Instance?.RecordCaseOpened(data, null, 0f);
+        // Record case opened statistic with rolled item details
+        StatisticsManager.Instance?.RecordCaseOpened(data, rolledItem, rolledValue);
 
         Debug.Log($"[CaseInventory] Opened case '{data.caseId}' - total opened now: {StatisticsManager.Instance?.TotalCasesOpened}");
 
         return true;
+    }
+
+    private CaseItemData RollRandomItem(CaseData data)
+    {
+        if (data == null || data.possibleItems == null || data.possibleItems.Count == 0)
+            return null;
+
+        float totalWeight = 0f;
+        for (int i = 0; i < data.possibleItems.Count; i++)
+        {
+            var item = data.possibleItems[i];
+            if (item == null) continue;
+            totalWeight += Mathf.Max(0f, item.dropChance);
+        }
+
+        if (totalWeight <= 0f)
+            return data.possibleItems[0];
+
+        float roll = Random.Range(0f, totalWeight);
+        float running = 0f;
+
+        for (int i = 0; i < data.possibleItems.Count; i++)
+        {
+            var item = data.possibleItems[i];
+            if (item == null) continue;
+
+            running += Mathf.Max(0f, item.dropChance);
+            if (roll <= running)
+                return item;
+        }
+
+        return data.possibleItems[0];
     }
 
     public void OpenCase(CaseData data)

@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     // Core system references
     public BalanceManager Balance { get; private set; }
     public CaseProgressManager CaseProgress { get; private set; }
+    public SkinInventoryManager SkinInventory { get; private set; }
     public ComboSystem Combo { get; private set; }
     public IdleIncomeSystem IdleIncome { get; private set; }
     public StatisticsManager Statistics { get; private set; }
@@ -64,6 +65,7 @@ public class GameManager : MonoBehaviour
         // Get or create core systems
         Balance = GetOrAddComponent<BalanceManager>();
         CaseProgress = GetOrAddComponent<CaseProgressManager>();
+        SkinInventory = GetOrAddComponent<SkinInventoryManager>();
         Combo = GetOrAddComponent<ComboSystem>();
         IdleIncome = GetOrAddComponent<IdleIncomeSystem>();
         Statistics = GetOrAddComponent<StatisticsManager>();
