@@ -1,11 +1,7 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-#if ENABLE_INPUT_SYSTEM
-using UnityEngine.InputSystem;
-#endif
 
 /// <summary>
 /// Manages sidebar tabs and panels. Call SelectTab(id) or SelectTab(index).
@@ -28,10 +24,6 @@ public class SidebarController : MonoBehaviour
 
     [Tooltip("If true, selecting the current tab will close it (toggle behavior).")]
     [SerializeField] private bool allowToggleCurrent = false;
-
-    [Header("Keyboard")]
-    [Tooltip("Enable pressing numeric keys 1..9 to open tabs 0..8")]
-    [SerializeField] private bool enableNumberShortcuts = true;
 
     // Events
     public UnityEvent<string, int> OnTabChanged; // (tabId, index)
@@ -56,36 +48,6 @@ public class SidebarController : MonoBehaviour
         if (orderedPanels.Count == 0) return;
         int idx = Mathf.Clamp(startTabIndex, 0, orderedPanels.Count - 1);
         SelectTab(idx);
-    }
-
-    private void Update()
-    {
-        if (!enableNumberShortcuts) return;
-
-        // Support both old and new input systems to avoid runtime exceptions.
-#if ENABLE_INPUT_SYSTEM
-        var kb = Keyboard.current;
-        if (kb == null) return;
-        // check numeric keys 1..9
-        for (int i = 0; i < Math.Min(9, orderedPanels.Count); i++)
-        {
-            // digit keys across the top of the keyboard
-            Key key = Key.Digit1 + i;
-            if (kb[key].wasPressedThisFrame)
-            {
-                SelectTab(i);
-            }
-        }
-#else
-        // Legacy Input Manager
-        for (int i = 0; i < Math.Min(9, orderedPanels.Count); i++)
-        {
-            if (Input.GetKeyDown(KeyCode.Alpha1 + i))
-            {
-                SelectTab(i);
-            }
-        }
-#endif
     }
 
     private void AutoRegisterPanels()

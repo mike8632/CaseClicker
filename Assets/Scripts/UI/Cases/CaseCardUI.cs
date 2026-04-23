@@ -1,8 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class CaseCardUI : MonoBehaviour
 {
+    private static readonly Dictionary<string, CaseData> CaseDataById = new Dictionary<string, CaseData>();
+
     [Header("Bindings")]
     public Image icon;
     public Text nameText;
@@ -35,8 +38,19 @@ public class CaseCardUI : MonoBehaviour
 
     private int ownedCount;
 
+    public static bool TryGetCaseDataById(string caseId, out CaseData caseData)
+    {
+        caseData = null;
+        if (string.IsNullOrEmpty(caseId)) return false;
+
+        string id = caseId.Trim();
+        EnsureCaseDataRegistry();
+        return CaseDataById.TryGetValue(id, out caseData);
+    }
+
     private void OnEnable()
     {
+        RegisterThisCaseData();
         Refresh();
 
         if (buyButton != null)
@@ -127,7 +141,38 @@ public class CaseCardUI : MonoBehaviour
     public void SetData(CaseData caseData)
     {
         data = caseData;
+        RegisterThisCaseData();
         Refresh();
+    }
+
+    private static void EnsureCaseDataRegistry()
+    {
+        if (CaseDataById.Count > 0)
+            return;
+
+        var cards = Resources.FindObjectsOfTypeAll<CaseCardUI>();
+        for (int i = 0; i < cards.Length; i++)
+        {
+            var card = cards[i];
+            if (card == null || card.data == null) continue;
+            if (!card.gameObject.scene.IsValid()) continue;
+
+            RegisterCaseData(card.data);
+        }
+    }
+
+    private void RegisterThisCaseData()
+    {
+        RegisterCaseData(data);
+    }
+
+    private static void RegisterCaseData(CaseData caseData)
+    {
+        if (caseData == null || string.IsNullOrEmpty(caseData.caseId))
+            return;
+
+        string id = caseData.caseId.Trim();
+        CaseDataById[id] = caseData;
     }
 
     public void Refresh()

@@ -9,6 +9,12 @@ public class CaseInventoryManager : MonoBehaviour
 {
     public static CaseInventoryManager Instance { get; private set; }
 
+    private static string NormalizeCaseId(string caseId)
+    {
+        if (string.IsNullOrWhiteSpace(caseId)) return null;
+        return caseId.Trim();
+    }
+
     // Unlock requests made before the inventory manager exists are queued here.
     private static readonly HashSet<string> _pendingUnlockCaseIds = new HashSet<string>();
 
@@ -47,9 +53,12 @@ public class CaseInventoryManager : MonoBehaviour
         // Seed from initial entries
         foreach (var e in initialEntries)
         {
-            if (e == null || string.IsNullOrEmpty(e.caseId)) continue;
-            _entries[e.caseId] = new CaseEntry {
-                caseId = e.caseId,
+            if (e == null) continue;
+            string id = NormalizeCaseId(e.caseId);
+            if (string.IsNullOrEmpty(id)) continue;
+
+            _entries[id] = new CaseEntry {
+                caseId = id,
                 ownedCount = e.ownedCount,
                 ownedKeys = e.ownedKeys,
                 unlocked = e.unlocked,
@@ -64,6 +73,7 @@ public class CaseInventoryManager : MonoBehaviour
 
     public static void UnlockCaseNowOrQueue(string caseId)
     {
+        caseId = NormalizeCaseId(caseId);
         if (string.IsNullOrEmpty(caseId)) return;
 
         if (Instance != null)
@@ -135,6 +145,7 @@ public class CaseInventoryManager : MonoBehaviour
 
     public bool IsCaseUnlocked(string caseId)
     {
+        caseId = NormalizeCaseId(caseId);
         if (string.IsNullOrEmpty(caseId)) return false;
         if (_entries.TryGetValue(caseId, out var e)) return e.unlocked;
         return false;
@@ -142,6 +153,7 @@ public class CaseInventoryManager : MonoBehaviour
 
     public void SetUnlocked(string caseId, bool unlocked)
     {
+        caseId = NormalizeCaseId(caseId);
         if (string.IsNullOrEmpty(caseId)) return;
         if (!_entries.TryGetValue(caseId, out var e))
         {
@@ -156,6 +168,7 @@ public class CaseInventoryManager : MonoBehaviour
 
     public int GetCaseCount(string caseId)
     {
+        caseId = NormalizeCaseId(caseId);
         if (string.IsNullOrEmpty(caseId)) return 0;
         if (_entries.TryGetValue(caseId, out var e)) return e.ownedCount;
         return 0;
@@ -163,6 +176,7 @@ public class CaseInventoryManager : MonoBehaviour
 
     public int GetKeyCount(string caseId)
     {
+        caseId = NormalizeCaseId(caseId);
         if (string.IsNullOrEmpty(caseId)) return 0;
         if (_entries.TryGetValue(caseId, out var e)) return e.ownedKeys;
         return 0;
@@ -190,6 +204,7 @@ public class CaseInventoryManager : MonoBehaviour
 
     public void AddCases(string caseId, int amount)
     {
+        caseId = NormalizeCaseId(caseId);
         if (string.IsNullOrEmpty(caseId) || amount <= 0) return;
         if (!_entries.TryGetValue(caseId, out var e))
         {
@@ -208,6 +223,7 @@ public class CaseInventoryManager : MonoBehaviour
 
     public void RemoveCases(string caseId, int amount)
     {
+        caseId = NormalizeCaseId(caseId);
         if (string.IsNullOrEmpty(caseId) || amount <= 0) return;
         if (_entries.TryGetValue(caseId, out var e))
         {
@@ -218,6 +234,7 @@ public class CaseInventoryManager : MonoBehaviour
 
     public void AddKeys(string caseId, int amount)
     {
+        caseId = NormalizeCaseId(caseId);
         if (string.IsNullOrEmpty(caseId) || amount <= 0) return;
         if (!_entries.TryGetValue(caseId, out var e))
         {
@@ -229,6 +246,7 @@ public class CaseInventoryManager : MonoBehaviour
 
     public void RemoveKeys(string caseId, int amount)
     {
+        caseId = NormalizeCaseId(caseId);
         if (string.IsNullOrEmpty(caseId) || amount <= 0) return;
         if (_entries.TryGetValue(caseId, out var e))
         {
@@ -261,6 +279,7 @@ public class CaseInventoryManager : MonoBehaviour
 
     public float GetKeyPrice(string caseId, float defaultPrice)
     {
+        caseId = NormalizeCaseId(caseId);
         if (string.IsNullOrEmpty(caseId)) return defaultPrice;
         if (_entries.TryGetValue(caseId, out var e) && e.keyPrice > 0f) return e.keyPrice;
         return defaultPrice;
@@ -268,6 +287,7 @@ public class CaseInventoryManager : MonoBehaviour
 
     public void SetKeyPrice(string caseId, float price)
     {
+        caseId = NormalizeCaseId(caseId);
         if (string.IsNullOrEmpty(caseId) || price <= 0f) return;
         if (!_entries.TryGetValue(caseId, out var e))
         {
@@ -499,6 +519,7 @@ public class CaseInventoryManager : MonoBehaviour
 
     public bool HasEntry(string caseId)
     {
+        caseId = NormalizeCaseId(caseId);
         if (string.IsNullOrEmpty(caseId)) return false;
         return _entries.ContainsKey(caseId);
     }
