@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class CaseCardUI : MonoBehaviour
 {
     private static readonly Dictionary<string, CaseData> CaseDataById = new Dictionary<string, CaseData>();
+    private static readonly Dictionary<string, CaseData> CaseDataByName = new Dictionary<string, CaseData>();
 
     [Header("Bindings")]
     public Image icon;
@@ -45,7 +46,25 @@ public class CaseCardUI : MonoBehaviour
 
         string id = caseId.Trim();
         EnsureCaseDataRegistry();
+        if (CaseDataById.TryGetValue(id, out caseData))
+            return true;
+
+        RebuildCaseDataRegistry();
         return CaseDataById.TryGetValue(id, out caseData);
+    }
+
+    public static bool TryGetCaseDataByName(string caseName, out CaseData caseData)
+    {
+        caseData = null;
+        string normalizedName = NormalizeCaseName(caseName);
+        if (string.IsNullOrEmpty(normalizedName)) return false;
+
+        EnsureCaseDataRegistry();
+        if (CaseDataByName.TryGetValue(normalizedName, out caseData))
+            return true;
+
+        RebuildCaseDataRegistry();
+        return CaseDataByName.TryGetValue(normalizedName, out caseData);
     }
 
     private void OnEnable()
@@ -150,6 +169,14 @@ public class CaseCardUI : MonoBehaviour
         if (CaseDataById.Count > 0)
             return;
 
+        RebuildCaseDataRegistry();
+    }
+
+    private static void RebuildCaseDataRegistry()
+    {
+        CaseDataById.Clear();
+        CaseDataByName.Clear();
+
         var cards = Resources.FindObjectsOfTypeAll<CaseCardUI>();
         for (int i = 0; i < cards.Length; i++)
         {
@@ -173,6 +200,18 @@ public class CaseCardUI : MonoBehaviour
 
         string id = caseData.caseId.Trim();
         CaseDataById[id] = caseData;
+
+        string normalizedName = NormalizeCaseName(caseData.caseName);
+        if (!string.IsNullOrEmpty(normalizedName))
+            CaseDataByName[normalizedName] = caseData;
+    }
+
+    private static string NormalizeCaseName(string caseName)
+    {
+        if (string.IsNullOrWhiteSpace(caseName))
+            return null;
+
+        return caseName.Trim().ToLowerInvariant();
     }
 
     public void Refresh()

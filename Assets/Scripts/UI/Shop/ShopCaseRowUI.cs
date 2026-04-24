@@ -22,7 +22,7 @@ public class ShopCaseRowUI : MonoBehaviour
     [SerializeField] private Text buyButtonText;
 
     [Header("Formats")]
-    [SerializeField] private string countFormat = "COUNT:{0}";
+    [SerializeField] private string countFormat = "COUNT: {0}";
     [SerializeField] private string priceFormat = "${0:F2}";
     [SerializeField] private string buyFormat = "Buy {0} FOR ${1:F2}";
 
@@ -30,6 +30,7 @@ public class ShopCaseRowUI : MonoBehaviour
     [SerializeField] private string caseId;
     [SerializeField] private CaseData data;
     [SerializeField] private bool buyKeysInsteadOfCases = false;
+    [SerializeField] private Sprite keyIconOverride;
     [SerializeField] private int minAmount = 1;
     [SerializeField] private int maxAmount = 999999;
     [SerializeField] private int maxDigits = 6;
@@ -37,13 +38,29 @@ public class ShopCaseRowUI : MonoBehaviour
     [Header("Optional Lock UI")]
     [SerializeField] private GameObject lockOverlay;
 
+    [Header("Buy Button Colors")]
+    [SerializeField] private bool useAffordabilityColor = true;
+    [SerializeField] private Color unaffordableColor = new Color(0.75f, 0.15f, 0.15f, 1f);
+
     private int _amount = 1;
     private bool _syncingInput;
+    private Coroutine _bindRoutine;
+    private ColorBlock _defaultBuyButtonColors;
+    private bool _hasDefaultBuyButtonColors;
 
     private void Awake()
     {
+        if (!string.IsNullOrEmpty(countFormat))
+            countFormat = countFormat.Replace(":{0}", ": {0}");
+
         if (string.IsNullOrEmpty(caseId) && data != null)
             caseId = data.caseId;
+
+        if (buyButton != null)
+        {
+            _defaultBuyButtonColors = buyButton.colors;
+            _hasDefaultBuyButtonColors = true;
+        }
 
         _amount = Mathf.Clamp(_amount, Mathf.Max(1, minAmount), Mathf.Max(minAmount, maxAmount));
         if (amountInput != null)
@@ -76,11 +93,16 @@ public class ShopCaseRowUI : MonoBehaviour
             amountInput.onValueChanged.AddListener(OnAmountChanged);
         }
 
-        if (CaseInventoryManager.Instance != null)
-            CaseInventoryManager.Instance.OnCaseCountChanged.AddListener(OnCaseCountChanged);
+        EnsureRuntimeSubscriptions();
 
-        if (BalanceManager.Instance != null)
-            BalanceManager.Instance.OnMoneyChanged.AddListener(OnMoneyChanged);
+        if (GameManager.Instance != null)
+            GameManager.Instance.OnGameInitialized.AddListener(OnGameInitialized);
+        if (SaveSystem.Instance != null)
+            SaveSystem.Instance.OnLoadCompleted.AddListener(OnSaveLoadCompleted);
+
+        if (_bindRoutine != null)
+            StopCoroutine(_bindRoutine);
+        _bindRoutine = StartCoroutine(BindWhenManagersReady());
 
         RefreshAll();
     }
@@ -97,6 +119,54 @@ public class ShopCaseRowUI : MonoBehaviour
 
         if (BalanceManager.Instance != null)
             BalanceManager.Instance.OnMoneyChanged.RemoveListener(OnMoneyChanged);
+
+        if (GameManager.Instance != null)
+            GameManager.Instance.OnGameInitialized.RemoveListener(OnGameInitialized);
+        if (SaveSystem.Instance != null)
+            SaveSystem.Instance.OnLoadCompleted.RemoveListener(OnSaveLoadCompleted);
+
+        if (_bindRoutine != null)
+        {
+            StopCoroutine(_bindRoutine);
+            _bindRoutine = null;
+        }
+    }
+
+    private System.Collections.IEnumerator BindWhenManagersReady()
+    {
+        while (enabled && (CaseInventoryManager.Instance == null || BalanceManager.Instance == null))
+            yield return null;
+
+        EnsureRuntimeSubscriptions();
+        RefreshAll();
+        _bindRoutine = null;
+    }
+
+    private void EnsureRuntimeSubscriptions()
+    {
+        if (CaseInventoryManager.Instance != null)
+        {
+            CaseInventoryManager.Instance.OnCaseCountChanged.RemoveListener(OnCaseCountChanged);
+            CaseInventoryManager.Instance.OnCaseCountChanged.AddListener(OnCaseCountChanged);
+        }
+
+        if (BalanceManager.Instance != null)
+        {
+            BalanceManager.Instance.OnMoneyChanged.RemoveListener(OnMoneyChanged);
+            BalanceManager.Instance.OnMoneyChanged.AddListener(OnMoneyChanged);
+        }
+    }
+
+    private void OnGameInitialized()
+    {
+        EnsureRuntimeSubscriptions();
+        RefreshAll();
+    }
+
+    private void OnSaveLoadCompleted()
+    {
+        EnsureRuntimeSubscriptions();
+        RefreshAll();
     }
 
     public void SetData(CaseData caseData)
@@ -180,8 +250,11 @@ public class ShopCaseRowUI : MonoBehaviour
             return;
         }
 
-        if (nameText != null) nameText.text = data.caseName;
-        if (icon != null) icon.sprite = data.caseIcon;
+        if (nameText != null) nameText.text = GetDisplayName();
+        if (icon != null)
+            icon.sprite = buyKeysInsteadOfCases && keyIconOverride != null
+                ? keyIconOverride
+                : data.caseIcon;
 
         int count = GetOwnedCount();
         if (countText != null) countText.text = string.Format(countFormat, count);
@@ -194,9 +267,12 @@ public class ShopCaseRowUI : MonoBehaviour
 
     private void RefreshBuyState()
     {
+        data = ResolveCaseData();
+
         if (data == null)
         {
             if (buyButton != null) buyButton.interactable = false;
+            ApplyBuyButtonAffordabilityVisual(unlocked: false, canAfford: false);
             return;
         }
 
@@ -215,6 +291,8 @@ public class ShopCaseRowUI : MonoBehaviour
 
         if (buyButton != null)
             buyButton.interactable = canBuy;
+
+        ApplyBuyButtonAffordabilityVisual(unlocked, canAfford);
 
         if (buyButtonText != null)
             buyButtonText.text = string.Format(buyFormat, _amount, totalPrice);
@@ -269,30 +347,74 @@ public class ShopCaseRowUI : MonoBehaviour
             : CaseInventoryManager.Instance.GetCasePrice(data);
     }
 
+    private string GetDisplayName()
+    {
+        if (data == null)
+            return string.Empty;
+
+        string baseName = data.caseName ?? string.Empty;
+        if (!buyKeysInsteadOfCases)
+            return baseName;
+
+        int caseIndex = baseName.IndexOf("case", System.StringComparison.OrdinalIgnoreCase);
+        if (caseIndex >= 0)
+            return baseName.Remove(caseIndex, 4).Insert(caseIndex, "Key");
+
+        if (baseName.EndsWith(" key", System.StringComparison.OrdinalIgnoreCase))
+            return baseName;
+
+        return baseName + " Key";
+    }
+
     private string GetCurrentCaseId()
     {
+        string dataCaseId = data != null ? data.caseId?.Trim() : null;
+        if (!string.IsNullOrEmpty(dataCaseId))
+            return dataCaseId;
+
         if (!string.IsNullOrEmpty(caseId))
             return caseId.Trim();
 
-        return data != null ? data.caseId?.Trim() : null;
+        return null;
     }
 
     private CaseData ResolveCaseData()
     {
-        string id = GetCurrentCaseId();
-        if (string.IsNullOrEmpty(id))
-            return null;
+        string configuredCaseId = string.IsNullOrEmpty(caseId) ? null : caseId.Trim();
+        if (!string.IsNullOrEmpty(configuredCaseId))
+        {
+            if (CaseCardUI.TryGetCaseDataById(configuredCaseId, out var configuredResolved))
+            {
+                data = configuredResolved;
+                return data;
+            }
+        }
 
-        if (CaseCardUI.TryGetCaseDataById(id, out var resolved))
+        string dataCaseId = data != null ? data.caseId?.Trim() : null;
+        if (!string.IsNullOrEmpty(dataCaseId) &&
+            CaseCardUI.TryGetCaseDataById(dataCaseId, out var resolved))
         {
             data = resolved;
             return data;
         }
 
-        // If explicit caseId is configured, do not fall back to unrelated inline data.
-        if (!string.IsNullOrEmpty(caseId))
-            return null;
+        string dataCaseName = data != null ? data.caseName : null;
+        if (!string.IsNullOrEmpty(dataCaseName) &&
+            CaseCardUI.TryGetCaseDataByName(dataCaseName, out var resolvedByName))
+        {
+            data = resolvedByName;
+            return data;
+        }
 
+        string uiCaseName = nameText != null ? nameText.text : null;
+        if (!string.IsNullOrEmpty(uiCaseName) &&
+            CaseCardUI.TryGetCaseDataByName(uiCaseName, out var resolvedByUiName))
+        {
+            data = resolvedByUiName;
+            return data;
+        }
+
+        // Fall back to the currently assigned data reference.
         return data;
     }
 
@@ -310,5 +432,23 @@ public class ShopCaseRowUI : MonoBehaviour
         }
 
         return sb.ToString();
+    }
+
+    private void ApplyBuyButtonAffordabilityVisual(bool unlocked, bool canAfford)
+    {
+        if (!useAffordabilityColor || buyButton == null || !_hasDefaultBuyButtonColors)
+            return;
+
+        var colors = _defaultBuyButtonColors;
+        if (unlocked && !canAfford)
+        {
+            colors.normalColor = unaffordableColor;
+            colors.highlightedColor = unaffordableColor;
+            colors.pressedColor = unaffordableColor;
+            colors.selectedColor = unaffordableColor;
+            colors.disabledColor = unaffordableColor;
+        }
+
+        buyButton.colors = colors;
     }
 }
