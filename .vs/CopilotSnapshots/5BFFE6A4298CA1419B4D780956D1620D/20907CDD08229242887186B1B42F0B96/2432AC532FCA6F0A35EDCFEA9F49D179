@@ -1,7 +1,6 @@
-using System.Text;
+﻿using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Events;
 
 /// <summary>
 /// Dynamic shop row for buying cases/keys in amounts.
@@ -9,9 +8,6 @@ using UnityEngine.Events;
 /// </summary>
 public class ShopCaseRowUI : MonoBehaviour
 {
-    [System.Serializable]
-    public class IntEvent : UnityEvent<int> { }
-
     [Header("Bindings")]
     [SerializeField] private Image icon;
     [SerializeField] private Text nameText;
@@ -31,7 +27,6 @@ public class ShopCaseRowUI : MonoBehaviour
     [SerializeField] private string buyFormat = "Buy {0} FOR ${1:F2}";
 
     [Header("Data")]
-    [SerializeField] private bool useCaseData = true;
     [SerializeField] private string caseId;
     [SerializeField] private CaseData data;
     [SerializeField] private bool buyKeysInsteadOfCases = false;
@@ -39,15 +34,6 @@ public class ShopCaseRowUI : MonoBehaviour
     [SerializeField] private int minAmount = 1;
     [SerializeField] private int maxAmount = 999999;
     [SerializeField] private int maxDigits = 6;
-
-    [Header("Custom Item (used when Use Case Data is off)")]
-    [SerializeField] private string customItemName = "Item";
-    [SerializeField] private Sprite customItemIcon;
-    [SerializeField] private float customUnitPrice = 0.60f;
-    [SerializeField] private int customOwnedCount = 0;
-    [SerializeField] private bool customUnlocked = true;
-    [SerializeField] private bool spendMoneyOnCustomBuy = true;
-    [SerializeField] private IntEvent onCustomBuy;
 
     [Header("Optional Lock UI")]
     [SerializeField] private GameObject lockOverlay;
@@ -161,15 +147,13 @@ public class ShopCaseRowUI : MonoBehaviour
         if (CaseInventoryManager.Instance != null)
         {
             CaseInventoryManager.Instance.OnCaseCountChanged.RemoveListener(OnCaseCountChanged);
-            if (useCaseData)
-                CaseInventoryManager.Instance.OnCaseCountChanged.AddListener(OnCaseCountChanged);
+            CaseInventoryManager.Instance.OnCaseCountChanged.AddListener(OnCaseCountChanged);
         }
 
         if (BalanceManager.Instance != null)
         {
             BalanceManager.Instance.OnMoneyChanged.RemoveListener(OnMoneyChanged);
-            if (useCaseData || spendMoneyOnCustomBuy)
-                BalanceManager.Instance.OnMoneyChanged.AddListener(OnMoneyChanged);
+            BalanceManager.Instance.OnMoneyChanged.AddListener(OnMoneyChanged);
         }
     }
 
@@ -196,8 +180,6 @@ public class ShopCaseRowUI : MonoBehaviour
 
     private void OnCaseCountChanged(string caseId)
     {
-        if (!useCaseData) return;
-
         string currentCaseId = GetCurrentCaseId();
         if (string.IsNullOrEmpty(currentCaseId) || string.IsNullOrEmpty(caseId)) return;
         if (!string.Equals(currentCaseId, caseId.Trim(), System.StringComparison.Ordinal)) return;
@@ -254,19 +236,6 @@ public class ShopCaseRowUI : MonoBehaviour
 
     private void RefreshAll()
     {
-        if (!useCaseData)
-        {
-            if (nameText != null) nameText.text = customItemName;
-            if (icon != null) icon.sprite = customItemIcon;
-            if (countText != null) countText.text = string.Format(countFormat, Mathf.Max(0, customOwnedCount));
-
-            float customPrice = Mathf.Max(0f, customUnitPrice);
-            if (unitPriceText != null) unitPriceText.text = string.Format(priceFormat, customPrice);
-
-            SetAmount(_amount);
-            return;
-        }
-
         data = ResolveCaseData();
 
         if (data == null)
@@ -298,35 +267,6 @@ public class ShopCaseRowUI : MonoBehaviour
 
     private void RefreshBuyState()
     {
-        if (!useCaseData)
-        {
-            float customPrice = Mathf.Max(0f, customUnitPrice);
-            float customTotalPrice = customPrice * _amount;
-
-            bool customCanAfford = !spendMoneyOnCustomBuy ||
-                                   (BalanceManager.Instance != null && BalanceManager.Instance.CanAfford(customTotalPrice));
-            bool customCanBuy = customUnlocked && customPrice > 0f && _amount > 0 && customCanAfford;
-
-            if (lockOverlay != null)
-                lockOverlay.SetActive(!customUnlocked);
-
-            if (buyButton != null)
-                buyButton.interactable = customCanBuy;
-
-            ApplyBuyButtonAffordabilityVisual(customUnlocked, customCanAfford);
-
-            if (buyButtonText != null)
-                buyButtonText.text = string.Format(buyFormat, _amount, customTotalPrice);
-
-            if (minusButton != null)
-                minusButton.interactable = _amount > Mathf.Max(1, minAmount);
-
-            if (plusButton != null)
-                plusButton.interactable = _amount < Mathf.Max(Mathf.Max(1, minAmount), maxAmount);
-
-            return;
-        }
-
         data = ResolveCaseData();
 
         if (data == null)
@@ -366,26 +306,6 @@ public class ShopCaseRowUI : MonoBehaviour
 
     private void OnBuyClicked()
     {
-        if (!useCaseData)
-        {
-            if (!customUnlocked || _amount <= 0)
-                return;
-
-            float unitPrice = Mathf.Max(0f, customUnitPrice);
-            float totalPrice = unitPrice * _amount;
-            if (spendMoneyOnCustomBuy)
-            {
-                if (BalanceManager.Instance == null || !BalanceManager.Instance.CanAfford(totalPrice))
-                    return;
-
-                BalanceManager.Instance.SpendMoney(totalPrice);
-            }
-
-            onCustomBuy?.Invoke(_amount);
-            RefreshAll();
-            return;
-        }
-
         data = ResolveCaseData();
         if (data == null || CaseInventoryManager.Instance == null) return;
 
@@ -408,9 +328,6 @@ public class ShopCaseRowUI : MonoBehaviour
 
     private int GetOwnedCount()
     {
-        if (!useCaseData)
-            return Mathf.Max(0, customOwnedCount);
-
         string currentCaseId = GetCurrentCaseId();
         if (CaseInventoryManager.Instance == null || string.IsNullOrEmpty(currentCaseId)) return 0;
 
@@ -421,9 +338,6 @@ public class ShopCaseRowUI : MonoBehaviour
 
     private float GetUnitPrice()
     {
-        if (!useCaseData)
-            return Mathf.Max(0f, customUnitPrice);
-
         if (data == null) return 0f;
         if (CaseInventoryManager.Instance == null)
             return buyKeysInsteadOfCases ? data.keyPrice : data.casePrice;
@@ -435,9 +349,6 @@ public class ShopCaseRowUI : MonoBehaviour
 
     private string GetDisplayName()
     {
-        if (!useCaseData)
-            return customItemName ?? string.Empty;
-
         if (data == null)
             return string.Empty;
 
@@ -457,9 +368,6 @@ public class ShopCaseRowUI : MonoBehaviour
 
     private string GetCurrentCaseId()
     {
-        if (!useCaseData)
-            return null;
-
         string dataCaseId = data != null ? data.caseId?.Trim() : null;
         if (!string.IsNullOrEmpty(dataCaseId))
             return dataCaseId;
@@ -472,9 +380,6 @@ public class ShopCaseRowUI : MonoBehaviour
 
     private CaseData ResolveCaseData()
     {
-        if (!useCaseData)
-            return null;
-
         string configuredCaseId = string.IsNullOrEmpty(caseId) ? null : caseId.Trim();
         if (!string.IsNullOrEmpty(configuredCaseId))
         {

@@ -1,4 +1,4 @@
-using System.Text;
+﻿using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
@@ -260,8 +260,8 @@ public class ShopCaseRowUI : MonoBehaviour
             if (icon != null) icon.sprite = customItemIcon;
             if (countText != null) countText.text = string.Format(countFormat, Mathf.Max(0, customOwnedCount));
 
-            float customPrice = Mathf.Max(0f, customUnitPrice);
-            if (unitPriceText != null) unitPriceText.text = string.Format(priceFormat, customPrice);
+            float unitPrice = Mathf.Max(0f, customUnitPrice);
+            if (unitPriceText != null) unitPriceText.text = string.Format(priceFormat, unitPrice);
 
             SetAmount(_amount);
             return;
@@ -300,23 +300,23 @@ public class ShopCaseRowUI : MonoBehaviour
     {
         if (!useCaseData)
         {
-            float customPrice = Mathf.Max(0f, customUnitPrice);
-            float customTotalPrice = customPrice * _amount;
+            float unitPrice = Mathf.Max(0f, customUnitPrice);
+            float totalPrice = unitPrice * _amount;
 
-            bool customCanAfford = !spendMoneyOnCustomBuy ||
-                                   (BalanceManager.Instance != null && BalanceManager.Instance.CanAfford(customTotalPrice));
-            bool customCanBuy = customUnlocked && customPrice > 0f && _amount > 0 && customCanAfford;
+            bool canAfford = !spendMoneyOnCustomBuy ||
+                             (BalanceManager.Instance != null && BalanceManager.Instance.CanAfford(totalPrice));
+            bool canBuy = customUnlocked && unitPrice > 0f && _amount > 0 && canAfford;
 
             if (lockOverlay != null)
                 lockOverlay.SetActive(!customUnlocked);
 
             if (buyButton != null)
-                buyButton.interactable = customCanBuy;
+                buyButton.interactable = canBuy;
 
-            ApplyBuyButtonAffordabilityVisual(customUnlocked, customCanAfford);
+            ApplyBuyButtonAffordabilityVisual(customUnlocked, canAfford);
 
             if (buyButtonText != null)
-                buyButtonText.text = string.Format(buyFormat, _amount, customTotalPrice);
+                buyButtonText.text = string.Format(buyFormat, _amount, totalPrice);
 
             if (minusButton != null)
                 minusButton.interactable = _amount > Mathf.Max(1, minAmount);
