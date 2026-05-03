@@ -1,0 +1,264 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
+
+/// <summary>
+/// Handles the CS:GO style scrolling case opening animation.
+/// </summary>
+public class CaseOpeningRouletteUI : MonoBehaviour
+{
+    [Header("UI References")]
+    [Tooltip("The RectTransform that holds the skin cards (e.g. 'Roller').")]
+    public RectTransform rollerRect;
+
+    [Tooltip("Viewport/mask RectTransform used for centering the winner.")]
+    public RectTransform viewportRect;
+
+    [Tooltip("Scene template to duplicate for the roller (can be a UI element in the scene).")]
+    public GameObject skinCardTemplate;
+
+    [Tooltip("If true, uses existing child slots under Roller and does not instantiate.")]
+    public bool useExistingSlotsOnly = false;
+
+    [Tooltip("If true, hides the template object before spawning clones.")]
+    public bool hideTemplateOnStart = true;
+
+    [Header("Animation Settings")]
+    [Tooltip("How many total items to generate for the visual roll.")]
+    public int totalItemsToGenerate = 45;
+
+    [Tooltip("The index of the winning item in the randomly generated list.")]
+    public int winningItemIndex = 40;
+
+    [Tooltip("How many items must appear after the winner for a better roulette feel.")]
+    public int minItemsAfterWinner = 3;
+
+    [Tooltip("How long the rolling animation should take in seconds.")]
+    public float rollDuration = 5f;
+
+    [Tooltip("Instant open duration override.")]
+    public float instantRollDuration = 0f;
+
+    [Tooltip("Width of one skin card + spacing (used to calculate slide distance).")]
+    public float itemWidth = 200f;
+
+    [Tooltip("If true, calculate item width + spacing from layout components.")]
+    public bool autoItemWidth = true;
+
+    [Header("Events")]
+    public UnityEvent OnRollStarted;
+    public UnityEvent<CaseItemData> OnRollFinished;
+
+    private readonly List<GameObject> spawnedCards = new List<GameObject>();
+    private readonly List<SkinInventoryCardUI> slotCards = new List<SkinInventoryCardUI>();
+    private bool isRolling = false;
+    private CaseData pendingCaseData;
+    private CaseItemData pendingWinner;
+
+    /// <summary>
+    /// Starts the roulette animation with the given possible items and the confirmed winner.
+    /// </summary>
+    public void StartRoulette(CaseData caseData, CaseItemData winnerData)
+    {
+        if (isRolling) return;
+
+        pendingCaseData = caseData;
+        pendingWinner = winnerData;
+        StartCoroutine(RollRoutine(caseData, winnerData));
+    }
+
+    public void SetRollData(CaseData caseData, CaseItemData winnerData)
+    {
+        pendingCaseData = caseData;
+        pendingWinner = winnerData;
+    }
+
+    public void StartSlowOpen()
+    {
+        if (pendingCaseData == null || pendingWinner == null) return;
+        rollDuration = Mathf.Max(0.01f, rollDuration);
+        StartRoulette(pendingCaseData, pendingWinner);
+    }
+
+    public void StartInstantOpen()
+    {
+        if (pendingCaseData == null || pendingWinner == null) return;
+        float previousDuration = rollDuration;
+        rollDuration = Mathf.Max(0f, instantRollDuration);
+        StartRoulette(pendingCaseData, pendingWinner);
+        rollDuration = previousDuration;
+    }
+
+    private IEnumerator RollRoutine(CaseData caseData, CaseItemData winner)
+    {
+        isRolling = true;
+        OnRollStarted?.Invoke();
+
+        PrepareSlots();
+        int itemCount = slotCards.Count;
+        if (itemCount == 0)
+        {
+            isRolling = false;
+            yield break;
+        }
+
+        int maxWinningIndex = Mathf.Max(0, itemCount - 1 - Mathf.Max(0, minItemsAfterWinner));
+        int clampedWinningIndex = Mathf.Clamp(winningItemIndex, 0, maxWinningIndex);
+
+        for (int i = 0; i < itemCount; i++)
+        {
+            var cardUI = slotCards[i];
+            if (cardUI == null) continue;
+
+            if (i == clampedWinningIndex)
+            {
+                cardUI.Bind(CreateDummyEntry(winner));
+            }
+            else
+            {
+                var randomItem = GetRandomItemFromCase(caseData);
+                cardUI.Bind(CreateDummyEntry(randomItem));
+            }
+        }
+
+        // Force UI update to ensure layout group calculates widths
+        Canvas.ForceUpdateCanvases();
+
+        // 3. Calculate target position
+        // We want the winning item to be centered.
+        // We move the roller RectTransform to the left.
+
+        // Randomize the stop position slightly so it doesn't land perfectly centered every time
+        float slotWidth = GetSlotWidth();
+        float randomOffset = Random.Range(-slotWidth * 0.4f, slotWidth * 0.4f);
+        float targetX = GetTargetX(clampedWinningIndex, slotWidth, randomOffset);
+
+        // Reset position to 0
+        rollerRect.anchoredPosition = new Vector2(0, rollerRect.anchoredPosition.y);
+
+        if (rollDuration <= 0f || itemCount <= 1)
+        {
+            rollerRect.anchoredPosition = new Vector2(targetX, rollerRect.anchoredPosition.y);
+            isRolling = false;
+            OnRollFinished?.Invoke(winner);
+            yield break;
+        }
+
+        // 4. Animate with an Ease-Out curve
+        float elapsed = 0f;
+        while (elapsed < rollDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / rollDuration;
+
+            // Cubic ease out: f(t) = 1 - (1-t)^3
+            float easeT = 1f - Mathf.Pow(1f - t, 3f);
+
+            float newX = Mathf.Lerp(0, targetX, easeT);
+            rollerRect.anchoredPosition = new Vector2(newX, rollerRect.anchoredPosition.y);
+
+            yield return null;
+        }
+
+        // Finish exactly at the target
+        rollerRect.anchoredPosition = new Vector2(targetX, rollerRect.anchoredPosition.y);
+
+        isRolling = false;
+        OnRollFinished?.Invoke(winner);
+    }
+
+    private float GetSlotWidth()
+    {
+        if (autoItemWidth && slotCards.Count > 0)
+        {
+            var slotRect = slotCards[0] != null ? slotCards[0].GetComponent<RectTransform>() : null;
+            float width = slotRect != null ? slotRect.rect.width : itemWidth;
+
+            var layout = rollerRect != null ? rollerRect.GetComponent<HorizontalLayoutGroup>() : null;
+            if (layout != null)
+                width += layout.spacing;
+
+            return Mathf.Max(1f, width);
+        }
+
+        return Mathf.Max(1f, itemWidth);
+    }
+
+    private float GetTargetX(int winningIndex, float slotWidth, float randomOffset)
+    {
+        float paddingLeft = 0f;
+        var layout = rollerRect != null ? rollerRect.GetComponent<HorizontalLayoutGroup>() : null;
+        if (layout != null)
+            paddingLeft = layout.padding.left;
+
+        float centeredOffset = 0f;
+        if (viewportRect != null)
+        {
+            centeredOffset = (viewportRect.rect.width - slotWidth) * 0.5f;
+        }
+
+        return -(paddingLeft + (winningIndex * slotWidth)) + centeredOffset + randomOffset;
+    }
+
+    private void PrepareSlots()
+    {
+        slotCards.Clear();
+
+        if (!useExistingSlotsOnly)
+        {
+            foreach (var card in spawnedCards)
+            {
+                if (card != null) Destroy(card);
+            }
+            spawnedCards.Clear();
+        }
+
+        if (useExistingSlotsOnly || skinCardTemplate == null)
+        {
+            if (rollerRect != null)
+                slotCards.AddRange(rollerRect.GetComponentsInChildren<SkinInventoryCardUI>(true));
+            return;
+        }
+
+        if (hideTemplateOnStart)
+            skinCardTemplate.SetActive(false);
+
+        for (int i = 0; i < totalItemsToGenerate; i++)
+        {
+            GameObject obj = Instantiate(skinCardTemplate, rollerRect);
+            obj.SetActive(true);
+            spawnedCards.Add(obj);
+
+            var cardUI = obj.GetComponent<SkinInventoryCardUI>();
+            if (cardUI != null)
+                slotCards.Add(cardUI);
+        }
+    }
+
+    private CaseItemData GetRandomItemFromCase(CaseData caseData)
+    {
+        if (caseData == null || caseData.possibleItems == null || caseData.possibleItems.Count == 0)
+            return null;
+
+        return caseData.possibleItems[Random.Range(0, caseData.possibleItems.Count)];
+    }
+
+    private SkinInventoryEntry CreateDummyEntry(CaseItemData data)
+    {
+        if (data == null) return null;
+
+        return new SkinInventoryEntry
+        {
+            weaponName = data.weaponName,
+            skinName = data.skinName,
+            itemName = data.itemName,
+            itemIcon = data.itemIcon,
+            rarity = data.rarity,
+            wear = data.wear,
+            marketValue = Random.Range(data.minValue, data.maxValue),
+            isStatTrak = Random.value < 0.1f // 10% chance for visual randomness in roller
+        };
+    }
+}

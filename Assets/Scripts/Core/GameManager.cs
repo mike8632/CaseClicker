@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     public UnityEvent<CaseData> OnCaseDropped;
     public UnityEvent<float> OnComboChanged;
     public UnityEvent<CaseData> OnCaseOpened; // NEW: fired when a case is opened (consumes 1 case + 1 key)
+    public UnityEvent<CaseData, CaseItemData> OnCaseOpenedWithItem;
 
     // Properties
     public bool IsGamePaused => isGamePaused;
@@ -56,6 +57,7 @@ public class GameManager : MonoBehaviour
         OnCaseDropped ??= new UnityEvent<CaseData>();
         OnComboChanged ??= new UnityEvent<float>();
         OnCaseOpened ??= new UnityEvent<CaseData>();
+        OnCaseOpenedWithItem ??= new UnityEvent<CaseData, CaseItemData>();
 
         InitializeSystems();
     }
@@ -121,6 +123,12 @@ public class GameManager : MonoBehaviour
     public void RaiseCaseOpened(CaseData data)
     {
         OnCaseOpened?.Invoke(data);
+    }
+
+    public void RaiseCaseOpened(CaseData data, CaseItemData item)
+    {
+        OnCaseOpened?.Invoke(data);
+        OnCaseOpenedWithItem?.Invoke(data, item);
     }
 
     #endregion

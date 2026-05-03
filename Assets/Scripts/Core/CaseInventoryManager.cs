@@ -391,7 +391,8 @@ public class CaseInventoryManager : MonoBehaviour
         }
 
         // Trigger whatever system opens the case (not implemented here)
-        GameManager.Instance?.OnCaseOpened?.Invoke(caseDataForOpen);
+        if (GameManager.Instance != null)
+            GameManager.Instance.RaiseCaseOpened(caseDataForOpen, rolledItem);
 
         // Record case opened statistic with rolled item details
         StatisticsManager.Instance?.RecordCaseOpened(caseDataForOpen, rolledItem, rolledValue);
