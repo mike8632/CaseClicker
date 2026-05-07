@@ -13,6 +13,7 @@ public class SkinInventoryCardUI : MonoBehaviour
     [SerializeField] private Text sellPriceText;
     [SerializeField] private GameObject statTrakBadge;
     [SerializeField] private Text statTrakText;
+    [SerializeField] private Image knifeBadge;
     [SerializeField] private Image rarityBackground;
     [SerializeField] private Image rarityBackgroundSecondary;
 
@@ -24,12 +25,19 @@ public class SkinInventoryCardUI : MonoBehaviour
 
     [Header("Rarity Display")]
     [SerializeField] private bool showRarityText = false;
+    [SerializeField] private bool hideKnifeImage = false;
 
     public void Bind(SkinInventoryEntry entry)
     {
         if (entry == null) return;
 
-        if (skinImage != null) skinImage.sprite = entry.itemIcon;
+        if (skinImage != null)
+        {
+            bool showImage = !hideKnifeImage || entry.rarity != ItemRarity.Knife;
+            skinImage.gameObject.SetActive(showImage);
+            if (showImage)
+                skinImage.sprite = entry.itemIcon;
+        }
         if (weaponNameText != null)
         {
             string baseWeaponName = !string.IsNullOrEmpty(entry.weaponName) ? entry.weaponName : entry.itemName;
@@ -61,6 +69,9 @@ public class SkinInventoryCardUI : MonoBehaviour
             if (entry.isStatTrak)
                 statTrakText.text = statTrakFormat;
         }
+
+        if (knifeBadge != null)
+            knifeBadge.gameObject.SetActive(entry.rarity == ItemRarity.Knife);
 
         if (rarityBackground != null)
         {

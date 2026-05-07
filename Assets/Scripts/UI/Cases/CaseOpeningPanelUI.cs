@@ -116,6 +116,12 @@ public class CaseOpeningPanelUI : MonoBehaviour
 
     private void OnRollFinished(CaseItemData _)
     {
+        if (roulette != null && roulette.LastOpenInstant)
+        {
+            Hide();
+            return;
+        }
+
         if (autoHideDelay <= 0f)
         {
             Hide();

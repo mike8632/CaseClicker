@@ -47,6 +47,10 @@ public class CaseOpeningRouletteUI : MonoBehaviour
     [Tooltip("If true, calculate item width + spacing from layout components.")]
     public bool autoItemWidth = true;
 
+    [Header("Roulette Display")]
+    [Tooltip("If true, rare items like knives only appear when they are the winning item.")]
+    public bool hideRareItemsInFiller = true;
+
     [Header("Events")]
     public UnityEvent OnRollStarted;
     public UnityEvent<CaseItemData> OnRollFinished;
@@ -56,6 +60,7 @@ public class CaseOpeningRouletteUI : MonoBehaviour
     private bool isRolling = false;
     private CaseData pendingCaseData;
     private CaseItemData pendingWinner;
+    public bool LastOpenInstant { get; private set; }
 
     /// <summary>
     /// Starts the roulette animation with the given possible items and the confirmed winner.
@@ -64,6 +69,7 @@ public class CaseOpeningRouletteUI : MonoBehaviour
     {
         if (isRolling) return;
 
+        LastOpenInstant = rollDuration <= 0f;
         pendingCaseData = caseData;
         pendingWinner = winnerData;
         StartCoroutine(RollRoutine(caseData, winnerData));
@@ -78,6 +84,7 @@ public class CaseOpeningRouletteUI : MonoBehaviour
     public void StartSlowOpen()
     {
         if (pendingCaseData == null || pendingWinner == null) return;
+        LastOpenInstant = false;
         rollDuration = Mathf.Max(0.01f, rollDuration);
         StartRoulette(pendingCaseData, pendingWinner);
     }
@@ -87,6 +94,7 @@ public class CaseOpeningRouletteUI : MonoBehaviour
         if (pendingCaseData == null || pendingWinner == null) return;
         float previousDuration = rollDuration;
         rollDuration = Mathf.Max(0f, instantRollDuration);
+        LastOpenInstant = true;
         StartRoulette(pendingCaseData, pendingWinner);
         rollDuration = previousDuration;
     }
@@ -118,7 +126,7 @@ public class CaseOpeningRouletteUI : MonoBehaviour
             }
             else
             {
-                var randomItem = GetRandomItemFromCase(caseData);
+                var randomItem = GetRandomItemFromCase(caseData, hideRareItemsInFiller);
                 cardUI.Bind(CreateDummyEntry(randomItem));
             }
         }
@@ -237,27 +245,43 @@ public class CaseOpeningRouletteUI : MonoBehaviour
         }
     }
 
-    private CaseItemData GetRandomItemFromCase(CaseData caseData)
+    private CaseItemData GetRandomItemFromCase(CaseData caseData, bool excludeRareItems)
     {
         if (caseData == null || caseData.possibleItems == null || caseData.possibleItems.Count == 0)
             return null;
 
-        float totalWeight = 0f;
-        for (int i = 0; i < caseData.possibleItems.Count; i++)
+        var list = caseData.possibleItems;
+        if (excludeRareItems)
         {
-            var item = caseData.possibleItems[i];
+            list = new List<CaseItemData>();
+            for (int i = 0; i < caseData.possibleItems.Count; i++)
+            {
+                var item = caseData.possibleItems[i];
+                if (item == null) continue;
+                if (item.rarity == ItemRarity.Knife) continue;
+                list.Add(item);
+            }
+
+            if (list.Count == 0)
+                list = caseData.possibleItems;
+        }
+
+        float totalWeight = 0f;
+        for (int i = 0; i < list.Count; i++)
+        {
+            var item = list[i];
             if (item == null) continue;
             totalWeight += Mathf.Max(0f, item.dropChance);
         }
 
         if (totalWeight <= 0f)
-            return caseData.possibleItems[Random.Range(0, caseData.possibleItems.Count)];
+            return list[Random.Range(0, list.Count)];
 
         float roll = Random.Range(0f, totalWeight);
         float running = 0f;
-        for (int i = 0; i < caseData.possibleItems.Count; i++)
+        for (int i = 0; i < list.Count; i++)
         {
-            var item = caseData.possibleItems[i];
+            var item = list[i];
             if (item == null) continue;
 
             running += Mathf.Max(0f, item.dropChance);
@@ -265,7 +289,7 @@ public class CaseOpeningRouletteUI : MonoBehaviour
                 return item;
         }
 
-        return caseData.possibleItems[caseData.possibleItems.Count - 1];
+        return list[list.Count - 1];
     }
 
     private SkinInventoryEntry CreateDummyEntry(CaseItemData data)
