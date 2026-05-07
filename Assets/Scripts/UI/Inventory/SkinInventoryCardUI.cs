@@ -9,6 +9,7 @@ public class SkinInventoryCardUI : MonoBehaviour
     [SerializeField] private Text skinNameText;
     [SerializeField] private Text rarityText;
     [SerializeField] private Text conditionText;
+    [SerializeField] private Text floatValueText;
     [SerializeField] private Text sellPriceText;
     [SerializeField] private GameObject statTrakBadge;
     [SerializeField] private Text statTrakText;
@@ -17,6 +18,7 @@ public class SkinInventoryCardUI : MonoBehaviour
 
     [Header("Formats")]
     [SerializeField] private string sellPriceFormat = "SELL FOR ${0:F2}";
+    [SerializeField] private string floatValueFormat = "{0:0.000000}";
     [SerializeField] private string statTrakFormat = "StatTrak™";
     [SerializeField] private string statTrakNameSuffix = " (StatTrak)";
 
@@ -44,6 +46,12 @@ public class SkinInventoryCardUI : MonoBehaviour
                 rarityText.text = entry.rarity.ToString();
         }
         if (conditionText != null) conditionText.text = ToConditionShort(entry.wear);
+        if (floatValueText != null)
+        {
+            string valueFormat = string.IsNullOrWhiteSpace(floatValueFormat) ? "{0:0.000000}" : floatValueFormat;
+            floatValueText.gameObject.SetActive(true);
+            floatValueText.text = string.Format(valueFormat, entry.floatValue);
+        }
         if (sellPriceText != null) sellPriceText.text = string.Format(sellPriceFormat, entry.marketValue);
 
         if (statTrakBadge != null) statTrakBadge.SetActive(entry.isStatTrak);
@@ -88,6 +96,7 @@ public class SkinInventoryCardUI : MonoBehaviour
             case ItemRarity.Classified: return new Color(0.95f, 0.35f, 0.75f); // pink
             case ItemRarity.Covert: return new Color(0.90f, 0.20f, 0.20f); // red
             case ItemRarity.Contraband: return new Color(0.95f, 0.75f, 0.20f); // gold
+            case ItemRarity.Knife: return new Color(0.98f, 0.85f, 0.10f); // yellow
             default: return Color.white;
         }
     }

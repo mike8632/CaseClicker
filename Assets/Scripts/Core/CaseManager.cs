@@ -403,8 +403,9 @@ public class CaseItemData
     public float dropChance;            // Percentage chance (0-100)
     public float minValue;              // Minimum market value
     public float maxValue;              // Maximum market value
+    public float floatMin = 0f;          // Minimum float (0-1)
+    public float floatMax = 1f;          // Maximum float (0-1)
     public ItemRarity rarity;
-    public ItemWear wear;
 }
 
 /// <summary>
@@ -430,7 +431,8 @@ public enum ItemRarity
     Restricted,         // Purple
     Classified,         // Pink
     Covert,             // Red
-    Contraband          // Gold (Knives, Gloves)
+    Contraband,         // Gold (Legacy)
+    Knife               // Yellow (Knives)
 }
 
 /// <summary>

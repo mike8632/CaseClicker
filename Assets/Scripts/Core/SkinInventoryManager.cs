@@ -17,6 +17,7 @@ public class SkinInventoryEntry
     public ItemWear wear;
     public bool isStatTrak;
     public float marketValue;
+    public float floatValue;
 }
 
 /// <summary>
@@ -48,7 +49,7 @@ public class SkinInventoryManager : MonoBehaviour
         OnSkinAdded ??= new UnityEvent<SkinInventoryEntry>();
     }
 
-    public void AddSkin(CaseItemData item, string sourceCaseId, float marketValue)
+    public void AddSkin(CaseItemData item, string sourceCaseId, float marketValue, float floatValue)
     {
         if (item == null) return;
 
@@ -72,13 +73,24 @@ public class SkinInventoryManager : MonoBehaviour
             skinName = skinName,
             itemIcon = item.itemIcon,
             rarity = item.rarity,
-            wear = item.wear,
+            wear = GetWearFromFloat(floatValue),
             isStatTrak = isStatTrak,
-            marketValue = marketValue
+            marketValue = marketValue,
+            floatValue = floatValue
         };
 
         entries.Add(entry);
         OnSkinAdded?.Invoke(entry);
+    }
+
+    private static ItemWear GetWearFromFloat(float value)
+    {
+        float v = Mathf.Clamp01(value);
+        if (v < 0.07f) return ItemWear.FactoryNew;
+        if (v < 0.15f) return ItemWear.MinimalWear;
+        if (v < 0.38f) return ItemWear.FieldTested;
+        if (v < 0.45f) return ItemWear.WellWorn;
+        return ItemWear.BattleScarred;
     }
 
     private static void TrySplitItemName(string itemName, out string weaponName, out string skinName)

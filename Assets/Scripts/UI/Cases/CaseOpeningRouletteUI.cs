@@ -242,12 +242,40 @@ public class CaseOpeningRouletteUI : MonoBehaviour
         if (caseData == null || caseData.possibleItems == null || caseData.possibleItems.Count == 0)
             return null;
 
-        return caseData.possibleItems[Random.Range(0, caseData.possibleItems.Count)];
+        float totalWeight = 0f;
+        for (int i = 0; i < caseData.possibleItems.Count; i++)
+        {
+            var item = caseData.possibleItems[i];
+            if (item == null) continue;
+            totalWeight += Mathf.Max(0f, item.dropChance);
+        }
+
+        if (totalWeight <= 0f)
+            return caseData.possibleItems[Random.Range(0, caseData.possibleItems.Count)];
+
+        float roll = Random.Range(0f, totalWeight);
+        float running = 0f;
+        for (int i = 0; i < caseData.possibleItems.Count; i++)
+        {
+            var item = caseData.possibleItems[i];
+            if (item == null) continue;
+
+            running += Mathf.Max(0f, item.dropChance);
+            if (roll <= running)
+                return item;
+        }
+
+        return caseData.possibleItems[caseData.possibleItems.Count - 1];
     }
 
     private SkinInventoryEntry CreateDummyEntry(CaseItemData data)
     {
         if (data == null) return null;
+
+        float floatMin = Mathf.Clamp01(Mathf.Min(data.floatMin, data.floatMax));
+        float floatMax = Mathf.Clamp01(Mathf.Max(data.floatMin, data.floatMax));
+        float floatValue = floatMax > floatMin ? Random.Range(floatMin, floatMax) : floatMin;
+        ItemWear wear = GetWearFromFloat(floatValue);
 
         return new SkinInventoryEntry
         {
@@ -256,9 +284,20 @@ public class CaseOpeningRouletteUI : MonoBehaviour
             itemName = data.itemName,
             itemIcon = data.itemIcon,
             rarity = data.rarity,
-            wear = data.wear,
+            wear = wear,
             marketValue = Random.Range(data.minValue, data.maxValue),
-            isStatTrak = Random.value < 0.1f // 10% chance for visual randomness in roller
+            isStatTrak = Random.value < 0.1f, // 10% chance for visual randomness in roller
+            floatValue = floatValue
         };
+    }
+
+    private static ItemWear GetWearFromFloat(float value)
+    {
+        float v = Mathf.Clamp01(value);
+        if (v < 0.07f) return ItemWear.FactoryNew;
+        if (v < 0.15f) return ItemWear.MinimalWear;
+        if (v < 0.38f) return ItemWear.FieldTested;
+        if (v < 0.45f) return ItemWear.WellWorn;
+        return ItemWear.BattleScarred;
     }
 }

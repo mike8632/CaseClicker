@@ -366,6 +366,7 @@ public class CaseInventoryManager : MonoBehaviour
         // Roll item result first (based on case item pool)
         CaseItemData rolledItem = RollRandomItem(caseDataForOpen);
         float rolledValue = 0f;
+        float rolledFloat = 0f;
         if (rolledItem == null)
         {
             Debug.LogWarning($"[CaseInventory] Opened case '{caseDataForOpen.caseId}' but no valid items are configured in possibleItems. No skin was added.");
@@ -375,6 +376,10 @@ public class CaseInventoryManager : MonoBehaviour
             float min = Mathf.Min(rolledItem.minValue, rolledItem.maxValue);
             float max = Mathf.Max(rolledItem.minValue, rolledItem.maxValue);
             rolledValue = max > min ? Random.Range(min, max) : min;
+
+            float floatMin = Mathf.Clamp01(Mathf.Min(rolledItem.floatMin, rolledItem.floatMax));
+            float floatMax = Mathf.Clamp01(Mathf.Max(rolledItem.floatMin, rolledItem.floatMax));
+            rolledFloat = floatMax > floatMin ? Random.Range(floatMin, floatMax) : floatMin;
         }
 
         RemoveCases(data.caseId, 1);
@@ -383,7 +388,7 @@ public class CaseInventoryManager : MonoBehaviour
         // Add rolled skin/item to skin inventory if available
         if (rolledItem != null && SkinInventoryManager.Instance != null)
         {
-            SkinInventoryManager.Instance.AddSkin(rolledItem, caseDataForOpen.caseId, rolledValue);
+            SkinInventoryManager.Instance.AddSkin(rolledItem, caseDataForOpen.caseId, rolledValue, rolledFloat);
         }
         else if (rolledItem != null)
         {
