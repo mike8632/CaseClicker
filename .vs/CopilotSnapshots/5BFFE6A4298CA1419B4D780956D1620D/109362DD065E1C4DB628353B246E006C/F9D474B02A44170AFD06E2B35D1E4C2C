@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -99,24 +99,12 @@ public class CaseOpeningRouletteUI : MonoBehaviour
         rollDuration = previousDuration;
     }
 
-    public void ResetRoulette()
-    {
-        if (rollerRect == null)
-            return;
-
-        PrepareSlots();
-        SetSlotsActive(false);
-        rollerRect.anchoredPosition = new Vector2(0f, rollerRect.anchoredPosition.y);
-        LastOpenInstant = false;
-    }
-
     private IEnumerator RollRoutine(CaseData caseData, CaseItemData winner)
     {
         isRolling = true;
         OnRollStarted?.Invoke();
 
         PrepareSlots();
-        SetSlotsActive(true);
         int itemCount = slotCards.Count;
         if (itemCount == 0)
         {
@@ -254,16 +242,6 @@ public class CaseOpeningRouletteUI : MonoBehaviour
             var cardUI = obj.GetComponent<SkinInventoryCardUI>();
             if (cardUI != null)
                 slotCards.Add(cardUI);
-        }
-    }
-
-    private void SetSlotsActive(bool active)
-    {
-        for (int i = 0; i < slotCards.Count; i++)
-        {
-            var card = slotCards[i];
-            if (card != null)
-                card.gameObject.SetActive(active);
         }
     }
 

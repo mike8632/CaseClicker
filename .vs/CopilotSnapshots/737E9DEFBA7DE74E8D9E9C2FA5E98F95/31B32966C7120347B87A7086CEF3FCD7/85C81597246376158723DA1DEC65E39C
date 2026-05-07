@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -105,7 +105,6 @@ public class CaseOpeningRouletteUI : MonoBehaviour
             return;
 
         PrepareSlots();
-        SetSlotsActive(false);
         rollerRect.anchoredPosition = new Vector2(0f, rollerRect.anchoredPosition.y);
         LastOpenInstant = false;
     }
@@ -116,7 +115,6 @@ public class CaseOpeningRouletteUI : MonoBehaviour
         OnRollStarted?.Invoke();
 
         PrepareSlots();
-        SetSlotsActive(true);
         int itemCount = slotCards.Count;
         if (itemCount == 0)
         {
@@ -257,16 +255,6 @@ public class CaseOpeningRouletteUI : MonoBehaviour
         }
     }
 
-    private void SetSlotsActive(bool active)
-    {
-        for (int i = 0; i < slotCards.Count; i++)
-        {
-            var card = slotCards[i];
-            if (card != null)
-                card.gameObject.SetActive(active);
-        }
-    }
-
     private CaseItemData GetRandomItemFromCase(CaseData caseData, bool excludeRareItems)
     {
         if (caseData == null || caseData.possibleItems == null || caseData.possibleItems.Count == 0)
@@ -285,7 +273,7 @@ public class CaseOpeningRouletteUI : MonoBehaviour
             }
 
             if (list.Count == 0)
-                list = caseData.possibleItems;
+                return null;
         }
 
         float totalWeight = 0f;
