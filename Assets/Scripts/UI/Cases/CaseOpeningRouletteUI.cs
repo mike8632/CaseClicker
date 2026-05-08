@@ -280,7 +280,7 @@ public class CaseOpeningRouletteUI : MonoBehaviour
             {
                 var item = caseData.possibleItems[i];
                 if (item == null) continue;
-                if (item.rarity == ItemRarity.Knife) continue;
+                if (item.GetEffectiveRarity() == ItemRarity.Knife) continue;
                 list.Add(item);
             }
 
@@ -293,7 +293,7 @@ public class CaseOpeningRouletteUI : MonoBehaviour
         {
             var item = list[i];
             if (item == null) continue;
-            totalWeight += Mathf.Max(0f, item.dropChance);
+            totalWeight += Mathf.Max(0f, GetEffectiveDropChance(item));
         }
 
         if (totalWeight <= 0f)
@@ -306,12 +306,20 @@ public class CaseOpeningRouletteUI : MonoBehaviour
             var item = list[i];
             if (item == null) continue;
 
-            running += Mathf.Max(0f, item.dropChance);
+            running += Mathf.Max(0f, GetEffectiveDropChance(item));
             if (roll <= running)
                 return item;
         }
 
         return list[list.Count - 1];
+    }
+
+    private float GetEffectiveDropChance(CaseItemData item)
+    {
+        if (CaseInventoryManager.Instance != null)
+            return CaseInventoryManager.Instance.GetEffectiveDropChance(item);
+
+        return item != null ? Mathf.Max(0f, item.dropChance) : 0f;
     }
 
     private SkinInventoryEntry CreateDummyEntry(CaseItemData data)
@@ -323,18 +331,33 @@ public class CaseOpeningRouletteUI : MonoBehaviour
         float floatValue = floatMax > floatMin ? Random.Range(floatMin, floatMax) : floatMin;
         ItemWear wear = GetWearFromFloat(floatValue);
 
+        data.GetDisplayNames(out var weaponName, out var skinName, out var itemName);
+
+        bool isStatTrak = Random.value < 0.1f;
+        float marketValue = data.GetValueForFloat(floatValue);
+        if (isStatTrak)
+            marketValue *= GetStatTrakMultiplier();
+
         return new SkinInventoryEntry
         {
-            weaponName = data.weaponName,
-            skinName = data.skinName,
-            itemName = data.itemName,
+            weaponName = weaponName,
+            skinName = skinName,
+            itemName = itemName,
             itemIcon = data.itemIcon,
-            rarity = data.rarity,
+            rarity = data.GetEffectiveRarity(),
             wear = wear,
-            marketValue = Random.Range(data.minValue, data.maxValue),
-            isStatTrak = Random.value < 0.1f, // 10% chance for visual randomness in roller
+            marketValue = marketValue,
+            isStatTrak = isStatTrak, // 10% chance for visual randomness in roller
             floatValue = floatValue
         };
+    }
+
+    private static float GetStatTrakMultiplier()
+    {
+        if (SkinInventoryManager.Instance != null)
+            return Mathf.Max(1f, SkinInventoryManager.Instance.StatTrakValueMultiplier);
+
+        return 1.5f;
     }
 
     private static ItemWear GetWearFromFloat(float value)

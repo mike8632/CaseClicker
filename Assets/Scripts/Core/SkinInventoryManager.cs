@@ -30,6 +30,9 @@ public class SkinInventoryManager : MonoBehaviour
 
     [Header("Drop Settings")]
     [SerializeField, Range(0f, 1f)] private float statTrakChance = 0.1f;
+    [SerializeField, Min(1f)] private float statTrakValueMultiplier = 1.5f;
+
+    public float StatTrakValueMultiplier => statTrakValueMultiplier;
 
     public UnityEvent<SkinInventoryEntry> OnSkinAdded;
 
@@ -54,14 +57,12 @@ public class SkinInventoryManager : MonoBehaviour
         if (item == null) return;
 
         bool isStatTrak = UnityEngine.Random.value <= statTrakChance;
-
-        // Prefer explicit fields; fallback to parsing itemName like "Weapon | Skin"
-        string weaponName = item.weaponName;
-        string skinName = item.skinName;
-        if (string.IsNullOrEmpty(weaponName) && string.IsNullOrEmpty(skinName))
+        if (isStatTrak)
         {
-            TrySplitItemName(item.itemName, out weaponName, out skinName);
+            marketValue *= Mathf.Max(1f, statTrakValueMultiplier);
         }
+
+        item.GetDisplayNames(out var weaponName, out var skinName, out _);
 
         var entry = new SkinInventoryEntry
         {
@@ -72,7 +73,7 @@ public class SkinInventoryManager : MonoBehaviour
             weaponName = weaponName,
             skinName = skinName,
             itemIcon = item.itemIcon,
-            rarity = item.rarity,
+            rarity = item.GetEffectiveRarity(),
             wear = GetWearFromFloat(floatValue),
             isStatTrak = isStatTrak,
             marketValue = marketValue,
@@ -93,23 +94,4 @@ public class SkinInventoryManager : MonoBehaviour
         return ItemWear.BattleScarred;
     }
 
-    private static void TrySplitItemName(string itemName, out string weaponName, out string skinName)
-    {
-        weaponName = string.Empty;
-        skinName = string.Empty;
-
-        if (string.IsNullOrEmpty(itemName))
-            return;
-
-        int pipeIndex = itemName.IndexOf('|');
-        if (pipeIndex >= 0)
-        {
-            weaponName = itemName.Substring(0, pipeIndex).Trim();
-            skinName = itemName.Substring(pipeIndex + 1).Trim();
-            return;
-        }
-
-        // Fallback: keep original as weaponName if no separator exists
-        weaponName = itemName;
-    }
 }

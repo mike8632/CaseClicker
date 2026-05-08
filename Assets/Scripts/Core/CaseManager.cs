@@ -406,6 +406,89 @@ public class CaseItemData
     public float floatMin = 0f;          // Minimum float (0-1)
     public float floatMax = 1f;          // Maximum float (0-1)
     public ItemRarity rarity;
+
+    private static readonly string[] KnifeNameKeywords =
+    {
+        "bayonet",
+        "bowie knife",
+        "butterfly knife",
+        "classic knife",
+        "falchion knife",
+        "flip knife",
+        "gut knife",
+        "huntsman knife",
+        "karambit",
+        "kukri knife",
+        "m9 bayonet",
+        "navaja knife",
+        "nomad knife",
+        "paracord knife",
+        "shadow daggers",
+        "skeleton knife",
+        "stiletto knife",
+        "survival knife",
+        "talon knife",
+        "ursus knife",
+        "knife"
+    };
+
+    public ItemRarity GetEffectiveRarity()
+    {
+        if (rarity == ItemRarity.Knife)
+            return rarity;
+
+        if (HasKnifeKeyword(weaponName) || HasKnifeKeyword(itemName) || HasKnifeKeyword(skinName))
+            return ItemRarity.Knife;
+
+        return rarity;
+    }
+
+    private static bool HasKnifeKeyword(string value)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+            return false;
+
+        string normalized = value.ToLowerInvariant();
+        for (int i = 0; i < KnifeNameKeywords.Length; i++)
+        {
+            if (normalized.Contains(KnifeNameKeywords[i]))
+                return true;
+        }
+
+        return false;
+    }
+
+    public void GetDisplayNames(out string resolvedWeaponName, out string resolvedSkinName, out string resolvedItemName)
+    {
+        resolvedItemName = itemName;
+        resolvedWeaponName = weaponName;
+        resolvedSkinName = skinName;
+
+        if (!string.IsNullOrEmpty(resolvedWeaponName) || !string.IsNullOrEmpty(resolvedSkinName))
+            return;
+
+        if (string.IsNullOrEmpty(resolvedItemName))
+            return;
+
+        int pipeIndex = resolvedItemName.IndexOf('|');
+        if (pipeIndex >= 0)
+        {
+            resolvedWeaponName = resolvedItemName.Substring(0, pipeIndex).Trim();
+            resolvedSkinName = resolvedItemName.Substring(pipeIndex + 1).Trim();
+            return;
+        }
+
+        resolvedWeaponName = resolvedItemName;
+        resolvedSkinName = string.Empty;
+    }
+
+    public float GetValueForFloat(float floatValue)
+    {
+        float min = Mathf.Min(minValue, maxValue);
+        float max = Mathf.Max(minValue, maxValue);
+        float t = 1f - Mathf.Clamp01(floatValue);
+        return Mathf.Lerp(min, max, t);
+    }
 }
 
 /// <summary>

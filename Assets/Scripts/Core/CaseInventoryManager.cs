@@ -33,6 +33,13 @@ public class CaseInventoryManager : MonoBehaviour
     [Header("Initial Data (optional)")]
     public List<CaseEntry> initialEntries = new List<CaseEntry>();
 
+    [Header("Default Drop Chances (used when item dropChance is 0)")]
+    [SerializeField] private float milSpecDropChance = 79.92f;
+    [SerializeField] private float restrictedDropChance = 15.98f;
+    [SerializeField] private float classifiedDropChance = 3.2f;
+    [SerializeField] private float covertDropChance = 0.62f;
+    [SerializeField] private float knifeDropChance = 0.26f;
+
     private readonly Dictionary<string, CaseEntry> _entries = new Dictionary<string, CaseEntry>();
 
     // Event fired when a case count changes (caseId provided)
@@ -373,13 +380,10 @@ public class CaseInventoryManager : MonoBehaviour
         }
         else
         {
-            float min = Mathf.Min(rolledItem.minValue, rolledItem.maxValue);
-            float max = Mathf.Max(rolledItem.minValue, rolledItem.maxValue);
-            rolledValue = max > min ? Random.Range(min, max) : min;
-
             float floatMin = Mathf.Clamp01(Mathf.Min(rolledItem.floatMin, rolledItem.floatMax));
             float floatMax = Mathf.Clamp01(Mathf.Max(rolledItem.floatMin, rolledItem.floatMax));
             rolledFloat = floatMax > floatMin ? Random.Range(floatMin, floatMax) : floatMin;
+            rolledValue = rolledItem.GetValueForFloat(rolledFloat);
         }
 
         RemoveCases(data.caseId, 1);
@@ -447,8 +451,9 @@ public class CaseInventoryManager : MonoBehaviour
                 Debug.LogWarning($"[CaseInventory] RollRandomItem item[{i}] is null for caseId='{data.caseId}'.");
                 continue;
             }
-            Debug.Log($"[CaseInventory] RollRandomItem item[{i}] id='{item.itemId}' name='{item.itemName}' chance={item.dropChance}");
-            totalWeight += Mathf.Max(0f, item.dropChance);
+            float chance = GetEffectiveDropChance(item);
+            Debug.Log($"[CaseInventory] RollRandomItem item[{i}] id='{item.itemId}' name='{item.itemName}' chance={chance}");
+            totalWeight += Mathf.Max(0f, chance);
         }
 
         if (totalWeight <= 0f)
@@ -462,12 +467,42 @@ public class CaseInventoryManager : MonoBehaviour
             var item = data.possibleItems[i];
             if (item == null) continue;
 
-            running += Mathf.Max(0f, item.dropChance);
+            running += Mathf.Max(0f, GetEffectiveDropChance(item));
             if (roll <= running)
                 return item;
         }
 
         return data.possibleItems[0];
+    }
+
+    public float GetEffectiveDropChance(CaseItemData item)
+    {
+        if (item == null)
+            return 0f;
+
+        if (item.dropChance > 0f)
+            return item.dropChance;
+
+        return GetDefaultDropChance(item.GetEffectiveRarity());
+    }
+
+    private float GetDefaultDropChance(ItemRarity rarity)
+    {
+        switch (rarity)
+        {
+            case ItemRarity.MilSpec:
+                return milSpecDropChance;
+            case ItemRarity.Restricted:
+                return restrictedDropChance;
+            case ItemRarity.Classified:
+                return classifiedDropChance;
+            case ItemRarity.Covert:
+                return covertDropChance;
+            case ItemRarity.Knife:
+                return knifeDropChance;
+            default:
+                return 0f;
+        }
     }
 
     public void OpenCase(CaseData data)
