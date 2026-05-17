@@ -40,6 +40,65 @@ public class SkinInventoryManager : MonoBehaviour
 
     public IReadOnlyList<SkinInventoryEntry> Entries => entries;
 
+    public List<SkinEntryDTO> GetSnapshot()
+    {
+        var snapshot = new List<SkinEntryDTO>(entries.Count);
+        for (int i = 0; i < entries.Count; i++)
+        {
+            var entry = entries[i];
+            if (entry == null) continue;
+            snapshot.Add(new SkinEntryDTO
+            {
+                instanceId = entry.instanceId,
+                sourceCaseId = entry.sourceCaseId,
+                itemId = entry.itemId,
+                itemName = entry.itemName,
+                weaponName = entry.weaponName,
+                skinName = entry.skinName,
+                rarity = entry.rarity,
+                wear = entry.wear,
+                isStatTrak = entry.isStatTrak,
+                marketValue = entry.marketValue,
+                floatValue = entry.floatValue
+            });
+        }
+
+        return snapshot;
+    }
+
+    public void ApplySnapshot(List<SkinEntryDTO> snapshot)
+    {
+        entries.Clear();
+
+        if (snapshot == null)
+            return;
+
+        for (int i = 0; i < snapshot.Count; i++)
+        {
+            var dto = snapshot[i];
+            if (dto == null) continue;
+
+            var entry = new SkinInventoryEntry
+            {
+                instanceId = string.IsNullOrEmpty(dto.instanceId) ? Guid.NewGuid().ToString("N") : dto.instanceId,
+                sourceCaseId = dto.sourceCaseId,
+                itemId = dto.itemId,
+                itemName = dto.itemName,
+                weaponName = dto.weaponName,
+                skinName = dto.skinName,
+                rarity = dto.rarity,
+                wear = dto.wear,
+                isStatTrak = dto.isStatTrak,
+                marketValue = dto.marketValue,
+                floatValue = dto.floatValue,
+                itemIcon = ResolveItemIcon(dto.sourceCaseId, dto.itemId, dto.itemName)
+            };
+
+            entries.Add(entry);
+            OnSkinAdded?.Invoke(entry);
+        }
+    }
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -82,6 +141,37 @@ public class SkinInventoryManager : MonoBehaviour
 
         entries.Add(entry);
         OnSkinAdded?.Invoke(entry);
+    }
+
+    private static Sprite ResolveItemIcon(string sourceCaseId, string itemId, string itemName)
+    {
+        var cards = UnityEngine.Object.FindObjectsByType<CaseCardUI>(FindObjectsSortMode.None);
+        for (int i = 0; i < cards.Length; i++)
+        {
+            var card = cards[i];
+            var caseData = card != null ? card.data : null;
+            if (caseData == null) continue;
+
+            if (!string.IsNullOrEmpty(sourceCaseId) && caseData.caseId != sourceCaseId)
+                continue;
+
+            var items = caseData.possibleItems;
+            if (items == null) continue;
+
+            for (int j = 0; j < items.Count; j++)
+            {
+                var item = items[j];
+                if (item == null) continue;
+
+                if (!string.IsNullOrEmpty(itemId) && item.itemId == itemId)
+                    return item.itemIcon;
+
+                if (!string.IsNullOrEmpty(itemName) && item.itemName == itemName)
+                    return item.itemIcon;
+            }
+        }
+
+        return null;
     }
 
     private static ItemWear GetWearFromFloat(float value)

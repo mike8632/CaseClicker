@@ -181,6 +181,12 @@ public class SaveSystem : MonoBehaviour
             data.caseInventory = CaseInventoryManager.Instance.GetSnapshot();
         }
 
+        // Skin inventory
+        if (SkinInventoryManager.Instance != null)
+        {
+            data.skinInventory = SkinInventoryManager.Instance.GetSnapshot();
+        }
+
         return data;
     }
 
@@ -357,6 +363,12 @@ public class SaveSystem : MonoBehaviour
         {
             ApplyCaseInventory(data.caseInventory);
         }
+
+        // Skin inventory
+        if (SkinInventoryManager.Instance != null && data.skinInventory != null)
+        {
+            SkinInventoryManager.Instance.ApplySnapshot(data.skinInventory);
+        }
     }
 
     private void ApplyCaseInventory(List<CaseEntryDTO> list)
@@ -509,6 +521,9 @@ public class SaveData
 
     // Case inventory
     public System.Collections.Generic.List<CaseEntryDTO> caseInventory;
+
+    // Skin inventory
+    public System.Collections.Generic.List<SkinEntryDTO> skinInventory;
 }
 
 /// <summary>
@@ -524,4 +539,23 @@ public class CaseEntryDTO
     public float keyPrice;
     public float casePriceOverride;
     public float caseSellPriceOverride;
+}
+
+/// <summary>
+/// Serializable DTO for skin inventory entries.
+/// </summary>
+[Serializable]
+public class SkinEntryDTO
+{
+    public string instanceId;
+    public string sourceCaseId;
+    public string itemId;
+    public string itemName;
+    public string weaponName;
+    public string skinName;
+    public ItemRarity rarity;
+    public ItemWear wear;
+    public bool isStatTrak;
+    public float marketValue;
+    public float floatValue;
 }
