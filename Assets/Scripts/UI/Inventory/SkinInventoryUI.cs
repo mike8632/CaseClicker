@@ -10,12 +10,15 @@ public class SkinInventoryUI : MonoBehaviour
     [SerializeField] private Transform contentParent;
     [SerializeField] private GameObject cardPrefab;
     [SerializeField] private bool newestOnTop = true;
+    [SerializeField] private SkinInventoryDetailUI detailPanel;
+    [SerializeField] private bool autoFindDetailPanel = true;
 
     private Coroutine initRoutine;
     private SkinInventoryCardUI sceneTemplateCard;
 
     private void OnEnable()
     {
+        ResolveDetailPanel();
         if (initRoutine != null) StopCoroutine(initRoutine);
         initRoutine = StartCoroutine(WaitThenSubscribe());
     }
@@ -84,7 +87,20 @@ public class SkinInventoryUI : MonoBehaviour
         if (card != null)
         {
             card.Bind(entry);
+            if (detailPanel != null)
+            {
+                card.OnSelected.RemoveListener(detailPanel.Show);
+                card.OnSelected.AddListener(detailPanel.Show);
+            }
         }
+    }
+
+    private void ResolveDetailPanel()
+    {
+        if (detailPanel != null || !autoFindDetailPanel)
+            return;
+
+        detailPanel = FindFirstObjectByType<SkinInventoryDetailUI>(FindObjectsInactive.Include);
     }
 
     private GameObject GetCardSource()

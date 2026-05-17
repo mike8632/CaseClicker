@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class SkinInventoryCardUI : MonoBehaviour
 {
@@ -27,9 +28,29 @@ public class SkinInventoryCardUI : MonoBehaviour
     [SerializeField] private bool showRarityText = false;
     [SerializeField] private bool hideKnifeImage = false;
 
+    [Header("Selection")]
+    [SerializeField] private Button clickButton;
+    public SkinInventoryEntryEvent OnSelected;
+
+    private SkinInventoryEntry currentEntry;
+
+    private void Awake()
+    {
+        if (clickButton == null)
+            clickButton = GetComponent<Button>();
+
+        if (clickButton != null)
+        {
+            clickButton.onClick.RemoveListener(HandleClick);
+            clickButton.onClick.AddListener(HandleClick);
+        }
+    }
+
     public void Bind(SkinInventoryEntry entry)
     {
         if (entry == null) return;
+
+        currentEntry = entry;
 
         if (skinImage != null)
         {
@@ -81,6 +102,18 @@ public class SkinInventoryCardUI : MonoBehaviour
         {
             rarityBackgroundSecondary.color = GetRarityColor(entry.rarity);
         }
+    }
+
+    private void HandleClick()
+    {
+        if (currentEntry == null) return;
+        Debug.Log($"[SkinInventoryCardUI] Selected '{currentEntry.itemName}' ({currentEntry.itemId})");
+        OnSelected?.Invoke(currentEntry);
+    }
+
+    [System.Serializable]
+    public class SkinInventoryEntryEvent : UnityEvent<SkinInventoryEntry>
+    {
     }
 
     private static string ToConditionShort(ItemWear wear)
