@@ -1,10 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class SkinInventoryDetailUI : MonoBehaviour
 {
     [Header("Bindings")]
     [SerializeField] private GameObject panelRoot;
+    [SerializeField] private Button closeButton;
     [SerializeField] private Image itemIcon;
     [SerializeField] private Text weaponNameText;
     [SerializeField] private Text skinNameText;
@@ -18,6 +20,34 @@ public class SkinInventoryDetailUI : MonoBehaviour
     [Header("Formats")]
     [SerializeField] private string floatFormat = "{0:0.000000}";
     [SerializeField] private string valueFormat = "${0:F2}";
+
+    private void OnEnable()
+    {
+        if (closeButton != null)
+        {
+            closeButton.onClick.RemoveListener(Hide);
+            closeButton.onClick.AddListener(Hide);
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (closeButton != null)
+        {
+            closeButton.onClick.RemoveListener(Hide);
+        }
+    }
+
+    private void Update()
+    {
+        if (panelRoot == null || !panelRoot.activeSelf)
+            return;
+
+        if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
+        {
+            Hide();
+        }
+    }
 
     public void Show(SkinInventoryEntry entry)
     {
