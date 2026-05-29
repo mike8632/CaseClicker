@@ -12,9 +12,12 @@ public class SkinInventoryUI : MonoBehaviour
     [SerializeField] private bool newestOnTop = true;
     [SerializeField] private SkinInventoryDetailUI detailPanel;
     [SerializeField] private bool autoFindDetailPanel = true;
+    [SerializeField] private bool enableDetailPanel = true;
 
     private Coroutine initRoutine;
     private SkinInventoryCardUI sceneTemplateCard;
+
+    public event System.Action<SkinInventoryCardUI> CardSpawned;
 
     private void OnEnable()
     {
@@ -87,11 +90,12 @@ public class SkinInventoryUI : MonoBehaviour
         if (card != null)
         {
             card.Bind(entry);
-            if (detailPanel != null)
+            if (enableDetailPanel && detailPanel != null)
             {
                 card.OnSelected.RemoveListener(detailPanel.Show);
                 card.OnSelected.AddListener(detailPanel.Show);
             }
+            CardSpawned?.Invoke(card);
         }
     }
 

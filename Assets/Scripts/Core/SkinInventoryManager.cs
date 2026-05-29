@@ -98,6 +98,24 @@ public class SkinInventoryManager : MonoBehaviour
             OnSkinAdded?.Invoke(entry);
         }
     }
+    public int RemoveEntries(IEnumerable<SkinInventoryEntry> entriesToRemove)
+    {
+        if (entriesToRemove == null || entries.Count == 0)
+            return 0;
+
+        var ids = new HashSet<string>();
+        foreach (var entry in entriesToRemove)
+        {
+            if (entry == null || string.IsNullOrEmpty(entry.instanceId))
+                continue;
+            ids.Add(entry.instanceId);
+        }
+
+        if (ids.Count == 0)
+            return 0;
+
+        return entries.RemoveAll(entry => entry != null && ids.Contains(entry.instanceId));
+    }
 
     private void Awake()
     {

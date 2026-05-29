@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
@@ -30,7 +31,9 @@ public class SkinInventoryCardUI : MonoBehaviour
 
     [Header("Selection")]
     [SerializeField] private Button clickButton;
+    [SerializeField] private GameObject selectionBorders;
     public SkinInventoryEntryEvent OnSelected;
+    public event Action<SkinInventoryCardUI, SkinInventoryEntry, bool> SelectionChanged;
 
     private SkinInventoryEntry currentEntry;
 
@@ -51,6 +54,9 @@ public class SkinInventoryCardUI : MonoBehaviour
         if (entry == null) return;
 
         currentEntry = entry;
+
+        if (selectionBorders != null)
+            selectionBorders.SetActive(false);
 
         if (skinImage != null)
         {
@@ -107,8 +113,19 @@ public class SkinInventoryCardUI : MonoBehaviour
     private void HandleClick()
     {
         if (currentEntry == null) return;
+        if (selectionBorders != null)
+            selectionBorders.SetActive(!selectionBorders.activeSelf);
+        SelectionChanged?.Invoke(this, currentEntry, IsSelected);
         Debug.Log($"[SkinInventoryCardUI] Selected '{currentEntry.itemName}' ({currentEntry.itemId})");
         OnSelected?.Invoke(currentEntry);
+    }
+
+    public bool IsSelected => selectionBorders != null && selectionBorders.activeSelf;
+
+    public void SetSelected(bool selected)
+    {
+        if (selectionBorders != null)
+            selectionBorders.SetActive(selected);
     }
 
     [System.Serializable]
