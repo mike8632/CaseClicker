@@ -122,6 +122,8 @@ public class SkinInventoryCardUI : MonoBehaviour
 
     public bool IsSelected => selectionBorders != null && selectionBorders.activeSelf;
 
+    public SkinInventoryEntry CurrentEntry => currentEntry;
+
     public void SetSelected(bool selected)
     {
         if (selectionBorders != null)

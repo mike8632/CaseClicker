@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class TradeUpContractUI : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class TradeUpContractUI : MonoBehaviour
     [SerializeField] private SkinInventoryUI sourceInventoryUI;
     [SerializeField] private Button cancelButton;
     [SerializeField] private Button submitButton;
+    [SerializeField] private Text selectedCountText;
+    [SerializeField] private TMP_Text selectedCountTmpText;
 
     [Header("Navigation")]
     [SerializeField] private string inventoryTabId = "4";
@@ -20,11 +23,16 @@ public class TradeUpContractUI : MonoBehaviour
 
     private readonly List<SkinInventoryEntry> selectedEntries = new List<SkinInventoryEntry>();
     private readonly HashSet<SkinInventoryCardUI> subscribedCards = new HashSet<SkinInventoryCardUI>();
+    private string lockedCaseId;
+    private ItemRarity? lockedRarity;
+    private bool? lockedStatTrak;
 
     private void Awake()
     {
         if (sourceInventoryUI != null && !refreshInventories.Contains(sourceInventoryUI))
             refreshInventories.Add(sourceInventoryUI);
+
+        UpdateSelectedCountText();
     }
 
     private void OnEnable()
@@ -42,6 +50,7 @@ public class TradeUpContractUI : MonoBehaviour
         }
 
         SubscribeToInventory();
+        UpdateSelectedCountText();
     }
 
     private void OnDisable()
@@ -93,8 +102,12 @@ public class TradeUpContractUI : MonoBehaviour
         if (card == null || subscribedCards.Contains(card))
             return;
 
+        if (!card.gameObject.activeSelf)
+            return;
+
         subscribedCards.Add(card);
         card.SelectionChanged += HandleSelectionChanged;
+        ApplyFilters();
     }
 
     private void HandleSelectionChanged(SkinInventoryCardUI card, SkinInventoryEntry entry, bool selected)
@@ -104,8 +117,34 @@ public class TradeUpContractUI : MonoBehaviour
 
         if (selected)
         {
+            if (!string.IsNullOrEmpty(lockedCaseId) && entry.sourceCaseId != lockedCaseId)
+            {
+                card?.SetSelected(false);
+                return;
+            }
+
+            if (lockedRarity.HasValue && entry.rarity != lockedRarity.Value)
+            {
+                card?.SetSelected(false);
+                return;
+            }
+
+            if (lockedStatTrak.HasValue && entry.isStatTrak != lockedStatTrak.Value)
+            {
+                card?.SetSelected(false);
+                return;
+            }
+
             if (!selectedEntries.Contains(entry))
                 selectedEntries.Add(entry);
+
+            if (selectedEntries.Count == 1)
+            {
+                lockedCaseId = entry.sourceCaseId;
+                lockedRarity = entry.rarity;
+                lockedStatTrak = entry.isStatTrak;
+                ApplyFilters();
+            }
 
             if (selectedEntries.Count > requiredCount)
             {
@@ -117,7 +156,16 @@ public class TradeUpContractUI : MonoBehaviour
         else
         {
             selectedEntries.Remove(entry);
+            if (selectedEntries.Count == 0)
+            {
+                lockedCaseId = null;
+                lockedRarity = null;
+                lockedStatTrak = null;
+                ApplyFilters();
+            }
         }
+
+        UpdateSelectedCountText();
     }
 
     private void HandleCancel()
@@ -230,6 +278,11 @@ public class TradeUpContractUI : MonoBehaviour
                 card.SetSelected(false);
         }
         selectedEntries.Clear();
+        lockedCaseId = null;
+        lockedRarity = null;
+        lockedStatTrak = null;
+        ApplyFilters();
+        UpdateSelectedCountText();
     }
 
     private void RefreshInventories()
@@ -240,6 +293,36 @@ public class TradeUpContractUI : MonoBehaviour
             if (ui != null)
                 ui.RebuildFromSnapshot();
         }
+    }
+
+    private void ApplyFilters()
+    {
+        foreach (var card in subscribedCards)
+        {
+            if (card == null) continue;
+            var entry = card.CurrentEntry;
+            bool show = true;
+
+            if (!string.IsNullOrEmpty(lockedCaseId))
+                show &= entry != null && entry.sourceCaseId == lockedCaseId;
+
+            if (lockedRarity.HasValue)
+                show &= entry != null && entry.rarity == lockedRarity.Value;
+
+            if (lockedStatTrak.HasValue)
+                show &= entry != null && entry.isStatTrak == lockedStatTrak.Value;
+
+            card.gameObject.SetActive(show);
+        }
+    }
+
+    private void UpdateSelectedCountText()
+    {
+        string text = $"{selectedEntries.Count}/{requiredCount} items selected";
+        if (selectedCountText != null)
+            selectedCountText.text = text;
+        if (selectedCountTmpText != null)
+            selectedCountTmpText.text = text;
     }
 
     private static float GetRandomFloatValue(CaseItemData item)
