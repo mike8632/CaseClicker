@@ -1,5 +1,7 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 /// <summary>
 /// Creates a new UI card for each dropped skin item.
@@ -13,9 +15,13 @@ public class SkinInventoryUI : MonoBehaviour
     [SerializeField] private SkinInventoryDetailUI detailPanel;
     [SerializeField] private bool autoFindDetailPanel = true;
     [SerializeField] private bool enableDetailPanel = true;
+    [Header("Search")]
+    [SerializeField] private InputField searchInput;
+    [SerializeField] private TMP_InputField searchInputTmp;
 
     private Coroutine initRoutine;
     private SkinInventoryCardUI sceneTemplateCard;
+    private string searchFilter;
 
     public event System.Action<SkinInventoryCardUI> CardSpawned;
 
@@ -24,6 +30,18 @@ public class SkinInventoryUI : MonoBehaviour
         ResolveDetailPanel();
         if (initRoutine != null) StopCoroutine(initRoutine);
         initRoutine = StartCoroutine(WaitThenSubscribe());
+
+        if (searchInput != null)
+        {
+            searchInput.onValueChanged.RemoveListener(HandleSearchChanged);
+            searchInput.onValueChanged.AddListener(HandleSearchChanged);
+        }
+
+        if (searchInputTmp != null)
+        {
+            searchInputTmp.onValueChanged.RemoveListener(HandleSearchChanged);
+            searchInputTmp.onValueChanged.AddListener(HandleSearchChanged);
+        }
     }
 
     private void OnDisable()
@@ -38,6 +56,12 @@ public class SkinInventoryUI : MonoBehaviour
         {
             SkinInventoryManager.Instance.OnSkinAdded.RemoveListener(OnSkinAdded);
         }
+
+        if (searchInput != null)
+            searchInput.onValueChanged.RemoveListener(HandleSearchChanged);
+
+        if (searchInputTmp != null)
+            searchInputTmp.onValueChanged.RemoveListener(HandleSearchChanged);
     }
 
     private IEnumerator WaitThenSubscribe()
@@ -64,6 +88,8 @@ public class SkinInventoryUI : MonoBehaviour
         {
             SpawnCard(list[i]);
         }
+
+        ApplySearchFilter();
     }
 
     private void OnSkinAdded(SkinInventoryEntry entry)
@@ -97,6 +123,63 @@ public class SkinInventoryUI : MonoBehaviour
             }
             CardSpawned?.Invoke(card);
         }
+
+        ApplySearchFilter(go);
+    }
+
+    private void HandleSearchChanged(string value)
+    {
+        searchFilter = value;
+        ApplySearchFilter();
+    }
+
+    private void ApplySearchFilter(GameObject specificCard = null)
+    {
+        string query = string.IsNullOrWhiteSpace(searchFilter)
+            ? null
+            : searchFilter.Trim().ToLowerInvariant();
+
+        if (specificCard != null)
+        {
+            ApplySearchFilterToCard(specificCard, query);
+            return;
+        }
+
+        if (contentParent == null)
+            return;
+
+        var cards = contentParent.GetComponentsInChildren<SkinInventoryCardUI>(true);
+        for (int i = 0; i < cards.Length; i++)
+        {
+            var card = cards[i];
+            if (card == null) continue;
+            ApplySearchFilterToCard(card.gameObject, query);
+        }
+    }
+
+    private void ApplySearchFilterToCard(GameObject cardObject, string query)
+    {
+        if (cardObject == null)
+            return;
+
+        var card = cardObject.GetComponent<SkinInventoryCardUI>();
+        if (card == null)
+            return;
+
+        var entry = card.CurrentEntry;
+        if (entry == null)
+            return;
+
+        bool show = true;
+        if (!string.IsNullOrEmpty(query))
+        {
+            string name = !string.IsNullOrEmpty(entry.itemName)
+                ? entry.itemName
+                : string.Concat(entry.weaponName, " ", entry.skinName);
+            show = !string.IsNullOrEmpty(name) && name.ToLowerInvariant().Contains(query);
+        }
+
+        cardObject.SetActive(show);
     }
 
     private void ResolveDetailPanel()
