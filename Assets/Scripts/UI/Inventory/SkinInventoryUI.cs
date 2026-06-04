@@ -25,6 +25,14 @@ public class SkinInventoryUI : MonoBehaviour
 
     public event System.Action<SkinInventoryCardUI> CardSpawned;
 
+    public SkinInventoryCardUI[] GetCards(bool includeInactive = false)
+    {
+        if (contentParent == null)
+            return System.Array.Empty<SkinInventoryCardUI>();
+
+        return contentParent.GetComponentsInChildren<SkinInventoryCardUI>(includeInactive);
+    }
+
     private void OnEnable()
     {
         ResolveDetailPanel();
