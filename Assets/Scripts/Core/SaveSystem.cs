@@ -187,6 +187,12 @@ public class SaveSystem : MonoBehaviour
             data.skinInventory = SkinInventoryManager.Instance.GetSnapshot();
         }
 
+        // Upgrades
+        if (UpgradeManager.Instance != null)
+        {
+            data.upgrades = UpgradeManager.Instance.GetSnapshot();
+        }
+
         return data;
     }
 
@@ -369,6 +375,12 @@ public class SaveSystem : MonoBehaviour
         {
             SkinInventoryManager.Instance.ApplySnapshot(data.skinInventory);
         }
+
+        // Upgrades (only level counters — effects already restored via other systems)
+        if (UpgradeManager.Instance != null && data.upgrades != null)
+        {
+            UpgradeManager.Instance.ApplySnapshot(data.upgrades);
+        }
     }
 
     private void ApplyCaseInventory(List<CaseEntryDTO> list)
@@ -524,6 +536,9 @@ public class SaveData
 
     // Skin inventory
     public System.Collections.Generic.List<SkinEntryDTO> skinInventory;
+
+    // Upgrades
+    public System.Collections.Generic.List<UpgradeEntryDTO> upgrades;
 }
 
 /// <summary>
@@ -558,4 +573,14 @@ public class SkinEntryDTO
     public bool isStatTrak;
     public float marketValue;
     public float floatValue;
+}
+
+/// <summary>
+/// Serializable DTO for a single upgrade level entry.
+/// </summary>
+[Serializable]
+public class UpgradeEntryDTO
+{
+    public string id;
+    public int level;
 }

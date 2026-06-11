@@ -220,4 +220,42 @@ public class UpgradeManager : MonoBehaviour
     {
         ResetAllUpgrades();
     }
+
+    /// <summary>
+    /// Returns the current level of every upgrade with a non-empty id, for saving.
+    /// </summary>
+    public System.Collections.Generic.List<UpgradeEntryDTO> GetSnapshot()
+    {
+        var list = new System.Collections.Generic.List<UpgradeEntryDTO>();
+        if (upgrades == null) return list;
+
+        foreach (var def in upgrades)
+        {
+            if (def == null || string.IsNullOrEmpty(def.id)) continue;
+            list.Add(new UpgradeEntryDTO { id = def.id, level = def.currentLevel });
+        }
+
+        return list;
+    }
+
+    /// <summary>
+    /// Restores upgrade levels from a saved snapshot.
+    /// Does NOT re-apply gameplay effects (effects are already restored by other systems).
+    /// </summary>
+    public void ApplySnapshot(System.Collections.Generic.List<UpgradeEntryDTO> snapshot)
+    {
+        if (snapshot == null || upgrades == null) return;
+
+        foreach (var dto in snapshot)
+        {
+            if (dto == null || string.IsNullOrEmpty(dto.id)) continue;
+
+            var def = GetUpgrade(dto.id);
+            if (def == null) continue; // unknown/deleted upgrade — skip safely
+
+            def.currentLevel = Mathf.Clamp(dto.level, 0, def.MaxLevel);
+        }
+
+        OnUpgradesChanged?.Invoke();
+    }
 }
