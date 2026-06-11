@@ -179,6 +179,25 @@ public class TradeUpContractUI : MonoBehaviour
 
     private void HandleSubmit()
     {
+        // Remove any selected entries that have since been sold or removed from inventory.
+        if (SkinInventoryManager.Instance != null)
+        {
+            var live = SkinInventoryManager.Instance.Entries;
+            for (int i = selectedEntries.Count - 1; i >= 0; i--)
+            {
+                bool exists = false;
+                for (int j = 0; j < live.Count; j++)
+                {
+                    if (live[j] == selectedEntries[i]) { exists = true; break; }
+                }
+                if (!exists)
+                {
+                    selectedEntries.RemoveAt(i);
+                    UpdateSelectedCountText();
+                }
+            }
+        }
+
         if (!ValidateSelection(out var inputRarity, out var isStatTrak))
             return;
 

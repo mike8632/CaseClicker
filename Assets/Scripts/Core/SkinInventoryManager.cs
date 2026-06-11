@@ -35,6 +35,7 @@ public class SkinInventoryManager : MonoBehaviour
     public float StatTrakValueMultiplier => statTrakValueMultiplier;
 
     public UnityEvent<SkinInventoryEntry> OnSkinAdded;
+    public UnityEvent<SkinInventoryEntry> OnSkinRemoved;
 
     private readonly List<SkinInventoryEntry> entries = new List<SkinInventoryEntry>();
 
@@ -127,6 +128,23 @@ public class SkinInventoryManager : MonoBehaviour
 
         Instance = this;
         OnSkinAdded ??= new UnityEvent<SkinInventoryEntry>();
+        OnSkinRemoved ??= new UnityEvent<SkinInventoryEntry>();
+    }
+
+    /// <summary>
+    /// Removes a skin from inventory and credits its market value to BalanceManager.
+    /// Returns true only if the skin was found and successfully removed.
+    /// </summary>
+    public bool SellSkin(SkinInventoryEntry entry)
+    {
+        if (entry == null) return false;
+
+        int removed = RemoveEntries(new[] { entry });
+        if (removed == 0) return false;
+
+        BalanceManager.Instance?.AddMoney(entry.marketValue);
+        OnSkinRemoved?.Invoke(entry);
+        return true;
     }
 
     public void AddSkin(CaseItemData item, string sourceCaseId, float marketValue, float floatValue)

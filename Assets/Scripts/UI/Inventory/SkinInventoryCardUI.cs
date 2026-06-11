@@ -22,12 +22,15 @@ public class SkinInventoryCardUI : MonoBehaviour
     [Header("Formats")]
     [SerializeField] private string sellPriceFormat = "SELL FOR ${0:F2}";
     [SerializeField] private string floatValueFormat = "{0:0.000000}";
-    [SerializeField] private string statTrakFormat = "StatTrak™";
+    [SerializeField] private string statTrakFormat = "StatTrak";
     [SerializeField] private string statTrakNameSuffix = " (StatTrak)";
 
     [Header("Rarity Display")]
     [SerializeField] private bool showRarityText = false;
     [SerializeField] private bool hideKnifeImage = false;
+
+    [Header("Sell")]
+    [SerializeField] private Button sellButton;
 
     [Header("Selection")]
     [SerializeField] private Button clickButton;
@@ -46,6 +49,12 @@ public class SkinInventoryCardUI : MonoBehaviour
         {
             clickButton.onClick.RemoveListener(HandleClick);
             clickButton.onClick.AddListener(HandleClick);
+        }
+
+        if (sellButton != null)
+        {
+            sellButton.onClick.RemoveListener(HandleSell);
+            sellButton.onClick.AddListener(HandleSell);
         }
     }
 
@@ -118,6 +127,13 @@ public class SkinInventoryCardUI : MonoBehaviour
         SelectionChanged?.Invoke(this, currentEntry, IsSelected);
         Debug.Log($"[SkinInventoryCardUI] Selected '{currentEntry.itemName}' ({currentEntry.itemId})");
         OnSelected?.Invoke(currentEntry);
+    }
+
+    private void HandleSell()
+    {
+        if (currentEntry == null || SkinInventoryManager.Instance == null) return;
+        if (SkinInventoryManager.Instance.SellSkin(currentEntry))
+            Destroy(gameObject);
     }
 
     public bool IsSelected => selectionBorders != null && selectionBorders.activeSelf;

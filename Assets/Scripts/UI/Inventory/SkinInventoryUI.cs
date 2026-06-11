@@ -63,6 +63,7 @@ public class SkinInventoryUI : MonoBehaviour
         if (SkinInventoryManager.Instance != null)
         {
             SkinInventoryManager.Instance.OnSkinAdded.RemoveListener(OnSkinAdded);
+            SkinInventoryManager.Instance.OnSkinRemoved.RemoveListener(OnSkinRemoved);
         }
 
         if (searchInput != null)
@@ -78,6 +79,7 @@ public class SkinInventoryUI : MonoBehaviour
             yield return null;
 
         SkinInventoryManager.Instance.OnSkinAdded.AddListener(OnSkinAdded);
+        SkinInventoryManager.Instance.OnSkinRemoved.AddListener(OnSkinRemoved);
 
         RebuildFromSnapshot();
         initRoutine = null;
@@ -103,6 +105,11 @@ public class SkinInventoryUI : MonoBehaviour
     private void OnSkinAdded(SkinInventoryEntry entry)
     {
         SpawnCard(entry);
+    }
+
+    private void OnSkinRemoved(SkinInventoryEntry entry)
+    {
+        detailPanel?.Hide();
     }
 
     private void SpawnCard(SkinInventoryEntry entry)
