@@ -144,6 +144,7 @@ public class UpgradeManager : MonoBehaviour
         OnUpgradePurchased?.Invoke(def.id, def.currentLevel);
         OnUpgradesChanged?.Invoke();
 
+        SaveSystem.Instance?.RequestSave();
         return true;
     }
 

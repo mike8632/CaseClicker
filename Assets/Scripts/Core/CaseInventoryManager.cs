@@ -273,6 +273,7 @@ public class CaseInventoryManager : MonoBehaviour
 
         BalanceManager.Instance?.SpendMoney(price);
         AddKeys(data.caseId, 1); // keys, not cases
+        SaveSystem.Instance?.RequestSave();
         return true;
     }
 
@@ -314,6 +315,7 @@ public class CaseInventoryManager : MonoBehaviour
         if (money < price) return false;
         BalanceManager.Instance?.SpendMoney(price);
         AddCases(data.caseId, 1);
+        SaveSystem.Instance?.RequestSave();
         return true;
     }
 
@@ -348,6 +350,7 @@ public class CaseInventoryManager : MonoBehaviour
         float sellPrice = GetCaseSellPrice(data);
         RemoveCases(data.caseId, 1);
         BalanceManager.Instance?.AddMoney(sellPrice);
+        SaveSystem.Instance?.RequestSave();
         return true;
     }
 
@@ -408,6 +411,7 @@ public class CaseInventoryManager : MonoBehaviour
 
         Debug.Log($"[CaseInventory] Opened case '{caseDataForOpen.caseId}' - total opened now: {StatisticsManager.Instance?.TotalCasesOpened}");
 
+        SaveSystem.Instance?.RequestSave();
         return true;
     }
 

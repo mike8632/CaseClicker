@@ -144,6 +144,7 @@ public class SkinInventoryManager : MonoBehaviour
 
         BalanceManager.Instance?.AddMoney(entry.marketValue);
         OnSkinRemoved?.Invoke(entry);
+        SaveSystem.Instance?.RequestSave();
         return true;
     }
 

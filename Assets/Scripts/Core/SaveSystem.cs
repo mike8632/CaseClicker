@@ -30,6 +30,10 @@ public class SaveSystem : MonoBehaviour
     // Auto-save timer
     private float autoSaveTimer = 0f;
 
+    // Pending-save debounce timer (-1 means no save is pending)
+    private float _pendingSaveTimer = -1f;
+    private const float DefaultPendingSaveDelay = 5f;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -56,6 +60,18 @@ public class SaveSystem : MonoBehaviour
 
     private void Update()
     {
+        // Pending debounced save
+        if (_pendingSaveTimer > 0f)
+        {
+            _pendingSaveTimer -= Time.deltaTime;
+            if (_pendingSaveTimer <= 0f)
+            {
+                _pendingSaveTimer = -1f;
+                SaveGame();
+                return; // SaveGame() already resets autoSaveTimer
+            }
+        }
+
         // Auto-save timer
         autoSaveTimer += Time.deltaTime;
         if (autoSaveTimer >= autoSaveIntervalSeconds)
@@ -81,10 +97,23 @@ public class SaveSystem : MonoBehaviour
     #region Save Operations
 
     /// <summary>
+    /// Request a save after a short delay. Repeated calls within the delay window
+    /// are collapsed into one save (debounce). Safe to call after every important action.
+    /// </summary>
+    public void RequestSave(float delaySeconds = DefaultPendingSaveDelay)
+    {
+        _pendingSaveTimer = Mathf.Max(0.1f, delaySeconds);
+    }
+
+    /// <summary>
     /// Save all game data. 
     /// </summary>
     public void SaveGame()
     {
+        // Cancel any pending debounced save and reset auto-save so we don't double-save shortly after.
+        _pendingSaveTimer = -1f;
+        autoSaveTimer = 0f;
+
         try
         {
             OnSaveStarted?.Invoke();

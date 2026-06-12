@@ -282,6 +282,7 @@ public class TradeUpContractUI : MonoBehaviour
         TryShowDetailPreview(awardedResult.Item, awardedResult.CaseId, floatValue, marketValue, outputRarity, isStatTrak);
         ClearSelection();
         RefreshInventories();
+        SaveSystem.Instance?.RequestSave();
     }
 
     private bool ValidateSelection(out ItemRarity inputRarity, out bool isStatTrak)
