@@ -56,6 +56,9 @@ public class TradeUpContractUI : MonoBehaviour
 
         SubscribeToInventory();
         UpdateSelectedCountText();
+
+        if (SkinInventoryManager.Instance != null)
+            SkinInventoryManager.Instance.OnSkinRemoved.AddListener(HandleSkinRemoved);
     }
 
     private void OnDisable()
@@ -67,6 +70,9 @@ public class TradeUpContractUI : MonoBehaviour
             submitButton.onClick.RemoveListener(HandleSubmit);
 
         UnsubscribeFromInventory();
+
+        if (SkinInventoryManager.Instance != null)
+            SkinInventoryManager.Instance.OnSkinRemoved.RemoveListener(HandleSkinRemoved);
     }
 
     private void SubscribeToInventory()
@@ -75,6 +81,7 @@ public class TradeUpContractUI : MonoBehaviour
             return;
 
         sourceInventoryUI.CardSpawned += HandleCardSpawned;
+        sourceInventoryUI.OnCardsCleared += HandleOnCardsCleared;
 
         var existingCards = sourceInventoryUI.GetComponentsInChildren<SkinInventoryCardUI>(true);
         for (int i = 0; i < existingCards.Length; i++)
@@ -86,7 +93,10 @@ public class TradeUpContractUI : MonoBehaviour
     private void UnsubscribeFromInventory()
     {
         if (sourceInventoryUI != null)
+        {
             sourceInventoryUI.CardSpawned -= HandleCardSpawned;
+            sourceInventoryUI.OnCardsCleared -= HandleOnCardsCleared;
+        }
 
         foreach (var card in subscribedCards)
         {
@@ -100,6 +110,23 @@ public class TradeUpContractUI : MonoBehaviour
     private void HandleCardSpawned(SkinInventoryCardUI card)
     {
         RegisterCard(card);
+    }
+
+    private void HandleOnCardsCleared()
+    {
+        // Cards were just cleared/rebuilt — deregister SelectionChanged from old cards
+        // and reset selection state. CardSpawned subscription stays active so new
+        // cards will register themselves as they spawn.
+        foreach (var card in subscribedCards)
+        {
+            if (card == null) continue;
+            card.SelectionChanged -= HandleSelectionChanged;
+        }
+        subscribedCards.Clear();
+        selectedEntries.Clear();
+        lockedRarity = null;
+        lockedStatTrak = null;
+        UpdateSelectedCountText();
     }
 
     private void RegisterCard(SkinInventoryCardUI card)
@@ -175,6 +202,34 @@ public class TradeUpContractUI : MonoBehaviour
     {
         ClearSelection();
         SidebarController.Instance?.SelectTab(inventoryTabId);
+    }
+
+    private void HandleSkinRemoved(SkinInventoryEntry entry)
+    {
+        if (entry == null) return;
+
+        bool wasSelected = selectedEntries.Remove(entry);
+        if (!wasSelected) return;
+
+        // Deselect the card visually if it still exists
+        foreach (var card in subscribedCards)
+        {
+            if (card != null && card.CurrentEntry == entry)
+            {
+                card.SetSelected(false);
+                break;
+            }
+        }
+
+        // Reset rarity/StatTrak locks when selection is now empty
+        if (selectedEntries.Count == 0)
+        {
+            lockedRarity = null;
+            lockedStatTrak = null;
+        }
+
+        ApplyFilters();
+        UpdateSelectedCountText();
     }
 
     private void HandleSubmit()

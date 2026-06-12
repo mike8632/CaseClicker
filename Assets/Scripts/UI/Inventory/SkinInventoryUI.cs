@@ -18,12 +18,19 @@ public class SkinInventoryUI : MonoBehaviour
     [Header("Search")]
     [SerializeField] private InputField searchInput;
     [SerializeField] private TMP_InputField searchInputTmp;
+    [Header("Lifecycle")]
+    [SerializeField] private bool clearCardsOnDisable = false;
+    [SerializeField] private bool rebuildOnTabShow = false;
 
     private Coroutine initRoutine;
     private SkinInventoryCardUI sceneTemplateCard;
     private string searchFilter;
+    private bool _liveActive = false;
+    private TabPanel _parentTabPanel;
 
     public event System.Action<SkinInventoryCardUI> CardSpawned;
+    /// <summary>Fired after cards are cleared (before new ones spawn). Subscribe to clean up stale card references.</summary>
+    public event System.Action OnCardsCleared;
 
     public SkinInventoryCardUI[] GetCards(bool includeInactive = false)
     {
@@ -60,6 +67,19 @@ public class SkinInventoryUI : MonoBehaviour
             initRoutine = null;
         }
 
+        if (clearCardsOnDisable)
+            ClearSpawnedCards();
+
+        if (rebuildOnTabShow)
+        {
+            if (SidebarController.Instance != null)
+            {
+                SidebarController.Instance.OnTabChanged.RemoveListener(HandleTabChanged);
+                SidebarController.Instance.OnTabClosed.RemoveListener(HandleTabClosed);
+            }
+            DeactivateLive();
+        }
+
         if (SkinInventoryManager.Instance != null)
         {
             SkinInventoryManager.Instance.OnSkinAdded.RemoveListener(OnSkinAdded);
@@ -78,10 +98,37 @@ public class SkinInventoryUI : MonoBehaviour
         while (SkinInventoryManager.Instance == null)
             yield return null;
 
-        SkinInventoryManager.Instance.OnSkinAdded.AddListener(OnSkinAdded);
+        // OnSkinRemoved is always subscribed so sold-skin cleanup works even when the tab is hidden
         SkinInventoryManager.Instance.OnSkinRemoved.AddListener(OnSkinRemoved);
 
-        RebuildFromSnapshot();
+        if (rebuildOnTabShow)
+        {
+            while (SidebarController.Instance == null)
+                yield return null;
+
+            _parentTabPanel = GetComponentInParent<TabPanel>(true);
+            if (_parentTabPanel == null)
+            {
+                Debug.LogWarning("[SkinInventoryUI] rebuildOnTabShow=true but no parent TabPanel was found. Falling back to live mode.");
+                SkinInventoryManager.Instance.OnSkinAdded.AddListener(OnSkinAdded);
+                RebuildFromSnapshot();
+            }
+            else
+            {
+                SidebarController.Instance.OnTabChanged.AddListener(HandleTabChanged);
+                SidebarController.Instance.OnTabClosed.AddListener(HandleTabClosed);
+
+                // If the tab is already visible at startup, activate immediately
+                if (_parentTabPanel.IsVisible)
+                    ActivateLive();
+            }
+        }
+        else
+        {
+            SkinInventoryManager.Instance.OnSkinAdded.AddListener(OnSkinAdded);
+            RebuildFromSnapshot();
+        }
+
         initRoutine = null;
     }
 
@@ -92,6 +139,7 @@ public class SkinInventoryUI : MonoBehaviour
 
         ResolveTemplateIfNeeded();
         ClearSpawnedCards();
+        OnCardsCleared?.Invoke();
 
         var list = SkinInventoryManager.Instance.Entries;
         for (int i = 0; i < list.Count; i++)
@@ -110,6 +158,56 @@ public class SkinInventoryUI : MonoBehaviour
     private void OnSkinRemoved(SkinInventoryEntry entry)
     {
         detailPanel?.Hide();
+
+        if (contentParent == null || entry == null) return;
+
+        var cards = contentParent.GetComponentsInChildren<SkinInventoryCardUI>(true);
+        for (int i = 0; i < cards.Length; i++)
+        {
+            var card = cards[i];
+            if (card == null) continue;
+            if (sceneTemplateCard != null && card == sceneTemplateCard) continue;
+            if (card.CurrentEntry != null && card.CurrentEntry.instanceId == entry.instanceId)
+            {
+                Destroy(card.gameObject);
+                break;
+            }
+        }
+    }
+
+    private void ActivateLive()
+    {
+        if (_liveActive) return;
+        _liveActive = true;
+        if (SkinInventoryManager.Instance != null)
+            SkinInventoryManager.Instance.OnSkinAdded.AddListener(OnSkinAdded);
+        RebuildFromSnapshot();
+    }
+
+    private void DeactivateLive()
+    {
+        if (!_liveActive) return;
+        _liveActive = false;
+        if (SkinInventoryManager.Instance != null)
+            SkinInventoryManager.Instance.OnSkinAdded.RemoveListener(OnSkinAdded);
+        ClearSpawnedCards();
+        OnCardsCleared?.Invoke();
+    }
+
+    private void HandleTabChanged(string tabId, int index)
+    {
+        if (_parentTabPanel == null) return;
+        if (tabId == _parentTabPanel.TabId)
+            ActivateLive();
+        else if (_liveActive)
+            DeactivateLive();
+    }
+
+    private void HandleTabClosed(string tabId, int index)
+    {
+        if (_parentTabPanel == null) return;
+        if (tabId == _parentTabPanel.TabId && _liveActive)
+            DeactivateLive();
     }
 
     private void SpawnCard(SkinInventoryEntry entry)
