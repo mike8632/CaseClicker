@@ -16,6 +16,7 @@ public class SkinInventoryEntry
     public ItemRarity rarity;
     public ItemWear wear;
     public bool isStatTrak;
+    public bool isLocked;
     public float marketValue;
     public float floatValue;
 }
@@ -36,6 +37,7 @@ public class SkinInventoryManager : MonoBehaviour
 
     public UnityEvent<SkinInventoryEntry> OnSkinAdded;
     public UnityEvent<SkinInventoryEntry> OnSkinRemoved;
+    public UnityEvent<SkinInventoryEntry> OnSkinLockChanged;
 
     private readonly List<SkinInventoryEntry> entries = new List<SkinInventoryEntry>();
 
@@ -59,6 +61,7 @@ public class SkinInventoryManager : MonoBehaviour
                 rarity = entry.rarity,
                 wear = entry.wear,
                 isStatTrak = entry.isStatTrak,
+                isLocked = entry.isLocked,
                 marketValue = entry.marketValue,
                 floatValue = entry.floatValue
             });
@@ -90,6 +93,7 @@ public class SkinInventoryManager : MonoBehaviour
                 rarity = dto.rarity,
                 wear = dto.wear,
                 isStatTrak = dto.isStatTrak,
+                isLocked = dto.isLocked,
                 marketValue = dto.marketValue,
                 floatValue = dto.floatValue,
                 itemIcon = ResolveItemIcon(dto.sourceCaseId, dto.itemId, dto.itemName)
@@ -129,6 +133,7 @@ public class SkinInventoryManager : MonoBehaviour
         Instance = this;
         OnSkinAdded ??= new UnityEvent<SkinInventoryEntry>();
         OnSkinRemoved ??= new UnityEvent<SkinInventoryEntry>();
+        OnSkinLockChanged ??= new UnityEvent<SkinInventoryEntry>();
     }
 
     /// <summary>
@@ -138,6 +143,7 @@ public class SkinInventoryManager : MonoBehaviour
     public bool SellSkin(SkinInventoryEntry entry)
     {
         if (entry == null) return false;
+        if (entry.isLocked) return false;
 
         int removed = RemoveEntries(new[] { entry });
         if (removed == 0) return false;
@@ -146,6 +152,17 @@ public class SkinInventoryManager : MonoBehaviour
         OnSkinRemoved?.Invoke(entry);
         SaveSystem.Instance?.RequestSave();
         return true;
+    }
+
+    /// <summary>
+    /// Toggle the locked/favorite state of a skin. Locked skins cannot be sold or used in trade-up.
+    /// </summary>
+    public void SetLocked(SkinInventoryEntry entry, bool locked)
+    {
+        if (entry == null) return;
+        entry.isLocked = locked;
+        OnSkinLockChanged?.Invoke(entry);
+        SaveSystem.Instance?.RequestSave();
     }
 
     public void AddSkin(CaseItemData item, string sourceCaseId, float marketValue, float floatValue)

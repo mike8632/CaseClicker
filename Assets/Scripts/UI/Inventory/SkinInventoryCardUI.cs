@@ -32,13 +32,25 @@ public class SkinInventoryCardUI : MonoBehaviour
     [Header("Sell")]
     [SerializeField] private Button sellButton;
 
+    [Header("Lock")]
+    [SerializeField] private Button lockButton;
+    [SerializeField] private GameObject lockedIcon;
+
     [Header("Selection")]
     [SerializeField] private Button clickButton;
     [SerializeField] private GameObject selectionBorders;
     public SkinInventoryEntryEvent OnSelected;
     public event Action<SkinInventoryCardUI, SkinInventoryEntry, bool> SelectionChanged;
 
+    public enum CardClickMode
+    {
+        Normal,        // click opens detail panel only (main inventory)
+        BulkSelect,    // click toggles multi-select for bulk actions
+        TradeUpSelect  // click toggles selection for trade-up contract
+    }
+
     private SkinInventoryEntry currentEntry;
+    private CardClickMode _clickMode = CardClickMode.Normal;
 
     private void Awake()
     {
@@ -56,6 +68,24 @@ public class SkinInventoryCardUI : MonoBehaviour
             sellButton.onClick.RemoveListener(HandleSell);
             sellButton.onClick.AddListener(HandleSell);
         }
+
+        if (lockButton != null)
+        {
+            lockButton.onClick.RemoveListener(HandleToggleLock);
+            lockButton.onClick.AddListener(HandleToggleLock);
+        }
+    }
+
+    private void OnEnable()
+    {
+        if (SkinInventoryManager.Instance != null)
+            SkinInventoryManager.Instance.OnSkinLockChanged.AddListener(HandleSkinLockChanged);
+    }
+
+    private void OnDisable()
+    {
+        if (SkinInventoryManager.Instance != null)
+            SkinInventoryManager.Instance.OnSkinLockChanged.RemoveListener(HandleSkinLockChanged);
     }
 
     public void Bind(SkinInventoryEntry entry)
@@ -117,16 +147,33 @@ public class SkinInventoryCardUI : MonoBehaviour
         {
             rarityBackgroundSecondary.color = GetRarityColor(entry.rarity);
         }
+
+        RefreshLockVisuals();
     }
 
     private void HandleClick()
     {
         if (currentEntry == null) return;
-        if (selectionBorders != null)
-            selectionBorders.SetActive(!selectionBorders.activeSelf);
-        SelectionChanged?.Invoke(this, currentEntry, IsSelected);
-        Debug.Log($"[SkinInventoryCardUI] Selected '{currentEntry.itemName}' ({currentEntry.itemId})");
-        OnSelected?.Invoke(currentEntry);
+
+        switch (_clickMode)
+        {
+            case CardClickMode.Normal:
+                // Open detail panel only  no selection border toggling
+                OnSelected?.Invoke(currentEntry);
+                break;
+
+            case CardClickMode.BulkSelect:
+                // Toggle multi-select (locked skins may be selected for bulk unlock)
+                SetSelected(!IsSelected);
+                SelectionChanged?.Invoke(this, currentEntry, IsSelected);
+                break;
+
+            case CardClickMode.TradeUpSelect:
+                // Toggle selection for trade-up contract
+                SetSelected(!IsSelected);
+                SelectionChanged?.Invoke(this, currentEntry, IsSelected);
+                break;
+        }
     }
 
     private void HandleSell()
@@ -134,6 +181,29 @@ public class SkinInventoryCardUI : MonoBehaviour
         if (currentEntry == null || SkinInventoryManager.Instance == null) return;
         if (SkinInventoryManager.Instance.SellSkin(currentEntry))
             Destroy(gameObject);
+    }
+
+    private void HandleToggleLock()
+    {
+        if (currentEntry == null || SkinInventoryManager.Instance == null) return;
+        SkinInventoryManager.Instance.SetLocked(currentEntry, !currentEntry.isLocked);
+    }
+
+    private void RefreshLockVisuals()
+    {
+        if (currentEntry == null) return;
+        bool locked = currentEntry.isLocked;
+        if (lockedIcon != null)
+            lockedIcon.SetActive(locked);
+        if (sellButton != null)
+            sellButton.interactable = !locked;
+    }
+
+    private void HandleSkinLockChanged(SkinInventoryEntry entry)
+    {
+        if (currentEntry == null || entry == null) return;
+        if (entry.instanceId != currentEntry.instanceId) return;
+        RefreshLockVisuals();
     }
 
     public bool IsSelected => selectionBorders != null && selectionBorders.activeSelf;
@@ -144,6 +214,16 @@ public class SkinInventoryCardUI : MonoBehaviour
     {
         if (selectionBorders != null)
             selectionBorders.SetActive(selected);
+    }
+
+    /// <summary>
+    /// Switch the card's click behavior. Always clears the selection visual when the mode changes.
+    /// </summary>
+    public void SetClickMode(CardClickMode mode)
+    {
+        if (_clickMode == mode) return;
+        _clickMode = mode;
+        SetSelected(false); // clear selection visual on mode change
     }
 
     [System.Serializable]

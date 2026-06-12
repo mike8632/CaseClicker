@@ -18,9 +18,15 @@ public class SkinInventoryDetailUI : MonoBehaviour
     [SerializeField] private Text valueText;
     [SerializeField] private GameObject statTrakBadge;
 
+    [Header("Lock")]
+    [SerializeField] private Button lockButton;
+    [SerializeField] private GameObject lockedBadge;
+
     [Header("Formats")]
     [SerializeField] private string floatFormat = "{0:0.000000}";
     [SerializeField] private string valueFormat = "${0:F2}";
+
+    private SkinInventoryEntry _currentEntry;
 
     private void OnEnable()
     {
@@ -29,14 +35,27 @@ public class SkinInventoryDetailUI : MonoBehaviour
             closeButton.onClick.RemoveListener(Hide);
             closeButton.onClick.AddListener(Hide);
         }
+
+        if (lockButton != null)
+        {
+            lockButton.onClick.RemoveListener(HandleToggleLock);
+            lockButton.onClick.AddListener(HandleToggleLock);
+        }
+
+        if (SkinInventoryManager.Instance != null)
+            SkinInventoryManager.Instance.OnSkinLockChanged.AddListener(HandleSkinLockChanged);
     }
 
     private void OnDisable()
     {
         if (closeButton != null)
-        {
             closeButton.onClick.RemoveListener(Hide);
-        }
+
+        if (lockButton != null)
+            lockButton.onClick.RemoveListener(HandleToggleLock);
+
+        if (SkinInventoryManager.Instance != null)
+            SkinInventoryManager.Instance.OnSkinLockChanged.RemoveListener(HandleSkinLockChanged);
     }
 
     private void Update()
@@ -55,6 +74,8 @@ public class SkinInventoryDetailUI : MonoBehaviour
         if (entry == null)
             return;
 
+        _currentEntry = entry;
+
         if (panelRoot != null)
             panelRoot.SetActive(true);
 
@@ -68,12 +89,36 @@ public class SkinInventoryDetailUI : MonoBehaviour
         if (floatText != null) floatText.text = string.Format(floatFormat, entry.floatValue);
         if (valueText != null) valueText.text = string.Format(valueFormat, entry.marketValue);
         if (statTrakBadge != null) statTrakBadge.SetActive(entry.isStatTrak);
+
+        RefreshLockVisuals();
     }
 
     public void Hide()
     {
         if (panelRoot != null)
             panelRoot.SetActive(false);
+
+        _currentEntry = null;
+    }
+
+    private void HandleToggleLock()
+    {
+        if (_currentEntry == null || SkinInventoryManager.Instance == null) return;
+        SkinInventoryManager.Instance.SetLocked(_currentEntry, !_currentEntry.isLocked);
+    }
+
+    private void RefreshLockVisuals()
+    {
+        if (_currentEntry == null) return;
+        if (lockedBadge != null)
+            lockedBadge.SetActive(_currentEntry.isLocked);
+    }
+
+    private void HandleSkinLockChanged(SkinInventoryEntry entry)
+    {
+        if (_currentEntry == null || entry == null) return;
+        if (entry.instanceId != _currentEntry.instanceId) return;
+        RefreshLockVisuals();
     }
 
     private static Color GetRarityColor(ItemRarity rarity)

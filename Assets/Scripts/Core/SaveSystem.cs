@@ -600,6 +600,7 @@ public class SkinEntryDTO
     public ItemRarity rarity;
     public ItemWear wear;
     public bool isStatTrak;
+    public bool isLocked;
     public float marketValue;
     public float floatValue;
 }

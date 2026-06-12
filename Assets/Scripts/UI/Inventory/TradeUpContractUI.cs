@@ -58,7 +58,10 @@ public class TradeUpContractUI : MonoBehaviour
         UpdateSelectedCountText();
 
         if (SkinInventoryManager.Instance != null)
+        {
             SkinInventoryManager.Instance.OnSkinRemoved.AddListener(HandleSkinRemoved);
+            SkinInventoryManager.Instance.OnSkinLockChanged.AddListener(HandleSkinLockChanged);
+        }
     }
 
     private void OnDisable()
@@ -72,7 +75,10 @@ public class TradeUpContractUI : MonoBehaviour
         UnsubscribeFromInventory();
 
         if (SkinInventoryManager.Instance != null)
+        {
             SkinInventoryManager.Instance.OnSkinRemoved.RemoveListener(HandleSkinRemoved);
+            SkinInventoryManager.Instance.OnSkinLockChanged.RemoveListener(HandleSkinLockChanged);
+        }
     }
 
     private void SubscribeToInventory()
@@ -155,6 +161,12 @@ public class TradeUpContractUI : MonoBehaviour
                 return;
             }
 
+            if (entry.isLocked)
+            {
+                card?.SetSelected(false);
+                return;
+            }
+
             if (lockedRarity.HasValue && entry.rarity != lockedRarity.Value)
             {
                 card?.SetSelected(false);
@@ -232,6 +244,35 @@ public class TradeUpContractUI : MonoBehaviour
         UpdateSelectedCountText();
     }
 
+    private void HandleSkinLockChanged(SkinInventoryEntry entry)
+    {
+        // Only act when a skin becomes locked — unlocking does not need special handling
+        if (entry == null || !entry.isLocked) return;
+
+        bool wasSelected = selectedEntries.Remove(entry);
+
+        // Hide the card from the trade-up grid regardless of selection state
+        foreach (var card in subscribedCards)
+        {
+            if (card == null) continue;
+            if (card.CurrentEntry != entry) continue;
+            card.SetSelected(false);
+            card.gameObject.SetActive(false);
+            break;
+        }
+
+        if (!wasSelected) return;
+
+        if (selectedEntries.Count == 0)
+        {
+            lockedRarity = null;
+            lockedStatTrak = null;
+        }
+
+        ApplyFilters();
+        UpdateSelectedCountText();
+    }
+
     private void HandleSubmit()
     {
         // Remove any selected entries that have since been sold or removed from inventory.
@@ -245,7 +286,7 @@ public class TradeUpContractUI : MonoBehaviour
                 {
                     if (live[j] == selectedEntries[i]) { exists = true; break; }
                 }
-                if (!exists)
+                if (!exists || selectedEntries[i].isLocked)
                 {
                     selectedEntries.RemoveAt(i);
                     UpdateSelectedCountText();
@@ -405,6 +446,9 @@ public class TradeUpContractUI : MonoBehaviour
             bool show = true;
 
             if (entry != null && (entry.rarity == ItemRarity.Covert || entry.rarity == ItemRarity.Knife || entry.rarity == ItemRarity.Contraband))
+                show = false;
+
+            if (entry != null && entry.isLocked)
                 show = false;
 
             if (lockedRarity.HasValue)

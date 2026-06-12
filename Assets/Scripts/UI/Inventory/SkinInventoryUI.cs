@@ -21,6 +21,8 @@ public class SkinInventoryUI : MonoBehaviour
     [Header("Lifecycle")]
     [SerializeField] private bool clearCardsOnDisable = false;
     [SerializeField] private bool rebuildOnTabShow = false;
+    [Header("Card Behavior")]
+    [SerializeField] private SkinInventoryCardUI.CardClickMode defaultCardClickMode = SkinInventoryCardUI.CardClickMode.Normal;
 
     private Coroutine initRoutine;
     private SkinInventoryCardUI sceneTemplateCard;
@@ -229,6 +231,7 @@ public class SkinInventoryUI : MonoBehaviour
         if (card != null)
         {
             card.Bind(entry);
+            card.SetClickMode(defaultCardClickMode);
             if (enableDetailPanel && detailPanel != null)
             {
                 card.OnSelected.RemoveListener(detailPanel.Show);
