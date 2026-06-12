@@ -33,8 +33,11 @@ public class SkinInventoryCardUI : MonoBehaviour
     [SerializeField] private Button sellButton;
 
     [Header("Lock")]
-    [SerializeField] private Button lockButton;
     [SerializeField] private GameObject lockedIcon;
+    [SerializeField] private Image      skinBackgroundImage;
+    [SerializeField] private Color      normalBackgroundColor = new Color(0.85f, 0.85f, 0.85f, 1f);
+    [SerializeField] private Color      lockedBackgroundColor = new Color(0.40f, 0.40f, 0.40f, 1f);
+    [SerializeField] private string     lockedSellText        = "LOCKED";
 
     [Header("Selection")]
     [SerializeField] private Button clickButton;
@@ -67,12 +70,6 @@ public class SkinInventoryCardUI : MonoBehaviour
         {
             sellButton.onClick.RemoveListener(HandleSell);
             sellButton.onClick.AddListener(HandleSell);
-        }
-
-        if (lockButton != null)
-        {
-            lockButton.onClick.RemoveListener(HandleToggleLock);
-            lockButton.onClick.AddListener(HandleToggleLock);
         }
     }
 
@@ -183,20 +180,24 @@ public class SkinInventoryCardUI : MonoBehaviour
             Destroy(gameObject);
     }
 
-    private void HandleToggleLock()
-    {
-        if (currentEntry == null || SkinInventoryManager.Instance == null) return;
-        SkinInventoryManager.Instance.SetLocked(currentEntry, !currentEntry.isLocked);
-    }
-
     private void RefreshLockVisuals()
     {
         if (currentEntry == null) return;
         bool locked = currentEntry.isLocked;
+
         if (lockedIcon != null)
             lockedIcon.SetActive(locked);
+
         if (sellButton != null)
             sellButton.interactable = !locked;
+
+        if (sellPriceText != null)
+            sellPriceText.text = locked
+                ? lockedSellText
+                : string.Format(sellPriceFormat, currentEntry.marketValue);
+
+        if (skinBackgroundImage != null)
+            skinBackgroundImage.color = locked ? lockedBackgroundColor : normalBackgroundColor;
     }
 
     private void HandleSkinLockChanged(SkinInventoryEntry entry)

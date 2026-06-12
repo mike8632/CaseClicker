@@ -73,6 +73,7 @@ public class InventoryFilterController : MonoBehaviour
 
     [Header("Special")]
     [SerializeField] private ToggleBoxFillUI statTrakOnlyToggle;
+    [SerializeField] private ToggleBoxFillUI lockedOnlyToggle;
 
     [Header("Weapon Type")]
     [SerializeField] private List<WeaponTypeToggle> weaponTypeToggles = new List<WeaponTypeToggle>();
@@ -136,6 +137,7 @@ public class InventoryFilterController : MonoBehaviour
         bool filterWear = selectedWears.Count > 0;
         bool filterWeaponType = selectedWeaponTypes.Count > 0;
         bool filterStatTrak = statTrakOnlyToggle != null && statTrakOnlyToggle.IsFilled;
+        bool filterLocked   = lockedOnlyToggle   != null && lockedOnlyToggle.IsFilled;
 
         bool hasMinPrice = TryGetPriceValue(true, out float minPrice);
         bool hasMaxPrice = TryGetPriceValue(false, out float maxPrice);
@@ -177,6 +179,9 @@ public class InventoryFilterController : MonoBehaviour
             if (show && filterStatTrak && !entry.isStatTrak)
                 show = false;
 
+            if (show && filterLocked && !entry.isLocked)
+                show = false;
+
             if (show && hasMinPrice && entry.marketValue < minPrice)
                 show = false;
 
@@ -216,6 +221,7 @@ public class InventoryFilterController : MonoBehaviour
             SetToggleFilled(weaponTypeToggles[i].toggle, false);
 
         SetToggleFilled(statTrakOnlyToggle, false);
+        SetToggleFilled(lockedOnlyToggle,   false);
 
         SetPriceInputs(defaultMinPrice, defaultMaxPrice);
         SetFloatInputs(defaultMinFloat, defaultMaxFloat);
