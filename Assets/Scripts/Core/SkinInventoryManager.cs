@@ -19,6 +19,7 @@ public class SkinInventoryEntry
     public bool isLocked;
     public float marketValue;
     public float floatValue;
+    public WeaponCategory weaponCategory;
 }
 
 /// <summary>
@@ -63,7 +64,8 @@ public class SkinInventoryManager : MonoBehaviour
                 isStatTrak = entry.isStatTrak,
                 isLocked = entry.isLocked,
                 marketValue = entry.marketValue,
-                floatValue = entry.floatValue
+                floatValue = entry.floatValue,
+                weaponCategory = entry.weaponCategory
             });
         }
 
@@ -82,6 +84,11 @@ public class SkinInventoryManager : MonoBehaviour
             var dto = snapshot[i];
             if (dto == null) continue;
 
+            // Migrate old saves: if category was not stored, infer it now from the weapon name.
+            WeaponCategory resolvedCategory = dto.weaponCategory != WeaponCategory.Unknown
+                ? dto.weaponCategory
+                : CaseItemData.InferWeaponCategory(dto.weaponName, dto.itemName);
+
             var entry = new SkinInventoryEntry
             {
                 instanceId = string.IsNullOrEmpty(dto.instanceId) ? Guid.NewGuid().ToString("N") : dto.instanceId,
@@ -96,6 +103,7 @@ public class SkinInventoryManager : MonoBehaviour
                 isLocked = dto.isLocked,
                 marketValue = dto.marketValue,
                 floatValue = dto.floatValue,
+                weaponCategory = resolvedCategory,
                 itemIcon = ResolveItemIcon(dto.sourceCaseId, dto.itemId, dto.itemName)
             };
 
@@ -190,7 +198,8 @@ public class SkinInventoryManager : MonoBehaviour
             wear = GetWearFromFloat(floatValue),
             isStatTrak = isStatTrak,
             marketValue = marketValue,
-            floatValue = floatValue
+            floatValue = floatValue,
+            weaponCategory = item.GetWeaponCategory()
         };
 
         entries.Add(entry);

@@ -603,6 +603,7 @@ public class SkinEntryDTO
     public bool isLocked;
     public float marketValue;
     public float floatValue;
+    public WeaponCategory weaponCategory;
 }
 
 /// <summary>

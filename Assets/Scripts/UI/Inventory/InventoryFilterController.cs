@@ -25,6 +25,7 @@ public class InventoryFilterController : MonoBehaviour
         Pistols,
         Rifles,
         SMGs,
+        Heavy,
         Snipers,
         Knives,
         Gloves
@@ -280,40 +281,35 @@ public class InventoryFilterController : MonoBehaviour
         return list;
     }
 
+    /// <summary>
+    /// Maps the filter UI's WeaponType (Inspector enum) to the global WeaponCategory stored on each entry.
+    /// To add a Heavy button later: add Heavy to the WeaponType enum and a case here.
+    /// </summary>
+    private static WeaponCategory FilterTypeToCategory(WeaponType type)
+    {
+        switch (type)
+        {
+            case WeaponType.Pistols: return WeaponCategory.Pistol;
+            case WeaponType.Rifles:  return WeaponCategory.Rifle;
+            case WeaponType.SMGs:    return WeaponCategory.SMG;
+            case WeaponType.Heavy:   return WeaponCategory.Heavy;
+            case WeaponType.Snipers: return WeaponCategory.Sniper;
+            case WeaponType.Knives:  return WeaponCategory.Knife;
+            case WeaponType.Gloves:  return WeaponCategory.Glove;
+            default:                 return WeaponCategory.Unknown;
+        }
+    }
+
     private static bool MatchesWeaponType(SkinInventoryEntry entry, List<WeaponType> selectedTypes)
     {
         if (entry == null || selectedTypes == null || selectedTypes.Count == 0)
             return true;
 
-        string weapon = string.IsNullOrEmpty(entry.weaponName) ? entry.itemName : entry.weaponName;
-        if (string.IsNullOrEmpty(weapon))
-            weapon = string.Concat(entry.weaponName, " ", entry.itemName);
-
-        weapon = weapon.ToLowerInvariant();
-
+        WeaponCategory entryCategory = entry.weaponCategory;
         for (int i = 0; i < selectedTypes.Count; i++)
         {
-            switch (selectedTypes[i])
-            {
-                case WeaponType.Pistols:
-                    if (weapon.Contains("pistol")) return true;
-                    break;
-                case WeaponType.Rifles:
-                    if (weapon.Contains("rifle")) return true;
-                    break;
-                case WeaponType.SMGs:
-                    if (weapon.Contains("smg")) return true;
-                    break;
-                case WeaponType.Snipers:
-                    if (weapon.Contains("sniper") || weapon.Contains("rifle") && weapon.Contains("sniper")) return true;
-                    break;
-                case WeaponType.Knives:
-                    if (weapon.Contains("knife")) return true;
-                    break;
-                case WeaponType.Gloves:
-                    if (weapon.Contains("glove")) return true;
-                    break;
-            }
+            if (FilterTypeToCategory(selectedTypes[i]) == entryCategory)
+                return true;
         }
 
         return false;

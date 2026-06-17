@@ -406,6 +406,10 @@ public class CaseItemData
     public float floatMin = 0f;          // Minimum float (0-1)
     public float floatMax = 1f;          // Maximum float (0-1)
     public ItemRarity rarity;
+    /// <summary>
+    /// Inspector-overridable weapon category. Leave Unknown to auto-infer from weaponName.
+    /// </summary>
+    public WeaponCategory weaponCategory = WeaponCategory.Unknown;
 
     private static readonly string[] KnifeNameKeywords =
     {
@@ -489,6 +493,123 @@ public class CaseItemData
         float t = 1f - Mathf.Clamp01(floatValue);
         return Mathf.Lerp(min, max, t);
     }
+
+    /// <summary>
+    /// Returns the weapon category for this item. Uses the Inspector override when set,
+    /// otherwise infers from weaponName/itemName.
+    /// </summary>
+    public WeaponCategory GetWeaponCategory()
+    {
+        if (weaponCategory != WeaponCategory.Unknown)
+            return weaponCategory;
+
+        return InferWeaponCategory(weaponName, itemName);
+    }
+
+    // ── Static inference lookup ───────────────────────────────────────────────
+
+    private static readonly System.Collections.Generic.Dictionary<string, WeaponCategory> s_WeaponLookup =
+        new System.Collections.Generic.Dictionary<string, WeaponCategory>(System.StringComparer.OrdinalIgnoreCase)
+    {
+        // Pistols
+        { "Glock-18",        WeaponCategory.Pistol },
+        { "USP-S",           WeaponCategory.Pistol },
+        { "P2000",           WeaponCategory.Pistol },
+        { "P250",            WeaponCategory.Pistol },
+        { "Five-SeveN",      WeaponCategory.Pistol },
+        { "Tec-9",           WeaponCategory.Pistol },
+        { "CZ75-Auto",       WeaponCategory.Pistol },
+        { "Dual Berettas",   WeaponCategory.Pistol },
+        { "Desert Eagle",    WeaponCategory.Pistol },
+        { "R8 Revolver",     WeaponCategory.Pistol },
+        // Rifles
+        { "AK-47",           WeaponCategory.Rifle },
+        { "M4A4",            WeaponCategory.Rifle },
+        { "M4A1-S",          WeaponCategory.Rifle },
+        { "FAMAS",           WeaponCategory.Rifle },
+        { "Galil AR",        WeaponCategory.Rifle },
+        { "AUG",             WeaponCategory.Rifle },
+        { "SG 553",          WeaponCategory.Rifle },
+        // SMGs
+        { "MAC-10",          WeaponCategory.SMG },
+        { "MP9",             WeaponCategory.SMG },
+        { "MP7",             WeaponCategory.SMG },
+        { "MP5-SD",          WeaponCategory.SMG },
+        { "UMP-45",          WeaponCategory.SMG },
+        { "P90",             WeaponCategory.SMG },
+        { "PP-Bizon",        WeaponCategory.SMG },
+        // Snipers
+        { "AWP",             WeaponCategory.Sniper },
+        { "SSG 08",          WeaponCategory.Sniper },
+        { "SCAR-20",         WeaponCategory.Sniper },
+        { "G3SG1",           WeaponCategory.Sniper },
+        // Heavy (Shotguns + LMGs)
+        { "Nova",            WeaponCategory.Heavy },
+        { "XM1014",          WeaponCategory.Heavy },
+        { "MAG-7",           WeaponCategory.Heavy },
+        { "Sawed-Off",       WeaponCategory.Heavy },
+        { "M249",            WeaponCategory.Heavy },
+        { "Negev",           WeaponCategory.Heavy },
+        // Knives
+        { "Karambit",        WeaponCategory.Knife },
+        { "M9 Bayonet",      WeaponCategory.Knife },
+        { "Bayonet",         WeaponCategory.Knife },
+        { "Butterfly Knife", WeaponCategory.Knife },
+        { "Flip Knife",      WeaponCategory.Knife },
+        { "Gut Knife",       WeaponCategory.Knife },
+        { "Huntsman Knife",  WeaponCategory.Knife },
+        { "Falchion Knife",  WeaponCategory.Knife },
+        { "Bowie Knife",     WeaponCategory.Knife },
+        { "Shadow Daggers",  WeaponCategory.Knife },
+        { "Navaja Knife",    WeaponCategory.Knife },
+        { "Stiletto Knife",  WeaponCategory.Knife },
+        { "Talon Knife",     WeaponCategory.Knife },
+        { "Ursus Knife",     WeaponCategory.Knife },
+        { "Paracord Knife",  WeaponCategory.Knife },
+        { "Survival Knife",  WeaponCategory.Knife },
+        { "Nomad Knife",     WeaponCategory.Knife },
+        { "Skeleton Knife",  WeaponCategory.Knife },
+        { "Kukri Knife",     WeaponCategory.Knife },
+        { "Classic Knife",   WeaponCategory.Knife },
+        // Gloves
+        { "Hand Wraps",           WeaponCategory.Glove },
+        { "Driver Gloves",        WeaponCategory.Glove },
+        { "Specialist Gloves",    WeaponCategory.Glove },
+        { "Sport Gloves",         WeaponCategory.Glove },
+        { "Moto Gloves",          WeaponCategory.Glove },
+        { "Bloodhound Gloves",    WeaponCategory.Glove },
+        { "Hydra Gloves",         WeaponCategory.Glove },
+        { "Broken Fang Gloves",   WeaponCategory.Glove },
+    };
+
+    /// <summary>
+    /// Infers WeaponCategory from a weapon name or item name.
+    /// Tries exact lookup first, then substring fallback for gloves/knives.
+    /// Returns Unknown for unrecognised weapons.
+    /// Also used by SkinInventoryManager to migrate old save entries.
+    /// </summary>
+    public static WeaponCategory InferWeaponCategory(string weaponName, string itemName = "")
+    {
+        // Exact match on weaponName
+        if (!string.IsNullOrWhiteSpace(weaponName) &&
+            s_WeaponLookup.TryGetValue(weaponName.Trim(), out WeaponCategory cat))
+            return cat;
+
+        // Exact match on itemName (handles cases where only itemName is populated)
+        if (!string.IsNullOrWhiteSpace(itemName) &&
+            s_WeaponLookup.TryGetValue(itemName.Trim(), out cat))
+            return cat;
+
+        // Substring fallback for gloves and knives (covers modded/custom names)
+        string combined = ((weaponName ?? "") + " " + (itemName ?? "")).ToLowerInvariant();
+        if (combined.Contains("glove") || combined.Contains("hand wrap"))
+            return WeaponCategory.Glove;
+        if (combined.Contains("knife") || combined.Contains("bayonet") ||
+            combined.Contains("karambit") || combined.Contains("daggers"))
+            return WeaponCategory.Knife;
+
+        return WeaponCategory.Unknown;
+    }
 }
 
 /// <summary>
@@ -528,4 +649,20 @@ public enum ItemWear
     FieldTested,
     WellWorn,
     BattleScarred
+}
+
+/// <summary>
+/// Weapon category used for inventory filtering.
+/// Unknown (= 0) is the safe default for old saves; it is inferred on load.
+/// </summary>
+public enum WeaponCategory
+{
+    Unknown = 0,
+    Pistol,
+    Rifle,
+    SMG,
+    Sniper,
+    Knife,
+    Glove,
+    Heavy   // Shotguns (XM1014, Nova, MAG-7, Sawed-Off) + LMGs (M249, Negev)
 }
