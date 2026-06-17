@@ -34544,9 +34544,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 3674445}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 237.90198, y: -75.07414}
   m_SizeDelta: {x: 648.36, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &169384172
@@ -60709,8 +60709,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -35.7, y: -87.3}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 122.29102, y: -47.5}
+  m_SizeDelta: {x: 584.58, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &301686752
 MonoBehaviour:
@@ -60734,15 +60734,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7f6f3149dfe706b4092b92a9f9592769, type: 2}
+  m_sharedMaterial: {fileID: 2629775182912732175, guid: 7f6f3149dfe706b4092b92a9f9592769, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4291021517
+  m_fontColor: {r: 0.8039216, g: 0.7921569, b: 0.7647059, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -60759,15 +60759,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
@@ -82641,7 +82641,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -437.5, y: -468}
+  m_AnchoredPosition: {x: -437.5, y: -485}
   m_SizeDelta: {x: 45, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &410470180
@@ -96042,11 +96042,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: be4a8817a5b2ad945817021f858fdf05, type: 3}
-    m_FontSize: 14
+    m_FontSize: 12
     m_FontStyle: 1
     m_BestFit: 1
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 1
+    m_MaxSize: 112
     m_Alignment: 4
     m_AlignByGeometry: 1
     m_RichText: 1
@@ -109477,9 +109477,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 3674445}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 237.90198, y: -20}
   m_SizeDelta: {x: 648.36, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &529917082
@@ -160238,6 +160238,7 @@ MonoBehaviour:
       skinName: Inheritance
       itemName: AK-47 | Inheritance
       itemId: 1
+      marketHashName: 
       itemIcon: {fileID: 4650112468173989024, guid: f47e371863937904eb4524aadb9a9a77, type: 3}
       dropChance: 0
       minValue: 0
@@ -160254,6 +160255,7 @@ MonoBehaviour:
       skinName: Chrome Cannon
       itemName: AWP | Chrome Cannon
       itemId: 2
+      marketHashName: 
       itemIcon: {fileID: -1339106379562158067, guid: 9695353d5d7e8a446bb56f1b34ecd31c, type: 3}
       dropChance: 0
       minValue: 0
@@ -160270,6 +160272,7 @@ MonoBehaviour:
       skinName: Black Lotus
       itemName: M4A1-S | Black Lotus
       itemId: 3
+      marketHashName: 
       itemIcon: {fileID: 6054873674146508719, guid: 4226fa131bbe9e64e86e1c93f69bbda4, type: 3}
       dropChance: 0
       minValue: 0
@@ -160286,6 +160289,7 @@ MonoBehaviour:
       skinName: Jawbreaker
       itemName: USP-S | Jawbreaker
       itemId: 4
+      marketHashName: 
       itemIcon: {fileID: 2805741691923793689, guid: 93216abb3890fac4b8dc04a212c191ee, type: 3}
       dropChance: 0
       minValue: 0
@@ -160302,6 +160306,7 @@ MonoBehaviour:
       skinName: Olympus
       itemName: Zeus x27 | Olympus
       itemId: 5
+      marketHashName: 
       itemIcon: {fileID: -7268817315752192983, guid: dab5a9930eccb89479e66ddfeb830f7a, type: 3}
       dropChance: 0
       minValue: 0
@@ -160318,6 +160323,7 @@ MonoBehaviour:
       skinName: Etch Lord
       itemName: M4A4 | Etch Lord
       itemId: 6
+      marketHashName: 
       itemIcon: {fileID: -8114314019797524203, guid: 78ddcc8083df1844892c94f613197051, type: 3}
       dropChance: 0
       minValue: 0
@@ -160334,6 +160340,7 @@ MonoBehaviour:
       skinName: Just Smile
       itemName: MP7 | Just Smile
       itemId: 7
+      marketHashName: 
       itemIcon: {fileID: -9220314694272278124, guid: 4feab52092466024db38e52fbe86dcf4, type: 3}
       dropChance: 0
       minValue: 0
@@ -160350,6 +160357,7 @@ MonoBehaviour:
       skinName: Block-18
       itemName: Glock-18 | Block-18
       itemId: 8
+      marketHashName: 
       itemIcon: {fileID: 8346372337257522836, guid: 4d1665639970efe4c965d31c45f0a914, type: 3}
       dropChance: 0
       minValue: 0
@@ -160366,6 +160374,7 @@ MonoBehaviour:
       skinName: Hybrid
       itemName: Five-SeveN | Hybrid
       itemId: 9
+      marketHashName: 
       itemIcon: {fileID: -5870258593703612450, guid: c352bb1591b1751419ca790a3bb60c1c, type: 3}
       dropChance: 0
       minValue: 0
@@ -160382,6 +160391,7 @@ MonoBehaviour:
       skinName: Analog Input
       itemName: Sawed-Off | Analog Input
       itemId: 10
+      marketHashName: 
       itemIcon: {fileID: 3249723414618678561, guid: 6747219626622e541be4f26b45b08bbb, type: 3}
       dropChance: 0
       minValue: 0
@@ -160398,6 +160408,7 @@ MonoBehaviour:
       skinName: Light Box
       itemName: MAC-10 | Light Box
       itemId: 11
+      marketHashName: 
       itemIcon: {fileID: -7554603619589753222, guid: c1f6630593b9970429de4e0db305dda0, type: 3}
       dropChance: 0
       minValue: 0
@@ -160414,6 +160425,7 @@ MonoBehaviour:
       skinName: Dezastre
       itemName: SSG 08 | Dezastre
       itemId: 12
+      marketHashName: 
       itemIcon: {fileID: 7835519776228597429, guid: e8e13aa09c5d5d44288b8f5b6bd1bb5d, type: 3}
       dropChance: 0
       minValue: 0
@@ -160430,6 +160442,7 @@ MonoBehaviour:
       skinName: Slag
       itemName: Tec-9 | Slag
       itemId: 13
+      marketHashName: 
       itemIcon: {fileID: 5297922754467360254, guid: 369c25b7ed49db242969c3230ee4eb1f, type: 3}
       dropChance: 0
       minValue: 0
@@ -160446,6 +160459,7 @@ MonoBehaviour:
       skinName: Irezumi
       itemName: XM1014 | Irezumi
       itemId: 14
+      marketHashName: 
       itemIcon: {fileID: 2060056436769442779, guid: 000c6b98c5466094ca3f33511dbd680d, type: 3}
       dropChance: 0
       minValue: 0
@@ -160462,6 +160476,7 @@ MonoBehaviour:
       skinName: Motorized
       itemName: UMP-45 | Motorized
       itemId: 15
+      marketHashName: 
       itemIcon: {fileID: 4210999582912475233, guid: 23d3049929e9dc242aa92d19ec986b6e, type: 3}
       dropChance: 0
       minValue: 0
@@ -160478,6 +160493,7 @@ MonoBehaviour:
       skinName: Hideout
       itemName: Dual Berettas | Hideout
       itemId: 16
+      marketHashName: 
       itemIcon: {fileID: 4200471570530433083, guid: 433f8bd36a5591e418100f7d59cca1d3, type: 3}
       dropChance: 0
       minValue: 0
@@ -160494,6 +160510,7 @@ MonoBehaviour:
       skinName: Dark Sigil
       itemName: Nova | Dark Sigil
       itemId: 17
+      marketHashName: 
       itemIcon: {fileID: -485238000239493697, guid: 66034999fd72f21419d31fdfb1d3741d, type: 3}
       dropChance: 0
       minValue: 0
@@ -160510,6 +160527,7 @@ MonoBehaviour:
       skinName: Crimson Web
       itemName: Kukri Knife | Crimson Web
       itemId: 18
+      marketHashName: 
       itemIcon: {fileID: -2606908294263128830, guid: 46c714630566c074894426778eb9ef9b, type: 3}
       dropChance: 0
       minValue: 0
@@ -160526,6 +160544,7 @@ MonoBehaviour:
       skinName: Fade
       itemName: Kukri Knife | Fade
       itemId: 19
+      marketHashName: 
       itemIcon: {fileID: -8867900220789609056, guid: 6e4bea73ac0e6614db3027780bfac135, type: 3}
       dropChance: 0
       minValue: 290
@@ -160542,6 +160561,7 @@ MonoBehaviour:
       skinName: Case Hardened
       itemName: Kukri Knife | Case Hardened
       itemId: 20
+      marketHashName: 
       itemIcon: {fileID: 3125003880243403001, guid: 1293971d24185834c99d604f136332a5, type: 3}
       dropChance: 0
       minValue: 0
@@ -160558,6 +160578,7 @@ MonoBehaviour:
       skinName: Blue Steel
       itemName: Kukri Knife | Blue Steel
       itemId: 22
+      marketHashName: 
       itemIcon: {fileID: 1612805923781741084, guid: 553942195c1e46f478725573efe76279, type: 3}
       dropChance: 0
       minValue: 112
@@ -160574,6 +160595,7 @@ MonoBehaviour:
       skinName: "\u2605"
       itemName: "Kukri Knife | \u2605"
       itemId: 23
+      marketHashName: 
       itemIcon: {fileID: 5598680587954661759, guid: 17ffd662ed4336046ba24aa4053f53ef, type: 3}
       dropChance: 0
       minValue: 130
@@ -160590,6 +160612,7 @@ MonoBehaviour:
       skinName: Urban Masked
       itemName: Kukri Knife | Urban Masked
       itemId: 24
+      marketHashName: 
       itemIcon: {fileID: 9098262618200210551, guid: 625e65c620a1cc842b0f0051aed1e7cf, type: 3}
       dropChance: 0
       minValue: 71
@@ -160606,6 +160629,7 @@ MonoBehaviour:
       skinName: Night Stripe
       itemName: Kukri Knife | Night Stripe
       itemId: 25
+      marketHashName: 
       itemIcon: {fileID: -2853112338144884148, guid: dde3aebeca4db2f429f4f72792c41148, type: 3}
       dropChance: 0
       minValue: 69
@@ -160622,6 +160646,7 @@ MonoBehaviour:
       skinName: Stained
       itemName: Kukri Knife | Stained
       itemId: 26
+      marketHashName: 
       itemIcon: {fileID: -7911846784761497075, guid: 253dcab58918077479c0df9dda59ba6d, type: 3}
       dropChance: 0
       minValue: 90.97
@@ -160638,6 +160663,7 @@ MonoBehaviour:
       skinName: Scorched
       itemName: Kukri Knife | Scorched
       itemId: 27
+      marketHashName: 
       itemIcon: {fileID: 4736615788513432613, guid: 51a9abbaaa29bd5498ffe828847f1dee, type: 3}
       dropChance: 0
       minValue: 67.85
@@ -160654,6 +160680,7 @@ MonoBehaviour:
       skinName: Boreal Fores
       itemName: Kukri Knife | Boreal Forest
       itemId: 28
+      marketHashName: 
       itemIcon: {fileID: 4520435413728599093, guid: 26833f355b2eb7d49a81cae5004fef3e, type: 3}
       dropChance: 0.26
       minValue: 61.73
@@ -160670,6 +160697,7 @@ MonoBehaviour:
       skinName: Safari Mesh
       itemName: Kukri Knife | Safari Mesh
       itemId: 29
+      marketHashName: 
       itemIcon: {fileID: -2759501560597142771, guid: 634a0754d4fa66442814136c911e33cd, type: 3}
       dropChance: 0
       minValue: 58.61
@@ -160686,6 +160714,7 @@ MonoBehaviour:
       skinName: Forest DDPAT
       itemName: Kukri Knife | Forest DDPAT
       itemId: 30
+      marketHashName: 
       itemIcon: {fileID: 1914773581991447278, guid: abb981fe8f100b34baed693dcdb11d29, type: 3}
       dropChance: 0
       minValue: 59.94
@@ -160702,6 +160731,7 @@ MonoBehaviour:
       skinName: Kukri Knife | Forest DDPAT
       itemName: Kukri Knife | Forest DDPAT
       itemId: 30
+      marketHashName: 
       itemIcon: {fileID: 1914773581991447278, guid: abb981fe8f100b34baed693dcdb11d29, type: 3}
       dropChance: 0
       minValue: 59.94
@@ -170563,7 +170593,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 380, y: -468}
+  m_AnchoredPosition: {x: 380, y: -485}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &839923834
@@ -181986,7 +182016,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &897821400
 RectTransform:
   m_ObjectHideFlags: 0
@@ -211994,7 +212024,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -1920, y: -1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1063082088
 MonoBehaviour:
@@ -212278,8 +212308,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -374.5, y: 3.73}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchoredPosition: {x: -241, y: -12}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1065521113
 MonoBehaviour:
@@ -214446,7 +214476,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 800, y: 6}
+  m_SizeDelta: {x: 600, y: 6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1076246121
 MonoBehaviour:
@@ -327027,8 +327057,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -50}
-  m_SizeDelta: {x: 800, y: 5}
+  m_AnchoredPosition: {x: 0, y: -75}
+  m_SizeDelta: {x: 650, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1647697197
 MonoBehaviour:
@@ -328186,9 +328216,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 64.345825, y: 25.308014}
-  m_SizeDelta: {x: 657.1077, y: 85.0325}
-  m_Pivot: {x: 0.48995546, y: 0.76868856}
+  m_AnchoredPosition: {x: 122.29, y: -5}
+  m_SizeDelta: {x: 584.58, y: 85}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1651905836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328202,7 +328232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Text
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9212798, g: 0.96001583, b: 0.9716981, a: 1}
+  m_Color: {r: 0.9529412, g: 0.9490196, b: 0.9372549, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -328216,7 +328246,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 42
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -419215,9 +419245,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 3674445}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 237.90198, y: -130.14828}
   m_SizeDelta: {x: 648.36, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2107831863
