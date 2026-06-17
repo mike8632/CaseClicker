@@ -18,6 +18,8 @@ public class SkinInventoryEntry
     public bool isStatTrak;
     public bool isLocked;
     public float marketValue;
+    /// <summary>Price at the time the skin was opened. Never updated by repricing, so historical value is preserved.</summary>
+    public float valueAtOpen;
     public float floatValue;
     public WeaponCategory weaponCategory;
     public string collectionId;
@@ -42,6 +44,8 @@ public class SkinInventoryManager : MonoBehaviour
     public UnityEvent<SkinInventoryEntry> OnSkinAdded;
     public UnityEvent<SkinInventoryEntry> OnSkinRemoved;
     public UnityEvent<SkinInventoryEntry> OnSkinLockChanged;
+    /// <summary>Fired for each entry whose marketValue was updated by RepriceInventoryFromCachedPrices.</summary>
+    public UnityEvent<SkinInventoryEntry> OnSkinValueChanged;
 
     private readonly List<SkinInventoryEntry> entries = new List<SkinInventoryEntry>();
 
@@ -67,6 +71,7 @@ public class SkinInventoryManager : MonoBehaviour
                 isStatTrak = entry.isStatTrak,
                 isLocked = entry.isLocked,
                 marketValue = entry.marketValue,
+                valueAtOpen = entry.valueAtOpen,
                 floatValue = entry.floatValue,
                 weaponCategory  = entry.weaponCategory,
                 collectionId   = entry.collectionId,
@@ -126,6 +131,8 @@ public class SkinInventoryManager : MonoBehaviour
                 isStatTrak     = dto.isStatTrak,
                 isLocked       = dto.isLocked,
                 marketValue    = dto.marketValue,
+                // Migrate old saves: valueAtOpen not present → default it to the saved marketValue.
+                valueAtOpen    = dto.valueAtOpen > 0f ? dto.valueAtOpen : dto.marketValue,
                 floatValue     = dto.floatValue,
                 weaponCategory  = resolvedCategory,
                 itemIcon        = matchedItem?.itemIcon ?? ResolveItemIcon(dto.sourceCaseId, dto.itemId, dto.itemName),
@@ -169,6 +176,7 @@ public class SkinInventoryManager : MonoBehaviour
         OnSkinAdded ??= new UnityEvent<SkinInventoryEntry>();
         OnSkinRemoved ??= new UnityEvent<SkinInventoryEntry>();
         OnSkinLockChanged ??= new UnityEvent<SkinInventoryEntry>();
+        OnSkinValueChanged ??= new UnityEvent<SkinInventoryEntry>();
     }
 
     /// <summary>
@@ -236,6 +244,7 @@ public class SkinInventoryManager : MonoBehaviour
             wear = rolledWear,
             isStatTrak = isStatTrak,
             marketValue = marketValue,
+            valueAtOpen = marketValue,
             floatValue = floatValue,
             weaponCategory  = item.GetWeaponCategory(),
             collectionId    = collId,
@@ -245,6 +254,67 @@ public class SkinInventoryManager : MonoBehaviour
 
         entries.Add(entry);
         OnSkinAdded?.Invoke(entry);
+    }
+
+    /// <summary>
+    /// Debug/test entry point. Reprices all inventory skins and requests a save if any changed.
+    /// </summary>
+    [ContextMenu("Reprice Inventory From Cached Prices")]
+    public void RepriceInventoryFromCachedPrices() => DoReprice(requestSave: true);
+
+    /// <summary>
+    /// Called automatically after loading inventory. Same reprice logic but does not
+    /// request an immediate save — the next normal save will persist the updated values.
+    /// </summary>
+    internal void AutoRepriceAfterLoad() => DoReprice(requestSave: false);
+
+    /// <summary>
+    /// Updates marketValue for every inventory skin that has a matching cached price.
+    /// Uses the skin's saved wear and StatTrak state for the lookup.
+    /// Only cached prices update the value — minValue/maxValue fallback is NOT used here.
+    /// valueAtOpen is never changed: it always reflects the price at roll time.
+    /// </summary>
+    private void DoReprice(bool requestSave)
+    {
+        int updated = 0;
+
+        for (int i = 0; i < entries.Count; i++)
+        {
+            var entry = entries[i];
+            if (entry == null) continue;
+
+            // Find the item definition using the safest available identifiers.
+            CaseItemData item = FindMatchingCaseItem(entry.sourceCaseId, entry.itemId, entry.itemName);
+
+            // Fallback: match by weaponName + skinName if itemId/itemName lookup failed.
+            if (item == null &&
+                (!string.IsNullOrEmpty(entry.weaponName) || !string.IsNullOrEmpty(entry.skinName)))
+            {
+                item = FindMatchingCaseItemByNames(entry.sourceCaseId, entry.weaponName, entry.skinName);
+            }
+
+            if (item == null || item.cachedPrices == null || !item.cachedPrices.HasAnyPrice())
+                continue;
+
+            float cachedPrice = item.GetCachedValueForWear(entry.wear, entry.isStatTrak);
+            if (cachedPrice <= 0f)
+                continue;
+
+            entry.marketValue = cachedPrice;
+            OnSkinValueChanged?.Invoke(entry);
+            updated++;
+        }
+
+        if (updated > 0)
+        {
+            Debug.Log($"[SkinInventoryManager] Auto repriced inventory from cached prices: {updated} / {entries.Count} skin(s).");
+            if (requestSave)
+                SaveSystem.Instance?.RequestSave();
+        }
+        else
+        {
+            Debug.Log("[SkinInventoryManager] RepriceInventoryFromCachedPrices: no skins had applicable cached prices.");
+        }
     }
 
     /// <summary>
@@ -289,6 +359,36 @@ public class SkinInventoryManager : MonoBehaviour
                 if (item == null) continue;
                 if (!string.IsNullOrEmpty(itemId)   && item.itemId   == itemId)   return item;
                 if (!string.IsNullOrEmpty(itemName) && item.itemName == itemName) return item;
+            }
+        }
+        return null;
+    }
+
+    /// <summary>
+    /// Fallback lookup by weaponName + skinName when itemId and itemName both fail.
+    /// </summary>
+    private static CaseItemData FindMatchingCaseItemByNames(string sourceCaseId, string weaponName, string skinName)
+    {
+        if (string.IsNullOrEmpty(weaponName) && string.IsNullOrEmpty(skinName))
+            return null;
+
+        var cards = UnityEngine.Object.FindObjectsByType<CaseCardUI>(FindObjectsSortMode.None);
+        for (int i = 0; i < cards.Length; i++)
+        {
+            var caseData = cards[i]?.data;
+            if (caseData == null) continue;
+            if (!string.IsNullOrEmpty(sourceCaseId) && caseData.caseId != sourceCaseId)
+                continue;
+
+            var items = caseData.possibleItems;
+            if (items == null) continue;
+
+            for (int j = 0; j < items.Count; j++)
+            {
+                var item = items[j];
+                if (item == null) continue;
+                if (item.weaponName == weaponName && item.skinName == skinName)
+                    return item;
             }
         }
         return null;

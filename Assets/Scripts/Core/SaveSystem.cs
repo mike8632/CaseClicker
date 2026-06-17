@@ -403,6 +403,9 @@ public class SaveSystem : MonoBehaviour
         if (SkinInventoryManager.Instance != null && data.skinInventory != null)
         {
             SkinInventoryManager.Instance.ApplySnapshot(data.skinInventory);
+            // Auto-reprice: update marketValue from any cached item prices imported since the last save.
+            // Does not request a save — the next normal save will persist the updated values.
+            SkinInventoryManager.Instance.AutoRepriceAfterLoad();
         }
 
         // Upgrades (only level counters — effects already restored via other systems)
@@ -602,6 +605,7 @@ public class SkinEntryDTO
     public bool isStatTrak;
     public bool isLocked;
     public float marketValue;
+    public float valueAtOpen;
     public float floatValue;
     public WeaponCategory weaponCategory;
     public string collectionId;

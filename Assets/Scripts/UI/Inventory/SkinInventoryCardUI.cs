@@ -22,7 +22,7 @@ public class SkinInventoryCardUI : MonoBehaviour
     [Header("Formats")]
     [SerializeField] private string sellPriceFormat = "SELL FOR ${0:F2}";
     [SerializeField] private string floatValueFormat = "{0:0.000000}";
-    [SerializeField] private string statTrakFormat = "StatTrak";
+    [SerializeField] private string statTrakFormat = "StatTrak?";
     [SerializeField] private string statTrakNameSuffix = " (StatTrak)";
 
     [Header("Rarity Display")]
@@ -76,13 +76,19 @@ public class SkinInventoryCardUI : MonoBehaviour
     private void OnEnable()
     {
         if (SkinInventoryManager.Instance != null)
+        {
             SkinInventoryManager.Instance.OnSkinLockChanged.AddListener(HandleSkinLockChanged);
+            SkinInventoryManager.Instance.OnSkinValueChanged.AddListener(HandleSkinValueChanged);
+        }
     }
 
     private void OnDisable()
     {
         if (SkinInventoryManager.Instance != null)
+        {
             SkinInventoryManager.Instance.OnSkinLockChanged.RemoveListener(HandleSkinLockChanged);
+            SkinInventoryManager.Instance.OnSkinValueChanged.RemoveListener(HandleSkinValueChanged);
+        }
     }
 
     public void Bind(SkinInventoryEntry entry)
@@ -155,7 +161,7 @@ public class SkinInventoryCardUI : MonoBehaviour
         switch (_clickMode)
         {
             case CardClickMode.Normal:
-                // Open detail panel only  no selection border toggling
+                // Open detail panel only ? no selection border toggling
                 OnSelected?.Invoke(currentEntry);
                 break;
 
@@ -205,6 +211,15 @@ public class SkinInventoryCardUI : MonoBehaviour
         if (currentEntry == null || entry == null) return;
         if (entry.instanceId != currentEntry.instanceId) return;
         RefreshLockVisuals();
+    }
+
+    private void HandleSkinValueChanged(SkinInventoryEntry entry)
+    {
+        if (currentEntry == null || entry == null) return;
+        if (entry.instanceId != currentEntry.instanceId) return;
+        // Refresh only the sell price text; leave everything else as-is.
+        if (sellPriceText != null && !currentEntry.isLocked)
+            sellPriceText.text = string.Format(sellPriceFormat, currentEntry.marketValue);
     }
 
     public bool IsSelected => selectionBorders != null && selectionBorders.activeSelf;

@@ -1,6 +1,6 @@
 {
-  "caseId": "stage2_test_case",
-  "caseName": "Stage 2 Test Case",
+  "caseId": "2",
+  "caseName": "Revoultion",
   "items": [
     {
       "weaponName": "AK-47",
@@ -17,13 +17,13 @@
 
       "priceFactoryNew": 100,
       "priceMinimalWear": 80,
-      "priceFieldTested": 0,
+      "priceFieldTested": 500,
       "priceWellWorn": 30,
       "priceBattleScarred": 20,
 
       "priceStatTrakFactoryNew": 200,
       "priceStatTrakMinimalWear": 160,
-      "priceStatTrakFieldTested": 0,
+      "priceStatTrakFieldTested": 1000,
       "priceStatTrakWellWorn": 60,
       "priceStatTrakBattleScarred": 40,
 
