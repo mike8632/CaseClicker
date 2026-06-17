@@ -33,6 +33,12 @@ public class SkinInventoryUI : MonoBehaviour
     public event System.Action<SkinInventoryCardUI> CardSpawned;
     /// <summary>Fired after cards are cleared (before new ones spawn). Subscribe to clean up stale card references.</summary>
     public event System.Action OnCardsCleared;
+    /// <summary>
+    /// Fired at the very end of RebuildFromSnapshot(), after the search filter has been applied to all
+    /// newly spawned cards. Subscribe here to run a final visibility pass (e.g. trade-up filter) that
+    /// must win over the search filter.
+    /// </summary>
+    public event System.Action OnRebuildComplete;
 
     public SkinInventoryCardUI[] GetCards(bool includeInactive = false)
     {
@@ -150,6 +156,7 @@ public class SkinInventoryUI : MonoBehaviour
         }
 
         ApplySearchFilter();
+        OnRebuildComplete?.Invoke();
     }
 
     private void OnSkinAdded(SkinInventoryEntry entry)
@@ -237,10 +244,11 @@ public class SkinInventoryUI : MonoBehaviour
                 card.OnSelected.RemoveListener(detailPanel.Show);
                 card.OnSelected.AddListener(detailPanel.Show);
             }
+            // Search filter runs first so that CardSpawned listeners (e.g. TradeUpContractUI)
+            // can apply their own visibility rules last and not be overwritten.
+            ApplySearchFilter(go);
             CardSpawned?.Invoke(card);
         }
-
-        ApplySearchFilter(go);
     }
 
     private void HandleSearchChanged(string value)

@@ -86,8 +86,9 @@ public class TradeUpContractUI : MonoBehaviour
         if (sourceInventoryUI == null)
             return;
 
-        sourceInventoryUI.CardSpawned += HandleCardSpawned;
-        sourceInventoryUI.OnCardsCleared += HandleOnCardsCleared;
+        sourceInventoryUI.CardSpawned       += HandleCardSpawned;
+        sourceInventoryUI.OnCardsCleared    += HandleOnCardsCleared;
+        sourceInventoryUI.OnRebuildComplete += HandleRebuildComplete;
 
         var existingCards = sourceInventoryUI.GetComponentsInChildren<SkinInventoryCardUI>(true);
         for (int i = 0; i < existingCards.Length; i++)
@@ -100,8 +101,9 @@ public class TradeUpContractUI : MonoBehaviour
     {
         if (sourceInventoryUI != null)
         {
-            sourceInventoryUI.CardSpawned -= HandleCardSpawned;
-            sourceInventoryUI.OnCardsCleared -= HandleOnCardsCleared;
+            sourceInventoryUI.CardSpawned       -= HandleCardSpawned;
+            sourceInventoryUI.OnCardsCleared    -= HandleOnCardsCleared;
+            sourceInventoryUI.OnRebuildComplete -= HandleRebuildComplete;
         }
 
         foreach (var card in subscribedCards)
@@ -116,6 +118,14 @@ public class TradeUpContractUI : MonoBehaviour
     private void HandleCardSpawned(SkinInventoryCardUI card)
     {
         RegisterCard(card);
+    }
+
+    // Called after every full RebuildFromSnapshot() + search-filter pass completes.
+    // Ensures ApplyFilters() runs last so locked/invalid cards stay hidden even if
+    // the search filter showed them first.
+    private void HandleRebuildComplete()
+    {
+        ApplyFilters();
     }
 
     private void HandleOnCardsCleared()
@@ -246,12 +256,18 @@ public class TradeUpContractUI : MonoBehaviour
 
     private void HandleSkinLockChanged(SkinInventoryEntry entry)
     {
-        // Only act when a skin becomes locked — unlocking does not need special handling
-        if (entry == null || !entry.isLocked) return;
+        if (entry == null) return;
 
+        if (!entry.isLocked)
+        {
+            // Skin was unlocked — rerun filters so the card reappears if the tab is open.
+            ApplyFilters();
+            return;
+        }
+
+        // Skin was locked — remove from selection and hide the card immediately.
         bool wasSelected = selectedEntries.Remove(entry);
 
-        // Hide the card from the trade-up grid regardless of selection state
         foreach (var card in subscribedCards)
         {
             if (card == null) continue;
@@ -261,16 +277,16 @@ public class TradeUpContractUI : MonoBehaviour
             break;
         }
 
-        if (!wasSelected) return;
-
-        if (selectedEntries.Count == 0)
+        if (wasSelected)
         {
-            lockedRarity = null;
-            lockedStatTrak = null;
+            if (selectedEntries.Count == 0)
+            {
+                lockedRarity = null;
+                lockedStatTrak = null;
+            }
+            ApplyFilters();
+            UpdateSelectedCountText();
         }
-
-        ApplyFilters();
-        UpdateSelectedCountText();
     }
 
     private void HandleSubmit()

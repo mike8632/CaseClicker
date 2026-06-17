@@ -20,6 +20,9 @@ public class SkinInventoryEntry
     public float marketValue;
     public float floatValue;
     public WeaponCategory weaponCategory;
+    public string collectionId;
+    public string collectionName;
+    public Sprite collectionIcon;   // runtime only — not saved to JSON
 }
 
 /// <summary>
@@ -65,7 +68,9 @@ public class SkinInventoryManager : MonoBehaviour
                 isLocked = entry.isLocked,
                 marketValue = entry.marketValue,
                 floatValue = entry.floatValue,
-                weaponCategory = entry.weaponCategory
+                weaponCategory  = entry.weaponCategory,
+                collectionId   = entry.collectionId,
+                collectionName = entry.collectionName
             });
         }
 
@@ -84,27 +89,49 @@ public class SkinInventoryManager : MonoBehaviour
             var dto = snapshot[i];
             if (dto == null) continue;
 
-            // Migrate old saves: if category was not stored, infer it now from the weapon name.
+            // Migrate old saves: if category was not stored, infer it from weapon name.
             WeaponCategory resolvedCategory = dto.weaponCategory != WeaponCategory.Unknown
                 ? dto.weaponCategory
                 : CaseItemData.InferWeaponCategory(dto.weaponName, dto.itemName);
 
+            // Resolve collection data and icon from the matching item definition.
+            // This handles old saves (collectionId/Name missing) and all saves (icon can't be in JSON).
+            string resolvedCollectionId   = dto.collectionId   ?? string.Empty;
+            string resolvedCollectionName = dto.collectionName ?? string.Empty;
+            Sprite resolvedCollectionIcon = null;
+
+            var matchedItem = FindMatchingCaseItem(dto.sourceCaseId, dto.itemId, dto.itemName);
+            if (matchedItem != null)
+            {
+                // Respect item-level override vs. parent case collection.
+                var matchedCase = FindCaseData(dto.sourceCaseId);
+                matchedItem.GetEffectiveCollection(matchedCase,
+                    out string itemCollId, out string itemCollName, out Sprite itemCollIcon);
+
+                if (string.IsNullOrEmpty(resolvedCollectionId))   resolvedCollectionId   = itemCollId;
+                if (string.IsNullOrEmpty(resolvedCollectionName)) resolvedCollectionName = itemCollName;
+                resolvedCollectionIcon = itemCollIcon;
+            }
+
             var entry = new SkinInventoryEntry
             {
-                instanceId = string.IsNullOrEmpty(dto.instanceId) ? Guid.NewGuid().ToString("N") : dto.instanceId,
-                sourceCaseId = dto.sourceCaseId,
-                itemId = dto.itemId,
-                itemName = dto.itemName,
-                weaponName = dto.weaponName,
-                skinName = dto.skinName,
-                rarity = dto.rarity,
-                wear = dto.wear,
-                isStatTrak = dto.isStatTrak,
-                isLocked = dto.isLocked,
-                marketValue = dto.marketValue,
-                floatValue = dto.floatValue,
-                weaponCategory = resolvedCategory,
-                itemIcon = ResolveItemIcon(dto.sourceCaseId, dto.itemId, dto.itemName)
+                instanceId     = string.IsNullOrEmpty(dto.instanceId) ? Guid.NewGuid().ToString("N") : dto.instanceId,
+                sourceCaseId   = dto.sourceCaseId,
+                itemId         = dto.itemId,
+                itemName       = dto.itemName,
+                weaponName     = dto.weaponName,
+                skinName       = dto.skinName,
+                rarity         = dto.rarity,
+                wear           = dto.wear,
+                isStatTrak     = dto.isStatTrak,
+                isLocked       = dto.isLocked,
+                marketValue    = dto.marketValue,
+                floatValue     = dto.floatValue,
+                weaponCategory  = resolvedCategory,
+                itemIcon        = matchedItem?.itemIcon ?? ResolveItemIcon(dto.sourceCaseId, dto.itemId, dto.itemName),
+                collectionId    = resolvedCollectionId,
+                collectionName  = resolvedCollectionName,
+                collectionIcon  = resolvedCollectionIcon
             };
 
             entries.Add(entry);
@@ -185,6 +212,10 @@ public class SkinInventoryManager : MonoBehaviour
 
         item.GetDisplayNames(out var weaponName, out var skinName, out _);
 
+        // Use item-level override if set, otherwise inherit from parent case.
+        var parentCase = FindCaseData(sourceCaseId);
+        item.GetEffectiveCollection(parentCase, out string collId, out string collName, out Sprite collIcon);
+
         var entry = new SkinInventoryEntry
         {
             instanceId = Guid.NewGuid().ToString("N"),
@@ -199,11 +230,61 @@ public class SkinInventoryManager : MonoBehaviour
             isStatTrak = isStatTrak,
             marketValue = marketValue,
             floatValue = floatValue,
-            weaponCategory = item.GetWeaponCategory()
+            weaponCategory  = item.GetWeaponCategory(),
+            collectionId    = collId,
+            collectionName  = collName,
+            collectionIcon  = collIcon
         };
 
         entries.Add(entry);
         OnSkinAdded?.Invoke(entry);
+    }
+
+    /// <summary>
+    /// Finds a CaseData by its caseId by scanning active CaseCardUI instances.
+    /// Returns null if not found.
+    /// </summary>
+    private static CaseData FindCaseData(string caseId)
+    {
+        if (string.IsNullOrEmpty(caseId)) return null;
+        var cards = UnityEngine.Object.FindObjectsByType<CaseCardUI>(FindObjectsSortMode.None);
+        for (int i = 0; i < cards.Length; i++)
+        {
+            var caseData = cards[i]?.data;
+            if (caseData != null && caseData.caseId == caseId)
+                return caseData;
+        }
+        return null;
+    }
+
+    /// <summary>
+    /// Finds the matching CaseItemData by sourceCaseId + itemId/itemName.
+    /// Used to resolve runtime-only data (sprites, collection info) after a save-load.
+    /// </summary>
+    private static CaseItemData FindMatchingCaseItem(string sourceCaseId, string itemId, string itemName)
+    {
+        var cards = UnityEngine.Object.FindObjectsByType<CaseCardUI>(FindObjectsSortMode.None);
+        for (int i = 0; i < cards.Length; i++)
+        {
+            var card     = cards[i];
+            var caseData = card != null ? card.data : null;
+            if (caseData == null) continue;
+
+            if (!string.IsNullOrEmpty(sourceCaseId) && caseData.caseId != sourceCaseId)
+                continue;
+
+            var items = caseData.possibleItems;
+            if (items == null) continue;
+
+            for (int j = 0; j < items.Count; j++)
+            {
+                var item = items[j];
+                if (item == null) continue;
+                if (!string.IsNullOrEmpty(itemId)   && item.itemId   == itemId)   return item;
+                if (!string.IsNullOrEmpty(itemName) && item.itemName == itemName) return item;
+            }
+        }
+        return null;
     }
 
     private static Sprite ResolveItemIcon(string sourceCaseId, string itemId, string itemName)

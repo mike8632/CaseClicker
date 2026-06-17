@@ -740,6 +740,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 1
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -2306,9 +2309,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1303226018}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 180.96146, y: -4}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1, y: 8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &9255982
@@ -11619,6 +11622,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 1
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -17215,6 +17221,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 1
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -17808,6 +17817,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -20798,6 +20810,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
 --- !u!114 &96835246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21692,6 +21707,83 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 102294637}
+  m_CullTransparentMesh: 1
+--- !u!1 &102833471
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 102833472}
+  - component: {fileID: 102833474}
+  - component: {fileID: 102833473}
+  m_Layer: 5
+  m_Name: Selected Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &102833472
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102833471}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 999037463}
+  - {fileID: 1325283535}
+  m_Father: {fileID: 1548976495}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -4, y: -4}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &102833473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102833471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &102833474
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102833471}
   m_CullTransparentMesh: 1
 --- !u!1 &102837213
 GameObject:
@@ -22811,6 +22903,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 1
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -29827,6 +29922,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
 --- !u!114 &144093302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33085,6 +33183,143 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 160463069}
   m_CullTransparentMesh: 1
+--- !u!1 &160584040
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 160584041}
+  - component: {fileID: 160584043}
+  - component: {fileID: 160584042}
+  m_Layer: 5
+  m_Name: ButtonText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &160584041
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160584040}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1385543399}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 19.719992, y: 0}
+  m_SizeDelta: {x: 74.014, y: 33}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &160584042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160584040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Shotguns
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 7f6f3149dfe706b4092b92a9f9592769, type: 2}
+  m_sharedMaterial: {fileID: 2629775182912732175, guid: 7f6f3149dfe706b4092b92a9f9592769, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 11
+  m_fontSizeBase: 11
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: -0.74627686}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &160584043
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160584040}
+  m_CullTransparentMesh: 1
 --- !u!1 &161410903
 GameObject:
   m_ObjectHideFlags: 0
@@ -34309,9 +34544,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 3674445}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 237.90198, y: -75.07414}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 648.36, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &169384172
@@ -36809,6 +37044,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
 --- !u!114 &185643994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37298,6 +37536,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
 --- !u!114 &190288183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37635,6 +37876,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -40167,6 +40411,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 1
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -46605,6 +46852,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -48367,10 +48617,10 @@ RectTransform:
   - {fileID: 638652255}
   m_Father: {fileID: 1818814487}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 191.53629, y: -30}
-  m_SizeDelta: {x: 120, y: 60}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &242896638
 MonoBehaviour:
@@ -49362,6 +49612,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
 --- !u!114 &247636282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50791,6 +51044,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 1
   keyIconOverride: {fileID: -6833575527408573083, guid: e2d1677cc92632e46b09c8fdb3f6c0dc, type: 3}
   minAmount: 1
@@ -60419,6 +60675,143 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 301630241}
   m_CullTransparentMesh: 1
+--- !u!1 &301686750
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 301686751}
+  - component: {fileID: 301686753}
+  - component: {fileID: 301686752}
+  m_Layer: 5
+  m_Name: Collection Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &301686751
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301686750}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 404582488}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -35.7, y: -87.3}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &301686752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301686750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: New Text
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &301686753
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 301686750}
+  m_CullTransparentMesh: 1
 --- !u!1 &301752919
 GameObject:
   m_ObjectHideFlags: 0
@@ -68914,6 +69307,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -74272,10 +74668,10 @@ RectTransform:
   - {fileID: 292098737}
   m_Father: {fileID: 150781258}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 129.03629, y: -62.436554}
-  m_SizeDelta: {x: 250, y: 40}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &372717124
 MonoBehaviour:
@@ -76169,7 +76565,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1439.8, y: -17.564026}
+  m_AnchoredPosition: {x: 1439.8, y: -17.563965}
   m_SizeDelta: {x: 340.3014, y: 74.56}
   m_Pivot: {x: 1.4665139, y: 0.77763397}
 --- !u!114 &382539702
@@ -77394,6 +77790,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -80084,7 +80483,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -36, y: 0.0000076294}
-  m_SizeDelta: {x: 837, y: 580}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &402904462
 MonoBehaviour:
@@ -80536,6 +80935,85 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 404132070}
+  m_CullTransparentMesh: 1
+--- !u!1 &404582487
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 404582488}
+  - component: {fileID: 404582490}
+  - component: {fileID: 404582489}
+  m_Layer: 5
+  m_Name: 'TopUi '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &404582488
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404582487}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1651905835}
+  - {fileID: 1647697196}
+  - {fileID: 1065521112}
+  - {fileID: 301686751}
+  m_Father: {fileID: 1906756308}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 486.27}
+  m_SizeDelta: {x: -1045, y: -972.5461}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &404582489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404582487}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &404582490
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404582487}
   m_CullTransparentMesh: 1
 --- !u!1 &404912552
 GameObject:
@@ -81607,6 +82085,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -83567,6 +84048,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -83827,6 +84311,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -85944,6 +86431,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -86159,6 +86649,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
 --- !u!114 &431814378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87025,6 +87518,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -91307,6 +91803,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -93194,6 +93693,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -93709,7 +94211,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -32, y: -0.000024319}
-  m_SizeDelta: {x: 943, y: 353}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &465538463
 MonoBehaviour:
@@ -95051,6 +95553,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
 --- !u!114 &471343104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95744,9 +96249,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1303226018}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 43.937225, y: -4}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1, y: 8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &475152309
@@ -104459,6 +104964,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 1
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -104674,6 +105182,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
 --- !u!114 &507400633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106456,9 +106967,9 @@ RectTransform:
   - {fileID: 761418459}
   m_Father: {fileID: 1303226018}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 239.68613, y: -5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &516768309
@@ -108966,9 +109477,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 3674445}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 237.90198, y: -20}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 648.36, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &529917082
@@ -109563,6 +110074,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
 --- !u!114 &533110772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113984,6 +114498,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
 --- !u!114 &556155842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120825,6 +121342,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
 --- !u!114 &588347490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120975,10 +121495,10 @@ RectTransform:
   - {fileID: 301752920}
   m_Father: {fileID: 1818814487}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 66.536285, y: -95}
-  m_SizeDelta: {x: 120, y: 60}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &588856250
 MonoBehaviour:
@@ -121272,6 +121792,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 1
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -122141,7 +122664,6 @@ GameObject:
   - component: {fileID: 595898240}
   - component: {fileID: 595898244}
   - component: {fileID: 595898243}
-  - component: {fileID: 595898242}
   - component: {fileID: 595898241}
   m_Layer: 5
   m_Name: CaseList
@@ -122237,34 +122759,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 1
   m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
---- !u!114 &595898242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 595898239}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e4d67bea8e1f69499b26dfdd5cc10b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::StatsUIController
-  totalClicksText: {fileID: 0}
-  casesDroppedText: {fileID: 0}
-  casesOpenedText: {fileID: 0}
-  itemsSoldText: {fileID: 0}
-  tradeUpsText: {fileID: 0}
-  upgradesText: {fileID: 0}
-  achievementsText: {fileID: 0}
-  playTimeText: {fileID: 0}
-  moneyPerSecondText: {fileID: 0}
-  actualMoneyText: {fileID: 0}
-  moneyRecordText: {fileID: 0}
-  totalGainedMoneyText: {fileID: 0}
-  totalExperienceText: {fileID: 0}
-  offlineIncomeText: {fileID: 0}
-  keysBoughtText: {fileID: 0}
-  missionsCompletedText: {fileID: 0}
 --- !u!114 &595898243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122572,6 +123066,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -122710,6 +123207,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 1
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -124227,6 +124727,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -125135,6 +125638,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -126684,6 +127190,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -126822,6 +127331,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 1
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -129139,7 +129651,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -36, y: 0}
-  m_SizeDelta: {x: 700, y: 550}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &634813903
 MonoBehaviour:
@@ -130741,6 +131253,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
 --- !u!1 &641261461
 GameObject:
   m_ObjectHideFlags: 0
@@ -132668,6 +133183,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 1
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -134579,6 +135097,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 1
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -138055,6 +138576,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -138787,6 +139311,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -142295,6 +142822,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
 --- !u!114 &701712752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142495,6 +143025,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 1
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -147595,6 +148128,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -149454,9 +149990,9 @@ RectTransform:
   - {fileID: 1119596633}
   m_Father: {fileID: 1303226018}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 122.236786, y: -5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &733907073
@@ -150237,10 +150773,10 @@ RectTransform:
   - {fileID: 19007759}
   m_Father: {fileID: 1818814487}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 66.536285, y: -30}
-  m_SizeDelta: {x: 120, y: 60}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &737696491
 MonoBehaviour:
@@ -159709,6 +160245,11 @@ MonoBehaviour:
       floatMin: 0
       floatMax: 0.8
       rarity: 5
+      weaponCategory: 0
+      overrideCollection: 0
+      collectionId: 
+      collectionName: 
+      collectionIcon: {fileID: 0}
     - weaponName: AWP
       skinName: Chrome Cannon
       itemName: AWP | Chrome Cannon
@@ -159720,6 +160261,11 @@ MonoBehaviour:
       floatMin: 0
       floatMax: 1
       rarity: 5
+      weaponCategory: 0
+      overrideCollection: 0
+      collectionId: 
+      collectionName: 
+      collectionIcon: {fileID: 0}
     - weaponName: 'M4A1-S '
       skinName: Black Lotus
       itemName: M4A1-S | Black Lotus
@@ -159731,6 +160277,11 @@ MonoBehaviour:
       floatMin: 0
       floatMax: 0.7
       rarity: 4
+      weaponCategory: 0
+      overrideCollection: 0
+      collectionId: 
+      collectionName: 
+      collectionIcon: {fileID: 0}
     - weaponName: 'USP-S '
       skinName: Jawbreaker
       itemName: USP-S | Jawbreaker
@@ -159742,6 +160293,11 @@ MonoBehaviour:
       floatMin: 0
       floatMax: 1
       rarity: 4
+      weaponCategory: 0
+      overrideCollection: 0
+      collectionId: 
+      collectionName: 
+      collectionIcon: {fileID: 0}
     - weaponName: 'Zeus x27 '
       skinName: Olympus
       itemName: Zeus x27 | Olympus
@@ -159753,6 +160309,11 @@ MonoBehaviour:
       floatMin: 0
       floatMax: 0.67
       rarity: 4
+      weaponCategory: 0
+      overrideCollection: 0
+      collectionId: 
+      collectionName: 
+      collectionIcon: {fileID: 0}
     - weaponName: M4A4
       skinName: Etch Lord
       itemName: M4A4 | Etch Lord
@@ -159764,6 +160325,11 @@ MonoBehaviour:
       floatMin: 0
       floatMax: 1
       rarity: 3
+      weaponCategory: 0
+      overrideCollection: 0
+      collectionId: 
+      collectionName: 
+      collectionIcon: {fileID: 0}
     - weaponName: MP7
       skinName: Just Smile
       itemName: MP7 | Just Smile
@@ -159775,6 +160341,11 @@ MonoBehaviour:
       floatMin: 0
       floatMax: 1
       rarity: 3
+      weaponCategory: 0
+      overrideCollection: 0
+      collectionId: 
+      collectionName: 
+      collectionIcon: {fileID: 0}
     - weaponName: Glock-18
       skinName: Block-18
       itemName: Glock-18 | Block-18
@@ -159786,6 +160357,11 @@ MonoBehaviour:
       floatMin: 0
       floatMax: 1
       rarity: 3
+      weaponCategory: 0
+      overrideCollection: 0
+      collectionId: 
+      collectionName: 
+      collectionIcon: {fileID: 0}
     - weaponName: Five-SeveN
       skinName: Hybrid
       itemName: Five-SeveN | Hybrid
@@ -159797,6 +160373,11 @@ MonoBehaviour:
       floatMin: 0
       floatMax: 1
       rarity: 3
+      weaponCategory: 0
+      overrideCollection: 0
+      collectionId: 
+      collectionName: 
+      collectionIcon: {fileID: 0}
     - weaponName: 'Sawed-Off '
       skinName: Analog Input
       itemName: Sawed-Off | Analog Input
@@ -159808,6 +160389,11 @@ MonoBehaviour:
       floatMin: 0
       floatMax: 0.62
       rarity: 3
+      weaponCategory: 0
+      overrideCollection: 0
+      collectionId: 
+      collectionName: 
+      collectionIcon: {fileID: 0}
     - weaponName: MAC-10
       skinName: Light Box
       itemName: MAC-10 | Light Box
@@ -159819,6 +160405,11 @@ MonoBehaviour:
       floatMin: 0
       floatMax: 1
       rarity: 2
+      weaponCategory: 0
+      overrideCollection: 0
+      collectionId: 
+      collectionName: 
+      collectionIcon: {fileID: 0}
     - weaponName: SSG 08
       skinName: Dezastre
       itemName: SSG 08 | Dezastre
@@ -159830,6 +160421,11 @@ MonoBehaviour:
       floatMin: 0
       floatMax: 1
       rarity: 2
+      weaponCategory: 0
+      overrideCollection: 0
+      collectionId: 
+      collectionName: 
+      collectionIcon: {fileID: 0}
     - weaponName: Tec-9
       skinName: Slag
       itemName: Tec-9 | Slag
@@ -159841,6 +160437,11 @@ MonoBehaviour:
       floatMin: 0
       floatMax: 0.9
       rarity: 2
+      weaponCategory: 0
+      overrideCollection: 0
+      collectionId: 
+      collectionName: 
+      collectionIcon: {fileID: 0}
     - weaponName: XM1014
       skinName: Irezumi
       itemName: XM1014 | Irezumi
@@ -159852,6 +160453,11 @@ MonoBehaviour:
       floatMin: 0
       floatMax: 0.8
       rarity: 2
+      weaponCategory: 0
+      overrideCollection: 0
+      collectionId: 
+      collectionName: 
+      collectionIcon: {fileID: 0}
     - weaponName: UMP-45
       skinName: Motorized
       itemName: UMP-45 | Motorized
@@ -159863,6 +160469,11 @@ MonoBehaviour:
       floatMin: 0
       floatMax: 0.8
       rarity: 2
+      weaponCategory: 0
+      overrideCollection: 0
+      collectionId: 
+      collectionName: 
+      collectionIcon: {fileID: 0}
     - weaponName: Dual Berettas
       skinName: Hideout
       itemName: Dual Berettas | Hideout
@@ -159874,6 +160485,11 @@ MonoBehaviour:
       floatMin: 0
       floatMax: 0.7
       rarity: 2
+      weaponCategory: 0
+      overrideCollection: 0
+      collectionId: 
+      collectionName: 
+      collectionIcon: {fileID: 0}
     - weaponName: Nova
       skinName: Dark Sigil
       itemName: Nova | Dark Sigil
@@ -159885,6 +160501,11 @@ MonoBehaviour:
       floatMin: 0
       floatMax: 0.7
       rarity: 2
+      weaponCategory: 0
+      overrideCollection: 0
+      collectionId: 
+      collectionName: 
+      collectionIcon: {fileID: 0}
     - weaponName: 'Kukri Knife '
       skinName: Crimson Web
       itemName: Kukri Knife | Crimson Web
@@ -159896,6 +160517,11 @@ MonoBehaviour:
       floatMin: 0.06
       floatMax: 0.8
       rarity: 7
+      weaponCategory: 0
+      overrideCollection: 0
+      collectionId: 
+      collectionName: 
+      collectionIcon: {fileID: 0}
     - weaponName: 'Kukri Knife '
       skinName: Fade
       itemName: Kukri Knife | Fade
@@ -159907,6 +160533,11 @@ MonoBehaviour:
       floatMin: 0
       floatMax: 0.08
       rarity: 7
+      weaponCategory: 0
+      overrideCollection: 0
+      collectionId: 
+      collectionName: 
+      collectionIcon: {fileID: 0}
     - weaponName: 'Kukri Knife '
       skinName: Case Hardened
       itemName: Kukri Knife | Case Hardened
@@ -159918,6 +160549,11 @@ MonoBehaviour:
       floatMin: 0
       floatMax: 1
       rarity: 7
+      weaponCategory: 0
+      overrideCollection: 0
+      collectionId: 
+      collectionName: 
+      collectionIcon: {fileID: 0}
     - weaponName: 'Kukri Knife '
       skinName: Blue Steel
       itemName: Kukri Knife | Blue Steel
@@ -159929,6 +160565,11 @@ MonoBehaviour:
       floatMin: 0
       floatMax: 1
       rarity: 7
+      weaponCategory: 0
+      overrideCollection: 0
+      collectionId: 
+      collectionName: 
+      collectionIcon: {fileID: 0}
     - weaponName: 'Kukri Knife '
       skinName: "\u2605"
       itemName: "Kukri Knife | \u2605"
@@ -159940,6 +160581,11 @@ MonoBehaviour:
       floatMin: 0.8
       floatMax: 0.06
       rarity: 7
+      weaponCategory: 0
+      overrideCollection: 0
+      collectionId: 
+      collectionName: 
+      collectionIcon: {fileID: 0}
     - weaponName: 'Kukri Knife '
       skinName: Urban Masked
       itemName: Kukri Knife | Urban Masked
@@ -159951,6 +160597,11 @@ MonoBehaviour:
       floatMin: 0.8
       floatMax: 0.06
       rarity: 7
+      weaponCategory: 0
+      overrideCollection: 0
+      collectionId: 
+      collectionName: 
+      collectionIcon: {fileID: 0}
     - weaponName: 'Kukri Knife '
       skinName: Night Stripe
       itemName: Kukri Knife | Night Stripe
@@ -159962,6 +160613,11 @@ MonoBehaviour:
       floatMin: 0.8
       floatMax: 0.06
       rarity: 7
+      weaponCategory: 0
+      overrideCollection: 0
+      collectionId: 
+      collectionName: 
+      collectionIcon: {fileID: 0}
     - weaponName: 'Kukri Knife '
       skinName: Stained
       itemName: Kukri Knife | Stained
@@ -159973,6 +160629,11 @@ MonoBehaviour:
       floatMin: 0
       floatMax: 1
       rarity: 7
+      weaponCategory: 0
+      overrideCollection: 0
+      collectionId: 
+      collectionName: 
+      collectionIcon: {fileID: 0}
     - weaponName: 'Kukri Knife '
       skinName: Scorched
       itemName: Kukri Knife | Scorched
@@ -159984,6 +160645,11 @@ MonoBehaviour:
       floatMin: 0.06
       floatMax: 0.8
       rarity: 7
+      weaponCategory: 0
+      overrideCollection: 0
+      collectionId: 
+      collectionName: 
+      collectionIcon: {fileID: 0}
     - weaponName: 'Kukri Knife '
       skinName: Boreal Fores
       itemName: Kukri Knife | Boreal Forest
@@ -159995,6 +160661,11 @@ MonoBehaviour:
       floatMin: 0.06
       floatMax: 0.8
       rarity: 7
+      weaponCategory: 0
+      overrideCollection: 0
+      collectionId: 
+      collectionName: 
+      collectionIcon: {fileID: 0}
     - weaponName: 'Kukri Knife '
       skinName: Safari Mesh
       itemName: Kukri Knife | Safari Mesh
@@ -160006,6 +160677,11 @@ MonoBehaviour:
       floatMin: 0.06
       floatMax: 0.8
       rarity: 7
+      weaponCategory: 0
+      overrideCollection: 0
+      collectionId: 
+      collectionName: 
+      collectionIcon: {fileID: 0}
     - weaponName: 'Kukri Knife '
       skinName: Forest DDPAT
       itemName: Kukri Knife | Forest DDPAT
@@ -160017,6 +160693,11 @@ MonoBehaviour:
       floatMin: 0.06
       floatMax: 0.8
       rarity: 7
+      weaponCategory: 0
+      overrideCollection: 0
+      collectionId: 
+      collectionName: 
+      collectionIcon: {fileID: 0}
     - weaponName: 'Kukri Knife '
       skinName: Kukri Knife | Forest DDPAT
       itemName: Kukri Knife | Forest DDPAT
@@ -160028,6 +160709,14 @@ MonoBehaviour:
       floatMin: 0.06
       floatMax: 0.8
       rarity: 2
+      weaponCategory: 0
+      overrideCollection: 0
+      collectionId: 
+      collectionName: 
+      collectionIcon: {fileID: 0}
+    collectionId: kilowatt
+    collectionName: Kilowatt Collection
+    collectionIcon: {fileID: -2144089654855439889, guid: 86317f3b63a5f5d4c98aa6f54b8a36d0, type: 3}
 --- !u!114 &783370134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165266,7 +165955,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -99.2, y: -0.5}
-  m_SizeDelta: {x: 462, y: 759}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &818526414
 MonoBehaviour:
@@ -168868,6 +169557,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -172908,6 +173600,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -173924,6 +174619,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -175596,6 +176294,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
 --- !u!114 &870342457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176058,7 +176759,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 879.1, y: -38.264}
+  m_AnchoredPosition: {x: 879.1001, y: -38.263916}
   m_SizeDelta: {x: 340.3014, y: 74.56}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &874006238
@@ -178407,10 +179108,10 @@ RectTransform:
   - {fileID: 251268669}
   m_Father: {fileID: 150781258}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 129.03629, y: -104.436554}
-  m_SizeDelta: {x: 250, y: 40}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &885551039
 MonoBehaviour:
@@ -181089,6 +181790,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
 --- !u!114 &895752800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181282,7 +181986,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &897821400
 RectTransform:
   m_ObjectHideFlags: 0
@@ -181297,9 +182001,7 @@ RectTransform:
   m_Children:
   - {fileID: 1880313168}
   - {fileID: 1063082087}
-  - {fileID: 1651905835}
   - {fileID: 1906756308}
-  - {fileID: 1647697196}
   m_Father: {fileID: 497128945}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -181369,6 +182071,9 @@ MonoBehaviour:
   floatText: {fileID: 169384172}
   valueText: {fileID: 2107831863}
   statTrakBadge: {fileID: 0}
+  collectionIconImage: {fileID: 1065521113}
+  collectionNameText: {fileID: 0}
+  collectionNameTmpText: {fileID: 301686752}
   lockButton: {fileID: 0}
   lockedBadge: {fileID: 0}
   floatFormat: '{0:0.000000}'
@@ -183632,6 +184337,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
 --- !u!114 &907923294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185190,6 +185898,96 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 914486153}
   m_CullTransparentMesh: 1
+--- !u!1 &915748668
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 915748669}
+  - component: {fileID: 915748672}
+  - component: {fileID: 915748671}
+  - component: {fileID: 915748670}
+  m_Layer: 5
+  m_Name: Image (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &915748669
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915748668}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.035, y: 0.05, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1385543399}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -36, y: 0.0000076294}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &915748670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915748668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
+  m_HorizontalFit: 2
+  m_VerticalFit: 2
+--- !u!114 &915748671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915748668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 1275589539659018210, guid: a7a22d93c6cc3504f9808ed5faa93249, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &915748672
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915748668}
+  m_CullTransparentMesh: 1
 --- !u!1 &916254244
 GameObject:
   m_ObjectHideFlags: 0
@@ -185648,6 +186446,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 1
   keyIconOverride: {fileID: -6620012541593082802, guid: c07b02bc36ce0364ea582525fb6df90f, type: 3}
   minAmount: 1
@@ -190331,6 +191132,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 1
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -191523,6 +192327,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 1
   keyIconOverride: {fileID: -2675456891679847655, guid: db217aa446638da41acaf1458ec7ac15, type: 3}
   minAmount: 1
@@ -191689,7 +192496,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -99.2, y: -0.5}
-  m_SizeDelta: {x: 462, y: 759}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &950695895
 MonoBehaviour:
@@ -198500,6 +199307,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
 --- !u!114 &988246005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199887,6 +200697,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
 --- !u!114 &996202874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200157,6 +200970,143 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 998643693}
+  m_CullTransparentMesh: 1
+--- !u!1 &999037462
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 999037463}
+  - component: {fileID: 999037465}
+  - component: {fileID: 999037464}
+  m_Layer: 5
+  m_Name: ButtonText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &999037463
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999037462}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 102833472}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 19.719992, y: 0}
+  m_SizeDelta: {x: 74.014, y: 33}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &999037464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999037462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Shotguns
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 7f6f3149dfe706b4092b92a9f9592769, type: 2}
+  m_sharedMaterial: {fileID: 2629775182912732175, guid: 7f6f3149dfe706b4092b92a9f9592769, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 11
+  m_fontSizeBase: 11
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: -0.74627686}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &999037465
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999037462}
   m_CullTransparentMesh: 1
 --- !u!1 &1000556517
 GameObject:
@@ -201909,6 +202859,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 1
   keyIconOverride: {fileID: -7055832063688677745, guid: ebed7b0c03f5e434484f273a0bce125d, type: 3}
   minAmount: 1
@@ -202049,6 +203002,9 @@ MonoBehaviour:
     casePrice: 0.8
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
 --- !u!114 &1008123494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202170,6 +203126,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 1
   keyIconOverride: {fileID: 5676361572865287561, guid: 95f7986c961688a43902eec2f25861f6, type: 3}
   minAmount: 1
@@ -210498,9 +211457,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1303226018}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 220.11124, y: -4}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1, y: 8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1061197908
@@ -211035,7 +211994,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -1920, y: -1080}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1063082088
 MonoBehaviour:
@@ -211284,6 +212243,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1065516904}
+  m_CullTransparentMesh: 1
+--- !u!1 &1065521111
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1065521112}
+  - component: {fileID: 1065521114}
+  - component: {fileID: 1065521113}
+  m_Layer: 5
+  m_Name: Collection Icon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1065521112
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065521111}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 404582488}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -374.5, y: 3.73}
+  m_SizeDelta: {x: 50, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1065521113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065521111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1065521114
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065521111}
   m_CullTransparentMesh: 1
 --- !u!1 &1066255792
 GameObject:
@@ -211791,6 +212825,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -212182,9 +213219,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1303226018}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 200.53635, y: -4}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1, y: 8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1069964686
@@ -212541,6 +213578,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -213405,7 +214445,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 450}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 800, y: 6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1076246121
@@ -214305,6 +215345,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
 --- !u!114 &1082682962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214376,9 +215419,9 @@ RectTransform:
   - {fileID: 116374162}
   m_Father: {fileID: 1303226018}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 4.7873535, y: -5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1083156134
@@ -215178,6 +216221,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 1
   keyIconOverride: {fileID: -7872473975979163806, guid: 902c9316ee4a8d946976f017d32e81c9, type: 3}
   minAmount: 1
@@ -216081,6 +217127,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -216911,6 +217960,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
 --- !u!114 &1102470941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218407,6 +219459,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
 --- !u!114 &1108928277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222857,9 +223912,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1303226018}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 63.512115, y: -4}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1, y: 8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1131457236
@@ -223913,6 +224968,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -228867,6 +229925,9 @@ MonoBehaviour:
     casePrice: 1
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
 --- !u!114 &1160962214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231259,6 +232320,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -235047,6 +236111,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 1
   keyIconOverride: {fileID: -8122749733422192677, guid: 19e4b3603a093ba4384615435c767d81, type: 3}
   minAmount: 1
@@ -235187,6 +236254,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
 --- !u!114 &1193274994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236733,6 +237803,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 1
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -242145,6 +243218,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -244808,10 +245884,10 @@ RectTransform:
   - {fileID: 2057963498}
   m_Father: {fileID: 150781258}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 129.03625, y: -20.436584}
-  m_SizeDelta: {x: 250, y: 40}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1249978351
 MonoBehaviour:
@@ -248660,6 +249736,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 1
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -251541,6 +252620,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -255035,6 +256117,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -255798,6 +256883,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
 --- !u!114 &1308280075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259134,6 +260222,96 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1324793688}
   m_CullTransparentMesh: 1
+--- !u!1 &1325283534
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1325283535}
+  - component: {fileID: 1325283538}
+  - component: {fileID: 1325283537}
+  - component: {fileID: 1325283536}
+  m_Layer: 5
+  m_Name: Image (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1325283535
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325283534}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.035, y: 0.05, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 102833472}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -36, y: 0.0000076294}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1325283536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325283534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
+  m_HorizontalFit: 2
+  m_VerticalFit: 2
+--- !u!114 &1325283537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325283534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 1275589539659018210, guid: a7a22d93c6cc3504f9808ed5faa93249, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1325283538
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325283534}
+  m_CullTransparentMesh: 1
 --- !u!1 &1325290769
 GameObject:
   m_ObjectHideFlags: 0
@@ -259798,9 +260976,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1303226018}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 141.81168, y: -4}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1, y: 8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1327283724
@@ -262927,6 +264105,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 1
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -264406,8 +265587,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 438722730}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -265676,6 +266857,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
 --- !u!114 &1358287769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267076,6 +268260,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
 --- !u!114 &1363269973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269810,6 +270997,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -271745,6 +272935,83 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1385169208}
+  m_CullTransparentMesh: 1
+--- !u!1 &1385543398
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1385543399}
+  - component: {fileID: 1385543401}
+  - component: {fileID: 1385543400}
+  m_Layer: 5
+  m_Name: Border
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1385543399
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385543398}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 160584041}
+  - {fileID: 915748669}
+  m_Father: {fileID: 1548976495}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -4, y: -4}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1385543400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385543398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.07058824, g: 0.13333334, b: 0.21176471, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1385543401
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385543398}
   m_CullTransparentMesh: 1
 --- !u!1 &1385834481
 GameObject:
@@ -275252,7 +276519,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1400962228
 RectTransform:
   m_ObjectHideFlags: 0
@@ -275366,6 +276633,8 @@ MonoBehaviour:
     type: 1
   - toggle: {fileID: 588856250}
     type: 2
+  - toggle: {fileID: 1548976499}
+    type: 3
   - toggle: {fileID: 1946472911}
     type: 3
   - toggle: {fileID: 1982108470}
@@ -279908,6 +281177,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -285200,6 +286472,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
 --- !u!114 &1449153236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286243,6 +287518,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
 --- !u!114 &1455240497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286972,6 +288250,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 1
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -287115,8 +288396,9 @@ GameObject:
   - component: {fileID: 1457983337}
   - component: {fileID: 1457983336}
   - component: {fileID: 1457983335}
+  - component: {fileID: 1457983339}
   m_Layer: 5
-  m_Name: Button6
+  m_Name: Button7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -287140,8 +288422,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 191.53629, y: -160}
-  m_SizeDelta: {x: 120, y: 60}
+  m_AnchoredPosition: {x: 129.04, y: -225}
+  m_SizeDelta: {x: 245, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1457983335
 MonoBehaviour:
@@ -287241,6 +288523,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1457983333}
   m_CullTransparentMesh: 1
+--- !u!114 &1457983339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457983333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.LayoutElement
+  m_IgnoreLayout: 1
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: -1
+  m_PreferredHeight: -1
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!1 &1458006569
 GameObject:
   m_ObjectHideFlags: 0
@@ -289047,6 +290349,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -291133,6 +292438,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 1
   keyIconOverride: {fileID: 5676361572865287561, guid: 95f7986c961688a43902eec2f25861f6, type: 3}
   minAmount: 1
@@ -294521,6 +295829,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -296933,6 +298244,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -301727,6 +303041,9 @@ MonoBehaviour:
     casePrice: 1
     rarity: 1
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
 --- !u!114 &1527844829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305698,6 +307015,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
 --- !u!114 &1545703423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306142,6 +307462,145 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1548971027}
   m_CullTransparentMesh: 1
+--- !u!1 &1548976494
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1548976495}
+  - component: {fileID: 1548976498}
+  - component: {fileID: 1548976497}
+  - component: {fileID: 1548976496}
+  - component: {fileID: 1548976499}
+  m_Layer: 5
+  m_Name: Button4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1548976495
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548976494}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1385543399}
+  - {fileID: 102833472}
+  m_Father: {fileID: 1818814487}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1548976496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548976494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1548976497}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1548976497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548976494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.5482377, g: 0.55041325, b: 0.55345905, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 0.8
+--- !u!222 &1548976498
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548976494}
+  m_CullTransparentMesh: 1
+--- !u!114 &1548976499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548976494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4e27d4308b878f45b83fa836a027b05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ToggleBoxFillUI
+  boxFillImage: {fileID: 102833473}
+  startFilled: 0
+  toggleChildren: 1
+  allowSelfToggle: 1
 --- !u!1 &1549103181
 GameObject:
   m_ObjectHideFlags: 0
@@ -307705,9 +309164,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1303226018}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 83.087006, y: -4}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1, y: 8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1557588066
@@ -307910,6 +309369,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -309657,10 +311119,10 @@ RectTransform:
   - {fileID: 315163110}
   m_Father: {fileID: 150781258}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 129.03629, y: -146.43655}
-  m_SizeDelta: {x: 250, y: 40}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1570078717
 MonoBehaviour:
@@ -312477,6 +313939,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -314415,6 +315880,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -314754,6 +316222,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 1
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -318821,6 +320292,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
 --- !u!114 &1615241609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323182,7 +324656,7 @@ RectTransform:
   m_Father: {fileID: 1043804481}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -323616,6 +325090,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -324401,7 +325878,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -36, y: 0}
-  m_SizeDelta: {x: 323, y: 525}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1641831527
 MonoBehaviour:
@@ -325540,17 +327017,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1647697195}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1076246120}
-  m_Father: {fileID: 897821400}
+  m_Father: {fileID: 404582488}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 450}
+  m_AnchoredPosition: {x: 0, y: -50}
   m_SizeDelta: {x: 800, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1647697197
@@ -326705,13 +328182,13 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 897821400}
+  m_Father: {fileID: 404582488}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 490}
-  m_SizeDelta: {x: 799, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 64.345825, y: 25.308014}
+  m_SizeDelta: {x: 657.1077, y: 85.0325}
+  m_Pivot: {x: 0.48995546, y: 0.76868856}
 --- !u!114 &1651905836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326734,7 +328211,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: be4a8817a5b2ad945817021f858fdf05, type: 3}
-    m_FontSize: 32
+    m_FontSize: 36
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -328468,6 +329945,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 1
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -329742,6 +331222,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 1
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -330152,7 +331635,7 @@ RectTransform:
   m_Father: {fileID: 567169756}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -334688,6 +336171,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 1
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -335137,7 +336623,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -36, y: -0.000024319}
-  m_SizeDelta: {x: 644, y: 435}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1691644018
 MonoBehaviour:
@@ -337463,6 +338949,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 1
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -346732,6 +348221,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -349883,6 +351375,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -350789,6 +352284,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 1
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -356876,6 +358374,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 1
   keyIconOverride: {fileID: -6237046940341661926, guid: a1112111d1a929a4dbbb69e73d45930a, type: 3}
   minAmount: 1
@@ -358830,6 +360331,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -359581,6 +361085,7 @@ RectTransform:
   - {fileID: 737696490}
   - {fileID: 242896637}
   - {fileID: 588856249}
+  - {fileID: 1548976495}
   - {fileID: 1946472910}
   - {fileID: 1982108469}
   - {fileID: 1457983334}
@@ -360970,8 +362475,8 @@ RectTransform:
   - {fileID: 1847891539}
   m_Father: {fileID: 153417337}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0.000030517578, y: -0.000024795532}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -362835,9 +364340,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1303226018}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 24.362305, y: -4}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1, y: 8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1838275245
@@ -367664,6 +369169,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 1
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -368864,7 +370372,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 170.1507, y: -37.28}
+  m_AnchoredPosition: {x: 170.15088, y: -37.28003}
   m_SizeDelta: {x: 340.3014, y: 74.56}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1876085015
@@ -371255,6 +372763,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 1
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -372079,6 +373590,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 1
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -375425,6 +376939,7 @@ RectTransform:
   - {fileID: 1097229960}
   - {fileID: 839923833}
   - {fileID: 3674445}
+  - {fileID: 404582488}
   m_Father: {fileID: 897821400}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -378303,7 +379818,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -34.7, y: 0.0000076294}
-  m_SizeDelta: {x: 1011, y: 214}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1924569877
 MonoBehaviour:
@@ -382091,6 +383606,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
 --- !u!114 &1941938799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382998,7 +384516,7 @@ GameObject:
   - component: {fileID: 1946472912}
   - component: {fileID: 1946472911}
   m_Layer: 5
-  m_Name: Button4
+  m_Name: Button5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -383020,10 +384538,10 @@ RectTransform:
   - {fileID: 1663024030}
   m_Father: {fileID: 1818814487}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 191.53629, y: -95}
-  m_SizeDelta: {x: 120, y: 60}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1946472911
 MonoBehaviour:
@@ -383327,6 +384845,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -383414,9 +384935,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1303226018}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 161.38657, y: -4}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1, y: 8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1948596950
@@ -385799,6 +387320,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
 --- !u!114 &1956255760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -391466,6 +392990,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 1
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
 --- !u!114 &1980508214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -391688,9 +393215,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1303226018}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 102.661896, y: -4}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1, y: 8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1980818504
@@ -391942,7 +393469,7 @@ GameObject:
   - component: {fileID: 1982108471}
   - component: {fileID: 1982108470}
   m_Layer: 5
-  m_Name: Button5
+  m_Name: Button6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -391964,10 +393491,10 @@ RectTransform:
   - {fileID: 1973237411}
   m_Father: {fileID: 1818814487}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 66.536285, y: -160}
-  m_SizeDelta: {x: 120, y: 60}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1982108470
 MonoBehaviour:
@@ -393278,6 +394805,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 1
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -394010,6 +395540,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 1
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -395105,6 +396638,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 1
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -396562,6 +398098,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
 --- !u!114 &2004292810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402701,6 +404240,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
 --- !u!114 &2028998136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408367,6 +409909,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
 --- !u!114 &2061573124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408490,6 +410035,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
 --- !u!114 &2061727567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409852,6 +411400,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
 --- !u!114 &2070740849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411352,6 +412903,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 1
   keyIconOverride: {fileID: -3711269441617700983, guid: 33543b00a4964894b8dbb6795302a003, type: 3}
   minAmount: 1
@@ -416707,6 +418261,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 1
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -417658,9 +419215,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 3674445}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 237.90198, y: -130.14828}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 648.36, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2107831863
@@ -418329,6 +419886,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 1
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -423203,6 +424763,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
 --- !u!114 &2135689745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425366,6 +426929,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 1
   keyIconOverride: {fileID: 0}
   minAmount: 1
@@ -425887,6 +427453,9 @@ MonoBehaviour:
     casePrice: 0.6
     rarity: 0
     possibleItems: []
+    collectionId: 
+    collectionName: 
+    collectionIcon: {fileID: 0}
   buyKeysInsteadOfCases: 0
   keyIconOverride: {fileID: 0}
   minAmount: 1

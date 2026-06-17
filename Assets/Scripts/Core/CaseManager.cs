@@ -387,6 +387,15 @@ public class CaseData
 
     // Item pool for this case (to be expanded)
     public List<CaseItemData> possibleItems = new List<CaseItemData>();
+
+    // ── Case-level collection defaults ────────────────────────────────────────
+    /// <summary>
+    /// Collection for all items in this case (e.g. "dreams_nightmares").
+    /// Items use this by default unless CaseItemData.overrideCollection is true.
+    /// </summary>
+    public string collectionId;
+    public string collectionName;
+    public Sprite collectionIcon;
 }
 
 /// <summary>
@@ -410,6 +419,43 @@ public class CaseItemData
     /// Inspector-overridable weapon category. Leave Unknown to auto-infer from weaponName.
     /// </summary>
     public WeaponCategory weaponCategory = WeaponCategory.Unknown;
+
+    // ── Collection ────────────────────────────────────────────────────────────
+    /// <summary>
+    /// When false (default), collection data is inherited from the parent CaseData.
+    /// When true, the fields below override the parent case's collection for this item only.
+    /// </summary>
+    public bool overrideCollection = false;
+    /// <summary>Item-level collection id. Only used when overrideCollection = true.</summary>
+    public string collectionId;
+    /// <summary>Item-level display name. Only used when overrideCollection = true.</summary>
+    public string collectionName;
+    /// <summary>Item-level icon. Only used when overrideCollection = true. Runtime-only; not saved to JSON.</summary>
+    public Sprite collectionIcon;
+
+    /// <summary>
+    /// Returns the collection id, name, and icon to use for this item.
+    /// Uses item-level values when overrideCollection is true; otherwise inherits from parentCase.
+    /// Safe to call with parentCase = null (falls back to item-level values).
+    /// </summary>
+    public void GetEffectiveCollection(CaseData parentCase,
+                                       out string outId,
+                                       out string outName,
+                                       out Sprite outIcon)
+    {
+        if (overrideCollection || parentCase == null)
+        {
+            outId   = collectionId   ?? string.Empty;
+            outName = collectionName ?? string.Empty;
+            outIcon = collectionIcon;
+        }
+        else
+        {
+            outId   = parentCase.collectionId   ?? string.Empty;
+            outName = parentCase.collectionName ?? string.Empty;
+            outIcon = parentCase.collectionIcon;
+        }
+    }
 
     private static readonly string[] KnifeNameKeywords =
     {

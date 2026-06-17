@@ -604,6 +604,9 @@ public class SkinEntryDTO
     public float marketValue;
     public float floatValue;
     public WeaponCategory weaponCategory;
+    public string collectionId;
+    public string collectionName;
+    // collectionIcon (Sprite) is intentionally not saved — resolved from CaseItemData on load
 }
 
 /// <summary>

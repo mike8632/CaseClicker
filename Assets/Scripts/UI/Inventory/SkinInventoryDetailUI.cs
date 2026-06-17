@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class SkinInventoryDetailUI : MonoBehaviour
 {
@@ -17,6 +18,11 @@ public class SkinInventoryDetailUI : MonoBehaviour
     [SerializeField] private Text floatText;
     [SerializeField] private Text valueText;
     [SerializeField] private GameObject statTrakBadge;
+
+    [Header("Collection")]
+    [SerializeField] private Image    collectionIconImage;
+    [SerializeField] private Text     collectionNameText;
+    [SerializeField] private TMP_Text collectionNameTmpText;
 
     [Header("Lock")]
     [SerializeField] private Button lockButton;
@@ -89,6 +95,18 @@ public class SkinInventoryDetailUI : MonoBehaviour
         if (floatText != null) floatText.text = string.Format(floatFormat, entry.floatValue);
         if (valueText != null) valueText.text = string.Format(valueFormat, entry.marketValue);
         if (statTrakBadge != null) statTrakBadge.SetActive(entry.isStatTrak);
+
+        // Collection
+        bool hasCollection = !string.IsNullOrEmpty(entry.collectionName);
+        if (collectionIconImage != null)
+        {
+            collectionIconImage.sprite  = entry.collectionIcon;
+            collectionIconImage.enabled = hasCollection && entry.collectionIcon != null;
+        }
+        if (collectionNameText != null)
+            collectionNameText.text    = hasCollection ? entry.collectionName : string.Empty;
+        if (collectionNameTmpText != null)
+            collectionNameTmpText.text = hasCollection ? entry.collectionName : string.Empty;
 
         RefreshLockVisuals();
     }
