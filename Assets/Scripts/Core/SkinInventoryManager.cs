@@ -205,9 +205,16 @@ public class SkinInventoryManager : MonoBehaviour
         if (item == null) return;
 
         bool isStatTrak = UnityEngine.Random.value <= statTrakChance;
+        ItemWear rolledWear = GetWearFromFloat(floatValue);
+
         if (isStatTrak)
         {
-            marketValue *= Mathf.Max(1f, statTrakValueMultiplier);
+            // Prefer cached StatTrak price for the rolled wear tier.
+            float stCached = item.GetCachedValueForWear(rolledWear, isStatTrak: true);
+            if (stCached > 0f)
+                marketValue = stCached;
+            else
+                marketValue *= Mathf.Max(1f, statTrakValueMultiplier);
         }
 
         item.GetDisplayNames(out var weaponName, out var skinName, out _);
@@ -226,7 +233,7 @@ public class SkinInventoryManager : MonoBehaviour
             skinName = skinName,
             itemIcon = item.itemIcon,
             rarity = item.GetEffectiveRarity(),
-            wear = GetWearFromFloat(floatValue),
+            wear = rolledWear,
             isStatTrak = isStatTrak,
             marketValue = marketValue,
             floatValue = floatValue,

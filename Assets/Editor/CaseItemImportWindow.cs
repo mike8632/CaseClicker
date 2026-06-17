@@ -59,6 +59,22 @@ public class CaseItemImportWindow : EditorWindow
         public float  floatMin;
         public float  floatMax;
         public string iconPath;   // local Assets/ path — assign sprite from project
+
+        // ── Cached prices (all optional, default 0) ───────────────────────────
+        public double priceFactoryNew;
+        public double priceMinimalWear;
+        public double priceFieldTested;
+        public double priceWellWorn;
+        public double priceBattleScarred;
+
+        public double priceStatTrakFactoryNew;
+        public double priceStatTrakMinimalWear;
+        public double priceStatTrakFieldTested;
+        public double priceStatTrakWellWorn;
+        public double priceStatTrakBattleScarred;
+
+        public string currency;
+        public string lastUpdatedUtc;
     }
 
     // ── Menu entry ────────────────────────────────────────────────────────────
@@ -268,6 +284,35 @@ public class CaseItemImportWindow : EditorWindow
                 if (hasWeapon && hasSkin)       item.itemName = $"{item.weaponName} | {item.skinName}";
                 else if (hasWeapon)             item.itemName = item.weaponName;
                 else if (hasSkin)               item.itemName = item.skinName;
+            }
+
+            // Populate cached prices if any price field is present
+            bool hasPrices = j.priceFactoryNew > 0 || j.priceMinimalWear > 0 ||
+                             j.priceFieldTested > 0 || j.priceWellWorn > 0 ||
+                             j.priceBattleScarred > 0 ||
+                             j.priceStatTrakFactoryNew > 0 || j.priceStatTrakMinimalWear > 0 ||
+                             j.priceStatTrakFieldTested > 0 || j.priceStatTrakWellWorn > 0 ||
+                             j.priceStatTrakBattleScarred > 0;
+
+            if (hasPrices)
+            {
+                item.cachedPrices = new ItemPriceData
+                {
+                    factoryNew    = j.priceFactoryNew,
+                    minimalWear   = j.priceMinimalWear,
+                    fieldTested   = j.priceFieldTested,
+                    wellWorn      = j.priceWellWorn,
+                    battleScarred = j.priceBattleScarred,
+
+                    statTrakFactoryNew    = j.priceStatTrakFactoryNew,
+                    statTrakMinimalWear   = j.priceStatTrakMinimalWear,
+                    statTrakFieldTested   = j.priceStatTrakFieldTested,
+                    statTrakWellWorn      = j.priceStatTrakWellWorn,
+                    statTrakBattleScarred = j.priceStatTrakBattleScarred,
+
+                    currency       = j.currency       ?? string.Empty,
+                    lastUpdatedUtc = j.lastUpdatedUtc ?? string.Empty,
+                };
             }
 
             // Try to load icon from local project path

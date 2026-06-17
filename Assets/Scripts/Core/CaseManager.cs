@@ -399,6 +399,77 @@ public class CaseData
 }
 
 /// <summary>
+/// Cached marketplace prices for one item, keyed by wear tier.
+/// Populated by the Stage 3 price updater tool; all fields default to 0 (= not cached).
+/// When HasAnyPrice() returns false the game falls back to CaseItemData.minValue/maxValue.
+/// </summary>
+[System.Serializable]
+public class ItemPriceData
+{
+    public double factoryNew;
+    public double minimalWear;
+    public double fieldTested;
+    public double wellWorn;
+    public double battleScarred;
+
+    public double statTrakFactoryNew;
+    public double statTrakMinimalWear;
+    public double statTrakFieldTested;
+    public double statTrakWellWorn;
+    public double statTrakBattleScarred;
+
+    /// <summary>ISO 4217 currency code the prices are stored in, e.g. "USD".</summary>
+    public string currency;
+    /// <summary>ISO 8601 timestamp of the last price fetch, set by the price updater tool.</summary>
+    public string lastUpdatedUtc;
+
+    public bool HasAnyPrice() =>
+        factoryNew > 0 || minimalWear > 0 || fieldTested > 0 ||
+        wellWorn > 0   || battleScarred > 0;
+
+    /// <summary>Returns the price for the given wear and StatTrak flag. Returns 0 if not cached.</summary>
+    public double GetPrice(ItemWear wear, bool isStatTrak)
+    {
+        if (isStatTrak)
+        {
+            return wear switch
+            {
+                ItemWear.FactoryNew    => statTrakFactoryNew,
+                ItemWear.MinimalWear   => statTrakMinimalWear,
+                ItemWear.FieldTested   => statTrakFieldTested,
+                ItemWear.WellWorn      => statTrakWellWorn,
+                ItemWear.BattleScarred => statTrakBattleScarred,
+                _                      => 0.0
+            };
+        }
+
+        return wear switch
+        {
+            ItemWear.FactoryNew    => factoryNew,
+            ItemWear.MinimalWear   => minimalWear,
+            ItemWear.FieldTested   => fieldTested,
+            ItemWear.WellWorn      => wellWorn,
+            ItemWear.BattleScarred => battleScarred,
+            _                      => 0.0
+        };
+    }
+
+    /// <summary>
+    /// Converts a raw float value (0–1) to an ItemWear tier using the same thresholds
+    /// as the rest of the game (SkinInventoryManager.GetWearFromFloat).
+    /// </summary>
+    public static ItemWear FloatToWear(float f)
+    {
+        float v = Mathf.Clamp01(f);
+        if (v < 0.07f) return ItemWear.FactoryNew;
+        if (v < 0.15f) return ItemWear.MinimalWear;
+        if (v < 0.38f) return ItemWear.FieldTested;
+        if (v < 0.45f) return ItemWear.WellWorn;
+        return ItemWear.BattleScarred;
+    }
+}
+
+/// <summary>
 /// Data class for items that can be obtained from cases.
 /// </summary>
 [System.Serializable]
@@ -417,6 +488,12 @@ public class CaseItemData
     public float floatMin = 0f;          // Minimum float (0-1)
     public float floatMax = 1f;          // Maximum float (0-1)
     public ItemRarity rarity;
+    /// <summary>
+    /// Cached marketplace prices per wear tier. Null by default (= not yet fetched).
+    /// When non-null and HasAnyPrice() is true, GetValueForFloat uses these instead of minValue/maxValue.
+    /// Populated by the Stage 3 price-updater editor tool.
+    /// </summary>
+    public ItemPriceData cachedPrices;
     /// <summary>
     /// Inspector-overridable weapon category. Leave Unknown to auto-infer from weaponName.
     /// </summary>
@@ -536,10 +613,31 @@ public class CaseItemData
 
     public float GetValueForFloat(float floatValue)
     {
+        // Try cached wear-based price first (non-StatTrak; StatTrak is handled in SkinInventoryManager.AddSkin).
+        if (cachedPrices != null && cachedPrices.HasAnyPrice())
+        {
+            ItemWear wear = ItemPriceData.FloatToWear(floatValue);
+            double cached = cachedPrices.GetPrice(wear, isStatTrak: false);
+            if (cached > 0.0)
+                return (float)cached;
+        }
+
+        // Fallback: linear interpolation between minValue and maxValue based on float.
         float min = Mathf.Min(minValue, maxValue);
         float max = Mathf.Max(minValue, maxValue);
         float t = 1f - Mathf.Clamp01(floatValue);
         return Mathf.Lerp(min, max, t);
+    }
+
+    /// <summary>
+    /// Returns the cached price for a specific wear+StatTrak combination, or 0 if not cached.
+    /// Used by SkinInventoryManager.AddSkin to override with a StatTrak-specific cached price.
+    /// </summary>
+    public float GetCachedValueForWear(ItemWear wear, bool isStatTrak)
+    {
+        if (cachedPrices == null) return 0f;
+        double price = cachedPrices.GetPrice(wear, isStatTrak);
+        return (float)price;
     }
 
     /// <summary>

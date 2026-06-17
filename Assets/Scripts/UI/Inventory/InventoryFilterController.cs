@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class InventoryFilterController : MonoBehaviour
 {
+    /// <summary>Fired at the end of every ApplyFilters() call. Subscribe to refresh counters or other dependent UI.</summary>
+    public event System.Action OnFiltersApplied;
     [Serializable]
     public class RarityToggle
     {
@@ -200,6 +202,7 @@ public class InventoryFilterController : MonoBehaviour
         }
 
         ApplySort(cards, orderIndex);
+        OnFiltersApplied?.Invoke();
     }
 
     public void ResetFilters()
