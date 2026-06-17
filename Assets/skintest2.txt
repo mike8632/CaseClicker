@@ -1,0 +1,19 @@
+{
+  "currency": "USD",
+  "lastUpdatedUtc": "2026-06-18T00:00:00Z",
+  "prices": [
+    {
+      "marketHashName": "AK-47 | Stage 2 Test",
+      "factoryNew": 100,
+      "minimalWear": 80,
+      "fieldTested": 222,
+      "wellWorn": 30,
+      "battleScarred": 20,
+      "statTrakFactoryNew": 200,
+      "statTrakMinimalWear": 160,
+      "statTrakFieldTested": 444,
+      "statTrakWellWorn": 60,
+      "statTrakBattleScarred": 40
+    }
+  ]
+}

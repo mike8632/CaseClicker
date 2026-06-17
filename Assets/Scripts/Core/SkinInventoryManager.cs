@@ -265,8 +265,9 @@ public class SkinInventoryManager : MonoBehaviour
     /// <summary>
     /// Called automatically after loading inventory. Same reprice logic but does not
     /// request an immediate save — the next normal save will persist the updated values.
+    /// Also callable from editor tools after applying fresh cached prices in Play Mode.
     /// </summary>
-    internal void AutoRepriceAfterLoad() => DoReprice(requestSave: false);
+    public void AutoRepriceAfterLoad() => DoReprice(requestSave: false);
 
     /// <summary>
     /// Updates marketValue for every inventory skin that has a matching cached price.
