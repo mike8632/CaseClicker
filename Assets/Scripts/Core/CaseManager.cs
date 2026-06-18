@@ -513,6 +513,8 @@ public class CaseItemData
     public string collectionName;
     /// <summary>Item-level icon. Only used when overrideCollection = true. Runtime-only; not saved to JSON.</summary>
     public Sprite collectionIcon;
+    /// <summary>Remote URL for downloading the collection icon. Editor-only; not used at runtime.</summary>
+    public string collectionIconUrl;
 
     /// <summary>
     /// Returns the collection id, name, and icon to use for this item.

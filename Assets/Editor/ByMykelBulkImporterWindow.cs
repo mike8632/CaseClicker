@@ -386,8 +386,9 @@ public class ByMykelBulkImporterWindow : EditorWindow
             if (detail.collections != null && detail.collections.Length > 0)
             {
                 var coll = detail.collections[0];
-                item.collectionId       = coll.id   ?? "";
-                item.collectionName     = coll.name ?? "";
+                item.collectionId       = coll.id    ?? "";
+                item.collectionName     = coll.name  ?? "";
+                item.collectionIconUrl  = coll.image ?? "";
                 item.overrideCollection = true;
             }
         }
