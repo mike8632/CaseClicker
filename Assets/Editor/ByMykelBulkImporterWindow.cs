@@ -40,6 +40,7 @@ public class ByMykelBulkImporterWindow : EditorWindow
     {
         public string   id;
         public string   name;
+        public string   image;                  // URL — stored as CaseItemData.itemIconUrl
         public BmRarity rarity = new BmRarity();
     }
 
@@ -48,6 +49,7 @@ public class ByMykelBulkImporterWindow : EditorWindow
     {
         public string           id;
         public string           name;
+        public string           image;          // URL — stored as CaseItemData.itemIconUrl
         public BmWeapon         weapon      = new BmWeapon();
         public BmCategory       category    = new BmCategory();
         public BmPattern        pattern     = new BmPattern();
@@ -370,6 +372,9 @@ public class ByMykelBulkImporterWindow : EditorWindow
             item.weaponName     = detail.weapon?.name   ?? "";
             item.skinName       = detail.pattern?.name  ?? "";
             item.marketHashName = detail.name ?? skinRef.name ?? "";  // base name, no wear suffix
+            // Prefer the full-detail image; fall back to the crate reference image
+            item.itemIconUrl    = !string.IsNullOrEmpty(detail.image) ? detail.image
+                                : (skinRef.image ?? "");
             item.floatMin       = detail.min_float;
             item.floatMax       = detail.max_float > 0f ? detail.max_float : 1f;
             item.rarity         = MapRarity(detail.rarity?.name ?? skinRef.rarity?.name ?? "");
@@ -389,9 +394,10 @@ public class ByMykelBulkImporterWindow : EditorWindow
         else
         {
             // Fallback when skin is not found in skins.json
-            item.itemId         = skinRef.id   ?? "";
-            item.itemName       = skinRef.name ?? "";
-            item.marketHashName = skinRef.name ?? "";
+            item.itemId         = skinRef.id    ?? "";
+            item.itemName       = skinRef.name  ?? "";
+            item.marketHashName = skinRef.name  ?? "";
+            item.itemIconUrl    = skinRef.image ?? "";
             item.rarity         = MapRarity(skinRef.rarity?.name ?? "");
             item.floatMax       = 1f;
 

@@ -481,6 +481,8 @@ public class CaseItemData
     public string itemId;
     /// <summary>Steam market hash name, e.g. "AK-47 | Redline (Field-Tested)". Used for future price lookups.</summary>
     public string marketHashName;
+    /// <summary>Remote image URL (e.g. from ByMykel CSGO-API). Used by the Skin Image Downloader editor tool to fetch and assign itemIcon.</summary>
+    public string itemIconUrl;
     public Sprite itemIcon;
     public float dropChance;            // Percentage chance (0-100)
     public float minValue;              // Minimum market value
