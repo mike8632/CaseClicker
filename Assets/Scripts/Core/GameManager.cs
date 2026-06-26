@@ -78,10 +78,13 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        // Load saved data
+        // Load saved data first so MPS/CPS are restored before any calculations
         SaveSystem.LoadGame();
 
-        // Calculate offline income (handled in IdleIncomeSystem.Start)
+        // Unlock offline earnings now that save data is fully applied,
+        // then award any time accumulated since last session.
+        IdleIncome?.NotifySaveDataLoaded();
+        IdleIncome?.CalculateAndAwardOfflineEarnings();
 
         OnGameInitialized?.Invoke();
         Debug.Log("[GameManager] Game started");

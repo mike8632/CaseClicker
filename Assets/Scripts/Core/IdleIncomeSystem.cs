@@ -26,12 +26,14 @@ public class IdleIncomeSystem : MonoBehaviour
     // Current settings
     private float currentMaxIdleMinutes;
     private DateTime lastActiveTime;
-    private bool hasCollectedOfflineEarnings = false;
 
     // Statistics
     private double totalIdleMoneyEarned = 0;
     private float totalIdleCaseProgressEarned = 0f;
     private float totalIdleTimeSeconds = 0f;
+
+    // Guard: offline earnings may only run after save data has been fully applied
+    private bool _saveDataLoaded = false;
 
     #region Properties
 
@@ -66,38 +68,10 @@ public class IdleIncomeSystem : MonoBehaviour
         LoadLastActiveTime();
     }
 
-    private void Start()
-    {
-        // Calculate and award offline earnings on game start
-        if (!hasCollectedOfflineEarnings)
-        {
-            CalculateAndAwardOfflineEarnings();
-        }
-    }
-
     private void Update()
     {
         // Process idle income each frame
         ProcessIdleIncome(Time.deltaTime);
-    }
-
-    private void OnApplicationPause(bool pauseStatus)
-    {
-        if (pauseStatus)
-        {
-            // App going to background - save current time
-            SaveLastActiveTime();
-        }
-        else
-        {
-            // App returning from background - calculate offline earnings
-            CalculateAndAwardOfflineEarnings();
-        }
-    }
-
-    private void OnApplicationQuit()
-    {
-        SaveLastActiveTime();
     }
 
     #region Idle Income Processing
@@ -141,13 +115,29 @@ public class IdleIncomeSystem : MonoBehaviour
     #region Offline Earnings
 
     /// <summary>
+    /// Called by GameManager after save data is fully applied.
+    /// Offline earnings will not run until this is called.
+    /// </summary>
+    public void NotifySaveDataLoaded()
+    {
+        _saveDataLoaded = true;
+    }
+
+    /// <summary>
     /// Calculate and award earnings accumulated while offline.
+    /// Safe to call multiple times — only runs after save data is loaded,
+    /// and resets the clock after awarding to prevent double-awards.
     /// </summary>
     public void CalculateAndAwardOfflineEarnings()
     {
+        if (!_saveDataLoaded)
+        {
+            Debug.Log("[IdleIncome] Skipping offline earnings — save data not yet loaded.");
+            return;
+        }
+
         if (lastActiveTime == DateTime.MinValue)
         {
-            hasCollectedOfflineEarnings = true;
             return;
         }
 
@@ -160,7 +150,6 @@ public class IdleIncomeSystem : MonoBehaviour
 
         if (effectiveOfflineSeconds < 1f)
         {
-            hasCollectedOfflineEarnings = true;
             return;
         }
 
@@ -190,10 +179,11 @@ public class IdleIncomeSystem : MonoBehaviour
                   $"(capped from {FormatTime(offlineSeconds)}). " +
                   $"Earned: ${offlineMoney:F2}, {offlineCaseProgress:F2}% case progress");
 
+        // Reset the clock so a second call this session cannot re-award the same period
+        SaveLastActiveTime();
+
         // Trigger event for UI popup
         OnOfflineEarningsCollected?.Invoke(offlineMoney, offlineCaseProgress);
-
-        hasCollectedOfflineEarnings = true;
     }
 
     /// <summary>
@@ -229,7 +219,6 @@ public class IdleIncomeSystem : MonoBehaviour
         lastActiveTime = DateTime.Now;
         PlayerPrefs.SetString("LastActiveTime", lastActiveTime.ToBinary().ToString());
         PlayerPrefs.Save();
-        Debug.Log($"[IdleIncome] Saved last active time: {lastActiveTime}");
     }
 
     /// <summary>
@@ -242,12 +231,10 @@ public class IdleIncomeSystem : MonoBehaviour
         if (!string.IsNullOrEmpty(savedTime) && long.TryParse(savedTime, out long binaryTime))
         {
             lastActiveTime = DateTime.FromBinary(binaryTime);
-            Debug.Log($"[IdleIncome] Loaded last active time: {lastActiveTime}");
         }
         else
         {
             lastActiveTime = DateTime.MinValue;
-            Debug.Log("[IdleIncome] No previous active time found.");
         }
     }
 

@@ -97,8 +97,6 @@ public class BalanceManager : MonoBehaviour
         GameManager.Instance?.OnMoneyChanged?.Invoke(currentMoney);
         // Update statistics snapshot for current balance
         StatisticsManager.Instance?.UpdateActualMoney(currentMoney);
-
-        Debug.Log($"[Balance] +${amount:F2} | Total: ${currentMoney:F2}");
     }
 
     /// <summary>
@@ -128,7 +126,6 @@ public class BalanceManager : MonoBehaviour
         // Update statistics snapshot for current balance
         StatisticsManager.Instance?.UpdateActualMoney(currentMoney);
 
-        Debug.Log($"[Balance] -${amount:F2} | Remaining: ${currentMoney:F2}");
         return true;
     }
 

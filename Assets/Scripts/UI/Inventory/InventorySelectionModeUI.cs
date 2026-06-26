@@ -182,16 +182,32 @@ public class InventorySelectionModeUI : MonoBehaviour
         if (SkinInventoryManager.Instance == null) return;
 
         var toSell = new List<SkinInventoryEntry>();
+        float totalValue = 0f;
         foreach (var card in _selectedCards)
         {
             if (card == null || card.CurrentEntry == null) continue;
             if (card.CurrentEntry.isLocked) continue; // locked skins skipped in bulk sell
             toSell.Add(card.CurrentEntry);
+            totalValue += card.CurrentEntry.marketValue;
         }
-        foreach (var entry in toSell)
-            SkinInventoryManager.Instance.SellSkin(entry);
 
-        ExitSelectionMode();
+        if (toSell.Count == 0) return;
+
+        void DoSell()
+        {
+            foreach (var entry in toSell)
+                SkinInventoryManager.Instance?.SellSkin(entry);
+            ExitSelectionMode();
+        }
+
+        if (SellConfirmPopupUI.Instance != null)
+        {
+            SellConfirmPopupUI.Instance.ShowBulk(toSell.Count, totalValue, DoSell);
+        }
+        else
+        {
+            DoSell();
+        }
     }
 
     private void HandleLockSelected()

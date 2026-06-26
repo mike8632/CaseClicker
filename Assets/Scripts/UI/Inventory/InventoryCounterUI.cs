@@ -68,7 +68,18 @@ public class InventoryCounterUI : MonoBehaviour
         Refresh();
     }
 
-    private void OnInventoryChanged(SkinInventoryEntry _) => Refresh();
+    private void OnInventoryChanged(SkinInventoryEntry _)
+    {
+        // Defer by one frame so Unity's deferred Destroy() calls have completed
+        // and the card hierarchy matches the updated Entries list.
+        StartCoroutine(RefreshNextFrame());
+    }
+
+    private System.Collections.IEnumerator RefreshNextFrame()
+    {
+        yield return null;
+        Refresh();
+    }
 
     public void Refresh()
     {

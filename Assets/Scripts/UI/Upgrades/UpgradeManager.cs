@@ -54,8 +54,8 @@ public class UpgradeManager : MonoBehaviour
     [Header("Definitions")]
     public List<UpgradeDefinition> upgrades = new List<UpgradeDefinition>();
 
-    [Header("Testing")]
-    [SerializeField] private bool grantTestMoneyOnPurchase = true;
+    [Header("Testing (Dev Only — must be OFF in production)")]
+    [SerializeField] private bool grantTestMoneyOnPurchase = false;
     [SerializeField] private float testMoneyAmount = 10000f;
 
     // Fired when an upgrade is purchased: (upgradeId, newLevel)

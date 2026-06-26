@@ -126,8 +126,6 @@ public class ClickerController : MonoBehaviour
 
         // Trigger events for UI feedback
         OnMoneyClicked?.Invoke(earnings);
-
-        Debug.Log($"[Clicker] Money Click: +${earnings:F2} (Coin Combo: {GameManager.Instance.Combo?.CurrentCoinMultiplier:F2}x)");
     }
 
     /// <summary>
@@ -153,8 +151,6 @@ public class ClickerController : MonoBehaviour
 
         // Trigger events for UI feedback
         OnCaseClicked?.Invoke(progressGain);
-
-        Debug.Log($"[Clicker] Case Click: +{progressGain:F2}% (Case Combo: {GameManager.Instance.Combo?.CurrentCaseMultiplier:F2}x)");
     }
 
     /// <summary>
@@ -237,18 +233,4 @@ public class ClickerController : MonoBehaviour
 
     #endregion
 
-    #region Input Handling (Alternative to UI Buttons)
-
-    private void Update()
-    {
-        // Optional: Handle keyboard/mouse input directly
-        // This can be used if you want clicks anywhere on the screen
-        // or specific key bindings
-
-        // Example: Press 1 for money click, 2 for case click (for testing)
-#if UNITY_EDITOR
-#endif
-    }
-
-    #endregion
 }

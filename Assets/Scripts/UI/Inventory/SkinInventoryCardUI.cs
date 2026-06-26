@@ -182,8 +182,28 @@ public class SkinInventoryCardUI : MonoBehaviour
     private void HandleSell()
     {
         if (currentEntry == null || SkinInventoryManager.Instance == null) return;
-        if (SkinInventoryManager.Instance.SellSkin(currentEntry))
-            Destroy(gameObject);
+
+        if (SellConfirmPopupUI.Instance != null)
+        {
+            // Capture references before the lambda — the card may be destroyed inside it
+            var entryToSell = currentEntry;
+            var cardToDestroy = gameObject;
+            SellConfirmPopupUI.Instance.Show(entryToSell, () =>
+            {
+                if (SkinInventoryManager.Instance != null &&
+                    SkinInventoryManager.Instance.SellSkin(entryToSell))
+                {
+                    if (cardToDestroy != null)
+                        Destroy(cardToDestroy);
+                }
+            });
+        }
+        else
+        {
+            // No popup in scene — sell immediately (editor / test fallback)
+            if (SkinInventoryManager.Instance.SellSkin(currentEntry))
+                Destroy(gameObject);
+        }
     }
 
     private void RefreshLockVisuals()

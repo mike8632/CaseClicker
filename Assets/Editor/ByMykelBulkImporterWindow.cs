@@ -512,20 +512,22 @@ public class ByMykelBulkImporterWindow : EditorWindow
     private static ItemRarity MapRarity(string rarityName)
     {
         if (string.IsNullOrWhiteSpace(rarityName)) return ItemRarity.ConsumerGrade;
-        string n = rarityName.Replace(" ", "").Replace("_", "").ToLowerInvariant();
+        // Strip spaces, underscores AND hyphens — ByMykel uses "Mil-Spec Grade" (hyphen included)
+        string n = rarityName.Replace(" ", "").Replace("_", "").Replace("-", "").ToLowerInvariant();
         return n switch
         {
-            "consumergrade" or "stockitem" or "cg" or "white"          => ItemRarity.ConsumerGrade,
-            "industrialgrade" or "ig" or "lightblue"                   => ItemRarity.IndustrialGrade,
-            "milspec" or "militaryspec" or "militaryspecgrade" or "ms"  => ItemRarity.MilSpec,
-            "restricted" or "res" or "purple"                          => ItemRarity.Restricted,
-            "classified" or "cl" or "pink"                             => ItemRarity.Classified,
-            "covert" or "cov" or "red"                                 => ItemRarity.Covert,
-            "contraband" or "gold"                                     => ItemRarity.Contraband,
+            "consumergrade" or "stockitem" or "cg" or "white"                            => ItemRarity.ConsumerGrade,
+            "industrialgrade" or "ig" or "lightblue"                                     => ItemRarity.IndustrialGrade,
+            // "Mil-Spec Grade" → after stripping → "milspecgrade"
+            "milspec" or "militaryspec" or "militaryspecgrade" or "milspecgrade" or "ms" => ItemRarity.MilSpec,
+            "restricted" or "res" or "purple"                                            => ItemRarity.Restricted,
+            "classified" or "cl" or "pink"                                               => ItemRarity.Classified,
+            "covert" or "cov" or "red"                                                   => ItemRarity.Covert,
+            "contraband" or "gold"                                                       => ItemRarity.Contraband,
             // ByMykel uses "Extraordinary" for knives/gloves
             "extraordinary" or "knife" or "knives" or "gloves"
-                or "ancient" or "ancientcharacter"                     => ItemRarity.Knife,
-            _                                                          => ItemRarity.ConsumerGrade
+                or "ancient" or "ancientcharacter"                                       => ItemRarity.Knife,
+            _                                                                            => ItemRarity.ConsumerGrade
         };
     }
 

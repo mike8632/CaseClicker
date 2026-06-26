@@ -26,6 +26,9 @@ public class UpgradeItemUI : MonoBehaviour
     private CanvasGroup _canvasGroup;
     private LayoutElement _layoutElement;
 
+    // Cached afford state — used to skip full Refresh on every money tick
+    private bool _cachedCanAfford = false;
+
     private Color _enabledColor = new Color(0.388f, 0.573f, 0.176f); // green
     private Color _disabledColor = new Color(0.6f, 0.0f, 0.0f); // red
 
@@ -66,7 +69,6 @@ public class UpgradeItemUI : MonoBehaviour
             StatisticsManager.Instance.OnStatisticChanged.RemoveListener(OnStatisticChanged);
         if (GameManager.Instance != null)
         {
-            GameManager.Instance.OnCaseOpened.RemoveListener(OnCaseOpened);
             GameManager.Instance.OnMoneyChanged.RemoveListener(OnMoneyChanged);
         }
 
@@ -97,7 +99,6 @@ public class UpgradeItemUI : MonoBehaviour
         // Subscribe
         UpgradeManager.Instance.OnUpgradesChanged.AddListener(Refresh);
         StatisticsManager.Instance.OnStatisticChanged.AddListener(OnStatisticChanged);
-        GameManager.Instance.OnCaseOpened.AddListener(OnCaseOpened);
         GameManager.Instance.OnMoneyChanged.AddListener(OnMoneyChanged);
 
         // Initial refresh
@@ -114,14 +115,17 @@ public class UpgradeItemUI : MonoBehaviour
         }
     }
 
-    private void OnCaseOpened(CaseData data)
-    {
-        Refresh();
-    }
-
     private void OnMoneyChanged(double newAmount)
     {
-        Refresh();
+        // Skip full refresh if the upgrade is already maxed or not yet loaded
+        if (def == null || def.IsMaxed) return;
+
+        // Only refresh when afford state crosses the cost threshold
+        bool canAffordNow = newAmount >= def.CurrentCost;
+        if (canAffordNow != _cachedCanAfford)
+        {
+            Refresh();
+        }
     }
 
     private bool IsUnlockedByPreviousUpgrade()
@@ -190,12 +194,14 @@ public class UpgradeItemUI : MonoBehaviour
         if (opened < required) canBuy = false;
 
         // money
-        double currentMoney = 0.0;
         if (BalanceManager.Instance != null && !def.IsMaxed)
         {
-            currentMoney = BalanceManager.Instance.CurrentMoney;
+            double currentMoney = BalanceManager.Instance.CurrentMoney;
             if (currentMoney < def.CurrentCost) canBuy = false;
         }
+
+        // Keep cached afford state in sync so OnMoneyChanged threshold check is accurate
+        _cachedCanAfford = canBuy;
 
         if (buyButton != null)
         {
@@ -206,8 +212,6 @@ public class UpgradeItemUI : MonoBehaviour
                 img.color = canBuy ? _enabledColor : _disabledColor;
             }
         }
-
-        Debug.Log($"[UpgradeItemUI] Refresh id={upgradeId} level={def.currentLevel+1} opened={opened}/{required} money={currentMoney:F2} cost={def.CurrentCost:F2} canBuy={canBuy}");
     }
 
     private void OnBuyClicked()
