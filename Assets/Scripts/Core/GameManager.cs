@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using System;
 
 /// <summary>
@@ -179,5 +180,28 @@ public class GameManager : MonoBehaviour
     {
         SaveSystem?.SaveGame();
         IdleIncome?.SaveLastActiveTime();
+    }
+
+    /// <summary>
+    /// Deletes all saved progress, destroys the manager object, and reloads the scene.
+    /// Because all systems (BalanceManager, SaveSystem, IdleIncome, etc.) are components
+    /// on this same DontDestroyOnLoad GameObject, destroying it lets the reloaded scene
+    /// create fresh default instances.
+    /// </summary>
+    public void ResetAndReload()
+    {
+        // Wipe the save file and LastActiveTime from PlayerPrefs
+        SaveSystem?.DeleteSaveData();
+
+        // Allow the fresh scene's GameManager to become the singleton
+        Instance = null;
+
+        // Destroy this object (all manager components live here)
+        Destroy(gameObject);
+
+        // Reload the active scene from scratch
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+        Debug.Log("[GameManager] Progress reset — scene reloading.");
     }
 }

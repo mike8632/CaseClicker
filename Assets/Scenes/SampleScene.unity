@@ -12685,7 +12685,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -5, y: -16}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &56568930
@@ -20822,7 +20822,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0.1
       floatMax: 0.26
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.11999999731779099
@@ -20854,7 +20854,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0.06
       floatMax: 0.8
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1599999964237213
         minimalWear: 0.10999999940395355
@@ -20886,7 +20886,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.3
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.10999999940395355
@@ -20918,7 +20918,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.4
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.14000000059604645
@@ -20950,7 +20950,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.12999999523162842
@@ -20982,7 +20982,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0.08
       floatMax: 0.5
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.12999999523162842
@@ -30478,7 +30478,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.14000000059604645
@@ -30510,7 +30510,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1599999964237213
         minimalWear: 0.14000000059604645
@@ -30542,7 +30542,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.12999999523162842
@@ -30574,7 +30574,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.12999999523162842
@@ -30606,7 +30606,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.6
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1599999964237213
         minimalWear: 0.11999999731779099
@@ -30638,7 +30638,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.11999999731779099
@@ -30670,7 +30670,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.5
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.15000000596046448
@@ -38144,7 +38144,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0.06
       floatMax: 0.8
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.11999999731779099
@@ -38176,7 +38176,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0.06
       floatMax: 0.8
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.12999999523162842
@@ -38208,7 +38208,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0.06
       floatMax: 0.22
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.12999999523162842
@@ -38240,7 +38240,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0.06
       floatMax: 0.8
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.14000000059604645
@@ -38272,7 +38272,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0.06
       floatMax: 0.34
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.14000000059604645
@@ -38304,7 +38304,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0.06
       floatMax: 0.8
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.14000000059604645
@@ -39116,7 +39116,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.86
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.14000000059604645
@@ -39148,7 +39148,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.6
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1599999964237213
         minimalWear: 0.12999999523162842
@@ -39180,7 +39180,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.8
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.11999999731779099
@@ -39212,7 +39212,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.65
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1599999964237213
         minimalWear: 0.11999999731779099
@@ -39244,7 +39244,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.45
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.12999999523162842
@@ -39276,7 +39276,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.11999999731779099
@@ -39308,7 +39308,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.7
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.11999999731779099
@@ -42580,6 +42580,143 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 206293538}
+  m_CullTransparentMesh: 1
+--- !u!1 &207371796
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 207371797}
+  - component: {fileID: 207371799}
+  - component: {fileID: 207371798}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &207371797
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207371796}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2080449494}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &207371798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207371796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Cancel
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 7f6f3149dfe706b4092b92a9f9592769, type: 2}
+  m_sharedMaterial: {fileID: 2629775182912732175, guid: 7f6f3149dfe706b4092b92a9f9592769, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 24
+  m_fontSizeBase: 24
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &207371799
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207371796}
   m_CullTransparentMesh: 1
 --- !u!1 &207534332
 GameObject:
@@ -51061,6 +51198,143 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 243392134}
   m_CullTransparentMesh: 1
+--- !u!1 &243813008
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 243813009}
+  - component: {fileID: 243813011}
+  - component: {fileID: 243813010}
+  m_Layer: 5
+  m_Name: Title Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &243813009
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243813008}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1883891615}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -20, y: 125}
+  m_SizeDelta: {x: 410.71, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &243813010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243813008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Title
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 24
+  m_fontSizeBase: 24
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &243813011
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243813008}
+  m_CullTransparentMesh: 1
 --- !u!1 &244108368
 GameObject:
   m_ObjectHideFlags: 0
@@ -51736,7 +52010,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0.06
       floatMax: 0.8
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.12999999523162842
@@ -51768,7 +52042,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.8
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.12999999523162842
@@ -51800,7 +52074,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.44
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.11999999731779099
@@ -51832,7 +52106,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.2
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1599999964237213
         minimalWear: 0.12999999523162842
@@ -51864,7 +52138,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.10999999940395355
@@ -51896,7 +52170,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.5
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.11999999731779099
@@ -89317,7 +89591,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.12999999523162842
@@ -89349,7 +89623,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0.15
       floatMax: 0.8
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.12999999523162842
@@ -89381,7 +89655,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.6
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.12999999523162842
@@ -89413,7 +89687,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.15000000596046448
@@ -89445,7 +89719,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.35
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.10999999940395355
@@ -89477,7 +89751,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.6
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.12999999523162842
@@ -93696,6 +93970,102 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 448199356}
   m_CullTransparentMesh: 1
+--- !u!1 &448350965
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 448350966}
+  - component: {fileID: 448350968}
+  - component: {fileID: 448350967}
+  - component: {fileID: 448350969}
+  m_Layer: 5
+  m_Name: ConfirmDialog
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &448350966
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448350965}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1667611967}
+  m_Father: {fileID: 497128945}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &448350967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448350965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &448350968
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448350965}
+  m_CullTransparentMesh: 1
+--- !u!114 &448350969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448350965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46f9c61965ffecf488d08105b29a0a14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ConfirmDialogUI
+  panelRoot: {fileID: 1667611966}
+  titleText: {fileID: 0}
+  titleTmpText: {fileID: 243813010}
+  messageText: {fileID: 0}
+  messageTmpText: {fileID: 1293321835}
+  confirmButton: {fileID: 1013316420}
+  cancelButton: {fileID: 1004470341}
 --- !u!1 &448415112
 GameObject:
   m_ObjectHideFlags: 0
@@ -98701,7 +99071,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.04
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.14000000059604645
@@ -98733,7 +99103,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.3
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.11999999731779099
@@ -98765,7 +99135,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.4
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.14000000059604645
@@ -98797,7 +99167,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.3
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.10999999940395355
@@ -98829,7 +99199,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0.06
       floatMax: 0.8
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.14000000059604645
@@ -106245,6 +106615,7 @@ RectTransform:
   - {fileID: 654960956}
   - {fileID: 1955573848}
   - {fileID: 897821400}
+  - {fileID: 448350966}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -108714,7 +109085,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.75
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.10999999940395355
@@ -108746,7 +109117,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.85
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.12999999523162842
@@ -108778,7 +109149,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.75
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.15000000596046448
         minimalWear: 0.15000000596046448
@@ -108810,7 +109181,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1599999964237213
         minimalWear: 0.12999999523162842
@@ -108842,7 +109213,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.9
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.11999999731779099
@@ -108874,7 +109245,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0.02
       floatMax: 0.8
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.15000000596046448
@@ -108906,7 +109277,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0.14
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.10999999940395355
@@ -114150,7 +114521,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.79
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.11999999731779099
@@ -114182,7 +114553,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.11999999731779099
@@ -114214,7 +114585,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.7
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.14000000059604645
@@ -114246,7 +114617,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.12999999523162842
@@ -114278,7 +114649,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.6
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.15000000596046448
@@ -114310,7 +114681,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1599999964237213
         minimalWear: 0.14000000059604645
@@ -114342,7 +114713,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.14000000059604645
@@ -119021,6 +119392,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 555932991}
   m_CullTransparentMesh: 1
+--- !u!1 &556114293
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 556114294}
+  - component: {fileID: 556114296}
+  - component: {fileID: 556114295}
+  m_Layer: 5
+  m_Name: Coin partical box
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &556114294
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556114293}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1868001596}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -468.08, y: -20.7215}
+  m_SizeDelta: {x: -936.15, y: -52.068}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &556114295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556114293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &556114296
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556114293}
+  m_CullTransparentMesh: 1
 --- !u!1 &556155839
 GameObject:
   m_ObjectHideFlags: 0
@@ -119118,7 +119564,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.14000000059604645
@@ -119150,7 +119596,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.15000000596046448
         minimalWear: 0.14000000059604645
@@ -119182,7 +119628,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.78
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.14000000059604645
@@ -119214,7 +119660,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.9
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.14000000059604645
@@ -119246,7 +119692,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.11999999731779099
@@ -119278,7 +119724,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.9
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1599999964237213
         minimalWear: 0.12999999523162842
@@ -119310,7 +119756,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.12999999523162842
@@ -126506,7 +126952,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.12999999523162842
@@ -126538,7 +126984,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.11999999731779099
@@ -126570,7 +127016,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.45
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.12999999523162842
@@ -126602,7 +127048,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0.1
       floatMax: 0.65
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.12999999523162842
@@ -126634,7 +127080,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.8
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.11999999731779099
@@ -126666,7 +127112,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.14000000059604645
@@ -126698,7 +127144,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.5
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1599999964237213
         minimalWear: 0.11999999731779099
@@ -136961,7 +137407,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.11999999731779099
@@ -136993,7 +137439,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.8
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.11999999731779099
@@ -137025,7 +137471,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20999999344348907
         minimalWear: 0.15000000596046448
@@ -137057,7 +137503,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.14000000059604645
@@ -137089,7 +137535,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.7
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.11999999731779099
@@ -137121,7 +137567,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.46
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1599999964237213
         minimalWear: 0.11999999731779099
@@ -143536,6 +143982,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1915400229}
   - {fileID: 1456702869}
   - {fileID: 1326402234}
   - {fileID: 1797521932}
@@ -143917,7 +144364,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -5, y: -16}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &674181985
@@ -149057,7 +149504,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.55
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.14000000059604645
@@ -149089,7 +149536,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.75
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.11999999731779099
@@ -149121,7 +149568,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.10999999940395355
@@ -149153,7 +149600,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.75
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1599999964237213
         minimalWear: 0.14000000059604645
@@ -149185,7 +149632,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0.1
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.11999999731779099
@@ -149217,7 +149664,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.7
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.12999999523162842
@@ -149249,7 +149696,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.75
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1599999964237213
         minimalWear: 0.12999999523162842
@@ -151039,6 +151486,143 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 708450196}
+  m_CullTransparentMesh: 1
+--- !u!1 &709360063
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 709360064}
+  - component: {fileID: 709360066}
+  - component: {fileID: 709360065}
+  m_Layer: 5
+  m_Name: name
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &709360064
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709360063}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1383394496}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -81.70005, y: 39}
+  m_SizeDelta: {x: 232.6, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &709360065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709360063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: New Text
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 7f6f3149dfe706b4092b92a9f9592769, type: 2}
+  m_sharedMaterial: {fileID: 2629775182912732175, guid: 7f6f3149dfe706b4092b92a9f9592769, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 22
+  m_fontSizeBase: 22
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: -164.56165, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &709360066
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709360063}
   m_CullTransparentMesh: 1
 --- !u!1 &710025873
 GameObject:
@@ -167013,7 +167597,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.698529
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.10999999940395355
@@ -167045,7 +167629,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1599999964237213
         minimalWear: 0.12999999523162842
@@ -167077,7 +167661,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.698529
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.14000000059604645
@@ -167109,7 +167693,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.15000000596046448
@@ -167141,7 +167725,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.9
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1599999964237213
         minimalWear: 0.14000000059604645
@@ -167173,7 +167757,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.801418
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.14000000059604645
@@ -167205,7 +167789,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.799353
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.12999999523162842
@@ -175749,7 +176333,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -5, y: -16}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &832512747
@@ -183137,7 +183721,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.12999999523162842
@@ -183169,7 +183753,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.11999999731779099
@@ -183201,7 +183785,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.7
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.14000000059604645
@@ -183233,7 +183817,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.9
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.14000000059604645
@@ -183265,7 +183849,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.5
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.11999999731779099
@@ -183297,7 +183881,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.14000000059604645
@@ -183329,7 +183913,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.5
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.15000000596046448
@@ -189177,7 +189761,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.45
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.14000000059604645
@@ -189209,7 +189793,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.52
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.15000000596046448
@@ -189241,7 +189825,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.5
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.14000000059604645
@@ -189273,7 +189857,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.5
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.12999999523162842
@@ -189305,7 +189889,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.6
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.14000000059604645
@@ -189337,7 +189921,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0.4
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.11999999731779099
@@ -189369,7 +189953,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.81
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.11999999731779099
@@ -192268,7 +192852,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0.06
       floatMax: 0.8
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.12999999523162842
@@ -192300,7 +192884,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.7
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1599999964237213
         minimalWear: 0.12999999523162842
@@ -192332,7 +192916,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.58
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.14000000059604645
@@ -192364,7 +192948,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.8
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.11999999731779099
@@ -192396,7 +192980,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0.06
       floatMax: 0.58
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.15000000596046448
@@ -196909,6 +197493,143 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 933679507}
+  m_CullTransparentMesh: 1
+--- !u!1 &933753197
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 933753198}
+  - component: {fileID: 933753200}
+  - component: {fileID: 933753199}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &933753198
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933753197}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1191629782}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &933753199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933753197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Sell
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 7f6f3149dfe706b4092b92a9f9592769, type: 2}
+  m_sharedMaterial: {fileID: 2629775182912732175, guid: 7f6f3149dfe706b4092b92a9f9592769, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 24
+  m_fontSizeBase: 24
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &933753200
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933753197}
   m_CullTransparentMesh: 1
 --- !u!1 &933758953
 GameObject:
@@ -207622,7 +208343,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.15000000596046448
         minimalWear: 0.14000000059604645
@@ -207654,7 +208375,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.6
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.14000000059604645
@@ -207686,7 +208407,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.8
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.12999999523162842
@@ -207718,7 +208439,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.14000000059604645
@@ -207750,7 +208471,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.7
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.14000000059604645
@@ -207782,7 +208503,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.10999999940395355
@@ -207814,7 +208535,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.10999999940395355
@@ -209556,7 +210277,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20999999344348907
         minimalWear: 0.10999999940395355
@@ -209588,7 +210309,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.10999999940395355
@@ -209620,7 +210341,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.5
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1599999964237213
         minimalWear: 0.15000000596046448
@@ -209652,7 +210373,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.15000000596046448
@@ -209684,7 +210405,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.14000000059604645
@@ -209716,7 +210437,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.11999999731779099
@@ -210983,6 +211704,127 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1004134688}
+  m_CullTransparentMesh: 1
+--- !u!1 &1004470339
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1004470340}
+  - component: {fileID: 1004470343}
+  - component: {fileID: 1004470342}
+  - component: {fileID: 1004470341}
+  m_Layer: 5
+  m_Name: Cancel Button
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1004470340
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004470339}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1962971216}
+  m_Father: {fileID: 1883891615}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -112, y: -110}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1004470341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004470339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1004470342}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1004470342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004470339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1004470343
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004470339}
   m_CullTransparentMesh: 1
 --- !u!1 &1004541550
 GameObject:
@@ -212373,7 +213215,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0.05
       floatMax: 0.75
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1599999964237213
         minimalWear: 0.12999999523162842
@@ -212405,7 +213247,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.45
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.10999999940395355
@@ -212437,7 +213279,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0.1
       floatMax: 0.7
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1599999964237213
         minimalWear: 0.11999999731779099
@@ -212469,7 +213311,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.4
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.10999999940395355
@@ -214267,6 +215109,127 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1012386645}
+  m_CullTransparentMesh: 1
+--- !u!1 &1013316418
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1013316419}
+  - component: {fileID: 1013316422}
+  - component: {fileID: 1013316421}
+  - component: {fileID: 1013316420}
+  m_Layer: 5
+  m_Name: Confirm Botton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1013316419
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013316418}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1965126605}
+  m_Father: {fileID: 1883891615}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 150, y: -110}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1013316420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013316418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1013316421}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1013316421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013316418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1013316422
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013316418}
   m_CullTransparentMesh: 1
 --- !u!1 &1015234387
 GameObject:
@@ -225132,7 +226095,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.5
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1599999964237213
         minimalWear: 0.11999999731779099
@@ -225164,7 +226127,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.5
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20999999344348907
         minimalWear: 0.15000000596046448
@@ -225196,7 +226159,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.12999999523162842
@@ -225228,7 +226191,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1599999964237213
         minimalWear: 0.10999999940395355
@@ -225260,7 +226223,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.4
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.11999999731779099
@@ -228195,7 +229158,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.5
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.12999999523162842
@@ -228227,7 +229190,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.8
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.12999999523162842
@@ -228259,7 +229222,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.14000000059604645
@@ -228291,7 +229254,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.5
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.11999999731779099
@@ -228323,7 +229286,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.5
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.14000000059604645
@@ -230142,7 +231105,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0.1
       floatMax: 0.6
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20999999344348907
         minimalWear: 0.11999999731779099
@@ -230174,7 +231137,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.3
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.11999999731779099
@@ -230206,7 +231169,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.7
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1599999964237213
         minimalWear: 0.11999999731779099
@@ -230238,7 +231201,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0.05
       floatMax: 0.45
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.12999999523162842
@@ -241024,7 +241987,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.25
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.11999999731779099
@@ -241056,7 +242019,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0.06
       floatMax: 0.49
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.14000000059604645
@@ -241088,7 +242051,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.46
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.15000000596046448
@@ -241120,7 +242083,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.25
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1599999964237213
         minimalWear: 0.14000000059604645
@@ -241152,7 +242115,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0.06
       floatMax: 0.35
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.12999999523162842
@@ -247073,6 +248036,127 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1191178794}
   m_CullTransparentMesh: 1
+--- !u!1 &1191629781
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1191629782}
+  - component: {fileID: 1191629785}
+  - component: {fileID: 1191629784}
+  - component: {fileID: 1191629783}
+  m_Layer: 5
+  m_Name: Sell
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1191629782
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191629781}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 933753198}
+  m_Father: {fileID: 1383394496}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 109.3, y: -56}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1191629783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191629781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1191629784}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1191629784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191629781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 1, b: 0.2618475, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1191629785
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191629781}
+  m_CullTransparentMesh: 1
 --- !u!1 &1191852025
 GameObject:
   m_ObjectHideFlags: 0
@@ -247801,7 +248885,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0.1
       floatMax: 0.26
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.14000000059604645
@@ -247833,7 +248917,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.14
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.15000000596046448
         minimalWear: 0.14000000059604645
@@ -247865,7 +248949,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0.06
       floatMax: 0.8
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.12999999523162842
@@ -255695,7 +256779,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -5, y: -16}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1235585859
@@ -264501,6 +265585,143 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1292889319}
   m_CullTransparentMesh: 1
+--- !u!1 &1293321833
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1293321834}
+  - component: {fileID: 1293321836}
+  - component: {fileID: 1293321835}
+  m_Layer: 5
+  m_Name: Message Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1293321834
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293321833}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1883891615}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -19.998, y: 75}
+  m_SizeDelta: {x: 410.7063, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1293321835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293321833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Message
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 24
+  m_fontSizeBase: 24
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1293321836
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293321833}
+  m_CullTransparentMesh: 1
 --- !u!1 &1293426606
 GameObject:
   m_ObjectHideFlags: 0
@@ -265545,7 +266766,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -5, y: -16}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1297990002
@@ -268718,7 +269939,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.14000000059604645
@@ -268750,7 +269971,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.5
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.15000000596046448
@@ -268782,7 +270003,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.46
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1599999964237213
         minimalWear: 0.12999999523162842
@@ -268814,7 +270035,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.8
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.11999999731779099
@@ -268846,7 +270067,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0.1
       floatMax: 0.2
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.11999999731779099
@@ -268878,7 +270099,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.55
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.11999999731779099
@@ -279172,7 +280393,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.8
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.12999999523162842
@@ -279204,7 +280425,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.65
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.15000000596046448
@@ -279236,7 +280457,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.14000000059604645
@@ -279268,7 +280489,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.15000000596046448
@@ -279300,7 +280521,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.15000000596046448
@@ -279332,7 +280553,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.55
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.14000000059604645
@@ -279364,7 +280585,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.7
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.12999999523162842
@@ -281137,7 +282358,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.11999999731779099
@@ -281169,7 +282390,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.6
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1599999964237213
         minimalWear: 0.12999999523162842
@@ -281201,7 +282422,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.8
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.12999999523162842
@@ -281233,7 +282454,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.5
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.11999999731779099
@@ -281265,7 +282486,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.5
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.14000000059604645
@@ -281297,7 +282518,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.8
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.11999999731779099
@@ -281329,7 +282550,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1599999964237213
         minimalWear: 0.15000000596046448
@@ -285515,6 +286736,85 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1383334993}
+  m_CullTransparentMesh: 1
+--- !u!1 &1383394495
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1383394496}
+  - component: {fileID: 1383394499}
+  - component: {fileID: 1383394498}
+  m_Layer: 5
+  m_Name: SellConfirmPopup2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1383394496
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383394495}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 709360064}
+  - {fileID: 1596811434}
+  - {fileID: 1191629782}
+  - {fileID: 2080449494}
+  m_Father: {fileID: 1468651193}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -4, y: -4}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1383394498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383394495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0.4785081, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1383394499
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383394495}
   m_CullTransparentMesh: 1
 --- !u!1 &1383794904
 GameObject:
@@ -299888,7 +301188,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.68
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.12999999523162842
@@ -299920,7 +301220,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.8
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.15000000596046448
@@ -299952,7 +301252,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.8
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.11999999731779099
@@ -299984,7 +301284,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.8
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.11999999731779099
@@ -300016,7 +301316,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.15000000596046448
@@ -300048,7 +301348,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.45
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1599999964237213
         minimalWear: 0.11999999731779099
@@ -300080,7 +301380,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0.05
       floatMax: 0.65
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.11999999731779099
@@ -301478,7 +302778,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.11999999731779099
@@ -301510,7 +302810,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.9
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.14000000059604645
@@ -301542,7 +302842,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.7
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.14000000059604645
@@ -301574,7 +302874,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20999999344348907
         minimalWear: 0.11999999731779099
@@ -301606,7 +302906,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.14000000059604645
@@ -301638,7 +302938,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.57
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.10999999940395355
@@ -301670,7 +302970,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.10999999940395355
@@ -305496,6 +306796,106 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1468595902}
+  m_CullTransparentMesh: 1
+--- !u!1 &1468651192
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1468651193}
+  - component: {fileID: 1468651196}
+  - component: {fileID: 1468651195}
+  - component: {fileID: 1468651194}
+  m_Layer: 5
+  m_Name: SellConfirmPopup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1468651193
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468651192}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1383394496}
+  m_Father: {fileID: 1495754783}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -3.1000977}
+  m_SizeDelta: {x: -1020, y: -920}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1468651194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468651192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b940a7a7dac833c4e92e1fea7378d16f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SellConfirmPopupUI
+  panelRoot: {fileID: 1468651192}
+  itemNameText: {fileID: 0}
+  itemNameTmpText: {fileID: 709360065}
+  priceText: {fileID: 0}
+  priceTmpText: {fileID: 1596811435}
+  sellButton: {fileID: 1191629783}
+  cancelButton: {fileID: 2080449495}
+  priceFormat: ${0:F2}
+  titleFormat: '{0}'
+  bulkTitleFormat: Sell {0} items?
+  bulkPriceFormat: 'Total: ${0:F2}'
+--- !u!114 &1468651195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468651192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1468651196
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468651192}
   m_CullTransparentMesh: 1
 --- !u!1 &1469005121
 GameObject:
@@ -311524,6 +312924,7 @@ RectTransform:
   - {fileID: 683778098}
   - {fileID: 881408555}
   - {fileID: 1453598460}
+  - {fileID: 1468651193}
   - {fileID: 1400962228}
   m_Father: {fileID: 1691544113}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -317563,7 +318964,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.11999999731779099
@@ -317595,7 +318996,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1599999964237213
         minimalWear: 0.11999999731779099
@@ -317627,7 +319028,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.14000000059604645
@@ -317659,7 +319060,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.9
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.12999999523162842
@@ -317691,7 +319092,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.9
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.15000000596046448
         minimalWear: 0.15000000596046448
@@ -317723,7 +319124,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.11999999731779099
@@ -317755,7 +319156,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.11999999731779099
@@ -322081,7 +323482,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.10999999940395355
@@ -322113,7 +323514,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.7
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.11999999731779099
@@ -322145,7 +323546,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.11999999731779099
@@ -322177,7 +323578,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1599999964237213
         minimalWear: 0.11999999731779099
@@ -322209,7 +323610,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.15000000596046448
@@ -322241,7 +323642,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.14000000059604645
@@ -322273,7 +323674,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.15000000596046448
@@ -332015,6 +333416,143 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1596731590}
   m_CullTransparentMesh: 1
+--- !u!1 &1596811433
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1596811434}
+  - component: {fileID: 1596811436}
+  - component: {fileID: 1596811435}
+  m_Layer: 5
+  m_Name: price
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1596811434
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1596811433}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1383394496}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -11}
+  m_SizeDelta: {x: 400, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1596811435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1596811433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: New Text
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 7f6f3149dfe706b4092b92a9f9592769, type: 2}
+  m_sharedMaterial: {fileID: 2629775182912732175, guid: 7f6f3149dfe706b4092b92a9f9592769, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 28
+  m_fontSizeBase: 28
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1596811436
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1596811433}
+  m_CullTransparentMesh: 1
 --- !u!1 &1596901207
 GameObject:
   m_ObjectHideFlags: 0
@@ -335902,7 +337440,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.04
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.12999999523162842
@@ -335934,7 +337472,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.5
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.15000000596046448
@@ -335966,7 +337504,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.5
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.10999999940395355
@@ -335998,7 +337536,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.4
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1599999964237213
         minimalWear: 0.11999999731779099
@@ -336030,7 +337568,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.28
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.15000000596046448
@@ -336062,7 +337600,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.2
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.14000000059604645
@@ -348398,6 +349936,82 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1667474215}
   m_CullTransparentMesh: 1
+--- !u!1 &1667611966
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1667611967}
+  - component: {fileID: 1667611969}
+  - component: {fileID: 1667611968}
+  m_Layer: 5
+  m_Name: ConfirmPanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1667611967
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667611966}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1883891615}
+  m_Father: {fileID: 448350966}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1667611968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667611966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.6603774, g: 0.6603774, b: 0.6603774, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1667611969
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667611966}
+  m_CullTransparentMesh: 1
 --- !u!1 &1668479277
 GameObject:
   m_ObjectHideFlags: 0
@@ -353325,7 +354939,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -5, y: -16}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1695499441
@@ -376026,6 +377640,7 @@ GameObject:
   - component: {fileID: 1812001539}
   - component: {fileID: 1812001541}
   - component: {fileID: 1812001540}
+  - component: {fileID: 1812001542}
   m_Layer: 5
   m_Name: Clicker Ui
   m_TagString: Untagged
@@ -376093,6 +377708,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1812001538}
   m_CullTransparentMesh: 1
+--- !u!114 &1812001542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812001538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2799fc34e49f354b828069be7bfab97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClickParticleSpawner
+  coinSpawnArea: {fileID: 556114294}
+  caseSpawnArea: {fileID: 1915400229}
+  coinSprite: {fileID: 8331170060733035162, guid: f40dbcded2517db4d9e5770472e4df20, type: 3}
+  caseSprite: {fileID: -1098838501703822429, guid: c1a5f3c7e0192844784cad903acb79a9, type: 3}
+  maxParticles: 22
+  particleSize: 36
+  minFallSpeed: 90
+  maxFallSpeed: 220
+  minRotateSpeed: 60
+  maxRotateSpeed: 270
 --- !u!1 &1813133988
 GameObject:
   m_ObjectHideFlags: 0
@@ -384772,6 +386409,7 @@ GameObject:
   - component: {fileID: 1868001596}
   - component: {fileID: 1868001598}
   - component: {fileID: 1868001597}
+  - component: {fileID: 1868001599}
   m_Layer: 5
   m_Name: Coin_ClickerUI
   m_TagString: Untagged
@@ -384791,6 +386429,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 556114294}
   - {fileID: 1283859801}
   - {fileID: 333452767}
   - {fileID: 1348346515}
@@ -384842,6 +386481,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1868001595}
   m_CullTransparentMesh: 1
+--- !u!114 &1868001599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868001595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2799fc34e49f354b828069be7bfab97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ClickParticleSpawner
+  coinSpawnArea: {fileID: 0}
+  caseSpawnArea: {fileID: 0}
+  coinSprite: {fileID: 8331170060733035162, guid: f40dbcded2517db4d9e5770472e4df20, type: 3}
+  caseSprite: {fileID: -1098838501703822429, guid: c1a5f3c7e0192844784cad903acb79a9, type: 3}
+  maxParticles: 22
+  particleSize: 36
+  minFallSpeed: 90
+  maxFallSpeed: 220
+  minRotateSpeed: 60
+  maxRotateSpeed: 270
 --- !u!1 &1868531790
 GameObject:
   m_ObjectHideFlags: 0
@@ -388235,6 +389896,85 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1883313499}
+  m_CullTransparentMesh: 1
+--- !u!1 &1883891614
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1883891615}
+  - component: {fileID: 1883891617}
+  - component: {fileID: 1883891616}
+  m_Layer: 5
+  m_Name: ConfirmBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1883891615
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883891614}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 243813009}
+  - {fileID: 1293321834}
+  - {fileID: 1013316419}
+  - {fileID: 1004470340}
+  m_Father: {fileID: 1667611967}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 600, y: 300}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1883891616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883891614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.20125782, g: 0.20125782, b: 0.20125782, a: 0.392}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1883891617
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883891614}
   m_CullTransparentMesh: 1
 --- !u!1 &1884091000
 GameObject:
@@ -393657,7 +395397,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -5, y: -16}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1912813076
@@ -393879,6 +395619,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1914601591}
+  m_CullTransparentMesh: 1
+--- !u!1 &1915400228
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1915400229}
+  - component: {fileID: 1915400231}
+  - component: {fileID: 1915400230}
+  m_Layer: 5
+  m_Name: Case partical box
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1915400229
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915400228}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 672769290}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -467.84, y: -20.721}
+  m_SizeDelta: {x: -936.15, y: -52.06775}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1915400230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915400228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1915400231
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915400228}
   m_CullTransparentMesh: 1
 --- !u!1 &1915591886
 GameObject:
@@ -399600,7 +401415,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.55
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1599999964237213
         minimalWear: 0.12999999523162842
@@ -399632,7 +401447,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.5
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1599999964237213
         minimalWear: 0.15000000596046448
@@ -399664,7 +401479,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.12999999523162842
@@ -399696,7 +401511,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.7
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.11999999731779099
@@ -399728,7 +401543,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.11999999731779099
@@ -399760,7 +401575,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.7
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.15000000596046448
@@ -399792,7 +401607,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.12999999523162842
@@ -403858,7 +405673,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0.06
       floatMax: 0.8
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.11999999731779099
@@ -403890,7 +405705,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0.02
       floatMax: 0.18
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.11999999731779099
@@ -403922,7 +405737,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0.08
       floatMax: 0.22
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.12999999523162842
@@ -405448,6 +407263,143 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1962264723}
   m_CullTransparentMesh: 1
+--- !u!1 &1962971215
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1962971216}
+  - component: {fileID: 1962971218}
+  - component: {fileID: 1962971217}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1962971216
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962971215}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1004470340}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1962971217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962971215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Cancel
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4281479730
+  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 24
+  m_fontSizeBase: 24
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1962971218
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962971215}
+  m_CullTransparentMesh: 1
 --- !u!1 &1963443452
 GameObject:
   m_ObjectHideFlags: 0
@@ -406037,6 +407989,143 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1965107429}
+  m_CullTransparentMesh: 1
+--- !u!1 &1965126604
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1965126605}
+  - component: {fileID: 1965126607}
+  - component: {fileID: 1965126606}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1965126605
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965126604}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1013316419}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1965126606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965126604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Confirm
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4281479730
+  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 24
+  m_fontSizeBase: 24
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_characterHorizontalScale: 1
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1965126607
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965126604}
   m_CullTransparentMesh: 1
 --- !u!1 &1965584644
 GameObject:
@@ -409816,7 +411905,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.11999999731779099
@@ -409848,7 +411937,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.11999999731779099
@@ -409880,7 +411969,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1599999964237213
         minimalWear: 0.10999999940395355
@@ -409912,7 +412001,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.9
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.12999999523162842
@@ -409944,7 +412033,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.12999999523162842
@@ -409976,7 +412065,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.851064
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.11999999731779099
@@ -410008,7 +412097,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.702614
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1599999964237213
         minimalWear: 0.14000000059604645
@@ -415468,7 +417557,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.5
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1599999964237213
         minimalWear: 0.12999999523162842
@@ -415500,7 +417589,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.75
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.11999999731779099
@@ -415532,7 +417621,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.5
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.10999999940395355
@@ -415564,7 +417653,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.7
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.11999999731779099
@@ -415596,7 +417685,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.7
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.14000000059604645
@@ -415628,7 +417717,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.5
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.15000000596046448
@@ -415660,7 +417749,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0.05
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.14000000059604645
@@ -422154,7 +424243,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.5
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.15000000596046448
@@ -422186,7 +424275,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.10999999940395355
@@ -422218,7 +424307,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.75
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1599999964237213
         minimalWear: 0.14000000059604645
@@ -422250,7 +424339,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.11999999731779099
@@ -422282,7 +424371,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.45
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1599999964237213
         minimalWear: 0.12999999523162842
@@ -422314,7 +424403,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.45
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.14000000059604645
@@ -422346,7 +424435,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.12999999523162842
@@ -428367,7 +430456,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.7
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.14000000059604645
@@ -428399,7 +430488,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.7
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.11999999731779099
@@ -428431,7 +430520,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.12999999523162842
@@ -428463,7 +430552,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.8
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.11999999731779099
@@ -428495,7 +430584,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.62
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1599999964237213
         minimalWear: 0.12999999523162842
@@ -428527,7 +430616,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.15000000596046448
@@ -428559,7 +430648,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.11999999731779099
@@ -429037,7 +431126,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.7
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.12999999523162842
@@ -429069,7 +431158,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.11999999731779099
@@ -429101,7 +431190,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.5
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.14000000059604645
@@ -429133,7 +431222,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0.05
       floatMax: 0.8
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.14000000059604645
@@ -429165,7 +431254,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.11999999731779099
@@ -429197,7 +431286,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.6
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.11999999731779099
@@ -429229,7 +431318,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.5
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.10999999940395355
@@ -430946,7 +433035,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.76
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.11999999731779099
@@ -430978,7 +433067,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.12999999523162842
@@ -431010,7 +433099,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.7
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.11999999731779099
@@ -431042,7 +433131,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.11999999731779099
@@ -431074,7 +433163,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.77
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1599999964237213
         minimalWear: 0.11999999731779099
@@ -431106,7 +433195,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.9
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1599999964237213
         minimalWear: 0.15000000596046448
@@ -431138,7 +433227,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1599999964237213
         minimalWear: 0.14000000059604645
@@ -433272,6 +435361,127 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2079639180}
+  m_CullTransparentMesh: 1
+--- !u!1 &2080449493
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2080449494}
+  - component: {fileID: 2080449497}
+  - component: {fileID: 2080449496}
+  - component: {fileID: 2080449495}
+  m_Layer: 5
+  m_Name: Cancel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2080449494
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080449493}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 207371797}
+  m_Father: {fileID: 1383394496}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -114, y: -56}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2080449495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080449493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 2080449496}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2080449496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080449493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2080449497
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080449493}
   m_CullTransparentMesh: 1
 --- !u!1 &2080756956
 GameObject:
@@ -444853,7 +447063,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.8
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.17000000178813934
         minimalWear: 0.14000000059604645
@@ -444885,7 +447095,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0.05
       floatMax: 0.7
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.18000000715255737
         minimalWear: 0.11999999731779099
@@ -444917,7 +447127,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.14000000059604645
@@ -444949,7 +447159,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.14000000059604645
@@ -444981,7 +447191,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 1
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.20000000298023224
         minimalWear: 0.14000000059604645
@@ -445013,7 +447223,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.7
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1599999964237213
         minimalWear: 0.10999999940395355
@@ -445045,7 +447255,7 @@ MonoBehaviour:
       maxValue: 0
       floatMin: 0
       floatMax: 0.6
-      rarity: 0
+      rarity: 2
       cachedPrices:
         factoryNew: 0.1899999976158142
         minimalWear: 0.11999999731779099
