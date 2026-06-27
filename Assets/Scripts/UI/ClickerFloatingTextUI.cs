@@ -87,11 +87,13 @@ public class ClickerFloatingTextUI : MonoBehaviour
 
     private void OnMoneyClicked(float amount)
     {
+        if (PlayerPrefs.GetInt("settings.showFloatingText", 1) == 0) return;
         SpawnEntry(moneyEntries, moneyRoot, string.Format(moneyFormat, amount), moneyColor);
     }
 
     private void OnCaseClicked(float amount)
     {
+        if (PlayerPrefs.GetInt("settings.showFloatingText", 1) == 0) return;
         SpawnEntry(caseEntries, caseRoot, string.Format(caseFormat, amount), caseColor);
     }
 

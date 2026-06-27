@@ -14,14 +14,22 @@ public class ClickerController : MonoBehaviour
     [SerializeField] private float baseMoneyPerClick = 1f;
     [SerializeField] private float baseCasePercentPerClick = 0.5f;
 
+    [Header("Critical Click")]
+    [Tooltip("Probability (0–1) that a click is a critical hit.")]
+    [SerializeField, Range(0f, 1f)] private float criticalClickChance = 0.05f;
+    [Tooltip("Multiplier applied to earnings on a critical click.")]
+    [SerializeField, Min(1f)] private float criticalClickMultiplier = 3f;
+
     [Header("UI References (Optional - assign in Inspector)")]
     [SerializeField] private Button moneyCoinButton;
     [SerializeField] private Button caseCoinButton;
 
     // Events for UI feedback
-    public UnityEvent<float> OnMoneyClicked;      // Passes amount earned
-    public UnityEvent<float> OnCaseClicked;       // Passes percent gained
+    public UnityEvent<float> OnMoneyClicked;      // Passes amount earned (post-crit)
+    public UnityEvent<float> OnCaseClicked;       // Passes percent gained (post-crit)
     public UnityEvent<Vector3> OnClickFeedback;   // For visual effects at click position
+    /// <summary>Fired only when a critical click lands. Passes the total amount earned.</summary>
+    public UnityEvent<float> OnCriticalClick;
 
     // Upgrade multipliers (modified by upgrade system)
     private float moneyClickMultiplier = 1f;
@@ -39,6 +47,8 @@ public class ClickerController : MonoBehaviour
     public float CaseClickMultiplier => caseClickMultiplier;
     public int TotalMoneyClicks => totalMoneyClicks;
     public int TotalCaseClicks => totalCaseClicks;
+    public float CriticalClickChance => criticalClickChance;
+    public float CriticalClickMultiplier => criticalClickMultiplier;
 
     /// <summary>
     /// Current Money Per Click including all multipliers (upgrades + coin combo)
@@ -76,9 +86,10 @@ public class ClickerController : MonoBehaviour
         Instance = this;
 
         // Initialize events if null
-        OnMoneyClicked ??= new UnityEvent<float>();
-        OnCaseClicked ??= new UnityEvent<float>();
+        OnMoneyClicked  ??= new UnityEvent<float>();
+        OnCaseClicked   ??= new UnityEvent<float>();
         OnClickFeedback ??= new UnityEvent<Vector3>();
+        OnCriticalClick ??= new UnityEvent<float>();
 
         // Ensure minimum starting values (fixes 0 value bug from serialization)
         if (baseMoneyPerClick <= 0f) baseMoneyPerClick = 1f;
@@ -114,8 +125,10 @@ public class ClickerController : MonoBehaviour
 
         GameManager.Instance.Combo?.RegisterCoinClick();
 
-        // Calculate earnings with combo multiplier
+        // Calculate earnings with combo multiplier, then apply crit
         float earnings = CurrentMoneyPerClick;
+        bool isCrit = Random.value < criticalClickChance;
+        if (isCrit) earnings *= criticalClickMultiplier;
 
         // Add money to balance
         GameManager.Instance.Balance?.AddMoney(earnings);
@@ -126,6 +139,7 @@ public class ClickerController : MonoBehaviour
 
         // Trigger events for UI feedback
         OnMoneyClicked?.Invoke(earnings);
+        if (isCrit) OnCriticalClick?.Invoke(earnings);
     }
 
     /// <summary>
@@ -139,8 +153,10 @@ public class ClickerController : MonoBehaviour
 
         GameManager.Instance.Combo?.RegisterCaseClick();
 
-        // Calculate case progress with combo multiplier
+        // Calculate case progress with combo multiplier, then apply crit
         float progressGain = CurrentCasePercentPerClick;
+        bool isCaseCrit = Random.value < criticalClickChance;
+        if (isCaseCrit) progressGain *= criticalClickMultiplier;
 
         // Add progress to case system
         GameManager.Instance.CaseProgress?.AddProgress(progressGain);
@@ -151,6 +167,7 @@ public class ClickerController : MonoBehaviour
 
         // Trigger events for UI feedback
         OnCaseClicked?.Invoke(progressGain);
+        if (isCaseCrit) OnCriticalClick?.Invoke(progressGain);
     }
 
     /// <summary>

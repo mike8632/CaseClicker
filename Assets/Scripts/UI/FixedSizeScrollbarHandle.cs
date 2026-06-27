@@ -10,6 +10,7 @@ using UnityEngine;
 /// ScrollRect.Rebuild() in the same frame, so the ScrollRect can no longer
 /// overwrite the handle size.
 /// </summary>
+[DefaultExecutionOrder(1000)]
 [RequireComponent(typeof(UnityEngine.UI.Scrollbar))]
 public class FixedSizeScrollbarHandle : MonoBehaviour
 {

@@ -124,6 +124,8 @@ public class ClickParticleSpawner : MonoBehaviour
     // ── Core spawn ────────────────────────────────────────────────────────────
     private void SpawnIcon(Sprite icon, RectTransform area)
     {
+        if (PlayerPrefs.GetInt("settings.fallingClickIcons", 1) == 0) return;
+
         // Cull the oldest particle if at the limit
         while (_active.Count >= maxParticles)
         {
