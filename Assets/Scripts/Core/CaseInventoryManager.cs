@@ -409,6 +409,12 @@ public class CaseInventoryManager : MonoBehaviour
         // Record case opened statistic with rolled item details
         StatisticsManager.Instance?.RecordCaseOpened(caseDataForOpen, rolledItem, rolledValue);
 
+        // Record persistent container profit stats (opening cost = key price + case price)
+        double openCost = (double)GetKeyPrice(caseDataForOpen.caseId, caseDataForOpen.keyPrice)
+                        + (double)caseDataForOpen.casePrice;
+        ContainerStatsManager.Instance?.RecordContainerOpened(
+            caseDataForOpen.caseId, openCost, (double)rolledValue);
+
         Debug.Log($"[CaseInventory] Opened case '{caseDataForOpen.caseId}' - total opened now: {StatisticsManager.Instance?.TotalCasesOpened}");
 
         SaveSystem.Instance?.RequestSave();

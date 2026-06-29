@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5b7183d1c56913946a51db9abb7cdcd9
+guid: fdb988d758524ee41b2d585edfa0fe80
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6301429047446442448
-    second: gold_0
+      213: 5049188655343856162
+    second: Bowie knife icon-Photoroom_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -72,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: gold_0
+      name: Bowie knife icon-Photoroom_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 115
-        height: 115
+        width: 1254
+        height: 1254
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 03e60a1faa3dc88a0800000000000000
-      internalID: -6301429047446442448
+      spriteID: 22ae3bd8452521640800000000000000
+      internalID: 5049188655343856162
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      gold_0: -6301429047446442448
+      Bowie knife icon-Photoroom_0: 5049188655343856162
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

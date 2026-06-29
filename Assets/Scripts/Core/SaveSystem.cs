@@ -222,6 +222,18 @@ public class SaveSystem : MonoBehaviour
             data.upgrades = UpgradeManager.Instance.GetSnapshot();
         }
 
+        // Collection rewards
+        if (CollectionRewardManager.Instance != null)
+        {
+            data.claimedCollectionRewardIds = CollectionRewardManager.Instance.GetSnapshot();
+        }
+
+        // Container stats (persistent open counts + profit per case)
+        if (ContainerStatsManager.Instance != null)
+        {
+            data.containerStats = ContainerStatsManager.Instance.GetSnapshot();
+        }
+
         return data;
     }
 
@@ -413,6 +425,18 @@ public class SaveSystem : MonoBehaviour
         {
             UpgradeManager.Instance.ApplySnapshot(data.upgrades);
         }
+
+        // Collection rewards (null-safe — old saves without this field are treated as no claims)
+        if (CollectionRewardManager.Instance != null)
+        {
+            CollectionRewardManager.Instance.ApplySnapshot(data.claimedCollectionRewardIds);
+        }
+
+        // Container stats (null-safe — old saves without this field start with no history)
+        if (ContainerStatsManager.Instance != null)
+        {
+            ContainerStatsManager.Instance.ApplySnapshot(data.containerStats);
+        }
     }
 
     private void ApplyCaseInventory(List<CaseEntryDTO> list)
@@ -571,6 +595,14 @@ public class SaveData
 
     // Upgrades
     public System.Collections.Generic.List<UpgradeEntryDTO> upgrades;
+
+    // Collection rewards — ids of collections whose one-time reward has been claimed.
+    // Null on old saves (treated as empty list in CollectionRewardManager.ApplySnapshot).
+    public System.Collections.Generic.List<string> claimedCollectionRewardIds;
+
+    // Per-container open counts and profit stats.
+    // Null on old saves — ContainerStatsManager.ApplySnapshot treats null as empty (no history).
+    public System.Collections.Generic.List<ContainerStatDTO> containerStats;
 }
 
 /// <summary>
@@ -611,6 +643,18 @@ public class SkinEntryDTO
     public string collectionId;
     public string collectionName;
     // collectionIcon (Sprite) is intentionally not saved — resolved from CaseItemData on load
+}
+
+/// <summary>
+/// Serializable DTO for per-container open counts and profit stats.
+/// </summary>
+[Serializable]
+public class ContainerStatDTO
+{
+    public string containerId;
+    public int    openedCount;
+    public double totalOpeningCost;
+    public double totalValueReceived;
 }
 
 /// <summary>
