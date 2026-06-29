@@ -36,16 +36,13 @@ public class ResetProgressButton : MonoBehaviour
     /// </summary>
     public void HandleClick()
     {
-        if (ConfirmDialogUI.Instance != null)
+        if (ConfirmDialogUI.Instance == null)
         {
-            ConfirmDialogUI.Instance.Show(dialogTitle, dialogMessage, DoReset);
+            Debug.LogError("[ResetProgressButton] Cannot reset progress — ConfirmDialogUI is missing from the scene. Add it before using this button.");
+            return;
         }
-        else
-        {
-            // No dialog in scene — reset immediately (dev fallback only)
-            Debug.LogWarning("[ResetProgress] No ConfirmDialogUI in scene — resetting without confirmation.");
-            DoReset();
-        }
+
+        ConfirmDialogUI.Instance.Show(dialogTitle, dialogMessage, DoReset);
     }
 
     private static void DoReset()

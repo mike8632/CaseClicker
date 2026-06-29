@@ -208,18 +208,16 @@ public class SettingsPanelUI : MonoBehaviour
 
     private void OnResetProgressClicked()
     {
-        if (ConfirmDialogUI.Instance != null)
+        if (ConfirmDialogUI.Instance == null)
         {
-            ConfirmDialogUI.Instance.Show(
-                "Reset Progress?",
-                "This will delete ALL saved progress and restart the game from the beginning.\n\nThis cannot be undone.",
-                () => GameManager.Instance?.ResetAndReload());
+            Debug.LogError("[SettingsPanelUI] Cannot reset progress — ConfirmDialogUI is missing from the scene. Add it before using this button.");
+            return;
         }
-        else
-        {
-            // Fallback — no dialog in scene
-            GameManager.Instance?.ResetAndReload();
-        }
+
+        ConfirmDialogUI.Instance.Show(
+            "Reset Progress?",
+            "This will delete ALL saved progress and restart the game from the beginning.\n\nThis cannot be undone.",
+            () => GameManager.Instance?.ResetAndReload());
     }
 
     private void OnRepriceInventoryClicked()
