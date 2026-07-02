@@ -46,6 +46,10 @@ public class ContainerInfoItemCardUI : MonoBehaviour
     [SerializeField] private TMP_Text weaponNameText;
     [SerializeField] private TMP_Text skinNameText;
     [SerializeField] private TMP_Text ownedText;
+    [Tooltip("Optional Button on this card's root. When assigned and this is a normal skin card,\n" +
+             "clicking opens SkinInfoPanelUI for the stored item.\n" +
+             "Special gold cards clear the listener so they never open the price panel.")]
+    [SerializeField] private Button   cardButton;
 
     [Header("Image Area Background Tint")]
     [Tooltip("Base dark color for the image area (used when no rarity tint is applied).")]
@@ -84,6 +88,9 @@ public class ContainerInfoItemCardUI : MonoBehaviour
     private ContentSizeFitter _itemImageCsf;
     private bool              _normalCsfEnabled;
 
+    // ── Stored item data (used by card-click handler) ─────────────────────────
+    private CaseItemData _item;
+
     // ── Lifecycle ──────────────────────────────────────────────────────────────
 
     private void Awake()
@@ -107,6 +114,8 @@ public class ContainerInfoItemCardUI : MonoBehaviour
     /// <summary>Populate this card with item data and ownership state.</summary>
     public void Setup(CaseItemData item, bool isOwned)
     {
+        _item = item;
+
         ApplyRarity(item.GetEffectiveRarity());
 
         if (itemImage != null)
@@ -131,6 +140,13 @@ public class ContainerInfoItemCardUI : MonoBehaviour
 
         if (ownedText != null) ownedText.gameObject.SetActive(true);
         SetOwned(isOwned);
+
+        // Wire click → SkinInfoPanelUI (normal cards only)
+        if (cardButton != null)
+        {
+            cardButton.onClick.RemoveAllListeners();
+            cardButton.onClick.AddListener(OnCardClicked);
+        }
     }
 
     /// <summary>
@@ -165,6 +181,10 @@ public class ContainerInfoItemCardUI : MonoBehaviour
 
         // Hide owned text — this card is informational only
         if (ownedText != null) ownedText.gameObject.SetActive(false);
+
+        // Special cards must never open the skin price panel
+        if (cardButton != null)
+            cardButton.onClick.RemoveAllListeners();
     }
 
     /// <summary>Update ownership display without rebuilding the card (fast-path).</summary>
@@ -173,6 +193,19 @@ public class ContainerInfoItemCardUI : MonoBehaviour
         if (ownedText == null) return;
         ownedText.text  = isOwned ? ownedLabel : notOwnedLabel;
         ownedText.color = isOwned ? ownedColor : notOwnedColor;
+    }
+
+    // ── Card click ─────────────────────────────────────────────────────────────
+
+    private void OnCardClicked()
+    {
+        if (_item == null) return;
+
+        if (SkinInfoPanelUI.Instance != null)
+            SkinInfoPanelUI.Instance.Show(_item);
+        else
+            Debug.LogWarning("[ContainerInfoItemCardUI] SkinInfoPanelUI is not in the scene — " +
+                             "add it to open skin price details.");
     }
 
     // ── Layout helpers ─────────────────────────────────────────────────────────
